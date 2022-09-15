@@ -25,4 +25,4 @@ jobs:
         method: 'POST'
         customHeaders: '{"Content-Type": "application/x-yaml"}'
         #le fichier du dépot github
-        file: "./rulesStructurePresenceZone.yaml"
+        file: ./rulesStructurePresenceZone.yaml
