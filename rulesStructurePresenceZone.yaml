@@ -2,6 +2,7 @@
 rules:
     - id:          1
       id-excel:    1
+      type:        presencezone
       message:     message test
       zone:        200
       priorite:    P1
@@ -12,6 +13,7 @@ rules:
           K
     - id:          2
       id-excel:    2
+      type:        presencezone
       message:     message test 2
       zone:        330
       priorite:    P2
