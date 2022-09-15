@@ -21,7 +21,7 @@ jobs:
       uses: fjogeleit/http-request-action@v1
       with:
       #Lien du ws pour sauvegarder les regles de qualimarque
-        url: ""
+        url: "https://qualimarc-test.sudoc.fr/api/v1/getTypesAnalyses"
         method: 'POST'
         customHeaders: '{"Content-Type": "application/x-yaml"}'
         #le fichier du dépot github
