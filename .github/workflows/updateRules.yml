@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: updateRules
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "develop" branch
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+  # Lancement manuel du service
+  workflow_dispatch:
+  
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "push all rules on qualimarc API"
+      uses: fjogeleit/http-request-action@v1
+      with:
+      #Lien du ws pour sauvegarder les regles de qualimarque
+        url: ${{ secrets.URL_API }}
+        method: 'POST'
+        customHeaders: '{"Content-Type": "application/x-yaml"}'
+        #le fichier du dépot github
+        file: "${{ github.workspace }}/testfile.txt"
