@@ -1,0 +1,19 @@
+---
+rules:
+    - id:          1
+      id-excel:    1
+      message:     message test
+      zone:        200
+      priorite:    P1
+      presence:    true
+      type-doc:
+          A
+          B
+          K
+    - id:          2
+      id-excel:    2
+      message:     message test 2
+      zone:        330
+      priorite:    P2
+      presence:    false
+               
