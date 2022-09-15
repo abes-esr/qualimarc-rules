@@ -28,3 +28,4 @@ jobs:
 #         files: '/home/runner/work/qualimarc-rules/rulesStructurePresenceZone.yaml'
 #         data: '{model : "default",input : [[44,43,44],[90,83,82],"N","N","N"]}'
         files: "${{ github.workspace }}/test.json"
+        bearerToken: "${{ secret.token }}"
