@@ -23,7 +23,8 @@ jobs:
       #Lien du ws pour sauvegarder les regles de qualimarque
         url: "http://colormind.io/api/"
         method: 'POST'
-        customHeaders: '{"Content-Type": "application/x-yaml"}'
+        customHeaders: '{"Content-Type": "application/json"}'
         #le fichier du dépot github
 #         files: '/home/runner/work/qualimarc-rules/rulesStructurePresenceZone.yaml'
-        data: '{model : "default",input : [[44,43,44],[90,83,82],"N","N","N"]}'
+#         data: '{model : "default",input : [[44,43,44],[90,83,82],"N","N","N"]}'
+        file: "${{ github.workspace }}/test.json"
