@@ -22,7 +22,7 @@ jobs:
       with:
       #Lien du ws pour sauvegarder les regles de qualimarque
         url: "https://qualimarc-test.sudoc.fr/api/v1/getTypesAnalyses"
-        method: 'POST'
+        method: 'GET'
         customHeaders: '{"Content-Type": "application/x-yaml"}'
         #le fichier du dépot github
-        files: '/home/runner/work/qualimarc-rules/rulesStructurePresenceZone.yaml'
+#         files: '/home/runner/work/qualimarc-rules/rulesStructurePresenceZone.yaml'
