@@ -1,10 +1,6 @@
-# This is a basic workflow to help you get started with Actions
-
 name: updateRules
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "develop" branch
   push:
     branches: [ "develop" ]
   pull_request:
@@ -17,15 +13,16 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
-    - name: "push all rules on qualimarc API"
+    - name: "push rules PresenceZone on qualimarc API"
       uses: fjogeleit/http-request-action@v1
       with:
       #Lien du ws pour sauvegarder les regles de qualimarque
         url: "http://colormind.io/api/"
         method: 'POST'
         customHeaders: '{"Content-Type": "application/json"}'
+        bearerToken: "${{ secrets.token }}"
+
         #le fichier du dépot github
-#         files: '/home/runner/work/qualimarc-rules/rulesStructurePresenceZone.yaml'
-#         data: '{model : "default",input : [[44,43,44],[90,83,82],"N","N","N"]}'
-        files: "${{ github.workspace }}/test.json"
-        bearerToken: "${{ secret.token }}"
+        files: '${{ github.workspace }}/rulesStructurePresenceZone.yaml'
+        #        data: '{model : "default",input : [[44,43,44],[90,83,82],"N","N","N"]}'
+        #        files: "${{ github.workspace }}/test.json"
