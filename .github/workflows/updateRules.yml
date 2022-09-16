@@ -19,8 +19,8 @@ jobs:
       #Lien du ws pour sauvegarder les regles de qualimarque
         url: "https://qualimarc.sudoc.fr/api/v1/indexRules"
         method: 'POST'
-        customHeaders: '{"Content-Type": "application/yaml"}'
-        bearerToken: "${{ secrets.token }}"
+        customHeaders: '{"Content-Type": "text/yaml"}'
+#        bearerToken: "${{ secrets.token }}"
 
         #le fichier du dépot github des regles de presenceZone
         files: '${{ github.workspace }}/rulesStructurePresenceZone.yaml'
