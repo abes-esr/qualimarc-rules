@@ -45,10 +45,8 @@ Les fichiers de règles sont décrits dans un langage appelé YAML. Proche du JS
 - Si un attribut dispose de plusieurs valeurs, celles-ci sont disposées sur des lignes différents et précédées d'un tiret ``- ``.
 
 Par exemple : 
-type-doc:
->    - A
->    - B
->    - O
+![typedoc](https://user-images.githubusercontent.com/57490853/190974752-3b5b1118-8c4e-42ce-8963-734559227c80.PNG)
+
 
 ## Description des règles de Qualimarc
 Toutes les règles de Qualimarc ont une structure commune, puis des champs propres à chaque type de règle. Dans le chapitre décrivant les règles, les éléments obligatoires seront précisés. Voici un exemple de fichier YAML décrivant une règle : 
