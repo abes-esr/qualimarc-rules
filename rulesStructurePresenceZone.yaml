@@ -8,9 +8,9 @@ rules:
       priorite:    P1
       presence:    true
       type-doc:
-          A
-          B
-          K
+      -    A
+      -    B
+      -    K
     - id:          2
       id-excel:    2
       type:        presencezone

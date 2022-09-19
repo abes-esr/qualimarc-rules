@@ -1,0 +1,34 @@
+name: updateRules
+
+env:
+  URL_API_QUALIMARC: https://qualimarc.sudoc.fr/api/v1/indexRules
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+  # Lancement manuel du service
+  workflow_dispatch:
+
+# TODO : mettre à jour avec le token "cat rulesStructurePresenceZone.yaml | curl -X POST -H "Content-Type: text/yaml" -H "Authorization: Basic $(echo ${{ secrets.QUALIMARC_API_INDEX_RULE_TOKEN }} | base64)" --data-binary @- ${{ env.URL_API_QUALIMARC }}
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "push rules PresenceZone on qualimarc API"
+        run: |
+          cat rulesStructurePresenceZone.yaml | curl -X POST -H "Content-Type: text/yaml" --data-binary @- ${{ env.URL_API_QUALIMARC }}
+
+      - name: "push rules PresenceSousZone on qualimarc API"
+        run: |
+          cat rulesStructurePresenceSousZone.yaml | curl -X POST -H "Content-Type: text/yaml" --data-binary @- ${{ env.URL_API_QUALIMARC }}
+
+      - name: "push rules NombreZone on qualimarc API"
+        run: |
+          cat rulesStructureNombreZone.yaml | curl -X POST -H "Content-Type: text/yaml" --data-binary @- ${{ env.URL_API_QUALIMARC }}
+
+      - name: "push rules NombreSousZone on qualimarc API"
+        run: |
+          cat rulesStructureNombreSousZone.yaml | curl -X POST -H "Content-Type: text/yaml" --data-binary @- ${{ env.URL_API_QUALIMARC }}
