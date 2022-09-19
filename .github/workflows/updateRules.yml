@@ -1,5 +1,8 @@
 name: updateRules
 
+env:
+  URL_API_QUALIMARC: https://qualimarc.sudoc.fr/api/v1/indexRules
+
 on:
   push:
     branches: [ "develop" ]
@@ -8,21 +11,24 @@ on:
 
   # Lancement manuel du service
   workflow_dispatch:
-  
+
+# TODO : mettre à jour avec le token "cat rulesStructurePresenceZone.yaml | curl -X POST -H "Content-Type: text/yaml" -H "Authorization: Basic $(echo ${{ secrets.QUALIMARC_API_INDEX_RULE_TOKEN }} | base64)" --data-binary @- ${{ env.URL_API_QUALIMARC }}
 jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
-    - name: "push rules PresenceZone on qualimarc API"
-      uses: fjogeleit/http-request-action@v1
-      with:
-      #Lien du ws pour sauvegarder les regles de qualimarque
-        url: "https://qualimarc.sudoc.fr/api/v1/indexRules"
-        method: 'POST'
-        customHeaders: '{"Content-Type": "text/yaml"}'
-#        bearerToken: "${{ secrets.token }}"
+      - name: "push rules PresenceZone on qualimarc API"
+        run: |
+          cat rulesStructurePresenceZone.yaml | curl -X POST -H "Content-Type: text/yaml" --data-binary @- ${{ env.URL_API_QUALIMARC }}
 
-        #le fichier du dépot github des regles de presenceZone
-        files: '${{ github.workspace }}/rulesStructurePresenceZone.yaml'
-        #        data: '{model : "default",input : [[44,43,44],[90,83,82],"N","N","N"]}'
-        #        files: "${{ github.workspace }}/test.json"
+      - name: "push rules PresenceSousZone on qualimarc API"
+        run: |
+          cat rulesStructurePresenceSousZone.yaml | curl -X POST -H "Content-Type: text/yaml" --data-binary @- ${{ env.URL_API_QUALIMARC }}
+
+      - name: "push rules NombreZone on qualimarc API"
+        run: |
+          cat rulesStructureNombreZone.yaml | curl -X POST -H "Content-Type: text/yaml" --data-binary @- ${{ env.URL_API_QUALIMARC }}
+
+      - name: "push rules NombreSousZone on qualimarc API"
+        run: |
+          cat rulesStructureNombreSousZone.yaml | curl -X POST -H "Content-Type: text/yaml" --data-binary @- ${{ env.URL_API_QUALIMARC }}
