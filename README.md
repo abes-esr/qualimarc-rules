@@ -60,6 +60,12 @@ A l'heure actuelle il existe 4 types de règles dans Qualimarc :
 - Nombre de zones dans une notice
 - Nombre de sous-zones dans une notice.
 
+De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règles, chaque type de règle sera disposé dans un fichier différent :
+- présence / absence de zone : rulesStructurePresenceZone.yaml
+- présence / absence de sous zone : rulesStructurePresenceSousZone.yaml
+- nombre de zone : rulesStructureNombreZone.yaml
+- nombre de sous zones : rulesStructureNombreSousZone.yaml
+
 Cette partie va décrire la structure des différentes règles en YAML.
 ### Champs communs à toutes les règles
 Voici les champs à renseigner pour décrire une règle simple toutes les règles héritent de ces champs. Ils doivent être renseignés pour chaque règle décrite dans un fichier YAML (à l'exception des champs optionnels) : 
