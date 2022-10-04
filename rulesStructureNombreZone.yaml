@@ -1,1 +1,10 @@
-
+---
+rules:
+  - id:          4
+    id-excel:    10
+    type:        nombrezone
+    message:     nombre zone ansible
+    zone:        330
+    priorite:    P1
+    operateur:   INFERIEUR
+    occurrences: 3

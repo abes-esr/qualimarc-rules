@@ -1,2 +1,11 @@
-
-test
+---
+rules:
+  - id:          5
+    id-excel:    130
+    type:        nombresouszone
+    message:     nombre zonesous ansible
+    zone:        200
+    souszone:    a
+    zonecible:   600
+    souszonecilbe: b
+    priorite:    P2

@@ -1,1 +1,10 @@
-
+---
+rules:
+  - id:          1
+    id-excel:    1
+    type:        presencesouszone
+    message:     message test ansible
+    zone:        200
+    souszone:    a
+    priorite:    P1
+    presence:    true

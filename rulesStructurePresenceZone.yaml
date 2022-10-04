@@ -18,4 +18,18 @@ rules:
       zone:        330
       priorite:    P2
       presence:    false
+    - id:          3
+      id-excel:    3
+      type:        presencezone
+      message:     Ajout Test Ansible
+      zone:        010
+      priorite:    P1
+      presence:    true
+    - id:          2
+      id-excel:    2
+      type:        presencezone
+      message:     message test 2
+      zone:        330
+      priorite:    P2
+      presence:    false
                
