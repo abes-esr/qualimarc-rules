@@ -4,10 +4,10 @@
 Ce document explique étape par étape comment ajouter ou modifier des règles dans le projet qualimarc.
 
 ## Sommaire
-- Utilisation de GitHub
-- Déclenchement de la Github action
-- Langage YAML
-- Syntaxe des règles
+- <a href="(https://github.com/abes-esr/qualimarc-rules/blob/develop/README.md#utilisation-de-github)">[Utilisation de GitHub]</a>
+- [Déclenchement de la Github action]
+- [Langage YAML]
+- [Syntaxe des règles]
 
 ## Utilisation de GitHub
 Github est un outil en ligne permettant de versionner des fichiers. Il dispose d'un éditeur en ligne permettant de modifier des fichiers puis de les sauvegarder tout en conservant un historique des modifications réalisées.
