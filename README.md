@@ -4,7 +4,7 @@
 Ce document explique étape par étape comment ajouter ou modifier des règles dans le projet qualimarc.
 
 ## Sommaire
-- [Utilisation de GitHub]
+- <a href="#UtilisationdeGitHub">[Utilisation de GitHub]</a>
 - [Déclenchement de la Github action]
 - [Langage YAML]
 - [Syntaxe des règles]
