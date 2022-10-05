@@ -4,7 +4,6 @@ rules:
       id-excel:    1
       type:        presencezone
       message:     message test
-      zone:        200
       priorite:    P1
       presence:    true
       type-doc:
