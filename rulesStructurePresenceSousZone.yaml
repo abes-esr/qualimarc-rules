@@ -1,9 +1,9 @@
 ---
 rules:
-  - id:          1
-    id-excel:    1
+  - id:          6
+    id-excel:    6
     type:        presencesouszone
-    message:     message test ansible
+    message:     message test ansible SQN
     zone:        200
     souszone:    a
     priorite:    P1

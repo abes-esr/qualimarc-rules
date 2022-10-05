@@ -44,7 +44,7 @@ Les fichiers de règles sont décrits dans un langage appelé YAML. Proche du JS
 - les chaines de caractères doivent être placée sur une même ligne, sans retour à la ligne.
 - Si un attribut dispose de plusieurs valeurs, celles-ci sont disposées sur des lignes différents et précédées d'un tiret ``- ``.
 
-Par exemple : 
+Par exemple :  
 ![typedoc](https://user-images.githubusercontent.com/57490853/190974752-3b5b1118-8c4e-42ce-8963-734559227c80.PNG)
 
 
@@ -54,17 +54,19 @@ Toutes les règles de Qualimarc ont une structure commune, puis des champs propr
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
 ## Syntaxe des règles
-A l'heure actuelle il existe 4 types de règles dans Qualimarc : 
+A l'heure actuelle il existe 5 types de règles dans Qualimarc : 
 - Présence ou absence de zone
 - Présence ou absence de sous-zone
 - Nombre de zones dans une notice
-- Nombre de sous-zones dans une notice.
+- Nombre de sous-zones dans une notice
+- Position de sous-zones dans une zone 
 
 De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règles, chaque type de règle sera disposé dans un fichier différent :
 - présence / absence de zone : rulesStructurePresenceZone.yaml
-- présence / absence de sous zone : rulesStructurePresenceSousZone.yaml
+- présence / absence de sous-zone : rulesStructurePresenceSousZone.yaml
 - nombre de zone : rulesStructureNombreZone.yaml
-- nombre de sous zones : rulesStructureNombreSousZone.yaml
+- nombre de sous-zones : rulesStructureNombreSousZone.yaml
+- position de sous-zone : rulesStructurePositionSousZone.yaml
 
 Cette partie va décrire la structure des différentes règles en YAML.
 ### Champs communs à toutes les règles
@@ -114,17 +116,26 @@ Règle numéro 4 dans la base, sur la ligne 10 du fichier Excel, permettant de t
 
 ### Nombre de sous-zones
 Liste des champs propres au type de règle nombre de sous-zones : 
-- souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc NE doit PAS être renseigné.
+- souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc de catalogage NE doit PAS être renseigné.
 - zonecible : ``obligatoire`` / de type chaine de caractères. La zone sur laquelle va s'effectuer la comparaison
-- - souszonecible : ``obligatoire`` / de type caractère. La sous zone sur laquelle va s'effectuer la comparaison. ATTENTION : le $ du format Unimarc NE doit PAS être renseigné.
+- souszonecible : ``obligatoire`` / de type caractère. La sous zone sur laquelle va s'effectuer la comparaison. ATTENTION : le $ du format Unimarc NE doit PAS être renseigné.
 
 Si le nombre de souszone dans la zone est différent du nombre de sous zones dans la zone cible, le message est envoyé à l'utilisateur. En cas de zone répétée, toutes les occurrences de toutes les zones sont cumulées.
 
-Exemple de fichier YAML : 
+Exemple de fichier YAML :  
 ![nombresouszone](https://user-images.githubusercontent.com/57490853/190974273-d357700f-e26e-41e2-97dd-21b9235646ab.PNG)
 
 Règle numéro 5 dans la base, sur la ligne 110 du fichier Excel, permettant de comparer le nombre de 200 $a avec le nombre de 600 $b. Si le nombre de 200 $a est différent du nombre de 600 $b, le message ``message test nombre sous zone`` est envoyé à l'utilisateur. La règle sera lancée uniquement si le traitement expert est sélectionné. L'absence du champ type-doc indique que la règle s'applique à tous les types de documents.
 
+### Position de sous-zone
+Liste des champs propres au type de règle position de sous-zone : 
+- souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc de catalogage ne doit pas être renseigné
+- position : ``obligatoire`` / de type entier. La position de la sous-zone dans la zone à vérifier.
+
+Exemple de fichier YAML :  
+![image](https://user-images.githubusercontent.com/57490853/194000274-e18a0dad-ed8e-49ac-a0c0-81653b7a5490.png)
+
+Si la souszone $3 n'est pas placée en première position dans l'une des occurrences de la zone 608, le message Faire le lien à l'autorité en sous-zone $3 est envoyé à l'utilisateur.
 
 
 

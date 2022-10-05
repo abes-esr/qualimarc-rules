@@ -21,12 +21,12 @@ rules:
     - id:          3
       id-excel:    3
       type:        presencezone
-      message:     Ajout Test Ansible
+      message:     Ajout Test Ansible SQN
       zone:        010
       priorite:    P1
       presence:    true
-    - id:          2
-      id-excel:    2
+    - id:          8
+      id-excel:    7
       type:        presencezone
       message:     message test 2
       zone:        330
