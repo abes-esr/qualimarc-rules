@@ -3,7 +3,7 @@ rules:
   - id:          4
     id-excel:    10
     type:        nombrezone
-    message:     nombre zone ansible
+    message:     nombre zone ansible SQN
     zone:        330
     priorite:    P1
     operateur:   INFERIEUR
