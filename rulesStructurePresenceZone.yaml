@@ -30,4 +30,14 @@ rules:
       zone:        330
       priorite:    P2
       presence:    false
-               
+   
+   #test Aurélie 06/10/22          
+    - id:          9
+      id-excel:    9
+      type:        presencezone
+      message:     Monographie : la zone 106 est obligatoire.
+      zone:        106
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    A
