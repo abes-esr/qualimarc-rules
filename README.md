@@ -84,6 +84,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
   - ``presencesouszone`` : pour les règles permettant de tester la présence ou l'absence d'une sous zone dans la notice
   - ``nombrezone`` pour les règles permettant de compter le nombre d'occurrences d'une zone dans la notice
   - ``nombresouszone`` : pour les règles permettant de comparer le nombre d'occurrences d'une sous zone par rapport à une autre sous zone de la notice
+  - ``positionsouszone`` : pour les règles permettant de vérifier la position d'une sous zone dans toutes les occurrences d'une zone 
 
 ### Présence / absence de zone
 Liste des champs propres au type de règle presence de zone : 
