@@ -3,7 +3,8 @@ rules:
     - id:          1
       id-excel:    1
       type:        presencezone
-      message:     message test
+      message:     message test présence 200 dans A B et K
+      zone:        200
       priorite:    P1
       presence:    true
       type-doc:
@@ -36,7 +37,7 @@ rules:
     - id:          9
       id-excel:    9
       type:        presencezone
-      message:     Monographie la zone 106 est obligatoire.
+      message:     Monographie la zone 106 est obligatoire
       zone:        106
       priorite:    P1
       presence:    false
