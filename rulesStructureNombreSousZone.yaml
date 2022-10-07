@@ -7,5 +7,5 @@ rules:
     zone:        200
     souszone:    a
     zonecible:   600
-    souszonecilbe: b
+    souszonecible: b
     priorite:    P2
