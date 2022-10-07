@@ -38,7 +38,7 @@ rules:
     - id:          001
       id-excel:    001
       type:        presencezone
-      message:     Monographie : la zone 106 est obligatoire
+      message:     Monographie la zone 106 est obligatoire
       zone:        106
       priorite:    P1
       presence:    false
@@ -48,7 +48,7 @@ rules:
     - id:          002
       id-excel:    002
       type:        presencezone
-      message:     Ressource continue : la zone 110 est obligatoire
+      message:     "Ressource continue : la zone 110 est obligatoire"
       zone:        110
       priorite:    P1
       presence:    false
