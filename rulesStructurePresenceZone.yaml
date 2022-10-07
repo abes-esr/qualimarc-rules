@@ -1,4 +1,5 @@
 ---
+#ID allant de 001 à 100 (sauf règles test)
 rules:
     - id:          1
       id-excel:    1
@@ -33,13 +34,23 @@ rules:
       priorite:    P2
       presence:    false
    
-   #test Aurélie 06/10/22          
-    - id:          999
-      id-excel:    999
+   #REGLES VALIDEES AURELIE octobre 2022        
+    - id:          001
+      id-excel:    001
       type:        presencezone
-      message:     Monographie la zone 106 est obligatoire
+      message:     Monographie : la zone 106 est obligatoire
       zone:        106
       priorite:    P1
       presence:    false
       type-doc:
       -    A
+      
+    - id:          002
+      id-excel:    002
+      type:        presencezone
+      message:     Ressource continue : la zone 110 est obligatoire
+      zone:        110
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    BD
