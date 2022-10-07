@@ -1,5 +1,5 @@
 ---
-#ID allant de 001 à 100 (sauf règles test)
+#ID de 001 à 099 (sauf règles test)
 rules:
     - id:          1
       id-excel:    1
