@@ -38,7 +38,7 @@ rules:
     - id:          001
       id-excel:    001
       type:        presencezone
-      message:     Monographie la zone 106 est obligatoire
+      message:     "Monographie : la zone 106 est obligatoire"
       zone:        106
       priorite:    P1
       presence:    false
