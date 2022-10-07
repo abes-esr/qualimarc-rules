@@ -7,7 +7,7 @@ rules:
     message:     nombre zonesous ansible SQN
     zone:        200
     souszone:    a
-    zonecilbe:   600
+    zonecible:   600
     souszonecible: b
     priorite:    P2
 
@@ -18,7 +18,7 @@ rules:
     message:     "Zone 101 : il doit y avoir autant de zones 330 que de codes de langue du résumé enregistrés en sous-zone $d"
     zone:        101
     souszone:    d
-    zonecilbe:   300
+    zonecible:   300
     souszonecible: a
     priorite:    P2
     type-doc:
