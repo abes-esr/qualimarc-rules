@@ -1,5 +1,5 @@
 ---
-#ID de 101 à 200 (sauf règles test)
+#ID de 100 à 199 (sauf règles test)
 rules:
   - id:          6
     id-excel:    6
@@ -11,8 +11,8 @@ rules:
     presence:    true
     
  #REGLES VALIDEES AURELIE octobre 2022
-  - id:          101
-    id-excel:    101
+  - id:          100
+    id-excel:    100
     type:        presencesouszone
     message:     "Zone 200 : la sous-zone $b doit être remplacée par les zones 181, 182 et 183"
     zone:        200
