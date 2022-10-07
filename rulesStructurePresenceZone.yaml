@@ -2,6 +2,7 @@
 rules:
     - id:          1
       id-excel:    1
+      type:        presencezone
       message:     message test
       priorite:    P1
       presence:    true
