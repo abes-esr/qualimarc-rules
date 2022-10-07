@@ -34,8 +34,8 @@ rules:
       presence:    false
    
    #test Aurélie 06/10/22          
-    - id:          9
-      id-excel:    9
+    - id:          999
+      id-excel:    999
       type:        presencezone
       message:     Monographie la zone 106 est obligatoire
       zone:        106
