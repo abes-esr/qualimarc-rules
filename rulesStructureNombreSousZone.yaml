@@ -6,6 +6,6 @@ rules:
     message:     nombre zonesous ansible SQN
     zone:        200
     souszone:    a
-    zonecible:   600
+    zonecilbe:   600
     souszonecible: b
     priorite:    P2
