@@ -22,5 +22,5 @@ rules:
     souszonecible: a
     priorite:    P2
     type-doc:
-        - TS
-        - TR
+      -    TS
+      -    TR
