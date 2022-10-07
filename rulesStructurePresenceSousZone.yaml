@@ -14,7 +14,7 @@ rules:
   - id:          101
     id-excel:    101
     type:        presencesouszone
-    message:     Zone 200 : la sous-zone $b doit être remplacée par les zones 181, 182 et 183
+    message:     "Zone 200 : la sous-zone $b doit être remplacée par les zones 181, 182 et 183"
     zone:        200
     souszone:    b
     priorite:    P1
