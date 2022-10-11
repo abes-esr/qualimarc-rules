@@ -21,7 +21,7 @@ rules:
     
  #REGLES VALIDEES AURELIE octobre 2022
   - id:          100
-    id-excel:    100
+    id-excel:    128
     type:        presencesouszone
     message:     "Zone 200 : la sous-zone $b doit être remplacée par les zones 181, 182 et 183"
     zone:        200
