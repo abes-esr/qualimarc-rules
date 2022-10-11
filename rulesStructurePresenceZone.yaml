@@ -154,5 +154,17 @@ rules:
       -    G
       -    M
       -    BD
+      
+            
+     - id:         509
+      id-excel:    93
+      type:        presencezone
+      message:     "Carte imprimée (K*) ou manuscrite (Pa) : la zone 120 est obligatoire"
+      zone:        120
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    K
+
 
 
