@@ -13,7 +13,7 @@ rules:
 
 #REGLES VALIDEES AURELIE octobre 2022
   - id:          400
-    id-excel:    400
+    id-excel:    42
     type:        nombresouszone
     message:     "Zone 101 : il doit y avoir autant de zones 330 que de codes de langue du résumé enregistrés en sous-zone $d"
     zone:        101
