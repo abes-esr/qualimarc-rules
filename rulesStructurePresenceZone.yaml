@@ -88,7 +88,26 @@ rules:
       -    BD
 
       
-      
+     - id:         505
+      id-excel:    89
+      type:        presencezone
+      message:     "Zone 116  : si la ressource n'est pas une image fixe, la zone 116 doit être supprimée"
+      zone:        116
+      priorite:    P2
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    BD
+ 
       
       
       
