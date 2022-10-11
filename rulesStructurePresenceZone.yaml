@@ -1,5 +1,5 @@
 ---
-#ID de 001 à 099 (sauf règles test)
+#ID de 500 à 599 (sauf règles test)
 rules:
     - id:          1
       id-excel:    1
@@ -35,8 +35,8 @@ rules:
       presence:    false
    
    #REGLES VALIDEES AURELIE octobre 2022        
-    - id:          001
-      id-excel:    001
+    - id:          500
+      id-excel:    68
       type:        presencezone
       message:     "Monographie : la zone 106 est obligatoire"
       zone:        106
@@ -45,8 +45,8 @@ rules:
       type-doc:
       -    A
       
-    - id:          002
-      id-excel:    002
+    - id:          501
+      id-excel:    74
       type:        presencezone
       message:     "Ressource continue : la zone 110 est obligatoire"
       zone:        110
@@ -55,7 +55,7 @@ rules:
       type-doc:
       -    BD
 
-    - id:          003
+    - id:          503
       id-excel:    87
       type:        presencezone
       message:     "Document audiovisuel : la zone 115 est obligatoire"
