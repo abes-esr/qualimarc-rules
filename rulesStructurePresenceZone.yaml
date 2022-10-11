@@ -54,3 +54,13 @@ rules:
       presence:    false
       type-doc:
       -    BD
+
+    - id:          003
+      id-excel:    87
+      type:        presencezone
+      message:     "Document audiovisuel : la zone 115 est obligatoire"
+      zone:        115
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    B
