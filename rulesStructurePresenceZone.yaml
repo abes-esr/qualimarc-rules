@@ -33,6 +33,10 @@ rules:
       zone:        330
       priorite:    P2
       presence:    false
+      
+      
+      
+      
    
    #REGLES VALIDEES AURELIE octobre 2022        
     - id:          500
@@ -115,7 +119,7 @@ rules:
       message:     "Image fixe : la zone 116 est obligatoire"
       zone:        116
       priorite:    P2
-      presence:    true
+      presence:    false
       type-doc:
       -    I
 
@@ -126,8 +130,29 @@ rules:
       message:     "Objet  : la zone 117 est obligatoire"
       zone:        117
       priorite:    P2
-      presence:    true
+      presence:    false
       type-doc:
       -    V      
       
       
+     - id:         508
+      id-excel:    92
+      type:        presencezone
+      message:     "Zone 117  :  si la ressource n'est pas un objet, la zone 117 doit être supprimée"
+      zone:        117
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    G
+      -    M
+      -    BD
+
+
