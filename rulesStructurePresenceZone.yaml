@@ -60,7 +60,38 @@ rules:
       type:        presencezone
       message:     "Document audiovisuel : la zone 115 est obligatoire"
       zone:        115
-      priorite:    P1
+      priorite:    P2
       presence:    false
       type-doc:
       -    B
+      
+      
+      
+    - id:          504
+      id-excel:    88
+      type:        presencezone
+      message:     "Zone 115 : si la ressource n'est pas un document audiovisuel, la zone 115 doit être supprimée"
+      zone:        115
+      priorite:    P2
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    BD
+
+      
+      
+      
+      
+      
+      
+      
