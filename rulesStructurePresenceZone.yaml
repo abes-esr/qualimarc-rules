@@ -76,7 +76,6 @@ rules:
       presence:    true
       type-doc:
       -    A
-      -    B
       -    K
       -    O
       -    N
