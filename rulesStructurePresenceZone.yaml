@@ -120,5 +120,14 @@ rules:
       -    I
 
       
+     - id:         507
+      id-excel:    91
+      type:        presencezone
+      message:     "Objet  : la zone 117 est obligatoire"
+      zone:        117
+      priorite:    P2
+      presence:    true
+      type-doc:
+      -    V      
       
       
