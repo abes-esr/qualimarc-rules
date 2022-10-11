@@ -10,6 +10,15 @@ rules:
     priorite:    P1
     presence:    true
     
+    #A supprimer (doublon)
+  - id:          101
+    type:        presencesouszone
+    message:     "test sqn"
+    zone:        200
+    souszone:    a
+    priorite:    P1
+    presence:    false
+    
  #REGLES VALIDEES AURELIE octobre 2022
   - id:          100
     id-excel:    100
