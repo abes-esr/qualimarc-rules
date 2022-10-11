@@ -72,7 +72,7 @@ rules:
       type:        presencezone
       message:     "Zone 115 : si la ressource n'est pas un document audiovisuel, la zone 115 doit être supprimée"
       zone:        115
-      priorite:    P2
+      priorite:    P1
       presence:    true
       type-doc:
       -    A
@@ -93,7 +93,7 @@ rules:
       type:        presencezone
       message:     "Zone 116  : si la ressource n'est pas une image fixe, la zone 116 doit être supprimée"
       zone:        116
-      priorite:    P2
+      priorite:    P1
       presence:    true
       type-doc:
       -    A
@@ -109,7 +109,16 @@ rules:
       -    BD
  
       
-      
+     - id:         506
+      id-excel:    90
+      type:        presencezone
+      message:     "Image fixe : la zone 116 est obligatoire"
+      zone:        116
+      priorite:    P2
+      presence:    true
+      type-doc:
+      -    I
+
       
       
       
