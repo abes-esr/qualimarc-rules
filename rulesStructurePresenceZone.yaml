@@ -92,7 +92,7 @@ rules:
       -    BD
 
       
-     - id:         505
+    - id:         505
       id-excel:    89
       type:        presencezone
       message:     "Zone 116  : si la ressource n'est pas une image fixe, la zone 116 doit être supprimée"
@@ -113,7 +113,7 @@ rules:
       -    BD
  
       
-     - id:         506
+    - id:         506
       id-excel:    90
       type:        presencezone
       message:     "Image fixe : la zone 116 est obligatoire"
@@ -124,7 +124,7 @@ rules:
       -    I
 
       
-     - id:         507
+    - id:         507
       id-excel:    91
       type:        presencezone
       message:     "Objet  : la zone 117 est obligatoire"
@@ -135,7 +135,7 @@ rules:
       -    V      
       
       
-     - id:         508
+    - id:         508
       id-excel:    92
       type:        presencezone
       message:     "Zone 117  :  si la ressource n'est pas un objet, la zone 117 doit être supprimée"
@@ -156,7 +156,7 @@ rules:
       -    BD
       
             
-     - id:         509
+    - id:         509
       id-excel:    93
       type:        presencezone
       message:     "Carte imprimée (K*) ou manuscrite (Pa) : la zone 120 est obligatoire"
