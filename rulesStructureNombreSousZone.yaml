@@ -5,9 +5,9 @@ rules:
     id-excel:    130
     type:        nombresouszone
     message:     nombre zonesous ansible SQN
-    zone:        200
+    zone:        999
     souszone:    a
-    zonecible:   600
+    zonecible:   999
     souszonecible: b
     priorite:    P2
 
