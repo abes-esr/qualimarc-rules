@@ -4,12 +4,12 @@
 Ce document explique étape par étape comment ajouter ou modifier des règles dans le projet qualimarc.
 
 ## Sommaire
-- <a href="(https://github.com/abes-esr/qualimarc-rules/blob/develop/README.md#utilisation-de-github)">[Utilisation de GitHub]</a>
-- [Déclenchement de la Github action]
-- [Langage YAML]
-- [Syntaxe des règles]
+- [Utilisation de GitHub](#1)
+- [Déclenchement de la Github action](#2)
+- [Langage YAML](#3)
+- [Syntaxe des règles](#4)
 
-## Utilisation de GitHub
+## Utilisation de GitHub-  <a id="1"></a>
 Github est un outil en ligne permettant de versionner des fichiers. Il dispose d'un éditeur en ligne permettant de modifier des fichiers puis de les sauvegarder tout en conservant un historique des modifications réalisées.
 
 ### Notion de branche
@@ -27,14 +27,14 @@ La sauvegarde d'un fichier est réalisée via l'action commit dans github. Lorsq
 > Un commit est une sauvegarde à laquelle est ajoutée un commentaire.
 > Chaque commit donne lieu à une nouvelle entrée dans l'historique des modifications du fichier et de la branche active.
 
-## Déclenchement de la github action
+## Déclenchement de la github action <a id="2"></a>
 Lorsqu'un commit est effectué sur une branche, une action dans github va se lancer. L'action récupère les fichiers disponibles sur la branche, et appelle un programme qui va stocker le contenu des règles décrites dans les différents fichiers dans la base de données.
 Il est possible de vérifier le déroulement de ce workflow. Pour cela, après avoir effectué un commit sur un fichier, se placer dans l'onglet ![action](https://user-images.githubusercontent.com/57490853/190964911-307815d6-2225-40a4-b5d8-3448d9d85555.PNG). 
 Une liste présentant les dernières exécutions du workflow est présentée. Chaque item de la liste est précédée d'une icone indiquant si le workflow s'est bien déroulé : 
 - ![ok](https://user-images.githubusercontent.com/57490853/190965145-dbd74f86-6407-4441-bb19-5dc0519d2a68.PNG) le processus s'est bien déroulé. La base de données a été mise à jour, et l'application Qualimarc peut être utilisée immédiatement avec les nouvelles règles ajoutées ou modifiées.
 - ![wrong](https://user-images.githubusercontent.com/57490853/190965205-322f7694-d69b-42d6-b3c7-cc3be8cfaf0a.PNG) une erreur a eu lieu pendant le déroulement du processus. Dans ce cas, cliquez sur le lien Ajout workflows GitHub pour voir les messages d'erreurs éventuels, et recommencer le processus après correction des erreurs dans le fichier source de la branche.
 
-## Langage YAML
+## Langage YAML <a id="3"></a>
 Les fichiers de règles sont décrits dans un langage appelé YAML. Proche du JSON, ce langage permet de décrire des données selon un syntaxe simple et structurée. Cette partie décrit les éléments de base du langage.
 - La première ligne du fichier doit être ``rules: `` (ce qui annonce que la suite du fichier contient des règles)
 - La syntaxe de base repose sur des couples clé: valeur (l'espace après les : est absolument nécessaire)
@@ -53,7 +53,7 @@ Toutes les règles de Qualimarc ont une structure commune, puis des champs propr
 ![yaml](https://user-images.githubusercontent.com/57490853/190967163-2325fc91-8d6c-4303-9593-26e8f5c27b36.PNG)
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
-## Syntaxe des règles
+## Syntaxe des règles- <a id="4"></a>
 A l'heure actuelle il existe 5 types de règles dans Qualimarc : 
 - Présence ou absence de zone
 - Présence ou absence de sous-zone
