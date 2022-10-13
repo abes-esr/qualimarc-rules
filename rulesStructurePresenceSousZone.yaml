@@ -10,11 +10,11 @@ rules:
     priorite:    P1
     presence:    true
     
-    #A supprimer (doublon)
+
   - id:          101
     type:        presencesouszone
-    message:     "test sqn"
-    zone:        999
+    message:     "Aurélie prochaine règle à modifier"
+    zone:        200
     souszone:    a
     priorite:    P1
     presence:    false
