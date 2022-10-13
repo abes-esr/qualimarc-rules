@@ -5,7 +5,7 @@ rules:
     id-excel:    6
     type:        presencesouszone
     message:     message test ansible SQN
-    zone:        200
+    zone:        999
     souszone:    a
     priorite:    P1
     presence:    true
@@ -14,7 +14,7 @@ rules:
   - id:          101
     type:        presencesouszone
     message:     "test sqn"
-    zone:        200
+    zone:        999
     souszone:    a
     priorite:    P1
     presence:    false
