@@ -7,5 +7,5 @@ rules:
     message:     nombre zone ansible SQN
     zone:        999
     priorite:    P1
-    operateur:   INFERIEUR
+    operateur:   SUPERIEUR
     occurrences: 3
