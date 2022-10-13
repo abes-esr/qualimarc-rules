@@ -5,7 +5,7 @@ rules:
     id-excel:    9
     type:        positionsouszone
     message:     Faire le lien à l'autorité en sous-zone $3
-    zone:        608
+    zone:        999
     souszone:    3
     priorite:    P1
     position:    1
