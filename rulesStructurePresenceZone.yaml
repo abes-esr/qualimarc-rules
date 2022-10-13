@@ -18,12 +18,12 @@ rules:
       message:     message test 2
       zone:        999
       priorite:    P2
-      presence:    false
+      presence:    true
     - id:          3
       id-excel:    3
       type:        presencezone
       message:     Ajout Test Ansible SQN
-      zone:        010
+      zone:        999
       priorite:    P1
       presence:    true
     - id:          8
@@ -32,7 +32,7 @@ rules:
       message:     message test 2
       zone:        999
       priorite:    P2
-      presence:    false
+      presence:    true
       
       
       
