@@ -90,8 +90,8 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
 Liste des champs propres au type de règle presence de zone : 
 - presence : ``obligatoire`` / de type booléen. Si la valeur est true et que la zone est présente dans la notice, le message est envoyé à l'utilisateur. Si la valeur est false et que la zone est absente de la notice, le message est envoyé à l'utilisateur
 
-Exemple de fichier YAML : 
-![presencezone](https://user-images.githubusercontent.com/57490853/190971728-7ca9f837-f505-4f15-8f89-0db26632c2d9.PNG)
+Exemple de fichier YAML : <br />
+![presencezone](https://user-images.githubusercontent.com/57490853/190971728-7ca9f837-f505-4f15-8f89-0db26632c2d9.PNG)<br />
 Règle numéro 2 dans la base, sur la ligne 2 du fichier Excel, permettant de tester l'absence de la zone 330 dans la notice. Si la 330 est absente, le message ``message test`` est envoyé à l'utilisateur. La règle sera lancée si le traitement rapide ou expert est choisi, et s'appliquera uniquement sur les types de documents Monographie, Audiovisuel ou Doc Elec 
 
 ### Présence / absence de sous-zone
