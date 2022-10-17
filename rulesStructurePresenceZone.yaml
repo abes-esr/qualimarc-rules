@@ -189,3 +189,21 @@ rules:
       zone:        183
       priorite:    P1
       presence:    false
+      
+      
+    - id:         512
+      id-excel:    115
+      type:        presencezone
+      message:     "La notice doit contenir au moins une zone 181 (type de contenu)"
+      zone:        181
+      priorite:    P1
+      presence:    false
+      
+      
+    - id:         513
+      id-excel:    116
+      type:        presencezone
+      message:     "La notice doit contenir au moins une zone 182 (type de médiation)"
+      zone:        182
+      priorite:    P1
+      presence:    false
