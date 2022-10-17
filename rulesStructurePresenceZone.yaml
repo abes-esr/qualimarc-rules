@@ -188,4 +188,4 @@ rules:
       message:     "La notice doit contenir au moins une zone 183 (type de support)"
       zone:        183
       priorite:    P1
-      presence:    true
+      presence:    false
