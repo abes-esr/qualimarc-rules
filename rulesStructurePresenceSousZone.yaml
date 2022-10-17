@@ -23,7 +23,7 @@ rules:
   - id:          100
     id-excel:    128
     type:        presencesouszone
-    message:     "Zone 200 : la sous-zone $b doit être remplacée par les zones 181, 182 et 183"
+    message:     "Zone 200 : la sous-zone $b est obsolète. Elle doit être supprimée et remplacée par les zones 181, 182 et 183"
     zone:        200
     souszone:    b
     priorite:    P1
