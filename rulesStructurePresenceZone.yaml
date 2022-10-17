@@ -42,7 +42,7 @@ rules:
     - id:          500
       id-excel:    68
       type:        presencezone
-      message:     "Monographie : la zone 106 est obligatoire"
+      message:     "Monographie : la zone 106 (forme de la ressource) est attendue"
       zone:        106
       priorite:    P1
       presence:    false
@@ -52,7 +52,7 @@ rules:
     - id:          501
       id-excel:    74
       type:        presencezone
-      message:     "Ressource continue : la zone 110 est obligatoire"
+      message:     "Ressource continue : la zone 110 est attendue. Une demande de correction ISSN sera nécessaire"
       zone:        110
       priorite:    P1
       presence:    false
@@ -62,7 +62,7 @@ rules:
     - id:          503
       id-excel:    87
       type:        presencezone
-      message:     "Document audiovisuel : la zone 115 est obligatoire"
+      message:     "Document audiovisuel : une zone 115 est attendue"
       zone:        115
       priorite:    P2
       presence:    false
@@ -81,11 +81,9 @@ rules:
       type-doc:
       -    A
       -    K
-      -    O
       -    N
       -    I
       -    F
-      -    Z
       -    V
       -    G
       -    M
@@ -103,10 +101,8 @@ rules:
       -    A
       -    B
       -    K
-      -    O
       -    N
       -    F
-      -    Z
       -    V
       -    G
       -    M
@@ -116,7 +112,7 @@ rules:
     - id:         506
       id-excel:    90
       type:        presencezone
-      message:     "Image fixe : la zone 116 est obligatoire"
+      message:     "Image fixe : une zone 116 est attendue"
       zone:        116
       priorite:    P2
       presence:    false
@@ -127,7 +123,7 @@ rules:
     - id:         507
       id-excel:    91
       type:        presencezone
-      message:     "Objet  : la zone 117 est obligatoire"
+      message:     "Objet  : une zone 117 est attendue"
       zone:        117
       priorite:    P2
       presence:    false
@@ -159,12 +155,29 @@ rules:
     - id:         509
       id-excel:    93
       type:        presencezone
-      message:     "Carte imprimée (K*) ou manuscrite (Pa) : la zone 120 est obligatoire"
+      message:     "Carte : une zone 120 est obligatoire"
       zone:        120
       priorite:    P1
       presence:    false
       type-doc:
       -    K
 
-
-
+    - id:         510
+      id-excel:    94
+      type:        presencezone
+      message:     "Zone 120 : si la ressource n'est pas une carte, la zone 120 doit être supprimée"
+      zone:        120
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    BD
