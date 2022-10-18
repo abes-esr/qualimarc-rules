@@ -159,6 +159,7 @@ Les règles complexes disposent de champs communs qui décrivent la règle compl
 > B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, TS : Thèse de soutenance, TR : Thèse de reproduction, PC : Partie composante 
 
 Ainsi, un exemple de fichier YAML permettant de définir les critères communs est présenté ci-dessous : 
+
 ![image](https://user-images.githubusercontent.com/57490853/196369223-f461a72c-45be-48a6-9b47-1f65343ad242.png)  
 
 ### Définition des règles simples composant la règle complexe
