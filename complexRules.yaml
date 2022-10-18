@@ -1,1 +1,41 @@
-
+---
+rules:
+   - id: 2
+     id-excel: 2
+     message: test
+     priorite: P2
+     type-doc:
+       - A
+       - O
+     regles:
+       - id: 20
+         type: presencezone
+         zone: '330'
+         presence: false
+       - id: 21
+         type: presencezone
+         zone: '330'
+         presence: true
+         operateur-booleen: ET
+   - id: 3
+     id-excel: 3
+     message: test
+     priorite: P2
+     regles:
+       - id: 30
+         type: nombrezone
+         zone: '330'
+         operateur: EGAL
+         occurrences: 1
+       - id: 31
+         type: nombrezone
+         zone: '200'
+         operateur: SUPERIEUR
+         occurrences: 1
+         operateur-booleen: OU
+       - id: 32
+         type: nombrezone
+         zone: '400'
+         operateur: INFERIEUR
+         occurrences: 1
+         operateur-booleen: OU
