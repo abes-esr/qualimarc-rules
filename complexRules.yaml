@@ -39,4 +39,4 @@ rules:
          operateur: INFERIEUR
          occurrences: 1
          operateur-booleen: OU
-#test
+#test à faire
