@@ -10,6 +10,7 @@ rules:
     zonecible:   603
     souszonecible: b
     priorite:    P2
+    
 
 #REGLES VALIDEES AURELIE octobre 2022
   - id:          400
