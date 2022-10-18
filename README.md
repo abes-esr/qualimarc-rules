@@ -7,7 +7,8 @@ Ce document explique étape par étape comment ajouter ou modifier des règles d
 - [Utilisation de GitHub](#1)
 - [Déclenchement de la mise à jour](#2)
 - [Langage YAML](#3)
-- [Syntaxe des règles](#4)
+- [Syntaxe des règles simples](#4)
+- [Syntaxe des règles complexes](#5)
 
 ## Utilisation de GitHub-  <a id="1"></a>
 Github est un outil en ligne permettant de versionner des fichiers. Il dispose d'un éditeur en ligne permettant de modifier des fichiers puis de les sauvegarder tout en conservant un historique des modifications réalisées.
@@ -49,7 +50,7 @@ Toutes les règles de Qualimarc ont une structure commune, puis des champs propr
 ![yaml](https://user-images.githubusercontent.com/57490853/190967163-2325fc91-8d6c-4303-9593-26e8f5c27b36.PNG)  
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
-## Syntaxe des règles- <a id="4"></a>
+## Syntaxe des règles simples <a id="4"></a>
 A l'heure actuelle il existe 5 types de règles dans Qualimarc : 
 - Présence ou absence de zone
 - Présence ou absence de sous-zone
@@ -63,14 +64,13 @@ De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règ
 - nombre de zone : rulesStructureNombreZone.yaml
 - nombre de sous-zones : rulesStructureNombreSousZone.yaml
 - position de sous-zone : rulesStructurePositionSousZone.yaml
-- règles complexes : complexRules.yaml
 
 NB : Toutes les règles complexes seront stockées dans le même fichier.
 
 Cette partie va décrire la structure des différentes règles en YAML.
 ### Champs communs aux règles simples
 Voici les champs à renseigner pour décrire une règle simple toutes les règles héritent de ces champs. Ils doivent être renseignés pour chaque règle décrite dans un fichier YAML (à l'exception des champs optionnels) : 
-- id : ``obligatoire`` / de type entier : identifiant unique de la notice dans la base, ce numéro est arbritraire, mais ne doit pas être retrouvé plusieurs fois dans les fichiers décrivant les règles. Deux règles simples ne peuvent pas avoir le même identifiant (cela inclut les règles simples qui composent une règle complexe), et deux règles complexes ne peuvent pas avoir le même identifiant.
+- id : ``obligatoire`` / de type entier : identifiant unique de la règle dans la base, ce numéro est arbritraire, mais ne doit pas être retrouvé plusieurs fois dans les fichiers décrivant les règles. Deux règles simples ne peuvent pas avoir le même identifiant (cela inclut les règles simples qui composent une règle complexe), et deux règles complexes ne peuvent pas avoir le même identifiant.
 - id-excel : ``optionnel`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
 - message : ``obligatoire`` / de type chaine de caractère : indique le message à envoyer à l'utilisateur si la condition décrite dans la règle est validée dans la notice
 - zone : ``obligatoire`` / de type chaine de caractère : indique la zone du format Unimarc d'export sur laquelle porte la règle
@@ -136,6 +136,55 @@ Exemple de fichier YAML :  <br />
 ![image](https://user-images.githubusercontent.com/57490853/194000274-e18a0dad-ed8e-49ac-a0c0-81653b7a5490.png)<br />
 
 Si la souszone $3 n'est pas placée en première position dans l'une des occurrences de la zone 608, le message Faire le lien à l'autorité en sous-zone $3 est envoyé à l'utilisateur.
+
+## Syntaxe des règles complexes <a id="5"></a>
+Une règle complexe est un assemblage de plusieurs règles simples qui seront testées les unes après les autres avec un opérateur booléen. Par exemple, une règle complexe composée de 3 règles simples avec un opérateur ET entre les deux premières et un opérateur OU entre les deux suivantes donnera l'expression suivante : règle 1 ET règle 2 OU règle 3. 
+
+Les conditions seront évaluées dans l'ordre d'apparition et ne prennent pas en compte la priorité des opérateurs booléen (dans cet exemple, règle 1 ET règle 2 est évalué d'abord, puis le résultat OU règle 3 est évalué ensuite, ce qui équivalent à (règle 1 ET règle 2) ou règle 3).
+
+Il est donc important de prendre en compte l'ordre de déclaration des différentes règles simples qui composent la règle composée pour que le résultat final soit conforme aux exigences.
+
+Par ailleurs, une règle complexe doit être composée d'au moins deux règles simple (s'il n'y a qu'une règle simple, c'est une règle simple, voir section ci-dessus). La première règle simple ne doit pas avoir d'opérateur, et les suivantes doivent absolument en avoir un (une erreur sera renvoyée si ces conditions ne sont pas respectées).
+
+Les règles complexes seront toutes déclarées dans le fichier complexRules.yaml situé à la racine de la branche. 
+
+### Champs communs aux règles complexes
+Les règles complexes disposent de champs communs qui décrivent la règle complexe et seront disposés au premier niveau du bloc YAML : 
+- id ``obligatoire`` / de type entier : identifiant de la règle dans la base de données. L'identifiant d'une règle complexe est unique et aucune autre règle complexe ne peut avoir le même identifiant. Il est par contre possible d'avoir une règle complexe disposant du même identifiant qu'une règle simple.
+- id-excel ``optionnel`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
+- message ``obligatoire`` / de type chaine de caractère : indique le message à envoyer à l'utilisateur si la condition décrite dans la règle est validée dans la notice
+- priorite ``obligatoire`` / une des deux valeurs possible : P1 ou P2 : indique la priorité de la règle (P1 utilisé pour analyse Rapide, P2 pour analyse experte)
+- type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
+> les valeurs possibles pour les types de documents sont les suivantes :
+> B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, TS : Thèse de soutenance, TR : Thèse de reproduction, PC : Partie composante 
+
+Ainsi, un exemple de fichier YAML permettant de définir les critères communs est présenté ci-dessous : 
+![image](https://user-images.githubusercontent.com/57490853/196369223-f461a72c-45be-48a6-9b47-1f65343ad242.png)  
+
+### Définition des règles simples composant la règle complexe
+Suite à la déclaration des champs communs, il est nécessaire de décrire au moins 2 règles simples pour que la règle complexe soit valide. La déclaration des règles simples se fait dans un champ liste nommé **regles**. Les champs à déclarer pour chacune des règles simples sont les suivants :
+- id : ``obligatoire`` / de type entier : identifiant unique de la règle dans la base, ce numéro est arbritraire, mais ne doit pas être retrouvé plusieurs fois dans les fichiers décrivant les règles simples. Deux règles simples ne peuvent pas avoir le même identifiant (cela inclut les règles simples qui composent une règle complexe)
+- type : ``obligatoire`` : de type chaine de caractère : indique le type de règle qui est décrite. Les valeurs possibles sont les mêmes que lors de la déclaration d'une règle simple.
+- zone : ``obligatoire`` : de type chaine de caractère : indique la zone du format Unimarc d'export sur laquelle porte la règle
+- operateur-booleen : une des deux valeurs possible : ET / OU : indique l'opérateur qui sera utilisé pour calculer la validité de la règle simple par rapport à la précédente. Ce critère **ne** doit **pas** être renseigné pour la **première** règle simple qui compose une règle complexe, et est **obligatoire** pour toutes les règles composant la règle complexe à partir de la **seconde**
+
+Les critères spécifiques au type de règle simple sélectionné doivent ensuite être rajouté (en suivant la même terminologie que dans le paragraphe sur les [règles simples](#4) ). 
+
+Exemple de fichier YAML de 2 règles complexes composées de règles simples de différents types :
+![image](https://user-images.githubusercontent.com/57490853/196372917-52b7682d-5e4d-422f-8d82-cd7b7e7bade6.png)  
+
+Le YAML précédent permet de déclarer 2 règles complexes. La première règle a un id 2, le message renvoyé sera **message test** si la règle est valide. Elle a une priorité de 1, et concerne les types de documents monographie et doc élec. Elle est composée de 2 règles simples : 
+- La première règle simple a un id 20, et vérifie si la zone 330 est absente.
+- La seconde règle simple a un id 21, et vérifie si la zone 200 est présente. Les deux règles simples doivent être valides pour que la règle complexe soit valide (operateur-booleen = ET)
+
+La seconde règle a un id 3, le message renvoyé est **message test 2** si la règle est valide. Elle a une priorité de 2, et concerne tous les types de documents (absence du champ type-doc). Elle est composée de 3 règles simples : 
+- La première règle simple a un id 30, et vérifie qu'il y a exactement 1 zone 330 dans la notice.
+- La deuxième règle simple a un id 31, et vérifie qu'il y a plus d'1 zone 200 dans la notice.
+- La troisième règle simple a un id 32, et vérifie qu'il y a moins d'une zone 400 dans la notice.
+
+La règle complexe est valide si la première règle simple est valide, OU la deuxième règle simple est valide, OU que la 3è règle simple est valide. (donc, si la règle 3 est valide, mais que les règles 1 et 2 ne sont pas valides, la règle complexe est valide)
+
+
 
 
 
