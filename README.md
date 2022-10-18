@@ -5,7 +5,7 @@ Ce document explique étape par étape comment ajouter ou modifier des règles d
 
 ## Sommaire
 - [Utilisation de GitHub](#1)
-- [Déclenchement de la Github action](#2)
+- [Déclenchement de la mise à jour](#2)
 - [Langage YAML](#3)
 - [Syntaxe des règles](#4)
 
@@ -27,12 +27,8 @@ La sauvegarde d'un fichier est réalisée via l'action commit dans github. Lorsq
 > Un commit est une sauvegarde à laquelle est ajoutée un commentaire.
 > Chaque commit donne lieu à une nouvelle entrée dans l'historique des modifications du fichier et de la branche active.
 
-## Déclenchement de la github action <a id="2"></a>
-Lorsqu'un commit est effectué sur une branche, une action dans github va se lancer. L'action récupère les fichiers disponibles sur la branche, et appelle un programme qui va stocker le contenu des règles décrites dans les différents fichiers dans la base de données.
-Il est possible de vérifier le déroulement de ce workflow. Pour cela, après avoir effectué un commit sur un fichier, se placer dans l'onglet ![action](https://user-images.githubusercontent.com/57490853/190964911-307815d6-2225-40a4-b5d8-3448d9d85555.PNG). 
-Une liste présentant les dernières exécutions du workflow est présentée. Chaque item de la liste est précédée d'une icone indiquant si le workflow s'est bien déroulé : 
-- ![ok](https://user-images.githubusercontent.com/57490853/190965145-dbd74f86-6407-4441-bb19-5dc0519d2a68.PNG) le processus s'est bien déroulé. La base de données a été mise à jour, et l'application Qualimarc peut être utilisée immédiatement avec les nouvelles règles ajoutées ou modifiées.
-- ![wrong](https://user-images.githubusercontent.com/57490853/190965205-322f7694-d69b-42d6-b3c7-cc3be8cfaf0a.PNG) une erreur a eu lieu pendant le déroulement du processus. Dans ce cas, cliquez sur le lien Ajout workflows GitHub pour voir les messages d'erreurs éventuels, et recommencer le processus après correction des erreurs dans le fichier source de la branche.
+## Déclenchement de la mise à jour <a id="2"></a>
+A intervalles de temps régulier, la plateforme Ansible de l'Abes va scanner le dépot Github et détecter les changements sur la branche. Lorsqu'une modification est détectée, Ansible récupère les fichiers disponibles sur la branche, et appelle un programme qui va stocker le contenu des règles décrites dans les différents fichiers dans la base de données. Une fois terminé une notification est envoyée par mail, ainsi que sur le canal Slack #notif-qualimarc.
 
 ## Langage YAML <a id="3"></a>
 Les fichiers de règles sont décrits dans un langage appelé YAML. Proche du JSON, ce langage permet de décrire des données selon un syntaxe simple et structurée. Cette partie décrit les éléments de base du langage.
@@ -67,11 +63,14 @@ De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règ
 - nombre de zone : rulesStructureNombreZone.yaml
 - nombre de sous-zones : rulesStructureNombreSousZone.yaml
 - position de sous-zone : rulesStructurePositionSousZone.yaml
+- règles complexes : complexRules.yaml
+
+NB : Toutes les règles complexes seront stockées dans le même fichier.
 
 Cette partie va décrire la structure des différentes règles en YAML.
-### Champs communs à toutes les règles
+### Champs communs aux règles simples
 Voici les champs à renseigner pour décrire une règle simple toutes les règles héritent de ces champs. Ils doivent être renseignés pour chaque règle décrite dans un fichier YAML (à l'exception des champs optionnels) : 
-- id : ``obligatoire`` / de type entier : identifiant unique de la notice dans la base, ce numéro est arbritraire, mais ne doit pas être retrouvé plusieurs fois dans les fichiers décrivant les règles.
+- id : ``obligatoire`` / de type entier : identifiant unique de la notice dans la base, ce numéro est arbritraire, mais ne doit pas être retrouvé plusieurs fois dans les fichiers décrivant les règles. Deux règles simples ne peuvent pas avoir le même identifiant (cela inclut les règles simples qui composent une règle complexe), et deux règles complexes ne peuvent pas avoir le même identifiant.
 - id-excel : ``optionnel`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
 - message : ``obligatoire`` / de type chaine de caractère : indique le message à envoyer à l'utilisateur si la condition décrite dans la règle est validée dans la notice
 - zone : ``obligatoire`` / de type chaine de caractère : indique la zone du format Unimarc d'export sur laquelle porte la règle
