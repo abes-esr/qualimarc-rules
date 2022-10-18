@@ -46,7 +46,7 @@ Par exemple :  <br />
 
 ## Description des règles de Qualimarc
 Toutes les règles de Qualimarc ont une structure commune, puis des champs propres à chaque type de règle. Dans le chapitre décrivant les règles, les éléments obligatoires seront précisés. Voici un exemple de fichier YAML décrivant une règle : 
-![yaml](https://user-images.githubusercontent.com/57490853/190967163-2325fc91-8d6c-4303-9593-26e8f5c27b36.PNG)
+![yaml](https://user-images.githubusercontent.com/57490853/190967163-2325fc91-8d6c-4303-9593-26e8f5c27b36.PNG)  
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
 ## Syntaxe des règles- <a id="4"></a>
