@@ -86,10 +86,10 @@ rules:
          presence: true
          operateur-booleen: ET
 
-
+#règle 5020 : à revoir car nécéssite un mention d'indicateur : 206$a exclusive des autres et seulement si ind 1 = #)
    - id: 5020
      id-excel: 99
-     message: "Carte : puisqu'une échelle est enregistrée en zone 123, elle doit aussi être transcrite en zone 206. Privilégier une zone 206 structurée."
+     message: "Carte : puisqu'une échelle est enregistrée en zone 123, elle doit aussi être transcrite en zone 206. Privilégier une zone 206 structurée"
      priorite: P1
      type-doc:
        - K
@@ -112,4 +112,29 @@ rules:
          presence: true
          operateur-booleen: ET
 
+#règle 5030 : attention, cette règle doit être complété si futurs prélable sur règle simple sous-zone mis en place
+   - id: 5030
+     id-excel: 269
+     message: "Enregistrement sonore : puisqu'une note de contenu a été enregistrée en 359$b, des liens doivent être faits en 464$t ou en 500$3 (au moins pour 3 contenus, au-delà c'est facultatif)"
+     priorite: P2
+     type-doc:
+       - N
+     regles:
+       - id: 5031
+         type: presencesouszone
+         zone: '464'
+         souszone:    t
+         presence: false
+       - id: 5032
+         type: presencesouszone
+         zone: '500'
+         souszone:    3
+         presence: false
+         operateur-booleen: OU
+       - id: 5033
+         type: presencesouszone
+         zone: '359'
+         souszone:    b
+         presence: true
+         operateur-booleen: ET
 
