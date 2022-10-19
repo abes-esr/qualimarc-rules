@@ -47,7 +47,7 @@ rules:
 # NOTA IMPORTANT : ID principal (règle complexe) à partir de 5000 puis décliné en dizaine (5010-5020-5030....)
 # ID secondaire (règles simples qui composent la règle complexe) : reprend l'ID principal, décliné par unité (exemple pour règle complexe 5000 : 5001-5002-5003...)
 
-- id: 5000
+   - id: 5000
      id-excel: 315
      message: "Partie composante : vérifier que le titre du document hôte enregistré en 463$t est bien le même que celui enregistré en 305$a"
      priorite: P2
