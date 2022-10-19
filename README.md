@@ -57,6 +57,7 @@ A l'heure actuelle il existe 5 types de règles dans Qualimarc :
 - Nombre de zones dans une notice
 - Nombre de sous-zones dans une notice
 - Position de sous-zones dans une zone 
+- Présence de sous-zones dans une même occurrence d'une zone
 
 De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règles, chaque type de règle sera disposé dans un fichier différent :
 - présence / absence de zone : rulesStructurePresenceZone.yaml
@@ -64,6 +65,7 @@ De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règ
 - nombre de zone : rulesStructureNombreZone.yaml
 - nombre de sous-zones : rulesStructureNombreSousZone.yaml
 - position de sous-zone : rulesStructurePositionSousZone.yaml
+- présence de sous-zones dans une meme occurrence de zone : rulesStructurePresenceSousZoneMemeZone.yaml
 
 NB : Toutes les règles complexes seront stockées dans le même fichier.
 
@@ -84,6 +86,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
   - ``nombrezone`` pour les règles permettant de compter le nombre d'occurrences d'une zone dans la notice
   - ``nombresouszone`` : pour les règles permettant de comparer le nombre d'occurrences d'une sous zone par rapport à une autre sous zone de la notice
   - ``positionsouszone`` : pour les règles permettant de vérifier la position d'une sous zone dans toutes les occurrences d'une zone 
+  - ``presencesouszonesmemezone`` : pour les règles permettant de vérifier la présence ou l'absence de n sous-zones dans la même occurrence d'une zone
 
 ### Présence / absence de zone
 Liste des champs propres au type de règle presence de zone : 
@@ -137,6 +140,18 @@ Exemple de fichier YAML :  <br />
 
 Si la souszone $3 n'est pas placée en première position dans l'une des occurrences de la zone 608, le message Faire le lien à l'autorité en sous-zone $3 est envoyé à l'utilisateur.
 
+### Presence / absence sous-zones dans une même occurrence de zone
+Liste des champs propres au type de règle présence / absence de sous-zones dans une même occurrence de zone :
+- souszones : ``obligatoire`` / de type liste d'objets. La liste des sous-zones à vérifier. Les champs de la liste sont les suivants : 
+- * souszone : ``obligatoire`` de type caractère la sous-zone à vérifier. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
+- * presence : ``obligatoire`` de type booléen. true si on souhaite que la sous-zone soit présente, false sinon
+- * operateur-booleen : une des deux valeurs possible : ET / OU : indique l'opérateur qui sera utilisé pour calculer la validité des différentes recherches de sous-zones dans la zone. Ce critère **ne** doit **pas** être renseigné pour la première sous-zone, et doit être **obligatoire** pour les suivantes. 
+
+Exemple de fichier YAML :  <br />
+![image](https://user-images.githubusercontent.com/57490853/196611583-1e212374-3df4-462c-80d6-90218933dfe5.png) <br />
+
+Si une sous-zone $a est présente ET une sous-zone $b est absente dans une même occurrence de la zone 606 alors le message "message test" est envoyé à l'utilisateur.
+
 ## Syntaxe des règles complexes <a id="5"></a>
 Une règle complexe est un assemblage de plusieurs règles simples qui seront testées les unes après les autres avec un opérateur booléen. Par exemple, une règle complexe composée de 3 règles simples avec un opérateur ET entre les deux premières et un opérateur OU entre les deux suivantes donnera l'expression suivante : règle 1 ET règle 2 OU règle 3. 
 
@@ -184,8 +199,6 @@ La seconde règle a un id 3, le message renvoyé est **message test 2** si la r�
 - La troisième règle simple a un id 32, et vérifie qu'il y a moins d'une zone 400 dans la notice.
 
 La règle complexe est valide si la première règle simple est valide, OU la deuxième règle simple est valide, OU que la 3è règle simple est valide. (donc, si la règle 3 est valide, mais que les règles 1 et 2 ne sont pas valides, la règle complexe est valide)
-
-
 
 
 
