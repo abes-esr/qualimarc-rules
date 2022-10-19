@@ -12,6 +12,7 @@ rules:
       -    A
       -    B
       -    K
+      
     - id:          2
       id-excel:    2
       type:        presencezone
@@ -87,6 +88,7 @@ rules:
       -    G
       -    M
       -    BD
+      -    PC
 
       
     - id:         505
@@ -106,7 +108,8 @@ rules:
       -    G
       -    M
       -    BD
- 
+      -    PC
+      
       
     - id:         506
       id-excel:    90
@@ -149,6 +152,7 @@ rules:
       -    G
       -    M
       -    BD
+      -    PC
       
             
     - id:         509
@@ -180,6 +184,7 @@ rules:
       -    G
       -    M
       -    BD
+      -    PC
 
     - id:         511
       id-excel:    117
