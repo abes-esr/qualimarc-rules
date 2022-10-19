@@ -49,7 +49,7 @@ rules:
 
    - id: 5000
      id-excel: 315
-     message: "Partie composante : vérifier que le titre du document hôte enregistré en 463$t est bien le même que celui enregistré en 305$a"
+     message: "Partie composante : vérifier que le titre du document hôte enregistré en 463 est bien le même que celui enregistré en 305$a"
      priorite: P2
      type-doc:
        - PC
@@ -67,6 +67,24 @@ rules:
          operateur-booleen: ET
 
 
+   - id: 5010
+     id-excel: 316
+     message: "Partie composante : vérifier que la date du document hôte enregistrée en 463 est bien la même que celle enregistrée en 305$a"
+     priorite: P2
+     type-doc:
+       - PC
+     regles:
+       - id: 5011
+         type: presencesouszone
+         zone: '463'
+         souszone:    d
+         presence: true
+       - id: 5012
+         type: presencesouszone
+         zone: '305'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
 
 
 
