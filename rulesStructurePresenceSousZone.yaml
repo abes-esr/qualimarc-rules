@@ -1,24 +1,6 @@
 ---
 #ID de 100 à 199 (sauf règles test)
-rules:
-  - id:          6
-    id-excel:    6
-    type:        presencesouszone
-    message:     message test ansible SQN
-    zone:        603
-    souszone:    a
-    priorite:    P1
-    presence:    true
-    
-
-  - id:          101
-    type:        presencesouszone
-    message:     "Aurélie prochaine règle à modifier"
-    zone:        200
-    souszone:    a
-    priorite:    P1
-    presence:    false
-    
+rules:    
  #REGLES VALIDEES AURELIE octobre 2022
   - id:          100
     id-excel:    128
