@@ -1,48 +1,5 @@
 ---
 rules:
-   - id: 1000
-     id-excel: 2
-     message: test
-     priorite: P2
-     type-doc:
-       - A
-       - O
-     regles:
-       - id: 1001
-         type: presencezone
-         zone: '330'
-         presence: false
-       - id: 1002
-         type: presencezone
-         zone: '330'
-         presence: true
-         operateur-booleen: ET
-   - id: 1100
-     id-excel: 3
-     message: test
-     priorite: P2
-     regles:
-       - id: 1101
-         type: nombrezone
-         zone: '330'
-         operateur: EGAL
-         occurrences: 1
-       - id: 1102
-         type: nombrezone
-         zone: '200'
-         operateur: SUPERIEUR
-         occurrences: 1
-         operateur-booleen: OU
-       - id: 32
-         type: nombrezone
-         zone: '400'
-         operateur: INFERIEUR
-         occurrences: 1
-         operateur-booleen: OU
-#test à faire
-
-
-
 #REGLES VALIDEES AURELIE
 # NOTA IMPORTANT : ID principal (règle complexe) à partir de 5000 puis décliné en dizaine (5010-5020-5030....)
 # ID secondaire (règles simples qui composent la règle complexe) : reprend l'ID principal, décliné par unité (exemple pour règle complexe 5000 : 5001-5002-5003...)
