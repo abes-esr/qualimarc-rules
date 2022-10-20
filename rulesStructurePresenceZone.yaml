@@ -1,43 +1,6 @@
 ---
 #ID de 500 à 599 (sauf règles test)
 rules:
-    - id:          1
-      id-excel:    1
-      type:        presencezone
-      message:     message test présence 200 dans A B et K
-      zone:        603
-      priorite:    P1
-      presence:    true
-      type-doc:
-      -    A
-      -    B
-      -    K
-      
-    - id:          2
-      id-excel:    2
-      type:        presencezone
-      message:     message test 2
-      zone:        603
-      priorite:    P2
-      presence:    true
-    - id:          3
-      id-excel:    3
-      type:        presencezone
-      message:     Ajout Test Ansible SQN
-      zone:        603
-      priorite:    P1
-      presence:    true
-    - id:          8
-      id-excel:    7
-      type:        presencezone
-      message:     message test 2
-      zone:        603
-      priorite:    P2
-      presence:    true
-      
-       
-      
-   
    #REGLES VALIDEES AURELIE octobre 2022        
     - id:          500
       id-excel:    68
