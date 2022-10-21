@@ -1,2 +1,14 @@
 ---
-#test
+rules:
+  - id:       55
+    id-excel: 55
+    type:     presencesouszonesmemezone
+    message:  test
+    zone:     606
+    priorite: P1
+    souszones:
+      - souszone:           a
+        presence:           true
+      - souszone:           b
+        presence:           false
+        operateur-booleen:  ET
