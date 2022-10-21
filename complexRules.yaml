@@ -122,5 +122,4 @@ rules:
          zone: '225'
          presence: false
          operateur-booleen: ET
-      
 
