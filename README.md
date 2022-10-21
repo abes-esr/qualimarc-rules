@@ -23,8 +23,8 @@ et sélectionnez la branche de travail. Le contenu de la branche est affiché.
 Pour modifier le contenu d'un fichier, cliquez sur le nom du fichier à modifier, puis sur la page suivante, cliquez sur le bouton ![edit](https://user-images.githubusercontent.com/57490853/190960013-f2216993-faee-468d-aee5-daf8dd0b41e3.PNG). Un éditeur en ligne s'affichera permettant de modifier le contenu du fichier.
 
 ### Sauvegarder un fichier
-La sauvegarde d'un fichier est réalisée via l'action commit dans github. Lorsqu'on fichier est en édition, en bas de la page, renseignez un titre dans le premier champ texte, puis une description des modifications effectuées dans le second, cochez la case ``Commit directly to the <nom_de_la_branche> branch`` puis cliquez sur le bouton Commit changes : <br />
-![commit](https://user-images.githubusercontent.com/57490853/190960543-e91a3708-9308-4f43-ad39-111ecb62a1ce.PNG)<br />
+La sauvegarde d'un fichier est réalisée via l'action commit dans github. Lorsqu'on fichier est en édition, en bas de la page, renseignez un titre dans le premier champ texte, puis une description des modifications effectuées dans le second, cochez la case ``Commit directly to the <nom_de_la_branche> branch`` puis cliquez sur le bouton Commit changes :  
+![commit](https://user-images.githubusercontent.com/57490853/190960543-e91a3708-9308-4f43-ad39-111ecb62a1ce.PNG) 
 > Un commit est une sauvegarde à laquelle est ajoutée un commentaire.
 > Chaque commit donne lieu à une nouvelle entrée dans l'historique des modifications du fichier et de la branche active.
 
@@ -41,8 +41,9 @@ Les fichiers de règles sont décrits dans un langage appelé YAML. Proche du JS
 - les chaines de caractères doivent être placée sur une même ligne, sans retour à la ligne.
 - Si un attribut dispose de plusieurs valeurs, celles-ci sont disposées sur des lignes différents et précédées d'un tiret ``- ``.
 
-Par exemple :  <br />
-![typedoc](https://user-images.githubusercontent.com/57490853/190974752-3b5b1118-8c4e-42ce-8963-734559227c80.PNG)<br />
+Par exemple :  
+
+![typedoc](https://user-images.githubusercontent.com/57490853/190974752-3b5b1118-8c4e-42ce-8963-734559227c80.PNG) 
 
 
 ## Description des règles de Qualimarc
@@ -108,7 +109,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
 Liste des champs propres au type de règle presence de zone : 
 - presence : ``obligatoire`` / de type booléen. Si la valeur est true et que la zone est présente dans la notice, le message est envoyé à l'utilisateur. Si la valeur est false et que la zone est absente de la notice, le message est envoyé à l'utilisateur
 
-Exemple de fichier YAML : <br />
+Exemple de fichier YAML :  
 ``` YAML
 rules:
   - id:             2
@@ -131,7 +132,7 @@ Liste des champs propres au type de règle presence de sous-zone :
 - souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc NE doit PAS être renseigné. 
 - presence : ``obligatoire`` / de type booléen. Si la valeur est true et que la sous-zone est présente dans la notice, le message est envoyé à l'utilisateur. Si la valeur est false et que la sous-zone est absente de la notice, le message est envoyé à l'utilisateur
 
-Exemple de fichier YAML :<br />
+Exemple de fichier YAML :  
 ``` YAML
 rules:
   - id:             3
@@ -157,7 +158,7 @@ Liste des champs propres au type de règle nombre de zones :
 
 Si le nombre de zone respecte la condition (SUPERIEUR / INFERIEUR / EGAL) au nombre d'occurrence choisi, le message est envoyé à l'utilisateur.
 
-Exemple de fichier YAML : <br />
+Exemple de fichier YAML :  
 
 ``` YAML
 rules:
@@ -181,7 +182,7 @@ Liste des champs propres au type de règle nombre de sous-zones :
 
 Si le nombre de souszone dans la zone est différent du nombre de sous zones dans la zone cible, le message est envoyé à l'utilisateur. En cas de zone répétée, toutes les occurrences de toutes les zones sont cumulées.
 
-Exemple de fichier YAML :  <br />
+Exemple de fichier YAML :  
 ``` YAML
 rules:
   - id:             5
@@ -203,7 +204,7 @@ Liste des champs propres au type de règle position de sous-zone :
 - souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc de catalogage ne doit pas être renseigné
 - position : ``obligatoire`` / de type entier. La position de la sous-zone dans la zone à vérifier.
 
-Exemple de fichier YAML :  <br />
+Exemple de fichier YAML :  
 ``` YAML
 rules:
   - id:         9
@@ -225,7 +226,7 @@ Liste des champs propres au type de règle présence / absence de sous-zones dan
 - * presence : ``obligatoire`` de type booléen. true si on souhaite que la sous-zone soit présente, false sinon
 - * operateur-booleen : une des deux valeurs possible : ET / OU : indique l'opérateur qui sera utilisé pour calculer la validité des différentes recherches de sous-zones dans la zone. Ce critère **ne** doit **pas** être renseigné pour la première sous-zone, et doit être **obligatoire** pour les suivantes. 
 
-Exemple de fichier YAML :  <br />
+Exemple de fichier YAML :  
 ``` YAML
 rules:
   - id:         4
