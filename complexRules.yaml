@@ -94,4 +94,33 @@ rules:
          souszone:    b
          presence: true
          operateur-booleen: ET
+         
+         
+   - id: 5040
+     id-excel: 272
+     message: "Puisqu'un lien vers une collection a été enregistré en zone 410, une mention de collection doit être enregistrée en 225. Utiliser le bon indicateur : 225 0# ou 225 2#"
+     priorite: P1
+     type-doc:
+       -    A
+       -    B
+       -    K
+       -    O
+       -    N
+       -    I
+       -    F
+       -    Z
+       -    G
+       -    M
+       -	   PC
+     regles:
+       - id: 5041
+         type: presencezone
+         zone: '410'
+         presence: true
+       - id: 5042
+         type: presencezone
+         zone: '225'
+         presence: false
+         operateur-booleen: ET
+      
 
