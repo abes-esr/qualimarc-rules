@@ -260,7 +260,7 @@ rules:
     zone:       200
     priorite:   P1
     indicateur: 2
-    valeur:     #
+    valeur:     '#'
 ```
 Si le second indicateur de la zone 200 a la valeur # alors le message "message test" est envoyé à l'utilisateur.
 
