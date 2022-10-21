@@ -111,6 +111,7 @@ rules:
        -    Z
        -    G
        -    M
+       -    PC
      regles:
        - id: 5041
          type: presencezone
