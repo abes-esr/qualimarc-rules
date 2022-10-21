@@ -140,3 +140,20 @@ rules:
          zone: '214'
          presence: false
          operateur-booleen: ET
+         
+                  
+   - id: 5060
+     id-excel: 321
+     message: "Puisque un autre type de relation est enregistré en zone 488, une note sur les zones de lien en zone 311 est obligatoire pour préciser la nature du lien entre les 2 documents"
+     priorite: P1
+     regles:
+       - id: 5061
+         type: presencezone
+         zone: '488'
+         presence: true
+       - id: 5062
+         type: presencezone
+         zone: '311'
+         presence: false
+         operateur-booleen: ET
+
