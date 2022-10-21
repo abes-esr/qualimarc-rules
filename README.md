@@ -158,7 +158,7 @@ Si une sous-zone $a est présente ET une sous-zone $b est absente dans une même
 ### Valeur d'un indicateur
 Liste des champs propres au type de règle valeur d'un indicateur :
 - indicateur : ``obligatoire`` / de type entier. Indique sur quel indicateur de la zone porte la règle. Ce champ ne peut prendre que les valeurs 1 ou 2
-- valeur : ``obligatoire`` / de type chaine de caractère. Indique la valeur de l'indicateur que la règle doit vérifier. Cette valeur ne peut être qu'un entier entre 0 et 9 ou un #
+- valeur : ``obligatoire`` / de type chaine de caractère. Indique la valeur de l'indicateur que la règle doit vérifier. Cette valeur ne peut être qu'un entier entre 0 et 9 ou un '#'. ATTENTION : en cas d'utilisation du # pour définir la valeur, il est nécessaire de l'entourer de simples quotes ('#') pour ne pas qu'il soit interprété comme un commentaire yaml
 
 Exemple de fichier YAML : <br />
 ![image](https://user-images.githubusercontent.com/57490853/197125847-7fa16baa-bc97-4102-bfe0-8193cf7eca1e.png) <br />
