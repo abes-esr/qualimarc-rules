@@ -81,7 +81,6 @@ De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règ
 - nombre de sous-zones : rulesStructureNombreSousZone.yaml
 - position de sous-zone : rulesStructurePositionSousZone.yaml
 - présence de sous-zones dans une meme occurrence de zone : rulesStructurePresenceSousZoneMemeZone.yaml
-- valeur d'un indicateur : rulesContenuIndicateur.yaml
 
 NB : Toutes les règles complexes seront stockées dans le même fichier.
 
