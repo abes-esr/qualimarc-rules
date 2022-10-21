@@ -123,3 +123,20 @@ rules:
          presence: false
          operateur-booleen: ET
 
+
+
+         
+   - id: 5050
+     id-excel: 158
+     message: "Zone 210  obsolète :  à remplacer par une zone 214 (document en main, en sélectionnant les bons indicateurs)"
+     priorite: P1
+     regles:
+       - id: 5051
+         type: presencezone
+         zone: '210'
+         presence: true
+       - id: 5052
+         type: presencezone
+         zone: '214'
+         presence: false
+         operateur-booleen: ET
