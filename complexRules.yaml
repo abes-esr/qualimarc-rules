@@ -87,7 +87,7 @@ rules:
          zone: '500'
          souszone:    3
          presence: false
-         operateur-booleen: OU
+         operateur-booleen: ET
        - id: 5033
          type: presencesouszone
          zone: '359'
