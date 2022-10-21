@@ -87,11 +87,73 @@ rules:
          zone: '500'
          souszone:    3
          presence: false
-         operateur-booleen: OU
+         operateur-booleen: ET
        - id: 5033
          type: presencesouszone
          zone: '359'
          souszone:    b
          presence: true
+         operateur-booleen: ET
+         
+         
+   - id: 5040
+     id-excel: 272
+     message: "Puisqu'un lien vers une collection a été enregistré en zone 410, une mention de collection doit être enregistrée en 225. Utiliser le bon indicateur : 225 0# ou 225 2#"
+     priorite: P1
+     type-doc:
+       -    A
+       -    B
+       -    K
+       -    O
+       -    N
+       -    I
+       -    F
+       -    Z
+       -    G
+       -    M
+       -    PC
+     regles:
+       - id: 5041
+         type: presencezone
+         zone: '410'
+         presence: true
+       - id: 5042
+         type: presencezone
+         zone: '225'
+         presence: false
+         operateur-booleen: ET
+
+
+
+         
+   - id: 5050
+     id-excel: 158
+     message: "Zone 210  obsolète :  à remplacer par une zone 214 (document en main, en sélectionnant les bons indicateurs)"
+     priorite: P1
+     regles:
+       - id: 5051
+         type: presencezone
+         zone: '210'
+         presence: true
+       - id: 5052
+         type: presencezone
+         zone: '214'
+         presence: false
+         operateur-booleen: ET
+         
+                  
+   - id: 5060
+     id-excel: 321
+     message: "Puisque un autre type de relation est enregistré en zone 488, une note sur les zones de lien en zone 311 est obligatoire pour préciser la nature du lien entre les 2 documents"
+     priorite: P1
+     regles:
+       - id: 5061
+         type: presencezone
+         zone: '488'
+         presence: true
+       - id: 5062
+         type: presencezone
+         zone: '311'
+         presence: false
          operateur-booleen: ET
 

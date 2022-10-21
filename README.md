@@ -23,8 +23,8 @@ et sélectionnez la branche de travail. Le contenu de la branche est affiché.
 Pour modifier le contenu d'un fichier, cliquez sur le nom du fichier à modifier, puis sur la page suivante, cliquez sur le bouton ![edit](https://user-images.githubusercontent.com/57490853/190960013-f2216993-faee-468d-aee5-daf8dd0b41e3.PNG). Un éditeur en ligne s'affichera permettant de modifier le contenu du fichier.
 
 ### Sauvegarder un fichier
-La sauvegarde d'un fichier est réalisée via l'action commit dans github. Lorsqu'on fichier est en édition, en bas de la page, renseignez un titre dans le premier champ texte, puis une description des modifications effectuées dans le second, cochez la case ``Commit directly to the <nom_de_la_branche> branch`` puis cliquez sur le bouton Commit changes : <br />
-![commit](https://user-images.githubusercontent.com/57490853/190960543-e91a3708-9308-4f43-ad39-111ecb62a1ce.PNG)<br />
+La sauvegarde d'un fichier est réalisée via l'action commit dans github. Lorsqu'on fichier est en édition, en bas de la page, renseignez un titre dans le premier champ texte, puis une description des modifications effectuées dans le second, cochez la case ``Commit directly to the <nom_de_la_branche> branch`` puis cliquez sur le bouton Commit changes :  
+![commit](https://user-images.githubusercontent.com/57490853/190960543-e91a3708-9308-4f43-ad39-111ecb62a1ce.PNG) 
 > Un commit est une sauvegarde à laquelle est ajoutée un commentaire.
 > Chaque commit donne lieu à une nouvelle entrée dans l'historique des modifications du fichier et de la branche active.
 
@@ -41,13 +41,27 @@ Les fichiers de règles sont décrits dans un langage appelé YAML. Proche du JS
 - les chaines de caractères doivent être placée sur une même ligne, sans retour à la ligne.
 - Si un attribut dispose de plusieurs valeurs, celles-ci sont disposées sur des lignes différents et précédées d'un tiret ``- ``.
 
-Par exemple :  <br />
-![typedoc](https://user-images.githubusercontent.com/57490853/190974752-3b5b1118-8c4e-42ce-8963-734559227c80.PNG)<br />
+Par exemple :  
+
+![typedoc](https://user-images.githubusercontent.com/57490853/190974752-3b5b1118-8c4e-42ce-8963-734559227c80.PNG) 
 
 
 ## Description des règles de Qualimarc
 Toutes les règles de Qualimarc ont une structure commune, puis des champs propres à chaque type de règle. Dans le chapitre décrivant les règles, les éléments obligatoires seront précisés. Voici un exemple de fichier YAML décrivant une règle : 
-![yaml](https://user-images.githubusercontent.com/57490853/190967163-2325fc91-8d6c-4303-9593-26e8f5c27b36.PNG)  
+``` YAML
+rules:
+  - id:             2
+    id-excel:       2
+    type:           presencezone
+    message:        message test test 2
+    zone:           330
+    priorite:       P1
+    presence:       false
+    type-doc:
+        - A 
+        - B
+        - O
+```
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
 ## Syntaxe des règles simples <a id="4"></a>
@@ -67,7 +81,6 @@ De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règ
 - nombre de sous-zones : rulesStructureNombreSousZone.yaml
 - position de sous-zone : rulesStructurePositionSousZone.yaml
 - présence de sous-zones dans une meme occurrence de zone : rulesStructurePresenceSousZoneMemeZone.yaml
-- valeur d'un indicateur : rulesContenuIndicateur.yaml
 
 NB : Toutes les règles complexes seront stockées dans le même fichier.
 
@@ -95,8 +108,22 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
 Liste des champs propres au type de règle presence de zone : 
 - presence : ``obligatoire`` / de type booléen. Si la valeur est true et que la zone est présente dans la notice, le message est envoyé à l'utilisateur. Si la valeur est false et que la zone est absente de la notice, le message est envoyé à l'utilisateur
 
-Exemple de fichier YAML : <br />
-![presencezone](https://user-images.githubusercontent.com/57490853/190971728-7ca9f837-f505-4f15-8f89-0db26632c2d9.PNG)<br />
+Exemple de fichier YAML :  
+``` YAML
+rules:
+  - id:             2
+    id-excel:       2
+    type:           presencezone
+    message:        message test 
+    zone:           330
+    priorite:       P1
+    presence:       false
+    type-doc:
+        - A 
+        - B
+        - O
+```
+
 Règle numéro 2 dans la base, sur la ligne 2 du fichier Excel, permettant de tester l'absence de la zone 330 dans la notice. Si la 330 est absente, le message ``message test`` est envoyé à l'utilisateur. La règle sera lancée si le traitement rapide ou expert est choisi, et s'appliquera uniquement sur les types de documents Monographie, Audiovisuel ou Doc Elec 
 
 ### Présence / absence de sous-zone
@@ -104,8 +131,22 @@ Liste des champs propres au type de règle presence de sous-zone :
 - souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc NE doit PAS être renseigné. 
 - presence : ``obligatoire`` / de type booléen. Si la valeur est true et que la sous-zone est présente dans la notice, le message est envoyé à l'utilisateur. Si la valeur est false et que la sous-zone est absente de la notice, le message est envoyé à l'utilisateur
 
-Exemple de fichier YAML :<br />
-![presencesouszone](https://user-images.githubusercontent.com/57490853/190973035-2ae52c7c-49b3-404e-9770-1a36bf4818cb.PNG)<br />
+Exemple de fichier YAML :  
+``` YAML
+rules:
+  - id:             3
+    id-excel:       3
+    type:           presencesouszone
+    message:        message test presence sous zone
+    zone:           330
+    souszone:       a
+    priorite:       P2
+    type-doc:
+        - A 
+        - F
+        - TS
+```
+
 Règle numéro 3 dans la base, sur la ligne 3 du fichier Excel, permettant de tester la présence de la sous zone $a de la zone 330 de la notice. Si la 330 $a est présente, le message ``message test presence sousZone`` sera envoyé à l'utilisateur. La règle sera lancée si le traitement expert est sélectionné et s'appliquera uniquement sur les types de documents Monographie, Manuscrit ou Thèse de soutenance.
 
 
@@ -116,8 +157,20 @@ Liste des champs propres au type de règle nombre de zones :
 
 Si le nombre de zone respecte la condition (SUPERIEUR / INFERIEUR / EGAL) au nombre d'occurrence choisi, le message est envoyé à l'utilisateur.
 
-Exemple de fichier YAML : <br />
-![nombrezone](https://user-images.githubusercontent.com/57490853/190973627-583d49b1-1183-479e-9002-db3b909e40ba.PNG)<br />
+Exemple de fichier YAML :  
+
+``` YAML
+rules:
+  - id:             4
+    id-excel:       10
+    type:           nombrezone
+    message:        message test nombre zone
+    zone:           330
+    operateur:      INFERIEUR
+    occurrences:    3
+    priorite:       P1
+```
+
 Règle numéro 4 dans la base, sur la ligne 10 du fichier Excel, permettant de tester le nombre de zones dans la zone 330 de la notice. Si le nombre de 330 dans la notice est strictement inférieur à 3, le message ``message test nombre zone`` est envoyé à l'utilisateur. La règle sera lancée si le traitement rapide ou expert est sélectionné. L'absence du champ type-doc indique que la règle s'applique à tous les types de documents.
 
 ### Nombre de sous-zones
@@ -128,8 +181,20 @@ Liste des champs propres au type de règle nombre de sous-zones :
 
 Si le nombre de souszone dans la zone est différent du nombre de sous zones dans la zone cible, le message est envoyé à l'utilisateur. En cas de zone répétée, toutes les occurrences de toutes les zones sont cumulées.
 
-Exemple de fichier YAML :  <br />
-![nombresouszone](https://user-images.githubusercontent.com/57490853/190974273-d357700f-e26e-41e2-97dd-21b9235646ab.PNG)<br />
+Exemple de fichier YAML :  
+``` YAML
+rules:
+  - id:             5
+    id-excel:       110
+    type:           nombresouszone
+    message:        message test nombre sous zone
+    zone:           200,
+    souszone:       a
+    zonecible:      600
+    souszonecible:  b
+    priorite:       P2
+```
+
 
 Règle numéro 5 dans la base, sur la ligne 110 du fichier Excel, permettant de comparer le nombre de 200 $a avec le nombre de 600 $b. Si le nombre de 200 $a est différent du nombre de 600 $b, le message ``message test nombre sous zone`` est envoyé à l'utilisateur. La règle sera lancée uniquement si le traitement expert est sélectionné. L'absence du champ type-doc indique que la règle s'applique à tous les types de documents.
 
@@ -138,8 +203,18 @@ Liste des champs propres au type de règle position de sous-zone :
 - souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc de catalogage ne doit pas être renseigné
 - position : ``obligatoire`` / de type entier. La position de la sous-zone dans la zone à vérifier.
 
-Exemple de fichier YAML :  <br />
-![image](https://user-images.githubusercontent.com/57490853/194000274-e18a0dad-ed8e-49ac-a0c0-81653b7a5490.png)<br />
+Exemple de fichier YAML :  
+``` YAML
+rules:
+  - id:         9
+    id-excel:   9
+    type:       positionsouszone
+    message:    Faire le lien à l'autorité en sous-zone $3
+    zone:       608
+    souszone:   3
+    priorite:   P1
+    position:   1
+```
 
 Si la souszone $3 n'est pas placée en première position dans l'une des occurrences de la zone 608, le message Faire le lien à l'autorité en sous-zone $3 est envoyé à l'utilisateur.
 
@@ -150,19 +225,43 @@ Liste des champs propres au type de règle présence / absence de sous-zones dan
 - * presence : ``obligatoire`` de type booléen. true si on souhaite que la sous-zone soit présente, false sinon
 - * operateur-booleen : une des deux valeurs possible : ET / OU : indique l'opérateur qui sera utilisé pour calculer la validité des différentes recherches de sous-zones dans la zone. Ce critère **ne** doit **pas** être renseigné pour la première sous-zone, et doit être **obligatoire** pour les suivantes. 
 
-Exemple de fichier YAML :  <br />
-![image](https://user-images.githubusercontent.com/57490853/196611583-1e212374-3df4-462c-80d6-90218933dfe5.png) <br />
+Exemple de fichier YAML :  
+``` YAML
+rules:
+  - id:         4
+    id-excel:   10
+    type:       presencesouszonesmemezone
+    message:    message test
+    zone:       606
+    priorite:   P1
+    souszones:
+        - souszone:          a
+          presence:          true
+        - souszone:          b
+          presence:          false
+          operateur-booleen: ET
+```
 
 Si une sous-zone $a est présente ET une sous-zone $b est absente dans une même occurrence de la zone 606 alors le message "message test" est envoyé à l'utilisateur.
 
 ### Valeur d'un indicateur
 Liste des champs propres au type de règle valeur d'un indicateur :
 - indicateur : ``obligatoire`` / de type entier. Indique sur quel indicateur de la zone porte la règle. Ce champ ne peut prendre que les valeurs 1 ou 2
-- valeur : ``obligatoire`` / de type chaine de caractère. Indique la valeur de l'indicateur que la règle doit vérifier. Cette valeur ne peut être qu'un entier entre 0 et 9 ou un '#'. ATTENTION : en cas d'utilisation du # pour définir la valeur, il est nécessaire de l'entourer de simples quotes ('#') pour ne pas qu'il soit interprété comme un commentaire yaml
+- valeur : ``obligatoire`` / de type chaine de caractère. Indique la valeur de l'indicateur que la règle doit vérifier. Cette valeur ne peut être qu'un entier entre 0 et 9 ou un #
 
 Exemple de fichier YAML : <br />
-![image](https://user-images.githubusercontent.com/57490853/197125847-7fa16baa-bc97-4102-bfe0-8193cf7eca1e.png) <br />
 
+``` YAML
+rules:
+  - id:         1
+    id-excel:   1
+    type:       indicateur
+    message:    message test
+    zone:       200
+    priorite:   P1
+    indicateur: 2
+    valeur:     #
+```
 Si le second indicateur de la zone 200 a la valeur # alors le message "message test" est envoyé à l'utilisateur.
 
 ## Syntaxe des règles complexes <a id="5"></a>
@@ -187,8 +286,17 @@ Les règles complexes disposent de champs communs qui décrivent la règle compl
 > B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, TS : Thèse de soutenance, TR : Thèse de reproduction, PC : Partie composante 
 
 Ainsi, un exemple de fichier YAML permettant de définir les critères communs est présenté ci-dessous : 
-
-![image](https://user-images.githubusercontent.com/57490853/196369223-f461a72c-45be-48a6-9b47-1f65343ad242.png)  
+``` YAML
+---
+rules:
+  - id:             2
+    id-excel:       2
+    message:        test
+    priorite:       P1
+    type-doc:
+        - A 
+        - O
+``` 
 
 ### Définition des règles simples composant la règle complexe
 Suite à la déclaration des champs communs, il est nécessaire de décrire au moins 2 règles simples pour que la règle complexe soit valide. La déclaration des règles simples se fait dans un champ liste nommé **regles**. Les champs à déclarer pour chacune des règles simples sont les suivants :
@@ -200,7 +308,50 @@ Suite à la déclaration des champs communs, il est nécessaire de décrire au m
 Les critères spécifiques au type de règle simple sélectionné doivent ensuite être rajouté (en suivant la même terminologie que dans le paragraphe sur les [règles simples](#4) ). 
 
 Exemple de fichier YAML de 2 règles complexes composées de règles simples de différents types :
-![image](https://user-images.githubusercontent.com/57490853/196372917-52b7682d-5e4d-422f-8d82-cd7b7e7bade6.png)  
+```
+---
+rules:
+  - id:             2
+    id-excel:       2
+    message:        "message test"
+    priorite:       P1
+    type-doc:
+        - A 
+        - O
+    regles:
+        - id:                20
+          type:              presencezone
+          zone:              330
+          presence:          false
+        - id:                21
+          type:              presencezone
+          zone:              200
+          presence:          true
+          operateur-booleen: ET
+  - id:             3
+    id-excel:       3
+    message:        "Message test 2"
+    priorite:       P2
+    regles:
+        - id:               30
+          type:             nombrezone
+          zone:             '330'
+          operateur:        EGAL
+          occurrences:      1
+        - id:               31
+          type:             nombrezone
+          zone:             '200'
+          operateur:        SUPERIEUR
+          occurrences:      1
+          operateur-booleen:OU
+        - id:               32
+          type:             nombrezone
+          zone:             '400'
+          operateur:        INFERIEUR
+          occurrences:      1
+          operateur-booleen:OU
+
+```
 
 Le YAML précédent permet de déclarer 2 règles complexes. La première règle a un id 2, le message renvoyé sera **message test** si la règle est valide. Elle a une priorité de 1, et concerne les types de documents monographie et doc élec. Elle est composée de 2 règles simples : 
 - La première règle simple a un id 20, et vérifie si la zone 330 est absente.

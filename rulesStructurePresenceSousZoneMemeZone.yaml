@@ -1,2 +1,29 @@
 ---
-#test
+#ID de 600 à 699 (sauf règles test)
+
+rules:
+  - id:       600
+    id-excel: 181
+    type:     presencesouszonesmemezone
+    message:  "Zone 214 : une sous-zone $6 doit toujours être suivie d'une sous-zone $7"
+    zone:     214
+    priorite: P1
+    souszones:
+      - souszone:           6
+        presence:           true
+      - souszone:           7
+        presence:           false
+        operateur-booleen:  ET
+
+  - id:       601
+    id-excel: 183
+    type:     presencesouszonesmemezone
+    message:  "Zone 214 : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
+    zone:     214
+    priorite: P1
+    souszones:
+      - souszone:           7
+        presence:           true
+      - souszone:           6
+        presence:           false
+        operateur-booleen:  ET
