@@ -51,13 +51,14 @@ Toutes les règles de Qualimarc ont une structure commune, puis des champs propr
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
 ## Syntaxe des règles simples <a id="4"></a>
-A l'heure actuelle il existe 5 types de règles dans Qualimarc : 
-- Présence ou absence de zone
-- Présence ou absence de sous-zone
-- Nombre de zones dans une notice
-- Nombre de sous-zones dans une notice
-- Position de sous-zones dans une zone 
-- Présence de sous-zones dans une même occurrence d'une zone
+A l'heure actuelle il existe 8 types de règles dans Qualimarc : 
+- ``structure`` : Présence ou absence de zone
+- ``structure`` : Présence ou absence de sous-zone
+- ``structure`` : Nombre de zones dans une notice
+- ``structure`` : Nombre de sous-zones dans une notice
+- ``structure`` : Position de sous-zones dans une zone 
+- ``structure`` : Présence de sous-zones dans une même occurrence d'une zone
+- ``contenu`` : Valeur d'un indicateur
 
 De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règles, chaque type de règle sera disposé dans un fichier différent :
 - présence / absence de zone : rulesStructurePresenceZone.yaml
@@ -66,6 +67,7 @@ De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règ
 - nombre de sous-zones : rulesStructureNombreSousZone.yaml
 - position de sous-zone : rulesStructurePositionSousZone.yaml
 - présence de sous-zones dans une meme occurrence de zone : rulesStructurePresenceSousZoneMemeZone.yaml
+- valeur d'un indicateur : rulesContenuIndicateur.yaml
 
 NB : Toutes les règles complexes seront stockées dans le même fichier.
 
@@ -87,6 +89,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
   - ``nombresouszone`` : pour les règles permettant de comparer le nombre d'occurrences d'une sous zone par rapport à une autre sous zone de la notice
   - ``positionsouszone`` : pour les règles permettant de vérifier la position d'une sous zone dans toutes les occurrences d'une zone 
   - ``presencesouszonesmemezone`` : pour les règles permettant de vérifier la présence ou l'absence de n sous-zones dans la même occurrence d'une zone
+  - ``indicateur`` : pour les règles permettant de vérifier la valeur d'un indicateur
 
 ### Présence / absence de zone
 Liste des champs propres au type de règle presence de zone : 
@@ -151,6 +154,16 @@ Exemple de fichier YAML :  <br />
 ![image](https://user-images.githubusercontent.com/57490853/196611583-1e212374-3df4-462c-80d6-90218933dfe5.png) <br />
 
 Si une sous-zone $a est présente ET une sous-zone $b est absente dans une même occurrence de la zone 606 alors le message "message test" est envoyé à l'utilisateur.
+
+### Valeur d'un indicateur
+Liste des champs propres au type de règle valeur d'un indicateur :
+- indicateur : ``obligatoire`` / de type entier. Indique sur quel indicateur de la zone porte la règle. Ce champ ne peut prendre que les valeurs 1 ou 2
+- valeur : ``obligatoire`` / de type chaine de caractère. Indique la valeur de l'indicateur que la règle doit vérifier. Cette valeur ne peut être qu'un entier entre 0 et 9 ou un #
+
+Exemple de fichier YAML : <br />
+![image](https://user-images.githubusercontent.com/57490853/197125847-7fa16baa-bc97-4102-bfe0-8193cf7eca1e.png) <br />
+
+Si le second indicateur de la zone 200 a la valeur # alors le message "message test" est envoyé à l'utilisateur.
 
 ## Syntaxe des règles complexes <a id="5"></a>
 Une règle complexe est un assemblage de plusieurs règles simples qui seront testées les unes après les autres avec un opérateur booléen. Par exemple, une règle complexe composée de 3 règles simples avec un opérateur ET entre les deux premières et un opérateur OU entre les deux suivantes donnera l'expression suivante : règle 1 ET règle 2 OU règle 3. 
