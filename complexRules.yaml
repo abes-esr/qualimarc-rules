@@ -194,3 +194,23 @@ rules:
          presence: true
          operateur-booleen: ET
 
+
+#Penser à supprimer règle simple nb de caractères règle 800
+   - id: 5080
+     id-excel: 445
+     message: "Zone 700 : les dates en sous-zone $f doivent être sous la forme AAAA-AAAA avec '.' à la place de l'année inconnue et '?' à la place des années incertaines"
+     priorite: P1
+     regles:
+       - id: 5081
+         type: nombrecaractere
+         zone: '700'
+         souszone:   f
+         operateur:  INFERIEUR
+         occurrences: 9
+       - id: 5082
+         type: nombrecaractere
+         zone: '700'
+         souszone:   f
+         operateur:  SUPERIEUR
+         occurrences: 9
+         operateur-booleen: ET
