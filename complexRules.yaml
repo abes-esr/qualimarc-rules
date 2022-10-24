@@ -213,4 +213,4 @@ rules:
          souszone:   f
          operateur:  SUPERIEUR
          occurrences: 9
-         operateur-booleen: ET
+         operateur-booleen: OU
