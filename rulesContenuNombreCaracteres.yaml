@@ -1,0 +1,10 @@
+rules:
+  - id:       1
+    id-excel: 1
+    type:     nombrecaractere
+    message:  "message"
+    zone:     214
+    priorite: P1
+    souszone: a
+    operateur: INFERIEUR
+    occurrences: 10
