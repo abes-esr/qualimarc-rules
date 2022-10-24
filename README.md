@@ -292,18 +292,18 @@ Si le nombre de caractères dans la 200$a est inférieur ou égal à 20, alors l
 
 ### Présence d'une chaine de caractères
 
-* La vérification STRICTEMENT peut comporter : 
-    * soit une chaine-caracteres,
-    * soit une chaine-caracteres et plusieurs autre-chaine-caracteres, mais chacune de ces autre-chaine-caracteres ne peut recevoir que l'opérateur OU
-* La vérification COMMENCE peut comporter :
-    * soit chaine-caracteres, 
-    * soit une chaine-caracteres et plusieurs autre-chaine-caracteres, mais chacune de ces autre-chaine-caracteres ne peut recevoir que l'opérateur OU
-* La vérification TERMINE peut comporter : 
-    * soit chaine-caracteres,
-    * soit une chaine-caracteres et plusieurs autre-chaine-caracteres, mais chacune de ces autre-chaine-caracteres ne peut recevoir que l'opérateur OU
-* La vérification CONTIENT peut comporter :
-    * soit chaine-caracteres,
-    * soit une chaine-caracteres et plusieurs autre-chaine-caracteres, chacune de ces autre-chaine-caracteres pouvant recevoir l'opérateur ET ou OU
+* La vérification `STRICTEMENT` peut comporter : 
+    * soit une `chaine-caracteres`,
+    * soit une `chaine-caracteres` et plusieurs `autre-chaine-caracteres`, mais chacune de ces `autre-chaine-caracteres` ne peut recevoir que l'`opérateur` `OU`
+* La vérification `COMMENCE` peut comporter :
+    * soit `chaine-caracteres`, 
+    * soit une `chaine-caracteres` et plusieurs `autre-chaine-caracteres`, mais chacune de ces `autre-chaine-caracteres` ne peut recevoir que l'`opérateur` `OU`
+* La vérification `TERMINE` peut comporter : 
+    * soit `chaine-caracteres`,
+    * soit une `chaine-caracteres` et plusieurs `autre-chaine-caracteres`, mais chacune de ces `autre-chaine-caracteres` ne peut recevoir que l'`opérateur` `OU`
+* La vérification `CONTIENT` peut comporter :
+    * soit `chaine-caracteres`,
+    * soit une `chaine-caracteres` et plusieurs `autre-chaine-caracteres`, chacune de ces `autre-chaine-caracteres` pouvant recevoir l'`opérateur` `ET` ou `OU`
 
 ``` YAML
 rules:
