@@ -29,11 +29,12 @@ rules:
         operateur-booleen:  ET
   
 #doublon de la 600 pour vérif  
+#modifiée le 24/10/22 pour la 200. La passer en zone générique 2XX quand ok
   - id:       602
-    id-excel: 181
+    id-excel: 119
     type:     presencesouszonesmemezone
-    message:  "Zone 214 : une sous-zone $6 doit toujours être suivie d'une sous-zone $7"
-    zone:     214
+    message:  "Zone 200 : une sous-zone $6 doit toujours être suivie d'une sous-zone $7"
+    zone:     200
     priorite: P1
     souszones:
       - souszone:           6
