@@ -18,5 +18,5 @@ rules:
     zone:       700
     priorite:   P1
     souszone:   f
-    operateur:  EGAL
+    operateur:  INFERIEUR
     occurrences: 9
