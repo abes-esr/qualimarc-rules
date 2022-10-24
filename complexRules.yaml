@@ -63,6 +63,11 @@ rules:
          presence: false
          operateur-booleen: OU
        - id: 5023
+         type: presencezone
+         zone: '206'
+         presence: true
+         operateur-booleen: ET
+       - id: 5024
          type: presencesouszone
          zone: '123'
          souszone:    b
