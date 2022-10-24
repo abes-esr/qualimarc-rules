@@ -17,3 +17,13 @@ rules:
     priorite:   P1
     indicateur: 1
     valeur:     '#'
+
+
+  - id:         701
+    id-excel:   203
+    type:       indicateur
+    message:    "Zone 225 : l'indicateur 1 ne peut pas avoir la valeur #"
+    zone:       225
+    priorite:   P1
+    indicateur: 1
+    valeur:     '#'
