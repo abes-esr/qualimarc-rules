@@ -41,3 +41,19 @@ rules:
       - souszone:           7
         presence:           false
         operateur-booleen:  ET
+        
+        
+        
+        
+  - id:       603
+    id-excel: 8
+    type:     presencesouszonesmemezone
+    message:  "Document électronique : il manque la sous-zone 017$2. S'il s'agit d'un DOI enregistré en sous-zone 017$a, c'est le code de référentiel DOI qui est attendu en sous-zone 017$2"
+    zone:     017
+    priorite: P1
+    souszones:
+      - souszone:           a
+        presence:           true
+      - souszone:           2
+        presence:           false
+        operateur-booleen:  ET
