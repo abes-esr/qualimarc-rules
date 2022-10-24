@@ -11,10 +11,12 @@ rules:
     occurrences: 10
 
 #REGLES AFE
+
+#règle 800 à supprimer au prfit de la règle complexe 5080
   - id:         800
     id-excel:   445
     type:       nombrecaractere
-    message:    "Zone 700 : les dates en sous-zone $f doivent être sous la forme AAAA-AAAA avec '.' à la place de l'année inconnue et '?' à la place des années incertaines"
+    message:    "Zone 700$f inférieure à 9 caractères (règle test à supprimer)"
     zone:       700
     priorite:   P1
     souszone:   f
