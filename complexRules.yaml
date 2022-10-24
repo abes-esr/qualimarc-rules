@@ -43,7 +43,7 @@ rules:
          presence: true
          operateur-booleen: ET
 
-#règle 5020 : ATTENTION A TETE MODIFIEE ET GENERE DES ERREURS CAR DOUBLONS ID
+#règle 5020 :  A SUPPRIMER  / ATTENTION A ETE MODIFIEE ET GENERE DES ERREURS CAR DOUBLONS ID / doublon ok règle 5070
    - id: 5020
      id-excel: 99
      message: "Carte : puisqu'une échelle est enregistrée en zone 123, elle doit aussi être transcrite en zone 206. Privilégier une zone 206 structurée"
@@ -161,5 +161,36 @@ rules:
          zone: '311'
          presence: false
          operateur-booleen: ET
-
+         
+         
+#règle 5070 : A CONSERVER / DOUBLON OK regle 5020
+   - id: 5070
+     id-excel: 99
+     message: "Carte : puisqu'une échelle est enregistrée en zone 123, elle doit aussi être transcrite en zone 206. Privilégier une zone 206 structurée"
+     priorite: P1
+     type-doc:
+       - K
+     regles:
+       - id: 5071
+         type: presencesouszone
+         zone: '206'
+         souszone:    a
+         presence: false
+       - id: 5072
+         type: presencesouszone
+         zone: '206'
+         souszone:    b
+         presence: false
+         operateur-booleen: OU
+       - id: 5073
+         type: presencezone
+         zone: '206'
+         presence: true
+         operateur-booleen: ET
+       - id: 5074
+         type: presencesouszone
+         zone: '123'
+         souszone:    b
+         presence: true
+         operateur-booleen: ET
 
