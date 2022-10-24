@@ -27,3 +27,17 @@ rules:
       - souszone:           6
         presence:           false
         operateur-booleen:  ET
+  
+#doublon de la 600 pour vérif  
+  - id:       602
+    id-excel: 181
+    type:     presencesouszonesmemezone
+    message:  "Zone 214 : une sous-zone $6 doit toujours être suivie d'une sous-zone $7"
+    zone:     214
+    priorite: P1
+    souszones:
+      - souszone:           6
+        presence:           true
+      - souszone:           7
+        presence:           false
+        operateur-booleen:  ET
