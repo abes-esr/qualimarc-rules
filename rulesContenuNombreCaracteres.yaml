@@ -1,3 +1,4 @@
+#ID règles de 800 à 899
 rules:
   - id:       1
     id-excel: 1
@@ -8,3 +9,14 @@ rules:
     souszone: a
     operateur: INFERIEUR
     occurrences: 10
+
+#REGLES AFE
+  - id:         800
+    id-excel:   445
+    type:       nombrecaractere
+    message:    "Zone 700 : les dates en sous-zone $f doivent être sous la forme AAAA-AAAA avec '.' à la place de l'année inconnue et '?' à la place des années incertaines"
+    zone:       700
+    priorite:   P1
+    souszone:   f
+    operateur:  EGAL
+    occurrences: 9
