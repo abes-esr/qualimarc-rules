@@ -61,6 +61,9 @@ rules:
         - A 
         - B
         - O
+    type-these:
+        - REPRO
+        - SOUTENANCE
 ```
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
@@ -100,6 +103,8 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
 - type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
 > les valeurs possibles pour les types de documents sont les suivantes :
 > B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, TS : Thèse de soutenance, TR : Thèse de reproduction, PC : Partie composante
+- type-these : ``optionnel`` : de type liste de valeur : indique si la règle doit être appliquée sur les thèses.
+> les valeurs possibles pour les types de thèse sont REPRO ou SOUTENANCE
 - type : ``obligatoire`` : de type chaine de caractère : indique le type de règle qui est décrite. Les valeurs possibles sont : 
   - ``presencezone`` : pour les règles permettant de tester la présence ou l'absence d'une zone dans la notice
   - ``presencesouszone`` : pour les règles permettant de tester la présence ou l'absence d'une sous zone dans la notice
