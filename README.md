@@ -74,6 +74,7 @@ A l'heure actuelle il existe 9 types de règles dans Qualimarc :
 - ``structure`` : Présence de sous-zones dans une même occurrence d'une zone
 - ``contenu`` : Valeur d'un indicateur
 - ``contenu`` : nombre de caractères dans une sous-zone
+- ``contenu`` : présence d'une ou plusieurs chaine(s) de caractères dans une sous-zone
 
 De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règles, chaque type de règle sera disposé dans un fichier différent :
 - présence / absence de zone : rulesStructurePresenceZone.yaml
@@ -289,6 +290,62 @@ rules:
     occurrences: 20
 ```
 Si le nombre de caractères dans la 200$a est inférieur ou égal à 20, alors le message "message test" sera envoyé à l'utilisateur.
+
+### Présence d'une chaine de caractères
+
+* La vérification `STRICTEMENT` peut comporter :
+    * soit une `chaine-caracteres` sans `operateur`,
+    * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `operateur` `OU`.
+* La vérification `COMMENCE` peut comporter :
+    * soit une `chaine-caracteres` sans `operateur`,
+    * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `operateur` `OU`,
+* La vérification `TERMINE` peut comporter :
+    * soit une `chaine-caracteres` sans `operateur`,
+    * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `OU`,
+* La vérification `CONTIENT` peut comporter :
+    * soit une `chaine-caracteres` sans `operateur`,
+    * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `ET` ou `OU`,
+
+``` YAML
+rules:
+    - id:                       1
+      id-excel:                 1
+      type:                     presencechainecaracteres
+      message:                  message de retour
+      zone:                     200
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    chaine de caractères à chercher
+
+    - id:                       2
+      id-excel:                 2
+      type:                     presencechainecaracteres
+      message:                  message de retour
+      zone:                     200
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    texte à chercher
+        - operateur:            OU
+          chaine-caracteres:    deuxième chaine de caractères à chercher
+
+    - id:                       3
+      id-excel:                 3
+      type:                     presencechainecaracteres
+      message:                  message de retour
+      zone:                     200
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    premier chaine de caractères à chercher
+        - operateur:            ET
+          chaine-caracteres:    deuxième chaine de caractères à chercher
+        - operateur:            OU
+          chaine-caracteres:    deuxième chaine de caractères à chercher
 
 ## Syntaxe des règles complexes <a id="5"></a>
 Une règle complexe est un assemblage de plusieurs règles simples qui seront testées les unes après les autres avec un opérateur booléen. Par exemple, une règle complexe composée de 3 règles simples avec un opérateur ET entre les deux premières et un opérateur OU entre les deux suivantes donnera l'expression suivante : règle 1 ET règle 2 OU règle 3. 
