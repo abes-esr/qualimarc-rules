@@ -290,52 +290,6 @@ rules:
 ```
 Si le nombre de caractères dans la 200$a est inférieur ou égal à 20, alors le message "message test" sera envoyé à l'utilisateur.
 
-### Présence d'une chaine de caractères
-
-* La vérification `STRICTEMENT` peut comporter : 
-    * soit une `chaine-caracteres`,
-    * soit une `chaine-caracteres` et plusieurs `autre-chaine-caracteres`, mais chacune de ces `autre-chaine-caracteres` ne peut recevoir que l'`opérateur` `OU`
-* La vérification `COMMENCE` peut comporter :
-    * soit `chaine-caracteres`, 
-    * soit une `chaine-caracteres` et plusieurs `autre-chaine-caracteres`, mais chacune de ces `autre-chaine-caracteres` ne peut recevoir que l'`opérateur` `OU`
-* La vérification `TERMINE` peut comporter : 
-    * soit `chaine-caracteres`,
-    * soit une `chaine-caracteres` et plusieurs `autre-chaine-caracteres`, mais chacune de ces `autre-chaine-caracteres` ne peut recevoir que l'`opérateur` `OU`
-* La vérification `CONTIENT` peut comporter :
-    * soit `chaine-caracteres`,
-    * soit une `chaine-caracteres` et plusieurs `autre-chaine-caracteres`, chacune de ces `autre-chaine-caracteres` pouvant recevoir l'`opérateur` `ET` ou `OU`
-
-``` YAML
-rules:
-    - id:                       1
-      id-excel:                 1
-      type:                     presencechainecaracteres
-      message:                  message test
-      zone:                     200
-      priorite:                 P1
-      souszone:                 a
-      type-de-verification:     STRICTEMENT
-      chaine-caracteres:        un texte à chercher
-      autre-chaine-caracteres:
-        - operateur:            OU
-          chaine-caracteres:    ou autre texte à chercher
-
-    - id:                       2
-      id-excel:                 2
-      type:                     presencechainecaracteres
-      message:                  message test
-      zone:                     200
-      priorite:                 P1
-      souszone:                 a
-      type-de-verification:     CONTIENT
-      chaine-caracteres:        premier texte à chercher
-      autre-chaine-caracteres:
-        - operateur:            ET
-          chaine-caracteres:    et deuxième texte à chercher
-        - operateur:            OU
-          chaine-caracteres:    autre autre texte à chercher
-```
-
 ## Syntaxe des règles complexes <a id="5"></a>
 Une règle complexe est un assemblage de plusieurs règles simples qui seront testées les unes après les autres avec un opérateur booléen. Par exemple, une règle complexe composée de 3 règles simples avec un opérateur ET entre les deux premières et un opérateur OU entre les deux suivantes donnera l'expression suivante : règle 1 ET règle 2 OU règle 3. 
 
