@@ -1,5 +1,5 @@
 ---
-# ID règles de X00 à X99
+# ID règles de 900 à 999
 rules:
   - id:         60
     type:       typecaractere
