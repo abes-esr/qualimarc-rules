@@ -308,6 +308,7 @@ Si le nombre de caractères dans la 200$a est inférieur ou égal à 20, alors l
     * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `ET` ou `OU`,
 
 ``` YAML
+---
 rules:
     - id:                       1
       id-excel:                 1
@@ -391,7 +392,7 @@ Suite à la déclaration des champs communs, il est nécessaire de décrire au m
 Les critères spécifiques au type de règle simple sélectionné doivent ensuite être rajouté (en suivant la même terminologie que dans le paragraphe sur les [règles simples](#4) ). 
 
 Exemple de fichier YAML de 2 règles complexes composées de règles simples de différents types :
-```
+``` YAML
 ---
 rules:
   - id:             2
