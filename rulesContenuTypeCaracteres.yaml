@@ -14,9 +14,9 @@ rules:
 #règle test pour vérifier blocage de la complexe 5090 ( à supprimer)
   - id:         900
     type:      typecaractere
-    message:   "Zone 345 : EAN en $b > doit aller en 073 (à supprimer/test doublon)"
-    zone:      345
+    message:   "Test type caractères numériques en 330$a"
+    zone:      330
     priorite:  P2
-    souszone:  b
+    souszone:  a
     type-caracteres:
       - "NUMERIQUE"
