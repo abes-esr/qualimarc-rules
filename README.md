@@ -85,6 +85,7 @@ De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règ
 - présence de sous-zones dans une meme occurrence de zone : rulesStructurePresenceSousZoneMemeZone.yaml
 - valeur d'un indicateur : rulesContenuIndicateur.yaml
 - nombre de caractères dans une sous-zone : rulesContenuNombreCaracteres.yaml
+- présence de chaine(s) de caractères dans une sous-zone : presenceChaineCaractères.yaml
 
 NB : Toutes les règles complexes seront stockées dans le même fichier.
 
