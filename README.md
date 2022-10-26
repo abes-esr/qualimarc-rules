@@ -317,6 +317,8 @@ rules:
       message:                  message de retour
       zone:                     200
       priorite:                 P1
+      type-these:
+          - REPRO
       souszone:                 a
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
@@ -327,6 +329,8 @@ rules:
       message:                  message de retour
       zone:                     200
       priorite:                 P1
+      type-these:
+          - SOUTENANCE
       souszone:                 a
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
@@ -339,6 +343,8 @@ rules:
       message:                  message de retour
       zone:                     200
       priorite:                 P1
+      type-these:
+          - REPRO
       souszone:                 a
       type-de-verification:     CONTIENT
       chaines-caracteres:
