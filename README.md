@@ -61,6 +61,9 @@ rules:
         - A 
         - B
         - O
+    type-these:
+        - REPRO
+        - SOUTENANCE
 ```
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
@@ -75,6 +78,7 @@ A l'heure actuelle il existe 9 types de règles dans Qualimarc :
 - ``contenu`` : Valeur d'un indicateur
 - ``contenu`` : Nombre de caractères dans une sous-zone
 - ``contenu`` : Présence d'une ou plusieurs chaine(s) de caractères dans une sous-zone
+- ``contenu`` : Type de caractères dans une sous-zone
 
 De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règles, chaque type de règle sera disposé dans un fichier différent :
 - présence / absence de zone : rulesStructurePresenceZone.yaml
@@ -86,6 +90,7 @@ De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règ
 - valeur d'un indicateur : rulesContenuIndicateur.yaml
 - nombre de caractères dans une sous-zone : rulesContenuNombreCaracteres.yaml
 - présence de chaine(s) de caractères dans une sous-zone : presenceChaineCaractères.yaml
+- type de caractères dans une sous-zone : rulesContenuTypeCaracteres.yaml
 
 NB : Toutes les règles complexes seront stockées dans le même fichier.
 
@@ -100,6 +105,8 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
 - type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
 > les valeurs possibles pour les types de documents sont les suivantes :
 > B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, TS : Thèse de soutenance, TR : Thèse de reproduction, PC : Partie composante
+- type-these : ``optionnel`` : de type liste de valeur : indique si la règle doit être appliquée sur les thèses.
+> les valeurs possibles pour les types de thèse sont REPRO ou SOUTENANCE
 - type : ``obligatoire`` : de type chaine de caractère : indique le type de règle qui est décrite. Les valeurs possibles sont : 
   - ``presencezone`` : pour les règles permettant de tester la présence ou l'absence d'une zone dans la notice
   - ``presencesouszone`` : pour les règles permettant de tester la présence ou l'absence d'une sous zone dans la notice
@@ -110,6 +117,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
   - ``indicateur`` : pour les règles permettant de vérifier la valeur d'un indicateur
   - ``nombrecaractere`` : pour les règles permettant de vérifier le nombre de caractères dans une sous-zone
   - ``presencechainecaracteres`` : pour les règles permettant de vérifier la présence et la position d'une ou plusieurs chaines de caractères dans une sous-zone
+  - ``typecaractere`` : pour les règles permettant de vérifier le type de caractères dans une sous-zone
 
 ### Présence / absence de zone
 Liste des champs propres au type de règle presence de zone : 
@@ -354,6 +362,29 @@ rules:
         - operateur:            OU
           chaine-caracteres:    deuxième chaine de caractères à chercher
 ```
+
+### Type de caractères
+Liste des champs propres au type de règle type de caractères :
+- souszone : ``obligatoire`` / de type caractère la sous-zone à vérifier. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
+- type-caracteres : ``obligatoire`` / peut prendre les valeurs : ALPHABETIQUE, ALPHABETIQUE_MAJ, ALPHABETIQUE_MIN, NUMERIQUE, SPECIAL
+
+Exemple de fichier YAML :
+
+``` YAML
+ rules:
+    - id:              1
+      type:            typecaractere
+      message:         message test
+      zone:            603
+      priorite:        P1
+      souszone:        a
+      type-caracteres:
+      - "ALPHABETIQUE"
+      - "NUMERIQUE"
+      - "SPECIAL"
+```
+Si le type de caractères dans la 603$a est Alphabetique OU Numerique OU Special, alors le message "message test" sera envoyé à l'utilisateur.
+
 
 ## Syntaxe des règles complexes <a id="5"></a>
 Une règle complexe est un assemblage de plusieurs règles simples qui seront testées les unes après les autres avec un opérateur booléen. Par exemple, une règle complexe composée de 3 règles simples avec un opérateur ET entre les deux premières et un opérateur OU entre les deux suivantes donnera l'expression suivante : règle 1 ET règle 2 OU règle 3. 

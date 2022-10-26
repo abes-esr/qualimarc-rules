@@ -1,0 +1,13 @@
+---
+# ID règles de 900 à 999
+rules:
+  - id:         60
+    type:       typecaractere
+    message:    test typecaractere
+    zone:       603
+    priorite:   P1
+    souszone:   a
+    type-caracteres:
+      - "ALPHABETIQUE_MAJ"
+      - "NUMERIQUE"
+
