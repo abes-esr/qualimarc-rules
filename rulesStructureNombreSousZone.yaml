@@ -22,6 +22,6 @@ rules:
     zonecible:   300
     souszonecible: a
     priorite:    P2
-    type-doc:
-      -    TS
-      -    TR
+    type-these:
+      -    REPRO
+      -    SOUTENANCE
