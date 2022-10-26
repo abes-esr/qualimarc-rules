@@ -73,8 +73,8 @@ A l'heure actuelle il existe 9 types de règles dans Qualimarc :
 - ``structure`` : Position de sous-zones dans une zone 
 - ``structure`` : Présence de sous-zones dans une même occurrence d'une zone
 - ``contenu`` : Valeur d'un indicateur
-- ``contenu`` : nombre de caractères dans une sous-zone
-- ``contenu`` : présence d'une ou plusieurs chaine(s) de caractères dans une sous-zone
+- ``contenu`` : Nombre de caractères dans une sous-zone
+- ``contenu`` : Présence d'une ou plusieurs chaine(s) de caractères dans une sous-zone
 
 De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règles, chaque type de règle sera disposé dans un fichier différent :
 - présence / absence de zone : rulesStructurePresenceZone.yaml
@@ -108,6 +108,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
   - ``presencesouszonesmemezone`` : pour les règles permettant de vérifier la présence ou l'absence de n sous-zones dans la même occurrence d'une zone
   - ``indicateur`` : pour les règles permettant de vérifier la valeur d'un indicateur
   - ``nombrecaractere`` : pour les règles permettant de vérifier le nombre de caractères dans une sous-zone
+  - ``presencechainecaracteres`` : pour les règles permettant de vérifier la présence et la position d'une ou plusieurs chaines de caractères dans une sous-zone
 
 ### Présence / absence de zone
 Liste des champs propres au type de règle presence de zone : 
@@ -318,7 +319,6 @@ rules:
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    chaine de caractères à chercher
-
     - id:                       2
       id-excel:                 2
       type:                     presencechainecaracteres
@@ -331,7 +331,6 @@ rules:
         - chaine-caracteres:    texte à chercher
         - operateur:            OU
           chaine-caracteres:    deuxième chaine de caractères à chercher
-
     - id:                       3
       id-excel:                 3
       type:                     presencechainecaracteres
@@ -346,6 +345,7 @@ rules:
           chaine-caracteres:    deuxième chaine de caractères à chercher
         - operateur:            OU
           chaine-caracteres:    deuxième chaine de caractères à chercher
+```
 
 ## Syntaxe des règles complexes <a id="5"></a>
 Une règle complexe est un assemblage de plusieurs règles simples qui seront testées les unes après les autres avec un opérateur booléen. Par exemple, une règle complexe composée de 3 règles simples avec un opérateur ET entre les deux premières et un opérateur OU entre les deux suivantes donnera l'expression suivante : règle 1 ET règle 2 OU règle 3. 
