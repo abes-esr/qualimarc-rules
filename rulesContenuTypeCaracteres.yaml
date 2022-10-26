@@ -11,7 +11,7 @@ rules:
       - "ALPHABETIQUE_MAJ"
       - "NUMERIQUE"
 
-#règle test pour vérifier blocage de la complexe 5090 ( à supprimer)
+#règle test pour vérifier blocage de la complexe 5090 ( à supprimer) ppn 192909053
   - id:         900
     type:      typecaractere
     message:   "Test type caractères numériques en 330$a"
