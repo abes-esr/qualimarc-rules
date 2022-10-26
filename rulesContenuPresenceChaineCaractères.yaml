@@ -5,7 +5,7 @@ rules:
       id-excel:                 99
       type:                     presencechainecaracteres
       message:                  message de retour
-      zone:                     200
+      zone:                     603
       priorite:                 P1
       souszone:                 a
       type-de-verification:     CONTIENT
