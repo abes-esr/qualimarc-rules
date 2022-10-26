@@ -233,5 +233,5 @@ rules:
          zone: '345'
          souszone:   b
          type-caracteres:
-         - "NUMERIQUE"
+           - "NUMERIQUE"
          operateur-booleen: ET
