@@ -15,3 +15,19 @@ rules:
           chaine-caracteres:    deuxième chaine de caractères à chercher
         - operateur:            OU
           chaine-caracteres:    deuxième chaine de caractères à chercher
+
+
+    - id:                       1000
+      id-excel:                 443
+      type:                     presencechainecaracteres
+      message:                  "Zone 700 : la sous-zone $a contient le terme générique 'Nom' ou 'Nom Auteur' ou 'Nom Auteur relatif à l'oeuvre ou à l'expression' : modifier ou supprimer cette sous-zone."
+      zone:                     700
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Nom
+        - operateur:            OU
+          chaine-caracteres:    Nom Auteur
+        - operateur:            OU
+          chaine-caracteres:    "Nom Auteur relatif à l'oeuvre ou à l'expression"
