@@ -220,7 +220,7 @@ rules:
    - id: 5090
      id-excel: 268
      message: "Zone 345 : s'il s'agit bien d'un EAN enregistré en $b, ce numéro a maintenant sa place en zone 073"
-     priorite: P1
+     priorite: P2
      regles:
        - id: 5091
          type: nombrecaractere
