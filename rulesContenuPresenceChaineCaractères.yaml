@@ -24,10 +24,10 @@ rules:
       zone:                     700
       priorite:                 P1
       souszone:                 a
-      type-de-verification:     STRICTEMENT
+      type-de-verification:     CONTIENT
       chaines-caracteres:
-        - chaine-caracteres:    Nom
-        - operateur:            OU
+       # - chaine-caracteres:    Nom
+       # - operateur:            OU
           chaine-caracteres:    Nom Auteur
-        - operateur:            OU
-          chaine-caracteres:    "Nom Auteur relatif à l'oeuvre ou à l'expression"
+       # - operateur:            OU
+       #   chaine-caracteres:    "Nom Auteur relatif à l'oeuvre ou à l'expression"
