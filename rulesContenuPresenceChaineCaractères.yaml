@@ -22,7 +22,7 @@ rules:
       type:                     presencechainecaracteres
       message:                  "Zone 700 : la sous-zone $a contient le terme générique 'Nom' ou 'Nom Auteur' ou 'Nom Auteur relatif à l'oeuvre ou à l'expression' : modifier ou supprimer cette sous-zone."
       zone:                     700
-      priorite:                 P1
+      priorite:                 P2
       souszone:                 a
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
@@ -31,3 +31,16 @@ rules:
           chaine-caracteres:    Nom Auteur
         - operateur:            OU
           chaine-caracteres:    "Nom Auteur relatif à l'oeuvre ou à l'expression"
+          
+          
+          
+    - id:                       1001
+      id-excel:                 209
+      type:                     presencechainecaracteres
+      message:                  "Zone 225 : la sous-zone $a contient le terme générique 'Titre de la Collection' : compléter ou supprimer cette sous-zone"
+      zone:                     225
+      priorite:                 P2
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Titre de la Collection
