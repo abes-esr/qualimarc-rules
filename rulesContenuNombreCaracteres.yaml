@@ -16,9 +16,9 @@ rules:
   - id:         800
     id-excel:   445
     type:       nombrecaractere
-    message:    "Zone 700$f inférieure à 9 caractères (règle test à supprimer)"
+    message:    "Zone 700$f supérieur à 9 caractères (règle test à supprimer)"
     zone:       700
     priorite:   P1
     souszone:   f
-    operateur:  INFERIEUR
+    operateur:  SUPERIEUR
     occurrences: 9
