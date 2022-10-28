@@ -174,3 +174,25 @@ rules:
       zone:        182
       priorite:    P1
       presence:    false
+      
+  
+    - id:         514
+      id-excel:    329
+      type:        presencezone
+      message:     "Zone 530  : puisqu'il ne s'agit pas d'une ressource continue, la zone est à supprimer"
+      zone:        530
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    K
+      -    PC
