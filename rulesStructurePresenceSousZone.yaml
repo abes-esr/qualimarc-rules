@@ -15,7 +15,7 @@ rules:
   - id:          101
     id-excel:    245
     type-these:
-        - TS
+    -    TS
     type:        presencesouszone
     message:     "Zone 328 : si la ressource est bien une thèse (document originel) ou un autre travail universitaire, la sous-zone 328$z doit être supprimée"
     zone:        328
@@ -27,8 +27,8 @@ rules:
   - id:          102
     id-excel:    317
     type-doc:
-        - A
-        - O
+    -    A
+    -    O
     type:        presencesouszone
     message:     "Zone 464  : si la ressource décrite est bien une monographie contenant plusieurs oeuvres, le lien à une autre notice ($0) doit être remplacé par un accès titre ($t)"
     zone:        464
