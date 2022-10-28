@@ -58,3 +58,22 @@ rules:
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    000
+        
+        
+        
+        
+  #à vérifier si 008$a interrogeable dans basexml
+    - id:                       1003
+      id-excel:                 1
+      type:                     presencechainecaracteres
+      message:                  "Zone 008 : la valeur alphabétique attendue pour définir le statut d'une notice complète et visible dans le catalogue Sudoc est 'x'"
+      zone:                     008
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    r
+        - operateur:            OU
+          chaine-caracteres:    y
+        - operateur:            OU
+          chaine-caracteres:    c
