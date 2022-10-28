@@ -11,7 +11,7 @@ rules:
     priorite:    P1
     presence:    true
 
-
+#attentionne fonctionne pas correctement. attendre correctif Pierre
   - id:          101
     id-excel:    245
     type-these:
@@ -20,5 +20,18 @@ rules:
     message:     "Zone 328 : si la ressource est bien une thèse (document originel) ou un autre travail universitaire, la sous-zone 328$z doit être supprimée"
     zone:        328
     souszone:    z
+    priorite:    P1
+    presence:    true
+    
+    
+  - id:          102
+    id-excel:    317
+    type-doc:
+        - A
+        - O
+    type:        presencesouszone
+    message:     "Zone 464  : si la ressource décrite est bien une monographie contenant plusieurs oeuvres, le lien à une autre notice ($0) doit être remplacé par un accès titre ($t)"
+    zone:        464
+    souszone:    0
     priorite:    P1
     presence:    true
