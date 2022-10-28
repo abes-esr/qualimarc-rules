@@ -100,7 +100,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
 - id : ``obligatoire`` / de type entier : identifiant unique de la règle dans la base, ce numéro est arbritraire, mais ne doit pas être retrouvé plusieurs fois dans les fichiers décrivant les règles. Deux règles simples ne peuvent pas avoir le même identifiant (cela inclut les règles simples qui composent une règle complexe), et deux règles complexes ne peuvent pas avoir le même identifiant.
 - id-excel : ``optionnel`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
 - message : ``obligatoire`` / de type chaine de caractère : indique le message à envoyer à l'utilisateur si la condition décrite dans la règle est validée dans la notice
-- zone : ``obligatoire`` / de type chaine de caractère : indique la zone du format Unimarc d'export sur laquelle porte la règle
+- zone : ``obligatoire`` / de type chaine de caractère : indique la zone du format Unimarc d'export sur laquelle porte la règle. Pour les règles simples il est possible de mentionner une zone générique (4XX, 5XX, 6XX, 7XX). Si une telle zone est renseignée, la règle sera dupliquée n fois, n correspondant au nombre de zones de la zone générique correspondante (voir [ce fichier](https://docs.google.com/spreadsheets/d/1E98M405rEaCcAV4UDkwY_ld6_B2yIeE9XQjCQqfv0Qk/edit?usp=sharing "Fichier des correspondances de zones génériques") )
 - priorite: ``obligatoire`` / une des deux valeurs possible : P1 ou P2 : indique la priorité de la règle (P1 utilisé pour analyse Rapide, P2 pour analyse experte)
 - type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
 > les valeurs possibles pour les types de documents sont les suivantes :
@@ -393,7 +393,9 @@ Les conditions seront évaluées dans l'ordre d'apparition et ne prennent pas en
 
 Il est donc important de prendre en compte l'ordre de déclaration des différentes règles simples qui composent la règle composée pour que le résultat final soit conforme aux exigences.
 
-Par ailleurs, une règle complexe doit être composée d'au moins deux règles simple (s'il n'y a qu'une règle simple, c'est une règle simple, voir section ci-dessus). La première règle simple ne doit pas avoir d'opérateur, et les suivantes doivent absolument en avoir un (une erreur sera renvoyée si ces conditions ne sont pas respectées).
+Par ailleurs, une règle complexe doit être composée d'au moins deux règles simples (s'il n'y a qu'une règle simple, c'est une règle simple, voir section ci-dessus). La première règle simple ne doit pas avoir d'opérateur, et les suivantes doivent absolument en avoir un (une erreur sera renvoyée si ces conditions ne sont pas respectées).
+
+Les règles simples qui composent une règle complexe ne peuvent pas avoir de zone générique. Il est donc interdit de créer une règle simple dans une règle complexe avec comme valeur du champ zone 4XX, 5XX, 6XX ou 7XX. Un message d'erreur sera envoyé si c'est le cas.
 
 Les règles complexes seront toutes déclarées dans le fichier complexRules.yaml situé à la racine de la branche. 
 
