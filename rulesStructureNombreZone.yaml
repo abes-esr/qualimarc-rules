@@ -9,11 +9,3 @@ rules:
     priorite:    P1
     operateur:   SUPERIEUR
     occurrences: 3
-
-  - id:          10
-    type:        nombrezone
-    message:     nombre zone ansible SQN
-    zone:        603
-    priorite:    P1
-    operateur:   SUPERIEUR
-    occurrences: 3
