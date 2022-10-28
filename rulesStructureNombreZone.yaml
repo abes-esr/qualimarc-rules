@@ -1,7 +1,7 @@
 ---
 #ID de 300 à 399
 rules:
-  - id:          4
+  - id:          60
     id-excel:    10
     type:        nombrezone
     message:     nombre zone ansible SQN
