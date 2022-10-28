@@ -15,6 +15,7 @@ rules:
         presence:           false
         operateur-booleen:  ET
 
+#Régle à passer en zone générique 2XX quand ok
   - id:       601
     id-excel: 183
     type:     presencesouszonesmemezone
@@ -30,6 +31,7 @@ rules:
   
 #doublon de la 600 pour vérif  
 #modifiée le 24/10/22 pour la 200. La passer en zone générique 2XX quand ok
+#la $6 n'est pas exportée quand elle n'est pas appareillée à une $7 > à vérifier auprès de GLT. Règle à exclure si c'est bien le cas
   - id:       602
     id-excel: 119
     type:     presencesouszonesmemezone
@@ -56,5 +58,8 @@ rules:
       - souszone:           a
         presence:           true
       - souszone:           2
+        presence:           false
+        operateur-booleen:  ET
+      - souszone:           d
         presence:           false
         operateur-booleen:  ET
