@@ -35,3 +35,24 @@ rules:
     souszone:    0
     priorite:    P1
     presence:    true
+    
+    
+    
+  - id:          103
+    id-excel:    414
+    type:        presencesouszone
+    message:     "Zone 610 : aucun lien ($3) ne doit être fait dans cette zone"
+    zone:        610
+    souszone:    3
+    priorite:    P1
+    presence:    true
+    
+    
+  - id:          104
+    id-excel:    415
+    type:        presencesouszone
+    message:     "Zone 615 : aucun lien ($3) ne doit être fait dans cette zone"
+    zone:        615
+    souszone:    3
+    priorite:    P1
+    presence:    true
