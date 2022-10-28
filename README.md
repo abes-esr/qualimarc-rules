@@ -97,7 +97,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
 - message : ``obligatoire`` / de type chaine de caractère : indique le message à envoyer à l'utilisateur si la condition décrite dans la règle est validée dans la notice
 - zone : ``obligatoire`` / de type chaine de caractère : indique la zone du format Unimarc d'export sur laquelle porte la règle
 - priorite: ``obligatoire`` / une des deux valeurs possible : P1 ou P2 : indique la priorité de la règle (P1 utilisé pour analyse Rapide, P2 pour analyse experte)
-- rule-set-id : ``optionnel`` : de type liste d'entier : indique les identifiants des jeux de règle auquel la règle appartient.
+- jeux-de-regles : ``optionnel`` : de type liste d'entier : indique les identifiants des jeux de règles auquel la règle appartient.
 - type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
 > les valeurs possibles pour les types de documents sont les suivantes :
 > B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, TS : Thèse de soutenance, TR : Thèse de reproduction, PC : Partie composante
@@ -126,13 +126,17 @@ rules:
     zone:           330
     priorite:       P1
     presence:       false
+    jeux-de-regles:
+        - 1 # Données codées (1XX)
+        - 2 # Indexation-matière (6XX)
     type-doc:
         - A 
         - B
         - O
 ```
 
-Règle numéro 2 dans la base, sur la ligne 2 du fichier Excel, permettant de tester l'absence de la zone 330 dans la notice. Si la 330 est absente, le message ``message test`` est envoyé à l'utilisateur. La règle sera lancée si le traitement rapide ou expert est choisi, et s'appliquera uniquement sur les types de documents Monographie, Audiovisuel ou Doc Elec 
+Règle numéro 2 dans la base, sur la ligne 2 du fichier Excel, permettant de tester l'absence de la zone 330 dans la notice. Si la 330 est absente, le message ``message test`` est envoyé à l'utilisateur. La règle sera lancée si le traitement rapide ou expert est choisi ou si le jeu de règle "Données codées (1XX)" ou
+"Indexation-matière (6XX)" est choisi, et s'appliquera uniquement sur les types de documents Monographie, Audiovisuel ou Doc Elec 
 
 ### Présence / absence de sous-zone
 Liste des champs propres au type de règle presence de sous-zone : 
