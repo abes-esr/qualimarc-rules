@@ -60,6 +60,3 @@ rules:
       - souszone:           2
         presence:           false
         operateur-booleen:  ET
-      - souszone:           d
-        presence:           false
-        operateur-booleen:  ET
