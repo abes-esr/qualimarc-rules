@@ -10,3 +10,15 @@ rules:
     souszone:    b
     priorite:    P1
     presence:    true
+
+
+  - id:          101
+    id-excel:    245
+    type-these:
+        - TS
+    type:        presencesouszone
+    message:     "Zone 328 : si la ressource est bien une thèse (document originel) ou un autre travail universitaire, la sous-zone 328$z doit être supprimée"
+    zone:        328
+    souszone:    z
+    priorite:    P1
+    presence:    true
