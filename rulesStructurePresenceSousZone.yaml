@@ -15,7 +15,7 @@ rules:
   - id:          101
     id-excel:    245
     type-these:
-    -    TS
+    -    SOUTENANCE
     type:        presencesouszone
     message:     "Zone 328 : si la ressource est bien une thèse (document originel) ou un autre travail universitaire, la sous-zone 328$z doit être supprimée"
     zone:        328
