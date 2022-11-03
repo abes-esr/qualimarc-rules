@@ -37,7 +37,7 @@ rules:
     - id:          504
       id-excel:    88
       type:        presencezone
-      message:     "Zone 115 : si la ressource n'est pas un document audiovisuel, la zone 115 doit être supprimée"
+      message:     "Zone 115 : si la ressource n'est ni un document audiovisuel, ni un document multimédia, ni une ressource électronique, la zone 115 doit être supprimée"
       zone:        115
       priorite:    P1
       presence:    true
