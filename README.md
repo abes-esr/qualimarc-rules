@@ -493,4 +493,3 @@ La seconde règle a un id 3, le message renvoyé est **message test 2** si la r�
 
 La règle complexe est valide si la première règle simple est valide, OU la deuxième règle simple est valide, OU que la 3è règle simple est valide. (donc, si la règle 3 est valide, mais que les règles 1 et 2 ne sont pas valides, la règle complexe est valide)
 
-
