@@ -196,3 +196,15 @@ rules:
       -    M
       -    K
       -    PC
+
+
+    - id:         515
+      id-excel:    237
+      type:        presencezone
+      message:     "Zone 328 : une zone de note sur les thèses est obligatoire dans les notices décrivant tout travail universitaire, qu'il s'agisse du document originel ou d'une reproduction ou édition commerciale"
+      zone:        328
+      priorite:    P1
+      presence:    false
+      type-these:
+      -    SOUTENANCE
+      -    REPRO
