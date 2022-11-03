@@ -1,25 +1,5 @@
 ---
 rules:
-
-# #TEST
-#    - id: 55550
-#      id-excel: 158
-#      message: "Zone 210  obsolète :  à remplacer par une zone 214 (document en main, en sélectionnant les bons indicateurs)"
-#      priorite: P1
-#      regles:
-#        - id: 55551
-#          type: presencezone
-#          zone: '210'
-#          presence: true
-#        - id: 55552
-#          type: presencezone
-#          zone: '214'
-#          presence: false
-#          operateur-booleen: ET
-#      jeux-de-regles:
-#        - 1
-#        - 2
-
 #REGLES VALIDEES AURELIE
 # NOTA IMPORTANT : ID principal (règle complexe) à partir de 5000 puis décliné en dizaine (5010-5020-5030....)
 # ID secondaire (règles simples qui composent la règle complexe) : reprend l'ID principal, décliné par unité (exemple pour règle complexe 5000 : 5001-5002-5003...)
