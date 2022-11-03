@@ -52,7 +52,7 @@ rules:
       id-excel:                 500
       type:                     presencechainecaracteres
       message:                  "Zones 7XX : le code fontion '000' (Fonction à préciser) est à remplacer par un code fonction plus précis et adéquat"
-      zone:                     '7XX'
+      zone:                     701
       priorite:                 P1
       souszone:                 4
       type-de-verification:     STRICTEMENT
