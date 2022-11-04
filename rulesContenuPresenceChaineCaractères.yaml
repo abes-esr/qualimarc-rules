@@ -87,6 +87,6 @@ rules:
       zone:                     106
       priorite:                 P1
       souszone:                 a
-      type-de-verification:     NE CONTIENT PAS
+      type-de-verification:     CONTIENT
       chaines-caracteres:
         - chaine-caracteres:    h
