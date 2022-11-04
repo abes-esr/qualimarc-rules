@@ -11,6 +11,8 @@ rules:
       presence:    false
       type-doc:
       -    A
+      jeux-de-regles:
+      -  1  Données codées (1XX)
       
     - id:          501
       id-excel:    74
