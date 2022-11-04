@@ -47,7 +47,7 @@ rules:
     priorite:    P1
     presence:    true
     jeux-de-regles:
-    -  1  #  Indexation-matière (6XX)
+    -  1  # Indexation-matière (6XX)
     
   - id:          104
     id-excel:    415
@@ -58,4 +58,4 @@ rules:
     priorite:    P1
     presence:    true
     jeux-de-regles:
-    -  1  #  Indexation-matière (6XX)
+    -  1  # Indexation-matière (6XX)
