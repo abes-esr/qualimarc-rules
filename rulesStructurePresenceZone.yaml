@@ -23,6 +23,8 @@ rules:
       presence:    false
       type-doc:
       -    BD
+      jeux-de-regles:
+      -  1  # Données codées (1XX)
 
     - id:          503
       id-excel:    87
@@ -33,7 +35,8 @@ rules:
       presence:    false
       type-doc:
       -    B
-      
+      jeux-de-regles:
+      -  1  # Données codées (1XX)      
       
       
     - id:          504
@@ -54,7 +57,8 @@ rules:
       -    M
       -    BD
       -    PC
-
+      jeux-de-regles:
+      -  1  # Données codées (1XX)
       
     - id:         505
       id-excel:    89
@@ -74,7 +78,8 @@ rules:
       -    M
       -    BD
       -    PC
-      
+      jeux-de-regles:
+      -  1  # Données codées (1XX)      
       
     - id:         506
       id-excel:    90
@@ -96,7 +101,8 @@ rules:
       presence:    false
       type-doc:
       -    V      
-      
+      jeux-de-regles:
+      -  1  # Données codées (1XX)   
       
     - id:         508
       id-excel:    92
@@ -118,7 +124,8 @@ rules:
       -    M
       -    BD
       -    PC
-      
+      jeux-de-regles:
+      -  1  # Données codées (1XX)    
             
     - id:         509
       id-excel:    93
