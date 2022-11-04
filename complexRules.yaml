@@ -238,7 +238,7 @@ rules:
 
 
 
-    - id: 6000
+   - id: 6000
       id-excel: 70
       message: "Zone 106 : si la ressource est bien un manuscrit, la valeur attendue en sous-zone $a est 'h'"
       priorite: P1     
