@@ -15,6 +15,6 @@ rules:
     type:        positionsouszone
     message:     "Test zone générique : Faire le lien à l'autorité en sous-zone $3"
     zone:        "6XX"
-    souszone:    "a"
+    souszone:    3
     priorite:    P1
     position:    1
