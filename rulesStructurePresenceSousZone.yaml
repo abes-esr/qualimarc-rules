@@ -46,7 +46,8 @@ rules:
     souszone:    3
     priorite:    P1
     presence:    true
-    
+    jeux-de-regles:
+    -  1 #  Indexation-matière (6XX)
     
   - id:          104
     id-excel:    415
@@ -56,3 +57,5 @@ rules:
     souszone:    3
     priorite:    P1
     presence:    true
+    jeux-de-regles:
+    -  1 #  Indexation-matière (6XX)
