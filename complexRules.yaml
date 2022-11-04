@@ -256,5 +256,5 @@ rules:
          souszone:   a
          type-de-verification: NE CONTIENT PAS
          chaines-caracteres:
-           - chaine-caracteres:    "h"
+           - chaine-caracteres:    h
          operateur-booleen: ET
