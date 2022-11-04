@@ -235,3 +235,24 @@ rules:
          type-caracteres:
            - "NUMERIQUE"
          operateur-booleen: ET
+
+
+
+    - id: 6000
+      id-excel: 70
+      message: "Zone 106 : si la ressource est bien un manuscrit, la valeur attendue en sous-zone $a est 'h'"
+      priorite: P1     
+      regles:
+        - id: 6001
+          type: presencesouszone
+          zone: '106'
+          souszone:    a
+          presence: true
+        - id: 6002
+          type: presencechainecaracteres
+          zone: '106'
+          souszone:   a
+          type-de-verification: NE CONTIENT PAS
+          chaines-caracteres:
+           - chaine-caracteres:    "h"
+          operateur-booleen: ET
