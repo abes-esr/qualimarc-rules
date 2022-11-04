@@ -254,7 +254,7 @@ rules:
          type: presencechainecaracteres
          zone: '106'
          souszone:   a
-         type-de-verification:    NE CONTIENT PAS
+         type-de-verification:    NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    h
          operateur-booleen: ET
