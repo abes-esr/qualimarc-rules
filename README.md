@@ -308,6 +308,14 @@ Si le nombre de caractères dans la 200$a est inférieur ou égal à 20, alors l
 
 ### Présence d'une chaine de caractères
 
+Liste des champs propres au type de règle présence chaine caractères:
+* souszone : **obligatoire** - de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
+* type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS`
+* chaines-caracteres : **obligatoire** - de type liste d'objets. La liste des chaine-caracteres à vérifier. Les champs d'un objet de la liste sont les suivants : 
+    * operateur : de type opérateur logique. ne peut être que `ET` ou `OU`. 
+    * chaine-caracteres :  la chaine de caractères à vérifier
+
+Liste des valeurs possibles en fonction du type de vérification :
 * La vérification `STRICTEMENT` peut comporter :
     * soit une `chaine-caracteres` sans `operateur`,
     * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `operateur` `OU`.
@@ -318,6 +326,9 @@ Si le nombre de caractères dans la 200$a est inférieur ou égal à 20, alors l
     * soit une `chaine-caracteres` sans `operateur`,
     * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `OU`,
 * La vérification `CONTIENT` peut comporter :
+    * soit une `chaine-caracteres` sans `operateur`,
+    * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `ET` ou `OU`,
+* La vérification `NECONTIENTPAS` peut comporter :
     * soit une `chaine-caracteres` sans `operateur`,
     * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `ET` ou `OU`,
 
