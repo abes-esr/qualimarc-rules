@@ -57,7 +57,7 @@ rules:
       souszone:                 4
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
-        - chaine-caracteres:    340
+        - chaine-caracteres:    000
         
         
         
