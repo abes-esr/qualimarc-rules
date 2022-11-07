@@ -14,7 +14,10 @@ rules:
       - souszone:           7
         presence:           false
         operateur-booleen:  ET
-
+    jeux-de-regles:
+    -  5  # Tranlittération ($6/$7)
+    
+    
 #Régle à passer en zone générique 2XX quand ok
   - id:       601
     id-excel: 183
@@ -28,7 +31,10 @@ rules:
       - souszone:           6
         presence:           false
         operateur-booleen:  ET
-  
+    jeux-de-regles:
+    -  5  # Tranlittération ($6/$7)
+    
+    
 #doublon de la 600 pour vérif  
 #modifiée le 24/10/22 pour la 200. La passer en zone générique 2XX quand ok
 #la $6 n'est pas exportée quand elle n'est pas appareillée à une $7 > à vérifier auprès de GLT. Règle à exclure si c'est bien le cas
@@ -74,3 +80,5 @@ rules:
       - souszone:           6
         presence:           false
         operateur-booleen:  ET
+    jeux-de-regles:
+    -  5  # Tranlittération ($6/$7)
