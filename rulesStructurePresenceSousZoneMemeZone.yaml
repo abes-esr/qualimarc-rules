@@ -60,3 +60,17 @@ rules:
       - souszone:           2
         presence:           false
         operateur-booleen:  ET
+
+
+  - id:       604
+    id-excel: 337
+    type:     presencesouszonesmemezone
+    message:  "Zone 5XX : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
+    zone:     "5XX"
+    priorite: P1
+    souszones:
+      - souszone:           7
+        presence:           true
+      - souszone:           6
+        presence:           false
+        operateur-booleen:  ET
