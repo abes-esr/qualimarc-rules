@@ -79,14 +79,5 @@ rules:
           chaine-caracteres:    c
 
 
-#doublon règle complexe pour vérifier valeur NE CONTIENT PAS ; à supprimer quand complexe 6000 OK
-    - id:                       1004
-      id-excel:                 70
-      type:                     presencechainecaracteres
-      message:                  "TEST SIMPLE 1004. Zone 106 : si la ressource est bien un manuscrit, la valeur attendue en sous-zone $a est 'h'"
-      zone:                     106
-      priorite:                 P1
-      souszone:                 a
-      type-de-verification:     NECONTIENTPAS
-      chaines-caracteres:
-        - chaine-caracteres:    h
+#1004 : doublon règle complexe pour vérifier valeur NE CONTIENT PAS ; à supprimer quand complexe 6000 OK
+
