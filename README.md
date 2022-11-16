@@ -9,6 +9,7 @@ Ce document explique étape par étape comment ajouter ou modifier des règles d
 - [Langage YAML](#3)
 - [Syntaxe des règles simples](#4)
 - [Syntaxe des règles complexes](#5)
+- [Règles de dépendance](#6)
 
 ## Utilisation de GitHub-  <a id="1"></a>
 Github est un outil en ligne permettant de versionner des fichiers. Il dispose d'un éditeur en ligne permettant de modifier des fichiers puis de les sauvegarder tout en conservant un historique des modifications réalisées.
@@ -503,3 +504,59 @@ La seconde règle a un id 3, le message renvoyé est **message test 2** si la r�
 - La troisième règle simple a un id 32, et vérifie qu'il y a moins d'une zone 400 dans la notice.
 
 La règle complexe est valide si la première règle simple est valide, OU la deuxième règle simple est valide, OU que la 3è règle simple est valide. (donc, si la règle 3 est valide, mais que les règles 1 et 2 ne sont pas valides, la règle complexe est valide)
+
+## Règles de dépendance <a id=“6”></a>
+Il est possible de créer des règles complexes permettant d'effectuer des vérifications dans une notice liée de la notice. Pour cela, une règle simple particulière doit être créée dans la règle complexe. Cette règle aura la valeur dependance dans le champ type. Voici un exemple de règle simple de type dépendance en YAML : 
+``` YAML
+---
+rules:
+  - id:             2
+    type:           dependance
+    zone:           '606'
+    souszone:       '3'
+```
+
+Lorsque Qualimarc consultera la liste des règles simples d'une règle complexe, s'il rencontre une règle simple de type dependance dans la liste, il ira récupérer la ou les notices liées spécifiées dans une zone / sous zone (si plusieurs occurrences de la zone sont trouvées dans la notice, la vérification sera faite sur tous les PPN de la première occurrence de la sous zone de chaque zone), et effectuera toutes les vérifications des règles simples situées après la règle de dépendance dans la notice liée. Dans l'exemple ci-dessus, Qualimarc récupèrera la notice liée présente derrière le ppn contenu en 606$3 et vérifiera toutes les règles suivantes dans la notice liée.
+
+Ainsi, un certain nombre de règles de gestion doivent être respectées :
+- Une règle complexe ne peut pas commencer par une règle de dépendance. Il est nécessaire de toujours déclarer une règle simple d'abord qui effectuera une vérification dans la notice initiale.
+- Une règle de dépendance doit être obligatoire suivie d'une règle simple dans le code YAML
+- La première règle simple qui suit la règle de dépendance NE doit PAS avoir d'opérateur (elle sera la première règle qui passera sur la notice liée)
+- Une règle de dépendance ne peut avoir que les attributs id, type, zone et souszone, aucun autre attribut d'une règle simple n'est possible et ces 4 attributs sont obligatoires
+
+Exemple de fichier YAML d'une règle complexe avec une règle de dépendance : 
+``` YAML
+---
+rules:
+  - id:             1
+    id-excel:       1
+    message:        "message test"
+    priorite:       P1
+    type-doc:
+        - A 
+        - O
+    regles:
+        - id:                20
+          type:              presencesouszone
+          zone:              660
+          souszone:          3
+          presence:          true
+        - id:                21
+          type:              dependance
+          zone:              606
+          souszone:          3
+        - id:                22
+          type:              presencesouszone
+          zone:              250
+          souszone:          a
+          presence:          true
+        - id:                23
+          type:              presencezone
+          zone:              200
+          presence:          true
+          operateur-booleen: ET
+```
+
+Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec. 
+Elle est composée de 4 règles simples qui seront validées dans l'ordre. La première règle vérifie la présence d'une 660$3. La seconde informe le programme que les règles suivantes seront appliquées sur la ou les notices liées dont le ppn est situé dans la première occurrence de la $3 de chaque 606 présente dans la notice. Si au moins une des notice liée contient une 250$a ET une 200, le message est envoyé à l'utilisateur.
+
