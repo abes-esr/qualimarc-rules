@@ -505,7 +505,7 @@ La seconde règle a un id 3, le message renvoyé est **message test 2** si la r�
 
 La règle complexe est valide si la première règle simple est valide, OU la deuxième règle simple est valide, OU que la 3è règle simple est valide. (donc, si la règle 3 est valide, mais que les règles 1 et 2 ne sont pas valides, la règle complexe est valide)
 
-## Règles de dépendance <a id=“6”></a>
+## Règles de dépendance <a id="6"></a>
 Il est possible de créer des règles complexes permettant d'effectuer des vérifications dans une notice liée de la notice. Pour cela, une règle simple particulière doit être créée dans la règle complexe. Cette règle aura la valeur dependance dans le champ type. Voici un exemple de règle simple de type dépendance en YAML : 
 ``` YAML
 ---
@@ -560,4 +560,3 @@ rules:
 Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec.  
 
 Elle est composée de 4 règles simples qui seront validées dans l'ordre. La première règle vérifie la présence d'une 660$3. La seconde informe le programme que les règles suivantes seront appliquées sur la ou les notices liées dont le ppn est situé dans la première occurrence de la $3 de chaque 606 présente dans la notice. Si au moins une des notice liée contient une 250$a ET une 200, le message est envoyé à l'utilisateur.
-
