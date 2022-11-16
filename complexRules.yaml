@@ -261,13 +261,13 @@ rules:
          
 #règle test création règle dépendance         
    - id: 6010            
-    id-excel: 6010
-    message:  "message test"
-    priorite: P1
-    type-doc:
+     id-excel: 6010
+     message:  "message test"
+     priorite: P1
+     type-doc:
         - A 
         - O
-    regles:
+     regles:
         - id:                6011
           type:              presencesouszone
           zone:              660
