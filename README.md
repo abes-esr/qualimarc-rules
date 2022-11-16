@@ -557,6 +557,7 @@ rules:
           operateur-booleen: ET
 ```
 
-Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec. 
+Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec.  
+
 Elle est composée de 4 règles simples qui seront validées dans l'ordre. La première règle vérifie la présence d'une 660$3. La seconde informe le programme que les règles suivantes seront appliquées sur la ou les notices liées dont le ppn est situé dans la première occurrence de la $3 de chaque 606 présente dans la notice. Si au moins une des notice liée contient une 250$a ET une 200, le message est envoyé à l'utilisateur.
 
