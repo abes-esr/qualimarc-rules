@@ -526,7 +526,7 @@ Ainsi, un certain nombre de règles de gestion doivent être respectées :
 - Une règle de dépendance ne peut avoir que les attributs id, type, zone et souszone, aucun autre attribut d'une règle simple n'est possible et ces 4 attributs sont obligatoires
 - Une règle complexe ne peut avoir qu'une seule règle de dépendance.
 
-le champ ``type-notice-liee`` ne peut etre uniquement : ``AUTORITE | BIBLIO``
+le champ ``type-notice-liee`` correspond au type de notice lié contenu dans la zone spécifié, à savoir notice bibliographique ou notice d'autorité. Ce champ ne peut prendre que les valeurs : ``AUTORITE | BIBLIO``
 
 Exemple de fichier YAML d'une règle complexe avec une règle de dépendance : 
 ``` YAML
@@ -564,7 +564,6 @@ rules:
 
 Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec.  
 
-Elle est composée de 4 règles simples qui seront validées dans l'ordre. La première règle vérifie la présence d'une 660$3. La seconde informe le programme que les règles suivantes seront appliquées sur la ou les notices liées dont le ppn est situé dans la première occurrence de la $3 de chaque 606 présente dans la notice. Si au moins une des notice liée contient une 250$a ET une 200, le message est envoyé à l'utilisateur.
-
+Elle est composée de 4 règles simples qui seront validées dans l'ordre. La première règle vérifie la présence d'une 660$3. La seconde informe le programme que les règles suivantes seront appliquées sur la ou les notices bibliographiques liées dont le ppn est situé dans la première occurrence de la $3 de chaque 606 présente dans la notice. Si au moins une des notice liée contient une 250$a ET une 200, le message est envoyé à l'utilisateur.
 
 
