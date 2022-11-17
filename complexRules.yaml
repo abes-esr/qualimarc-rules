@@ -258,4 +258,33 @@ rules:
          chaines-caracteres:
            - chaine-caracteres:    h
          operateur-booleen: ET
-         
+
+
+   - id: 6010
+     id-excel: 408
+     message: "Zone 106 : puisque la mention 'braille' est déclarée en zone d'indexation 608, la sous-zone 106$a peut être précisée (valeur 'f')"
+     priorite: P2
+     regles:
+       - id: 6011
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: false
+       - id: 6012
+         type: presencesouszone
+         zone: '608'
+         souszone:    3
+         presence: true
+         operateur-booleen: ET
+       - id: 6013
+         type: dependance
+         zone: '608'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 6014
+         type: presencechainecaracteres
+         zone: '280'
+         souszone:   a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    braille
