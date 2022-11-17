@@ -566,3 +566,4 @@ Le YAML précédent permet de créer une règle complexe qui renvoie le message 
 
 Elle est composée de 4 règles simples qui seront validées dans l'ordre. La première règle vérifie la présence d'une 660$3. La seconde informe le programme que les règles suivantes seront appliquées sur la ou les notices bibliographiques liées dont le ppn est situé dans la première occurrence de la $3 de chaque 606 présente dans la notice. Si au moins une des notice liée contient une 250$a ET une 200, le message est envoyé à l'utilisateur.
 
+
