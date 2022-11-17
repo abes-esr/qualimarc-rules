@@ -262,7 +262,7 @@ rules:
 
    - id: 6010
      id-excel: 408
-     message: "Zone 106 : puisque la mention 'braille' est déclarée en zone d'indexation 608, la sous-zone 106$a peut être précisée (valeur 'f')"
+     message: "Zone 106 : puisque la mention 'braille' est déclarée en zone d'indexation 608, la sous-zone 106$a peut être précisée (valeur 'f'). Voir autorité en zone 608"
      priorite: P2
      regles:
        - id: 6011
