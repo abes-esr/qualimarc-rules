@@ -288,3 +288,28 @@ rules:
          type-de-verification:    CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    braille
+           
+           
+
+   - id: 6020
+     id-excel: 306
+     message: "Zone 456 : puique la ressource est une thèse originelle, la notice liée doit être celle décrivant la reproduction et doit donc contenir une sous-zone 328$z. Corriger la notice liée ou utiliser une autre zone que la zone 456."
+     priorite: P2
+     type-these:
+       - SOUTENANCE
+     regles:
+       - id: 6021
+         type: presencesouszone
+         zone: '456'
+         souszone:    0
+         presence: true
+       - id: 6022
+         type: dependance
+         zone: '456'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 6023
+         type: presencesouszone
+         zone: '328'
+         souszone:   z
+         presence: false
