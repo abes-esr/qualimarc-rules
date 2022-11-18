@@ -315,10 +315,9 @@ rules:
          presence: false
 
 
-#attention : revoir le message d'erreur règle 6030 car il ne s'agit pas d'un manque mais d'une erreur de ppn !!!!
    - id: 6030
      id-excel: 278
-     message: "Zone 412 : dans la notice du document source, il manque le lien réciproque en 413 vers cet extrait ou tiré-à-part. Document source à corriger :"
+     message: "Zone 412 : dans la notice du document source indiqué en $0, le lien réciproque en 413 est absent ou erroné. Ajouter ou corriger le lien vers cet extrait ou tiré-à-part."
      priorite: P1
      type-doc:
        -    A
