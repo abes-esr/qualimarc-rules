@@ -347,3 +347,37 @@ rules:
          type: reciprocite
          zone: '413'
          souszone:   0
+         
+         
+   - id: 6040
+     id-excel: 280
+     message: "Zone 413 : dans la notice de l'extrait ou du tiré-à-part indiqué en $0, le lien réciproque en 412 est absent ou erroné. Ajouter ou corriger vers ce document source."
+     priorite: P1
+     type-doc:
+       -    A
+       -    B
+       -    K
+       -    O
+       -    N
+       -    I
+       -    F
+       -    Z
+       -    V
+       -    G
+       -    M
+       -    PC
+     regles:
+       - id: 6041
+         type: presencesouszone
+         zone: '413'
+         souszone:    0
+         presence: true
+       - id: 6042
+         type: dependance
+         zone: '413'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 6043
+         type: reciprocite
+         zone: '412'
+         souszone:   0
