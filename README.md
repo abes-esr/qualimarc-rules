@@ -121,6 +121,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
   - ``presencechainecaracteres`` : pour les règles permettant de vérifier la présence et la position d'une ou plusieurs chaines de caractères dans une sous-zone
   - ``typecaractere`` : pour les règles permettant de vérifier le type de caractères dans une sous-zone
 
+
 ### Présence / absence de zone
 Liste des champs propres au type de règle presence de zone : 
 - presence : ``obligatoire`` / de type booléen. Si la valeur est true et que la zone est présente dans la notice, le message est envoyé à l'utilisateur. Si la valeur est false et que la zone est absente de la notice, le message est envoyé à l'utilisateur
@@ -506,6 +507,8 @@ La seconde règle a un id 3, le message renvoyé est **message test 2** si la r�
 La règle complexe est valide si la première règle simple est valide, OU la deuxième règle simple est valide, OU que la 3è règle simple est valide. (donc, si la règle 3 est valide, mais que les règles 1 et 2 ne sont pas valides, la règle complexe est valide)
 
 ## Règles de dépendance <a id="6"></a>
+
+### Articulation entre deux notices
 Il est possible de créer des règles complexes permettant d'effectuer des vérifications dans une notice liée de la notice. Pour cela, une règle simple particulière doit être créée dans la règle complexe. Cette règle aura la valeur dependance dans le champ type. Voici un exemple de règle simple de type dépendance en YAML : 
 ``` YAML
 ---
@@ -565,4 +568,46 @@ rules:
 Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec.  
 
 Elle est composée de 4 règles simples qui seront validées dans l'ordre. La première règle vérifie la présence d'une 660$3. La seconde informe le programme que les règles suivantes seront appliquées sur la ou les notices bibliographiques liées dont le ppn est situé dans la première occurrence de la $3 de chaque 606 présente dans la notice. Si au moins une des notice liée contient une 250$a ET une 200, le message est envoyé à l'utilisateur.
+
+### Règle de réciprocité
+Ce type de règle ne peut être créé que dans une règle complexe, et doit être placée après une règle de dépendance. En effet, elle permet d'aller vérifier que la valeur contenu dans une zone / sous zone spécifique d'une notice liée correspond au PPN de la notice en cours d'analyse.
+
+Liste des champs propres au type de règle reciprocite : 
+- id : ``obligatoire`` / de type entier : identifiant de la règle dans la base de données
+- type : ``obligatoire`` : doit avoir la valeur **reciprocite**
+- zone : ``obligatoire`` / de type chaîne de caractères. La zone à vérifier dans la notice liée
+- souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier dans la notice liée. ATTENTION : le $ du format unimarc NE doit PAS être renseigné. 
+
+Exemple de fichier YAML :  
+``` YAML
+rules:
+  - id:             1
+    id-excel:       1
+    message:        "message test"
+    priorite:       P1
+    type-doc:
+        - A 
+        - O
+    regles:
+        - id:                20
+          type:              presencesouszone
+          zone:              660
+          souszone:          3
+          presence:          true
+        - id:                21
+          type:              dependance
+          zone:              606
+          souszone:          3
+          type-notice-liee:  BIBLIO
+        - id:                22
+          type:              reciprocite
+          zone:              250
+          souszone:          a
+```
+
+Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec.  
+
+Elle vérifie d'abord la présence de la zone 660$3, puis récupère le PPN en 606$3, analyse la notice bibliographique liée et si la valeur contenue dans la zone 250$a **ne** contient **pas** le PPN de la notice en cours d'analyse, elle envoie le message à l'utilisateur.
+
+
 
