@@ -387,10 +387,11 @@ rules:
 ### Comparaison contenu sous-zone
 
 Liste des champs propres au type de règle comparaison contenu sous-zone:
-* souszone : **obligatoire** - de type caractère. La sous-zone sur laquelle va porter la vérification. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
+* souszone : **obligatoire** - de type caractère. La sous-zone sur laquelle va porter la comparaison. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
 * type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS` ou `STRICTEMENTDIFFERENT`
-* zonecible : **obligatoire** - de type caractère. La zone dans laquelle aller chercher la sous-zone qui permettra d'effectuer la comparaison.
-* souszonecible : **obligatoire** - de type caractère. La sous-zone qui va permettre d'effectuer la comparaison. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
+* nombreCaracteres : *optionnel* - de type chiffre. Le nombre de caractères de la souszonecible à comparer à la souszone. Ne peux contenir que deux chiffres maximum. Ce paramètre est pris en compte uniquement pour les type-de-verification COMMENCE et TERMINE.
+* zonecible : **obligatoire** - de type caractère. La zone dans laquelle aller chercher la souszonecible qui permettra d'effectuer la comparaison.
+* souszonecible : **obligatoire** - de type caractère. La souszonecible qui sera comparée à la souszone. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
 
 ``` YAML
 ---
@@ -399,13 +400,14 @@ rules:
       id-excel:                 1
       type:                     comparaisoncontenusouszone
       message:                  message de retour
-      zone:                     338
+      zone:                     307
       priorite:                 P1
       type-these:
           - REPRO
-      souszone:                 b
-      type-de-verification:     CONTIENT
-      zonecible:                600
+      souszone:                 a
+      type-de-verification:     COMMENCE
+      nombreCaracteres:         6
+      zonecible:                215
       souszonecible:            a
 ```
 
