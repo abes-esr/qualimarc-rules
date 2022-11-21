@@ -79,6 +79,7 @@ A l'heure actuelle il existe 10 types de règles dans Qualimarc :
 - ``contenu`` : Valeur d'un indicateur
 - ``contenu`` : Nombre de caractères dans une sous-zone
 - ``contenu`` : Présence d'une ou plusieurs chaine(s) de caractères dans une sous-zone
+- ``contenu`` : Comparaison des contenus de deux sous-zone
 - ``contenu`` : Type de caractères dans une sous-zone
 
 De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règles, chaque type de règle sera disposé dans un fichier différent :
@@ -91,6 +92,7 @@ De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règ
 - valeur d'un indicateur : rulesContenuIndicateur.yaml
 - nombre de caractères dans une sous-zone : rulesContenuNombreCaracteres.yaml
 - présence de chaine(s) de caractères dans une sous-zone : presenceChaineCaractères.yaml
+- comparaison contenu sous-zone : comparaisoncontenusouszone.yaml
 - type de caractères dans une sous-zone : rulesContenuTypeCaracteres.yaml
 
 NB : Toutes les règles complexes seront stockées dans le même fichier.
@@ -119,6 +121,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
   - ``indicateur`` : pour les règles permettant de vérifier la valeur d'un indicateur
   - ``nombrecaractere`` : pour les règles permettant de vérifier le nombre de caractères dans une sous-zone
   - ``presencechainecaracteres`` : pour les règles permettant de vérifier la présence et la position d'une ou plusieurs chaines de caractères dans une sous-zone
+  - ``comparaisoncontenusouszone`` : pour les règles permettant de comparer le contenu d'une sous-zone avec le contenu d'une autre sous-zone 
   - ``typecaractere`` : pour les règles permettant de vérifier le type de caractères dans une sous-zone
 
 
@@ -379,6 +382,33 @@ rules:
           chaine-caracteres:    deuxième chaine de caractères à chercher
         - operateur:            OU
           chaine-caracteres:    deuxième chaine de caractères à chercher
+```
+
+### Comparaison contenu sous-zone
+
+Liste des champs propres au type de règle comparaison contenu sous-zone:
+* souszone : **obligatoire** - de type caractère. La sous-zone sur laquelle va porter la comparaison. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
+* type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS` ou `STRICTEMENTDIFFERENT`
+* nombreCaracteres : *optionnel* - de type chiffre. Le nombre de caractères de la souszonecible à comparer à la souszone. Ne peux contenir que deux chiffres maximum. Ce paramètre est pris en compte uniquement pour les type-de-verification COMMENCE et TERMINE.
+* zonecible : **obligatoire** - de type caractère. La zone dans laquelle aller chercher la souszonecible qui permettra d'effectuer la comparaison.
+* souszonecible : **obligatoire** - de type caractère. La souszonecible qui sera comparée à la souszone. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
+
+``` YAML
+---
+rules:
+    - id:                       1
+      id-excel:                 1
+      type:                     comparaisoncontenusouszone
+      message:                  message de retour
+      zone:                     307
+      priorite:                 P1
+      type-these:
+          - REPRO
+      souszone:                 a
+      type-de-verification:     COMMENCE
+      nombreCaracteres:         6
+      zonecible:                215
+      souszonecible:            a
 ```
 
 ### Type de caractères
