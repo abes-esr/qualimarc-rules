@@ -79,7 +79,7 @@ A l'heure actuelle il existe 10 types de règles dans Qualimarc :
 - ``contenu`` : Valeur d'un indicateur
 - ``contenu`` : Nombre de caractères dans une sous-zone
 - ``contenu`` : Présence d'une ou plusieurs chaine(s) de caractères dans une sous-zone
-- ``contenu`` : Coparaison des contenus de deux sous-zone
+- ``contenu`` : Comparaison des contenus de deux sous-zone
 - ``contenu`` : Type de caractères dans une sous-zone
 
 De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règles, chaque type de règle sera disposé dans un fichier différent :
