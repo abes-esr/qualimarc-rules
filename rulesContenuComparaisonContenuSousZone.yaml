@@ -7,14 +7,14 @@ rules:
       id-excel:                 97
       type:                     comparaisoncontenusouszone
       message:                  message de retour
-      zone:                     307
+      zone:                     215
       priorite:                 P1
       type-these:
           - REPRO
       souszone:                 a
       type-de-verification:     COMMENCE
       nombreCaracteres:         6
-      zonecible:                215
+      zonecible:                307
       souszonecible:            a
       
 # Exemple avec un nombre de caractères définis :
@@ -24,11 +24,11 @@ rules:
       id-excel:                 98
       type:                     comparaisoncontenusouszone
       message:                  message de retour
-      zone:                     600
+      zone:                     338
       priorite:                 P1
       type-these:
           - REPRO
-      souszone:                 a
+      souszone:                 b
       type-de-verification:     STRICTEMENTDIFFERENT
-      zonecible:                338
-      souszonecible:            b
+      zonecible:                600
+      souszonecible:            a
