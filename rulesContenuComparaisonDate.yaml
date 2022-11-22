@@ -3,7 +3,7 @@ rules:
   - id: 70
     id-excel: test
     type: comparaisondate
-    message: "La date 100$a doit etre egale a la date 214$d"
+    message: "La date 100$a doit etre egale a la date 214$d "
     zone: "100"
     souszone: "a"
     positionstart: 9
