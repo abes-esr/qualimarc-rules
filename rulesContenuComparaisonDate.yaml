@@ -1,7 +1,7 @@
 ---
 rules:
   - id: 70
-    id-excel: test
+    id-excel: 45
     type: comparaisondate
     message: "La date 100$a doit etre egale a la date 214$d "
     zone: "100"
