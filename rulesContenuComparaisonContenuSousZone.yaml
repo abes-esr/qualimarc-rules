@@ -24,11 +24,11 @@ rules:
       id-excel:                 98
       type:                     comparaisoncontenusouszone
       message:                  message de retour
-      zone:                     307
+      zone:                     600
       priorite:                 P1
       type-these:
           - REPRO
       souszone:                 a
       type-de-verification:     STRICTEMENTDIFFERENT
-      zonecible:                215
-      souszonecible:            a
+      zonecible:                338
+      souszonecible:            b
