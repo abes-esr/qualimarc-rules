@@ -19,7 +19,6 @@ rules:
       
 # Exemple avec un nombre de caractères définis :
 # la 215$a est STRICTEMENTDIFFERENT de la 307$a => si cette comparaison est vérifiée alors un message est retourné.
-rules:
     - id:                       98
       id-excel:                 98
       type:                     comparaisoncontenusouszone
