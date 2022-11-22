@@ -1,0 +1,33 @@
+---
+
+# Exemple avec un nombre de caractères définis :
+# la 307$a COMMENCE avec les 6 premiers caractères de la 215$a => si cette comparaison est vérifiée alors un message est retourné.
+rules:
+    - id:                       97
+      id-excel:                 97
+      type:                     comparaisoncontenusouszone
+      message:                  message de retour
+      zone:                     215
+      priorite:                 P1
+      type-these:
+          - REPRO
+      souszone:                 a
+      type-de-verification:     COMMENCE
+      nombreCaracteres:         6
+      zonecible:                307
+      souszonecible:            a
+      
+# Exemple avec un nombre de caractères définis :
+# la 215$a est STRICTEMENTDIFFERENT de la 307$a => si cette comparaison est vérifiée alors un message est retourné.
+    - id:                       98
+      id-excel:                 98
+      type:                     comparaisoncontenusouszone
+      message:                  message de retour
+      zone:                     338
+      priorite:                 P1
+      type-these:
+          - REPRO
+      souszone:                 b
+      type-de-verification:     STRICTEMENTDIFFERENT
+      zonecible:                600
+      souszonecible:            a
