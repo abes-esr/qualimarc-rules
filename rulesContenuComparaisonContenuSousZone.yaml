@@ -13,7 +13,7 @@ rules:
           - REPRO
           - SOUTENANCE
       souszone:                 b
-      type-de-verification:     STRICTEMENT
+      type-de-verification:     STRICTEMENTDIFFERENT
       zonecible:                328
       souszonecible:            d
       
