@@ -3,6 +3,7 @@
 #ID de 1200 à 1299
 
 rules:
+#AFE : après tests sur TERMINE, remettre le type de verif adéquat NECONTIENTPAS
     - id:                       1200
       id-excel:                 20
       type:                     comparaisoncontenusouszone
