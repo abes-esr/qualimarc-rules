@@ -13,7 +13,7 @@ rules:
           - REPRO
           - SOUTENANCE
       souszone:                 b
-      type-de-verification:     COMMENCE
+      type-de-verification:     TERMINE
       nombreCaracteres:         4
       zonecible:                328
       souszonecible:            d
