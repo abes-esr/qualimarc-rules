@@ -673,5 +673,3 @@ Le YAML précédent permet de créer une règle complexe qui renvoie le message 
 
 Elle vérifie d'abord la présence de la zone 660$3, puis récupère le PPN en 606$3, analyse la notice bibliographique liée et si la valeur contenue dans la zone 250$a **ne** contient **pas** le PPN de la notice en cours d'analyse, elle envoie le message à l'utilisateur.
 
-
-
