@@ -23,7 +23,7 @@ rules:
     souszone: "a"
     positionstart: 10
     positionend: 13
-    comparateur: "INFERIEUR"
+    comparateur: "SUPERIEUR"
     zonecible: "100"
     souszonecible: "a"
     positionstartcible: 14
