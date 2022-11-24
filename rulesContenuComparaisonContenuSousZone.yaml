@@ -3,19 +3,18 @@
 #ID de 1200 à 1299
 
 rules:
-#AFE : après tests sur TERMINE, remettre le type de verif adéquat NECONTIENTPAS
+
     - id:                       1200
       id-excel:                 20
       type:                     comparaisoncontenusouszone
-      message:                  "Année de soutenance : enregistrer la même année en zone 029 et en zone 328"
+      message:                  "Année de soutenance : enregistrer la même année en zone 029$b et en zone 328$d"
       zone:                     029
       priorite:                 P1
       type-these:
           - REPRO
           - SOUTENANCE
       souszone:                 b
-      type-de-verification:     COMMENCE
-      nombreCaracteres:         4
+      type-de-verification:     NECONTIENTPAS
       zonecible:                328
       souszonecible:            d
       
