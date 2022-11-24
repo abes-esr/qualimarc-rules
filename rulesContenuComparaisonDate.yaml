@@ -21,11 +21,11 @@ rules:
     message: "Zone 100 : corriger les dates, car l'année de parution ou de production (enregistrée en $a) doit être supérieure ou égale à l'année de l'original (fac-similés), de protection ou de production (enregistrée en $e)"
     zone: "100"
     souszone: "a"
-    positionstart: 10
-    positionend: 13
+    positionstart: 9
+    positionend: 12
     comparateur: "SUPERIEUR"
     zonecible: "100"
     souszonecible: "a"
-    positionstartcible: 14
-    positionendcible: 17
+    positionstartcible: 13
+    positionendcible: 16
     priorite: "P1"
