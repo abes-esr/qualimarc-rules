@@ -1,4 +1,5 @@
 ---
+#ID de 1100 à 1199
 rules:
   - id: 70
     id-excel: 45
@@ -11,4 +12,20 @@ rules:
     comparateur: "DIFFERENT"
     zonecible: "214"
     souszonecible: "d"
+    priorite: "P1"
+
+#règle 1100 : quand mise en prod QualiMarc effectuée, taper plutôt sur les 100$A et 100$E pour éviter les sources d'erreur liées à des potentiels manques dans la sous-zone 100$a
+  - id: 1100
+    id-excel: 28
+    type: comparaisondate
+    message: "Zone 100 : corriger les dates, car l'année de parution ou de production (enregistrée en $a) doit être supérieure ou égale à l'année de l'original (fac-similés), de protection ou de production (enregistrée en $e)"
+    zone: "100"
+    souszone: "a"
+    positionstart: 10
+    positionend: 13
+    comparateur: "INFERIEUR"
+    zonecible: "100"
+    souszonecible: "a"
+    positionstartcible: 14
+    positionendcible: 17
     priorite: "P1"
