@@ -91,8 +91,10 @@ rules:
       type-doc:
       -    I
      jeux-de-regles:
-       - 1  #données codées
-      
+      - 1  #données codées
+    
+    
+    
     - id:         507
       id-excel:    91
       type:        presencezone
