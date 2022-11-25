@@ -79,6 +79,8 @@ rules:
      id-excel: 269
      message: "Enregistrement sonore : puisqu'une note de contenu a été enregistrée en 359$b, des liens doivent être faits en 464$t ou en 500$3 (au moins pour 3 contenus, au-delà c'est facultatif)"
      priorite: P2
+     jeux-de-regles:
+       - 3  #liens
      type-doc:
        - N
      regles:
@@ -200,6 +202,8 @@ rules:
      id-excel: 445
      message: "Zone 700 : les dates en sous-zone $f doivent être sous la forme AAAA-AAAA avec '.' à la place de l'année inconnue et '?' à la suite des années incertaines"
      priorite: P1
+     jeux-de-regles:
+       - 7  #responsabilités
      regles:
        - id: 5081
          type: nombrecaractere
@@ -242,6 +246,8 @@ rules:
      id-excel: 70
      message: "Zone 106 : si la ressource est bien un manuscrit, la valeur attendue en sous-zone $a est 'h'"
      priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
      type-doc:
        - F
      regles:
@@ -319,6 +325,8 @@ rules:
      id-excel: 278
      message: "Zone 412 : dans la notice du document source indiqué en $0, le lien réciproque en 413 est absent ou erroné. Ajouter ou corriger le lien vers cet extrait ou tiré-à-part."
      priorite: P1
+     jeux-de-regles:
+       - 3  #liens
      type-doc:
        -    A
        -    B
@@ -353,6 +361,8 @@ rules:
      id-excel: 280
      message: "Zone 413 : dans la notice de l'extrait ou du tiré-à-part indiqué en $0, le lien réciproque en 412 est absent ou erroné. Ajouter ou corriger vers ce document source."
      priorite: P1
+     jeux-de-regles:
+       - 3  #liens
      type-doc:
        -    A
        -    B
