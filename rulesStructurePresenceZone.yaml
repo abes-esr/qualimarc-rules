@@ -140,7 +140,7 @@ rules:
       presence:    false
       type-doc:
       -    K
-     jeux-de-regles:
+      jeux-de-regles:
        - 1  #données codées
        
        
@@ -164,7 +164,7 @@ rules:
       -    M
       -    BD
       -    PC
-     jeux-de-regles:
+      jeux-de-regles:
        - 1  #données codées
        
        
