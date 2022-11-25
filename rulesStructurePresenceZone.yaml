@@ -90,7 +90,7 @@ rules:
       presence:    false
       type-doc:
       -    I
-     jeux-de-regles:
+      jeux-de-regles:
       - 1  #données codées
     
     
