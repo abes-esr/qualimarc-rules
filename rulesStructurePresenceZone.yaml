@@ -90,7 +90,8 @@ rules:
       presence:    false
       type-doc:
       -    I
-
+     jeux-de-regles:
+       - 1  #données codées
       
     - id:         507
       id-excel:    91
@@ -127,6 +128,7 @@ rules:
       jeux-de-regles:
       -  1  # Données codées (1XX)    
             
+            
     - id:         509
       id-excel:    93
       type:        presencezone
@@ -136,7 +138,10 @@ rules:
       presence:    false
       type-doc:
       -    K
-
+     jeux-de-regles:
+       - 1  #données codées
+       
+       
     - id:         510
       id-excel:    94
       type:        presencezone
@@ -157,7 +162,11 @@ rules:
       -    M
       -    BD
       -    PC
-
+     jeux-de-regles:
+       - 1  #données codées
+       
+       
+       
     - id:         511
       id-excel:    117
       type:        presencezone
@@ -165,7 +174,10 @@ rules:
       zone:        183
       priorite:    P1
       presence:    false
-      
+      jeux-de-regles:
+       - 1  #données codées
+       
+       
       
     - id:         512
       id-excel:    115
@@ -174,7 +186,8 @@ rules:
       zone:        181
       priorite:    P1
       presence:    false
-      
+      jeux-de-regles:
+       - 1  #données codées
       
     - id:         513
       id-excel:    116
@@ -183,7 +196,8 @@ rules:
       zone:        182
       priorite:    P1
       presence:    false
-      
+      jeux-de-regles:
+       - 1  #données codées     
   
     - id:         514
       id-excel:    329
