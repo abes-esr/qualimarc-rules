@@ -35,7 +35,8 @@ rules:
     souszone:    0
     priorite:    P1
     presence:    true
-    
+    jeux-de-regles:
+    -  3  # Liens
     
     
   - id:          103
