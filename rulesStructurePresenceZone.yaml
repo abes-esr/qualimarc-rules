@@ -376,3 +376,16 @@ rules:
       -    K
       jeux-de-regles:
       - 4  #2XX
+
+
+    - id:         524
+      id-excel:    211
+      type:        presencezone
+      message:     "Ressource électronique : la zone 230 est obligatoire"
+      zone:        230
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    O
+      jeux-de-regles:
+      - 4  #2XX
