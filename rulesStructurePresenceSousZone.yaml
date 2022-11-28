@@ -60,3 +60,15 @@ rules:
     presence:    true
     jeux-de-regles:
     -  2  # Indexation-matière (6XX)
+
+
+  - id:          105
+    id-excel:    7
+    type-doc:
+    -    O
+    type:        presencesouszone
+    message:     "Document électronique : si la ressource possède un DOI et qu'il est présent sur la ressource, le saisir en 017$a"
+    zone:        017
+    souszone:    a
+    priorite:    P2
+    presence:    false
