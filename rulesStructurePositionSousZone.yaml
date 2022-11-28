@@ -1,14 +1,14 @@
 ---
 #ID 200 à 299
 rules:
-#  - id:          9
-# id-excel:    9
-#    type:        positionsouszone
-#    message:     Faire le lien à l'autorité en sous-zone $3
-#    zone:        603
-#    souszone:    3
-#    priorite:    P1
-#    position:    1
+  - id:          9
+    id-excel:    9
+    type:        positionsouszone
+    message:     "TEST : faire le lien à l'autorité en sous-zone $3"
+    zone:        603
+    souszone:    3
+    priorite:    P1
+    position:    1
     
 #  - id:          200
 #    id-excel:    11111111
