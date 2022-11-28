@@ -135,7 +135,7 @@ rules:
          
    - id: 5050
      id-excel: 158
-     message: "Zone 210  obsolète :  à remplacer par une zone 214 (document en main, en sélectionnant les bons indicateurs)"
+     message: "Zone 210  obsolète :  à remplacer par une zone 214"
      priorite: P1
      regles:
        - id: 5051
