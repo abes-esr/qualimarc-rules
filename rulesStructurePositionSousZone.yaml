@@ -1,6 +1,6 @@
 ---
 #ID 200 à 299
-#rules:
+rules:
 #  - id:          9
 # id-excel:    9
 #    type:        positionsouszone
