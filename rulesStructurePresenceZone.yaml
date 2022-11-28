@@ -331,7 +331,7 @@ rules:
     - id:         521
       id-excel:    112
       type:        presencezone
-      message:     "Document électronique : la zone 135 est obligatoire"
+      message:     "Ressource électronique : la zone 135 est obligatoire"
       zone:        135
       priorite:    P1
       presence:    false
@@ -387,5 +387,29 @@ rules:
       presence:    false
       type-doc:
       -    O
+      jeux-de-regles:
+      - 4  #2XX
+
+
+    - id:         525
+      id-excel:    212
+      type:        presencezone
+      message:     "Zone 230 : puisque la ressource n'est pas un document électronique, la zone 230 doit être supprimée"
+      zone:        230
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    BD
+      -    PC
       jeux-de-regles:
       - 4  #2XX
