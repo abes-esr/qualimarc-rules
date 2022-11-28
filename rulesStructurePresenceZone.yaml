@@ -256,3 +256,14 @@ rules:
       -    G
       -    M
       -    PC
+
+
+    - id:         517
+      id-excel:    30
+      type:        presencezone
+      message:     "Zone 101 : l'enregistrement d'un code de langue est obligatoire"
+      zone:        101
+      priorite:    P1
+      presence:    false
+      jeux-de-regles:
+       - 1  #données codées
