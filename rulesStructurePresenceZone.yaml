@@ -267,3 +267,25 @@ rules:
       presence:    false
       jeux-de-regles:
        - 1  #données codées
+
+
+    - id:         518
+      id-excel:    149
+      type:        presencezone
+      message:     "Zone 207  : si la ressource n'est pas une ressource continue,  la zone 207 doit être supprimée"
+      zone:        207
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    PC
