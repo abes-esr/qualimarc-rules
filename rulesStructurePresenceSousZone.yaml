@@ -11,7 +11,7 @@ rules:
     priorite:    P1
     presence:    true
 
-#attentionne fonctionne pas correctement. attendre correctif Pierre
+
   - id:          101
     id-excel:    245
     type-these:
@@ -96,3 +96,15 @@ rules:
     -    PC
     jeux-de-regles:
     -  1  # Données codées (1XX)
+
+
+  - id:          107
+    id-excel:    246
+    type-these:
+    -   REPRO
+    type:        presencesouszone
+    message:     "Zone 328 : si la ressource est bien une thèse (reproduction), une sous-zone $z est obligatoire en début de zone"
+    zone:        328
+    souszone:    z
+    priorite:    P1
+    presence:    false
