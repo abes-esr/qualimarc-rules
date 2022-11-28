@@ -74,25 +74,25 @@ rules:
     presence:    false
 
 
-   - id:          106
-     id-excel:    44
-     type:        presencesouszone
-     message:     "Zone 101 : puisque la ressource n'est pas de type audiovisuel ni multimédia, la sous-zone $j n'a pas lieu d'être"
-     zone:        101
-     souszone:    j
-     priorite:    P2
-     presence:    true
-     type-doc:
-     -    A
-     -    K
-     -    O
-     -    N
-     -    I
-     -    F
-     -    V
-     -    G
-     -    M
-     -    BD
-     -    PC
-     jeux-de-regles:
-     -  1  # Données codées (1XX)
+  - id:          106
+    id-excel:    44
+    type:        presencesouszone
+    message:     "Zone 101 : puisque la ressource n'est pas de type audiovisuel ni multimédia, la sous-zone $j n'a pas lieu d'être"
+    zone:        101
+    souszone:    j
+    priorite:    P2
+    presence:    true
+    type-doc:
+    -    A
+    -    K
+    -    O
+    -    N
+    -    I
+    -    F
+    -    V
+    -    G
+    -    M
+    -    BD
+    -    PC
+    jeux-de-regles:
+    -  1  # Données codées (1XX)
