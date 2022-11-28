@@ -289,3 +289,16 @@ rules:
       -    G
       -    M
       -    PC
+
+
+    - id:         519
+      id-excel:    95
+      type:        presencezone
+      message:     "Zone 121 : si la ressource est bien une carte, la zone 121 est obligatoire"
+      zone:        121
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    K
+      jeux-de-regles:
+      - 1  #données codées
