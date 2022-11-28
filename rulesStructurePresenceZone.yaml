@@ -326,3 +326,16 @@ rules:
       -    PC
       jeux-de-regles:
       - 1  #données codées
+
+
+    - id:         521
+      id-excel:    112
+      type:        presencezone
+      message:     "Ressource électronique : la zone 135 est obligatoire"
+      zone:        135
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    O
+      jeux-de-regles:
+      - 1  #données codées
