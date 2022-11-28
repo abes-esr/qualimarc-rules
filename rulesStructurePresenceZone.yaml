@@ -233,3 +233,26 @@ rules:
       type-these:
       -    SOUTENANCE
       -    REPRO
+
+
+
+    - id:          516
+      id-excel:    5
+      type:        presencezone
+      message:     "Zone 011 : à supprimer car un numéro ISSN ne peut apparaître que dans une notice de ressource continue"
+      zone:        011
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    PC
