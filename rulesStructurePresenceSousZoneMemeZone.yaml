@@ -18,12 +18,12 @@ rules:
     -  5  # Tranlittération ($6/$7)
     
     
-#Régle à passer en zone générique 2XX quand ok
+#Passage 214 en zone générique 2XX
   - id:       601
     id-excel: 183
     type:     presencesouszonesmemezone
-    message:  "Zone 214 : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
-    zone:     214
+    message:  "Zone 2XX : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
+    zone:     "2XX"
     priorite: P1
     souszones:
       - souszone:           7
