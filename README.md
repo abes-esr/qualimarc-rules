@@ -72,7 +72,7 @@ rules:
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
 ## Syntaxe des règles simples <a id="4"></a>
-A l'heure actuelle il existe 10 types de règles dans Qualimarc : 
+A l'heure actuelle il existe 12 types de règles dans Qualimarc : 
 - ``structure`` : Présence ou absence de zone
 - ``structure`` : Présence ou absence de sous-zone
 - ``structure`` : Nombre de zones dans une notice
