@@ -50,7 +50,8 @@ rules:
       - souszone:           7
         presence:           false
         operateur-booleen:  ET
-        
+    jeux-de-regles:
+    -  4  # Tranlittération ($6/$7)       
         
   - id:       603
     id-excel: 8
@@ -66,7 +67,8 @@ rules:
       - souszone:           2
         presence:           false
         operateur-booleen:  ET
-
+    jeux-de-regles:
+    -  9  # Identifiants
 
   - id:       604
     id-excel: 337
