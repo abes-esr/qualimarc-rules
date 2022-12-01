@@ -16,14 +16,14 @@ rules:
         operateur-booleen:  ET
     jeux-de-regles:
     -  5  # Tranlittération ($6/$7)
-    
+    -  4  # INfos descriptives (2XX)    
     
 #A passer en zone générique 2XX qd ok
   - id:       601
     id-excel: 183
     type:     presencesouszonesmemezone
-    message:  "Zone 214 : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
-    zone:     214
+    message:  "Zone 2XX : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
+    zone:     "2XX"
     priorite: P1
     souszones:
       - souszone:           7
@@ -33,7 +33,7 @@ rules:
         operateur-booleen:  ET
     jeux-de-regles:
     -  5  # Tranlittération ($6/$7)
-    
+    -  4  # Infos descriptives (2XX)    
     
 #doublon de la 600 pour vérif  
 #modifiée le 24/10/22 pour la 200. La passer en zone générique 2XX quand ok
