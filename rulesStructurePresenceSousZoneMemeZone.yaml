@@ -49,7 +49,7 @@ rules:
         presence:           false
         operateur-booleen:  ET
     jeux-de-regles:
-    -  4  # Tranlittération ($6/$7)       
+    -  5  # Tranlittération ($6/$7)       
         
   - id:       603
     id-excel: 8
