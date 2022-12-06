@@ -19,7 +19,7 @@ rules:
     message:     "Zone 101 : il doit y avoir autant de zones 330 que de codes de langue du résumé enregistrés en sous-zone $d"
     zone:        101
     souszone:    d
-    zonecible:   300
+    zonecible:   330
     souszonecible: a
     priorite:    P2
     type-these:
