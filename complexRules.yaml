@@ -378,3 +378,27 @@ rules:
          type: reciprocite
          zone: '412'
          souszone:   0
+
+
+   - id: 6050
+     id-excel: 419
+     message: "Travaux universitaires (soutenance) : le code du système de classification attendu en sous-zone 686$2 est 'TEF'"
+     priorite: P1
+     jeux-de-regles:
+       - 2 #6XX
+     type-these:
+       - SOUTENANCE
+     regles:
+       - id: 6051
+         type: presencesouszone
+         zone: '686'
+         souszone:    2
+         presence: true
+       - id: 6052
+         type: presencechainecaracteres
+         zone: '686'
+         souszone:   2
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    TEF
+         operateur-booleen: ET
