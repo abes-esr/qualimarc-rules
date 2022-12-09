@@ -402,3 +402,29 @@ rules:
          chaines-caracteres:
            - chaine-caracteres:    TEF
          operateur-booleen: ET
+
+
+
+   - id: 6060
+     id-excel: 440
+     message: "Zone 700 : le code fonction doit être 070 pour l'auteur ou co-auteur de la thèse"
+     priorite: P1
+     jeux-de-regles:
+       - 7 #7XX
+     type-these:
+       - SOUTENANCE
+       - REPRO
+     regles:
+       - id: 6061
+         type: presencesouszone
+         zone: '700'
+         souszone:    4
+         presence: true
+       - id: 6062
+         type: presencechainecaracteres
+         zone: '700'
+         souszone:   4
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    '070'
+         operateur-booleen: ET
