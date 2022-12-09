@@ -98,13 +98,13 @@ rules:
     -  1  # Données codées (1XX)
 
 
-    - id:                       107
-      id-excel:                 217
-      type:                     presencechainecaracteres
-      message:                  "Ressource électronique : une zone 303 est attendue, précisant en $a : Notice rédigée d'après la consultation du AAAA-MM-JJ (insérer la date réelle de consultation)"
-      type-doc:
-      -     O
-      zone:                     303
-      priorite:                 P2
-      souszone:                 a
-      presence:                 false
+  - id:                       107
+    id-excel:                 217
+    type:                     presencechainecaracteres
+    message:                  "Ressource électronique : une zone 303 est attendue, précisant en $a : Notice rédigée d'après la consultation du AAAA-MM-JJ (insérer la date réelle de consultation)"
+    type-doc:
+    -     O
+    zone:                     303
+    priorite:                 P2
+    souszone:                 a
+    presence:                 false
