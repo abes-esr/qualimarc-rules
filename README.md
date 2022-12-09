@@ -72,7 +72,7 @@ rules:
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
 ## Syntaxe des règles simples <a id="4"></a>
-A l'heure actuelle il existe 12 types de règles dans Qualimarc : 
+A l'heure actuelle il existe 13 types de règles dans Qualimarc : 
 - ``structure`` : Présence ou absence de zone
 - ``structure`` : Présence ou absence de sous-zone
 - ``structure`` : Nombre de zones dans une notice
@@ -85,6 +85,7 @@ A l'heure actuelle il existe 12 types de règles dans Qualimarc :
 - ``contenu`` : Comparaison des contenus de deux sous-zone
 - ``contenu`` : Type de caractères dans une sous-zone
 - ``contenu`` : Comparaison de dates entre deux sous-zones
+- ``contenu`` : recherche d'une valeur dans une position de la zone 008
 
 De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règles, chaque type de règle sera disposé dans un fichier différent :
 - présence / absence de zone : rulesStructurePresenceZone.yaml
@@ -99,6 +100,7 @@ De façon à pouvoir aérer les fichiers contenant un nombre conséquent de règ
 - comparaison contenu sous-zone : comparaisoncontenusouszone.yaml
 - type de caractères dans une sous-zone : rulesContenuTypeCaracteres.yaml
 - comparaison de dates entre deux sous-zones : rulesContenuComparaisonDate.yaml
+- recherche dans 008 : rulesContenuTypeDocument.yaml
 
 NB : Toutes les règles complexes seront stockées dans le même fichier.
 
@@ -129,6 +131,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
   - ``comparaisoncontenusouszone`` : pour les règles permettant de comparer le contenu d'une sous-zone avec le contenu d'une autre sous-zone 
   - ``typecaractere`` : pour les règles permettant de vérifier le type de caractères dans une sous-zone
   - ``comparaisondate`` : pour les règles permettant de comparer la date de deux sous-zones
+  - ``typedocument`` : pour les règles permettant de chercher une valeur à une position de la 008
 
 ### Présence / absence de zone
 Liste des champs propres au type de règle presence de zone : 
@@ -467,6 +470,29 @@ rules:
      souszonecible: "d"
      priorite: "P1"
 ```
+
+### Contenu de la zone 008
+Liste des champs propres à l'analyse de la zone 008 : 
+- type-de-verification : ``obligatoire`` peut prendre les valeurs STRICTEMENT ou STRICTEMENTDIFFERENT : permet de déterminer si la valeur recherchée dans la 008 doit être égale ou différente.
+- position : ``obligatoire`` de type entier, la position où rechercher dans le contenu de la zone 008. Cette position ne peut être comprise qu'entre 1 et 4.
+- valeur : ``obligatoire`` de type caractère : la valeur à chercher dans la zone 008.
+
+Attention ! pour cette règle, il n'est pas utile de préciser la zone, étant donné qu'elle porte sur la 008 quoiqu'il en soit.
+
+Exemple de fichier YAML :
+``` YAML
+---
+rules:
+   - id: 1
+     id-excel: 1
+     type: comparaisondate
+     message: "Le caractère à la position 1 de la 008 doit être a"
+     position: 1
+     type-de-verification: STRICTEMENT
+     valeur : a
+     priorite: "P1"
+```
+Si le caractère à la position 1 de la zone 008 est égal à "a", alors le message "Le caractère à la position 1 de la 008 doit être a" est envoyé à l'utilisateur.
 
 ## Syntaxe des règles complexes <a id="5"></a>
 Une règle complexe est un assemblage de plusieurs règles simples qui seront testées les unes après les autres avec un opérateur booléen. Par exemple, une règle complexe composée de 3 règles simples avec un opérateur ET entre les deux premières et un opérateur OU entre les deux suivantes donnera l'expression suivante : règle 1 ET règle 2 OU règle 3. 
