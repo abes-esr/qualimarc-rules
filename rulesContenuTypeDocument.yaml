@@ -1,0 +1,9 @@
+rules:
+  - id:         65
+    type:       typedocument
+    message:    test typedocument
+    priorite:   P1
+    type-de-verification:   STRICTEMENT
+    position:   1
+    valeur:     a
+    
