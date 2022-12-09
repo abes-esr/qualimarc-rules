@@ -31,7 +31,8 @@ rules:
           chaine-caracteres:    Nom Auteur
         - operateur:            OU
           chaine-caracteres:    "Nom Auteur relatif à l'oeuvre ou à l'expression"
-          
+      jeux-de-regles: 
+      - 7 #responsabilités
           
           
     - id:                       1001
@@ -44,10 +45,11 @@ rules:
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    Titre de la Collection
-        
+      jeux-de-regles: 
+      - 4 #2XX        
         
    
- #règle à passer en générique 7XX dès que ok  
+
     - id:                       1002
       id-excel:                 500
       type:                     presencechainecaracteres
@@ -58,11 +60,10 @@ rules:
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    000
+      jeux-de-regles: 
+      - 7 #responsabilités        
         
-        
-        
-        
-  #à vérifier si 008$a interrogeable dans basexml
+  #à supprimer dès que règle sur 008/label est OK
     - id:                       1003
       id-excel:                 1
       type:                     presencechainecaracteres
@@ -79,5 +80,17 @@ rules:
           chaine-caracteres:    c
 
 
-#1004 : doublon règle complexe pour vérifier valeur NE CONTIENT PAS ; à supprimer quand complexe 6000 OK
-
+    - id:                       1004
+      id-excel:                 11
+      type:                     presencechainecaracteres
+      message:                  "Ressource électronique : enregistrer le DOI sous sa forme courte plutôt que sous forme d'URL"
+      type-doc:
+      -     O
+      zone:                     017
+      priorite:                 P2
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    doi.org
+      jeux-de-regles: 
+      - 9 #identifiants
