@@ -485,7 +485,7 @@ Exemple de fichier YAML :
 rules:
    - id: 1
      id-excel: 1
-     type: comparaisondate
+     type: typedocument
      message: "Le caractère à la position 1 de la 008 doit être a"
      position: 1
      type-de-verification: STRICTEMENT
