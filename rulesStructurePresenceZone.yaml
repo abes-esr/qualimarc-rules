@@ -413,3 +413,15 @@ rules:
       -    PC
       jeux-de-regles:
       - 4  #2XX
+
+
+
+    - id:         526
+      id-excel:    219
+      type:        presencezone
+      message:     "Ressource électronique : la zone 304 est obligatoire"
+      zone:        304
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    O
