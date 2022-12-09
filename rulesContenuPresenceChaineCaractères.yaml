@@ -110,3 +110,17 @@ rules:
       type-de-verification:     NECONTIENTPAS
       chaines-caracteres:
         - chaine-caracteres:    "rédigée d'après consultation"
+
+
+    - id:                       1006
+      id-excel:                 263
+      type:                     presencechainecaracteres
+      message:                  "Zone 337  : cette zone ne doit être utilisée que pour préciser la configuration requise du système pour accéder à la ressource, elle ne doit pas mentionner une URL d'accès"
+      type-doc:
+      -     O
+      zone:                     337
+      priorite:                 P2
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "http"
