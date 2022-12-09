@@ -16,7 +16,7 @@ rules:
   - id:          400
     id-excel:    42
     type:        nombresouszone
-    message:     "Zone 101 : il doit y avoir autant de zones 330 que de codes de langue du résumé enregistrés en sous-zone $d"
+    message:     "Travaux universitaires : il doit y avoir autant de zones 330 que de codes de langue du résumé enregistrés en sous-zone 110$d"
     zone:        101
     souszone:    d
     zonecible:   330
