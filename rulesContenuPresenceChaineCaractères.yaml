@@ -53,7 +53,7 @@ rules:
     - id:                       1002
       id-excel:                 500
       type:                     presencechainecaracteres
-      message:                  "Zones 7XX : le code fontion '000' (Fonction à préciser) est à remplacer par un code fonction plus précis et adéquat"
+      message:                  "Zones 7XX : le code fontion '000' enregistré en sous-zone $4 est à remplacer par un code fonction plus précis et adéquat"
       zone:                     "7XX"
       priorite:                 P1
       souszone:                 4
