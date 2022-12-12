@@ -470,7 +470,7 @@ rules:
 
    - id: 6090
      id-excel: 36
-     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) sous-zone(s) 7XX$4 contenant le code '730 (Traducteur)' n'ont pas lieu d'être"
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la sous-zone 700$4 contenant le code '730 (Traducteur)' n'a pas lieu d'être"
      priorite: P1
      jeux-de-regles:
        - 1  #données codées
@@ -483,7 +483,30 @@ rules:
          valeur: '0'
        - id: 6092
          type: presencechainecaracteres
-         zone: '7XX'
+         zone: '700'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+
+
+   - id: 7000
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) sous-zone(s) 701$4 contenant le code '730 (Traducteur)' n'ont pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7001
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7002
+         type: presencechainecaracteres
+         zone: '701'
          souszone: 4
          type-de-verification:     CONTIENT
          chaines-caracteres:
