@@ -17,13 +17,16 @@ rules:
     type-de-verification:   STRICTEMENTDIFFERENT
     position:   3
     valeur:     x
-
+    jeux-de-regles:
+    -  9  # Identification
 
   - id:         1301
-    id-excel:   1            
+    id-excel:   2            
     type:       typedocument
     message:    "Zone 008 : la valeur numérique attendue en 4ème position pour définir une notice conforme aux recommandations de l'ISBD est '3'"
     priorite:   P1
     type-de-verification:   STRICTEMENTDIFFERENT
     position:   4
     valeur:     '3'
+    jeux-de-regles:
+    -  9  # Identification
