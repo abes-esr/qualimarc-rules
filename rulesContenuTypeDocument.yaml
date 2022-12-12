@@ -22,7 +22,7 @@ rules:
   - id:         1301
     id-excel:   1            
     type:       typedocument
-    message:    "Zone 008 : la valeur numérique attendue en position 4 pour une notice conforme aux recommandations de l'ISBD est '3'"
+    message:    "Zone 008 : la valeur numérique attendue en 4ème position pour définir une notice conforme aux recommandations de l'ISBD est '3'"
     priorite:   P1
     type-de-verification:   STRICTEMENTDIFFERENT
     position:   4
