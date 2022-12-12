@@ -512,3 +512,70 @@ rules:
          chaines-caracteres:
            - chaine-caracteres:    "730"
          operateur-booleen: ET
+
+   - id: 7010
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) sous-zone(s) 702$4 contenant le code '730 (Traducteur)' n'ont pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7011
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7012
+         type: presencechainecaracteres
+         zone: '702'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+
+
+   - id: 7020
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la sous-zone(s) 710$4 contenant le code '730 (Traducteur)' n'a pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7021
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7022
+         type: presencechainecaracteres
+         zone: '710'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+
+   - id: 7030
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) sous-zone(s) 711$4 contenant le code '730 (Traducteur)' n'ont pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7031
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7032
+         type: presencechainecaracteres
+         zone: '711'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
