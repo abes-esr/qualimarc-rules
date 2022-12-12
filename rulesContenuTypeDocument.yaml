@@ -12,8 +12,18 @@ rules:
   - id:         1300
     id-excel:   1            
     type:       typedocument
-    message:    "test typedoc Zone 008 : la valeur alphabétique attendue en 3ème position pour définir le statut d'une notice complète et visible dans le catalogue Sudoc est 'x'"
+    message:    "Zone 008 : la valeur alphabétique attendue en 3ème position pour définir le statut d'une notice complète et visible dans le catalogue Sudoc est 'x'"
     priorite:   P1
     type-de-verification:   STRICTEMENTDIFFERENT
     position:   3
     valeur:     x
+
+
+  - id:         1301
+    id-excel:   1            
+    type:       typedocument
+    message:    "Zone 008 : la valeur numérique attendue en position 4 pour une notice conforme aux recommandations de l'ISBD est '3'"
+    priorite:   P1
+    type-de-verification:   STRICTEMENTDIFFERENT
+    position:   4
+    valeur:     '3'
