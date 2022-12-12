@@ -1,3 +1,5 @@
+# ID de 1300 à 1399
+
 rules:
   - id:         65
     type:       typedocument
@@ -7,3 +9,11 @@ rules:
     position:   1
     valeur:     a
     
+  - id:         1300
+    id-excel:   1            
+    type:       typedocument
+    message:    "test typedoc Zone 008 : la valeur alphabétique attendue en 3ème position pour définir le statut d'une notice complète et visible dans le catalogue Sudoc est 'x'"
+    priorite:   P1
+    type-de-verification:   STRICTEMENTDIFFERENT
+    position:   3
+    valeur:     x
