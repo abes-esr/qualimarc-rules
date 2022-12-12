@@ -428,3 +428,22 @@ rules:
          chaines-caracteres:
            - chaine-caracteres:    '070'
          operateur-booleen: ET
+
+
+   - id: 6070
+     id-excel: 33
+     message: "Traduction : si la ressource est bien une traduction (indicateur 1=1), la zone 454 est obligatoire"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     regles:
+       - id: 6071
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '1'
+       - id: 6072
+         type: presencezone
+         zone: '454'
+         presence: false
+         operateur-booleen: ET
