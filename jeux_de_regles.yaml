@@ -1,5 +1,5 @@
 ---
-rulesets:
+jeux-de-regles:
   - id:          1
     libelle:     Données codées (1XX)
     description: Données codées (1XX)
