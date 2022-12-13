@@ -13,6 +13,7 @@ Ce document explique étape par étape comment ajouter ou modifier des règles d
 - [Syntaxe des règles simples](#4)
 - [Syntaxe des règles complexes](#5)
 - [Règles de dépendance](#6)
+- [Jeux de règles personnalisés](#7)
 
 ## Utilisation de GitHub-  <a id="1"></a>
 Github est un outil en ligne permettant de versionner des fichiers. Il dispose d'un éditeur en ligne permettant de modifier des fichiers puis de les sauvegarder tout en conservant un historique des modifications réalisées.
@@ -699,3 +700,32 @@ Le YAML précédent permet de créer une règle complexe qui renvoie le message 
 
 Elle vérifie d'abord la présence de la zone 660$3, puis récupère le PPN en 606$3, analyse la notice bibliographique liée et si la valeur contenue dans la zone 250$a **ne** contient **pas** le PPN de la notice en cours d'analyse, elle envoie le message à l'utilisateur.
 
+## Jeux de règles personnalisés <a id="7"></a>
+
+### Principe
+Sur le même principe que les règles, il est possible de créer des jeux de règles personnalisés via un fichier contenant des objets en langage Yaml. A chaque modification du fichier, l'application supprimera tous les jeux de règles existants et les remplacera par ceux du fichier.
+
+### Création des jeux de règles personnalisés
+Les jeux de règles personnalisés sont créés dans le fichier jeux_de_regles.yaml. Le premier élément du fichier doit être nommé **jeux-de-regles**. Une liste d'objet doit ensuite être déclarée dans le fichier. Les attributs qui composent un jeu de règle sont : 
+- id : ``obligatoire`` / de type entier : identifiant du jeu de règles dans la base de données
+- libelle : ``obligatoire`` / de type chaîne de caractères : libellé du jeu de règles tel qu'il sera affiché sur la page d'accueil de Qualimarc
+- description : ``optionnel`` / de type chaîne de caractères. Une description du jeu de règle qui sera affichée dans l'info bulle.
+- position : ``obligatoire`` / de type entier. Indique la position du jeu de règles dans la liste de la page d'accueil. Le premier jeu de règle aura la position 0.
+
+Exemple de fichier YAML : 
+```YAML
+---
+jeux-de-regles:
+  - id:          1
+    libelle:     Données codées (1XX)
+    description: Données codées (1XX)
+    position:    0
+  - id:          2
+    libelle:     Indexation-matière (6XX)
+    description: Indexation-matière (6XX)
+    position:    1
+  - id:          3
+    libelle:     Liens ($0/$3)
+    description: Liens ($0/$3)
+    position:    2
+```
