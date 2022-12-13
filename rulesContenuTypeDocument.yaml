@@ -27,6 +27,6 @@ rules:
     priorite:   P1
     type-de-verification:   STRICTEMENTDIFFERENT
     position:   4
-    valeur:     '3'
+    valeur:     3
     jeux-de-regles:
     -  9  # Identification
