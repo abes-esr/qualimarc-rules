@@ -613,12 +613,12 @@ rules:
        - 1  #données codées
        - 7  #responsabilités
      regles:
-       - id: 7031
+       - id: 7051
          type: indicateur
          zone: '101'
          indicateur: 1
          valeur: '0'
-       - id: 7032
+       - id: 7052
          type: presencechainecaracteres
          zone: '720'
          souszone: 4
