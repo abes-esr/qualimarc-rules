@@ -1,0 +1,26 @@
+---
+rules:
+  - id: 80
+    id-excel: XXX
+    message: "214 doit truc truc"
+    zone: 214
+    priorite: P2
+    jeux-de-regles:
+      - 1
+      - 2
+    regles:
+      - id: 81
+        type: presencezone
+        presence: true
+      - id: 82
+        type: indicateur
+        indicateur: 1
+        valeur: "#"
+      - id: 83
+        type: indicateur
+        indicateur: 2
+        valeur: "1"
+      - id: 84
+        type: presencesouszone
+        souszone: "d"
+        presence: false

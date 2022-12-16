@@ -134,6 +134,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
   - ``comparaisondate`` : pour les règles permettant de comparer la date de deux sous-zones
   - ``typedocument`` : pour les règles permettant de chercher une valeur à une position de la 008
 
+
 ### Présence / absence de zone
 Liste des champs propres au type de règle presence de zone : 
 - presence : ``obligatoire`` / de type booléen. Si la valeur est true et que la zone est présente dans la notice, le message est envoyé à l'utilisateur. Si la valeur est false et que la zone est absente de la notice, le message est envoyé à l'utilisateur
@@ -596,6 +597,48 @@ La seconde règle a un id 3, le message renvoyé est **message test 2** si la r�
 - La troisième règle simple a un id 32, et vérifie qu'il y a moins d'une zone 400 dans la notice.
 
 La règle complexe est valide si la première règle simple est valide, OU la deuxième règle simple est valide, OU que la 3è règle simple est valide. (donc, si la règle 3 est valide, mais que les règles 1 et 2 ne sont pas valides, la règle complexe est valide)
+
+## Règles complexes sur une même instance de zone
+Il est possible de déclarer des règles complexes sur une même instance de zone. Pour cela il faut déclarer une règle complexe avec une zone (n'accepte pas les zones génériques) et déclarer des règles simples sans aucune zone (la zone est déclarée dans la règle complexe) ni opérateur booléen (les règles s'enchainent selon un schéma logique ET).
+
+les règle simple sur une même instance de zone sont les suivants :
+- ``structure`` : Présence ou absence de zone
+- ``structure`` : Présence ou absence de sous-zone
+- ``structure`` : Position de sous-zones dans une zone
+- ``contenu`` : Valeur d'un indicateur
+- ``contenu`` : Présence d'une ou plusieurs chaine(s) de caractères dans une sous-zone
+
+Exemple de fichier YAML de 2 règles complexes composées de règles simples de différents types :
+
+``` YAML
+---
+rules:
+  - id: 1
+    id-excel: XXX
+    message: "214 doit truc truc"
+    zone: 214
+    priorite: P2
+    jeux-de-regles:
+        - 1
+        - 2
+    regles: 
+      - id: 2
+        type: presencezone
+        presence: true
+      - id: 3
+        type: indicateur
+        indicateur: 1
+        valeur: "#"
+      - id: 4
+        type: indicateur
+        indicateur: 2
+        valeur: "1"
+      - id: 5
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+```
+
 
 ## Règles de dépendance <a id="6"></a>
 
