@@ -608,7 +608,7 @@ les règle simple sur une même instance de zone sont les suivants :
 - ``contenu`` : Valeur d'un indicateur
 - ``contenu`` : Présence d'une ou plusieurs chaine(s) de caractères dans une sous-zone
 
-Exemple de fichier YAML de 2 règles complexes composées de règles simples de différents types :
+Exemple de fichier YAML de 1 règle complexe composée de règles simples de différents types :
 
 ``` YAML
 ---
