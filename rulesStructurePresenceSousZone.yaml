@@ -67,7 +67,7 @@ rules:
     type-doc:
     -    O
     type:        presencesouszone
-    message:     "Document électronique : si la ressource possède un DOI et qu'il est présent sur la ressource, le saisir en 017$a"
+    message:     "Document électronique : si la ressource possède un DOI et qu'il est présent sur la ressource, le saisir en 017$a sous sa forme courte"
     zone:        017
     souszone:    a
     priorite:    P2
@@ -97,14 +97,3 @@ rules:
     jeux-de-regles:
     -  1  # Données codées (1XX)
 
-
-  - id:          107
-    id-excel:    217
-    type:        presencesouszone
-    message:     "Ressource électronique : une zone 303 est attendue, précisant en $a : Notice rédigée d'après la consultation du AAAA-MM-JJ (insérer la date réelle de consultation)"
-    zone:        303
-    souszone:    a
-    priorite:    P2
-    presence:    false
-    type-doc:
-    -     O
