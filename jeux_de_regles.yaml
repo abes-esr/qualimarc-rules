@@ -1,5 +1,14 @@
 ---
 jeux-de-regles:
+  - id:          10
+    libelle:     TEST
+    description: TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
+    position:    10
+
+
+
+
+##pas touché
   - id:          1
     libelle:     Données codées (1XX)
     description: Données codées (1XX)
@@ -36,7 +45,4 @@ jeux-de-regles:
     libelle:     Identification (0XX)
     description: Identification (0XX)
     position:    8
-  - id:          10
-    libelle:     TEST
-    description: TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
-    position:    10
+
