@@ -19,7 +19,7 @@ jeux-de-regles:
     position:    1
   - id:          3
     libelle:     Liens ($0/$3)
-    description: Liens ($0/$3)
+    description: "fait uniquement jouer les règles qui concernent une absence ou erreur de liens ($0 ou $3) dans les zones 4XX, 5XX, 6XX et 7XX"
     position:    2
   - id:          4
     libelle:     Informations descriptives (2XX)
