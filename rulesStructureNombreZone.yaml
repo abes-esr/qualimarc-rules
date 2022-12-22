@@ -1,10 +1,11 @@
 ---
+#ID de 300 à 399
 rules:
   - id:          4
     id-excel:    10
     type:        nombrezone
     message:     nombre zone ansible SQN
-    zone:        330
+    zone:        603
     priorite:    P1
-    operateur:   INFERIEUR
+    operateur:   SUPERIEUR
     occurrences: 3

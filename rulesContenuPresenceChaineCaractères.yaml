@@ -1,0 +1,113 @@
+---
+# ID de 1000 à 1099
+rules:
+    - id:                       99
+      id-excel:                 99
+      type:                     presencechainecaracteres
+      message:                  message de retour
+      zone:                     603
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    premier chaine de caractères à chercher
+        - operateur:            ET
+          chaine-caracteres:    deuxième chaine de caractères à chercher
+        - operateur:            OU
+          chaine-caracteres:    deuxième chaine de caractères à chercher
+
+
+    - id:                       1000
+      id-excel:                 443
+      type:                     presencechainecaracteres
+      message:                  "Zone 700 : la sous-zone $a contient le terme générique 'Nom' ou 'Nom Auteur' ou 'Nom Auteur relatif à l'oeuvre ou à l'expression' : modifier ou supprimer cette sous-zone."
+      zone:                     700
+      priorite:                 P2
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Nom
+        - operateur:            OU
+          chaine-caracteres:    Nom Auteur
+        - operateur:            OU
+          chaine-caracteres:    "Nom Auteur relatif à l'oeuvre ou à l'expression"
+      jeux-de-regles: 
+      - 7 #responsabilités
+          
+          
+    - id:                       1001
+      id-excel:                 209
+      type:                     presencechainecaracteres
+      message:                  "Zone 225 : la sous-zone $a contient le terme générique 'Titre de la Collection' : compléter ou supprimer cette sous-zone"
+      zone:                     225
+      priorite:                 P2
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Titre de la Collection
+      jeux-de-regles: 
+      - 4 #2XX        
+        
+   
+
+    - id:                       1002
+      id-excel:                 500
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fontion '000' enregistré en sous-zone $4 est à remplacer par un code fonction plus précis et adéquat"
+      zone:                     "7XX"
+      priorite:                 P1
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    000
+      jeux-de-regles: 
+      - 7 #responsabilités        
+        
+  #à supprimer dès que règle sur 008/label est OK
+    - id:                       1003
+      id-excel:                 1
+      type:                     presencechainecaracteres
+      message:                  "Zone 008 : la valeur alphabétique attendue pour définir le statut d'une notice complète et visible dans le catalogue Sudoc est 'x'"
+      zone:                     008
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    r
+        - operateur:            OU
+          chaine-caracteres:    y
+        - operateur:            OU
+          chaine-caracteres:    c
+
+
+    - id:                       1004
+      id-excel:                 11
+      type:                     presencechainecaracteres
+      message:                  "Ressource électronique : enregistrer le DOI sous sa forme courte plutôt que sous forme d'URL"
+      type-doc:
+      -     O
+      zone:                     017
+      priorite:                 P2
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    doi.org
+      jeux-de-regles: 
+      - 9 #identifiants
+      
+      
+     
+
+
+    - id:                       1006
+      id-excel:                 263
+      type:                     presencechainecaracteres
+      message:                  "Zone 337  : cette zone ne doit être utilisée que pour préciser la configuration requise du système pour accéder à la ressource, elle ne doit pas mentionner une URL d'accès"
+      type-doc:
+      -     O
+      zone:                     337
+      priorite:                 P2
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "http"

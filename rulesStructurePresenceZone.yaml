@@ -1,34 +1,430 @@
 ---
+#ID de 500 à 599 (sauf règles test)
 rules:
-    - id:          1
-      id-excel:    1
+   #REGLES VALIDEES AURELIE octobre 2022        
+    - id:          500
+      id-excel:    68
       type:        presencezone
-      message:     message test
+      message:     "Monographie : la zone 106 (forme de la ressource) est attendue"
+      zone:        106
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    A
+      jeux-de-regles:
+      -  1  # Données codées (1XX)
+      
+    - id:          501
+      id-excel:    74
+      type:        presencezone
+      message:     "Ressource continue : la zone 110 est attendue. Une demande de correction ISSN sera nécessaire"
+      zone:        110
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    BD
+      jeux-de-regles:
+      -  1  # Données codées (1XX)
+
+    - id:          503
+      id-excel:    87
+      type:        presencezone
+      message:     "Document audiovisuel : une zone 115 est attendue"
+      zone:        115
+      priorite:    P2
+      presence:    false
+      type-doc:
+      -    B
+      jeux-de-regles:
+      -  1  # Données codées (1XX)      
+      
+      
+    - id:          504
+      id-excel:    88
+      type:        presencezone
+      message:     "Zone 115 : si la ressource n'est ni un document audiovisuel, ni un document multimédia, ni une ressource électronique, la zone 115 doit être supprimée"
+      zone:        115
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    K
+      -    N
+      -    I
+      -    F
+      -    V
+      -    G
+      -    M
+      -    BD
+      -    PC
+      jeux-de-regles:
+      -  1  # Données codées (1XX)
+      
+    - id:         505
+      id-excel:    89
+      type:        presencezone
+      message:     "Zone 116  : si la ressource n'est pas une image fixe, la zone 116 doit être supprimée"
+      zone:        116
       priorite:    P1
       presence:    true
       type-doc:
       -    A
       -    B
       -    K
-    - id:          2
-      id-excel:    2
+      -    N
+      -    F
+      -    V
+      -    G
+      -    M
+      -    BD
+      -    PC
+      jeux-de-regles:
+      -  1  # Données codées (1XX)      
+      
+    - id:         506
+      id-excel:    90
       type:        presencezone
-      message:     message test 2
-      zone:        330
+      message:     "Image fixe : une zone 116 est attendue"
+      zone:        116
       priorite:    P2
       presence:    false
-    - id:          3
-      id-excel:    3
+      type-doc:
+      -    I
+      jeux-de-regles:
+      - 1  #données codées
+    
+    
+    
+    - id:         507
+      id-excel:    91
       type:        presencezone
-      message:     Ajout Test Ansible SQN
-      zone:        010
+      message:     "Objet  : une zone 117 est attendue"
+      zone:        117
+      priorite:    P2
+      presence:    false
+      type-doc:
+      -    V      
+      jeux-de-regles:
+      -  1  # Données codées (1XX)   
+      
+    - id:         508
+      id-excel:    92
+      type:        presencezone
+      message:     "Zone 117  :  si la ressource n'est pas un objet, la zone 117 doit être supprimée"
+      zone:        117
       priorite:    P1
       presence:    true
-    - id:          8
-      id-excel:    7
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    G
+      -    M
+      -    BD
+      -    PC
+      jeux-de-regles:
+      -  1  # Données codées (1XX)    
+            
+            
+    - id:         509
+      id-excel:    93
       type:        presencezone
-      message:     message test 2
-      zone:        330
+      message:     "Carte : une zone 120 est obligatoire"
+      zone:        120
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    K
+      jeux-de-regles:
+       - 1  #données codées
+       
+       
+    - id:         510
+      id-excel:    94
+      type:        presencezone
+      message:     "Zone 120 : si la ressource n'est pas une carte, la zone 120 doit être supprimée"
+      zone:        120
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    BD
+      -    PC
+      jeux-de-regles:
+       - 1  #données codées
+       
+       
+       
+    - id:         511
+      id-excel:    117
+      type:        presencezone
+      message:     "La notice doit contenir au moins une zone 183 (type de support)"
+      zone:        183
+      priorite:    P1
+      presence:    false
+      jeux-de-regles:
+       - 1  #données codées
+       
+       
+      
+    - id:         512
+      id-excel:    115
+      type:        presencezone
+      message:     "La notice doit contenir au moins une zone 181 (type de contenu)"
+      zone:        181
+      priorite:    P1
+      presence:    false
+      jeux-de-regles:
+       - 1  #données codées
+      
+    - id:         513
+      id-excel:    116
+      type:        presencezone
+      message:     "La notice doit contenir au moins une zone 182 (type de médiation)"
+      zone:        182
+      priorite:    P1
+      presence:    false
+      jeux-de-regles:
+       - 1  #données codées     
+  
+    - id:         514
+      id-excel:    329
+      type:        presencezone
+      message:     "Zone 530  : puisqu'il ne s'agit pas d'une ressource continue, la zone est à supprimer"
+      zone:        530
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    K
+      -    PC
+
+
+    - id:         515
+      id-excel:    237
+      type:        presencezone
+      message:     "Travaux universitaires : qu'il s'agisse du document originel ou d'une reproduction, une zone 328 est obligatoire"
+      zone:        328
+      priorite:    P1
+      presence:    false
+      type-these:
+      -    SOUTENANCE
+      -    REPRO
+
+
+
+    - id:          516
+      id-excel:    5
+      type:        presencezone
+      message:     "Zone 011 : à supprimer car un numéro ISSN ne peut apparaître que dans une notice de ressource continue"
+      zone:        011
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    PC
+
+
+    - id:         517
+      id-excel:    30
+      type:        presencezone
+      message:     "Zone 101 : l'enregistrement d'un code de langue est obligatoire"
+      zone:        101
+      priorite:    P1
+      presence:    false
+      jeux-de-regles:
+       - 1  #données codées
+
+
+    - id:         518
+      id-excel:    149
+      type:        presencezone
+      message:     "Zone 207  : si la ressource n'est pas une ressource continue,  la zone 207 doit être supprimée"
+      zone:        207
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    PC
+
+
+    - id:         519
+      id-excel:    95
+      type:        presencezone
+      message:     "Zone 121 : si la ressource est bien une carte, la zone 121 est obligatoire"
+      zone:        121
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    K
+      jeux-de-regles:
+      - 1  #données codées
+      
+
+    - id:         520
+      id-excel:    96
+      type:        presencezone
+      message:     "Zone 121 : si la ressource n'est pas une carte, la zone 121 doit être supprimée"
+      zone:        121
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    BD
+      -    PC
+      jeux-de-regles:
+      - 1  #données codées
+
+
+    - id:         521
+      id-excel:    112
+      type:        presencezone
+      message:     "Ressource électronique : la zone 135 est obligatoire"
+      zone:        135
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    O
+      jeux-de-regles:
+      - 1  #données codées
+
+
+    - id:         522
+      id-excel:    113
+      type:        presencezone
+      message:     "Zone 135 : si la ressource n'est pas une ressource électronique, la zone 135 doit être supprimée"
+      zone:        135
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    BD
+      -    PC
+      jeux-de-regles:
+      - 1  #données codées
+
+
+    - id:         523
+      id-excel:    143
+      type:        presencezone
+      message:     "Carte : la zone 206 (mention d'échelle) est obligatoire"
+      zone:        206
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    K
+      jeux-de-regles:
+      - 4  #2XX
+
+
+
+
+
+    - id:         525
+      id-excel:    212
+      type:        presencezone
+      message:     "Zone 230 : puisque la ressource n'est pas un document électronique, la zone 230 doit être supprimée"
+      zone:        230
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    BD
+      -    PC
+      jeux-de-regles:
+      - 4  #2XX
+
+
+
+    - id:         527
+      id-excel:    260
+      type:        presencezone
+      message:     "Ressource électronique : une zone 337 (note sur la configuration requise) est attendue"
+      zone:        337
       priorite:    P2
       presence:    false
-               
+      type-doc:
+      -    O
+
+
+    - id:         528
+      id-excel:   418
+      type:        presencezone
+      message:     "Travaux universitaires : puisqu'il s'agit d'une thèse originelle ou d'une reproduction à l'identique, une zone 686 est obligatoire"
+      zone:        686
+      priorite:    P1
+      presence:    false
+      type-these:
+      -    SOUTENANCE
+      jeux-de-regles:
+      - 2  #6XX

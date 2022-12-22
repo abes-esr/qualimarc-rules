@@ -1,0 +1,84 @@
+---
+#ID de 600 à 699 (sauf règles test)
+
+rules:
+  - id:       600
+    id-excel: 181
+    type:     presencesouszonesmemezone
+    message:  "Zone 214 : une sous-zone $6 doit toujours être suivie d'une sous-zone $7"
+    zone:     214
+    priorite: P1
+    souszones:
+      - souszone:           6
+        presence:           true
+      - souszone:           7
+        presence:           false
+        operateur-booleen:  ET
+    jeux-de-regles:
+    -  5  # Tranlittération ($6/$7)
+    -  4  # INfos descriptives (2XX)    
+    
+  
+  - id:       601
+    id-excel: 183
+    type:     presencesouszonesmemezone
+    message:  "Zone 2XX : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
+    zone:     "2XX"
+    priorite: P1
+    souszones:
+      - souszone:           7
+        presence:           true
+      - souszone:           6
+        presence:           false
+        operateur-booleen:  ET
+    jeux-de-regles:
+    -  5  # Tranlittération ($6/$7)
+    -  4  # Infos descriptives (2XX)    
+    
+# modif règle sur 200$6/$7 en 4XX - OK
+  - id:       602
+    id-excel: 324
+    type:     presencesouszonesmemezone
+    message:  "Zone 4XX : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
+    zone:     "4XX"
+    priorite: P1
+    souszones:
+      - souszone:           7
+        presence:           true
+      - souszone:           6
+        presence:           false
+        operateur-booleen:  ET
+    jeux-de-regles:
+    -  5  # Tranlittération ($6/$7)       
+        
+  - id:       603
+    id-excel: 8
+    type:     presencesouszonesmemezone
+    message:  "Document électronique : il manque la sous-zone 017$2. S'il s'agit d'un DOI enregistré en sous-zone 017$a, c'est le code de référentiel DOI qui est attendu en sous-zone 017$2"
+    zone:     017
+    priorite: P1
+    type-doc:
+      -    O
+    souszones:
+      - souszone:           a
+        presence:           true
+      - souszone:           2
+        presence:           false
+        operateur-booleen:  ET
+    jeux-de-regles:
+    -  9  # Identifiants
+
+  - id:       604
+    id-excel: 337
+    type:     presencesouszonesmemezone
+    message:  "Zone 5XX : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
+    zone:     "5XX"
+    priorite: P1
+    souszones:
+      - souszone:           7
+        presence:           true
+      - souszone:           6
+        presence:           false
+        operateur-booleen:  ET
+    jeux-de-regles:
+    -  5  # Tranlittération ($6/$7)

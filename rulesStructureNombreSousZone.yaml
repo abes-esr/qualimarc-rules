@@ -1,11 +1,27 @@
 ---
+#ID de 400 à 499
 rules:
   - id:          5
     id-excel:    130
     type:        nombresouszone
     message:     nombre zonesous ansible SQN
-    zone:        200
+    zone:        603
     souszone:    a
-    zonecible:   600
-    souszonecilbe: b
+    zonecible:   603
+    souszonecible: b
     priorite:    P2
+    
+
+#REGLES VALIDEES AURELIE octobre 2022
+  - id:          400
+    id-excel:    42
+    type:        nombresouszone
+    message:     "Travaux universitaires : il doit y avoir autant de zones 330 que de codes de langue du résumé enregistrés en sous-zone 110$d"
+    zone:        101
+    souszone:    d
+    zonecible:   330
+    souszonecible: a
+    priorite:    P2
+    type-these:
+      -    REPRO
+      -    SOUTENANCE

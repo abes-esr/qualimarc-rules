@@ -1,0 +1,14 @@
+#ID règles de 800 à 899
+rules:
+#REGLES AFE
+
+#règle 800 à supprimer au prfit de la règle complexe 5080
+  - id:         800
+    id-excel:   445
+    type:       nombrecaractere
+    message:    "Zone 700$f supérieur à 9 caractères (règle test à supprimer)"
+    zone:       700
+    priorite:   P1
+    souszone:   f
+    operateur:  SUPERIEUR
+    occurrences: 9

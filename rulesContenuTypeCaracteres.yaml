@@ -1,0 +1,24 @@
+---
+# ID règles de 900 à 999
+rules:
+  - id:         60
+    type:       typecaractere
+    message:    test typecaractere
+    zone:       603
+    priorite:   P1
+    souszone:   a
+    type-caracteres:
+      - "ALPHABETIQUE_MAJ"
+      - "NUMERIQUE"
+
+#règle test pour vérifier blocage de la complexe 5090 ( à supprimer) ppn 192909053
+  - id:         900
+    type:      typecaractere
+    message:   "Test type caractères numériques et spéciaux et majuscules en 330$a"
+    zone:      330
+    priorite:  P2
+    souszone:  a
+    type-caracteres:
+      - "NUMERIQUE"
+      - "ALPHABETIQUE_MAJ"
+      - "SPECIAL"

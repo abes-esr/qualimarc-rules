@@ -1,0 +1,680 @@
+---
+rules:
+#REGLES VALIDEES AURELIE
+# NOTA IMPORTANT : ID principal (règle complexe) à partir de 5000 puis décliné en dizaine (5010-5020-5030....)
+# ID secondaire (règles simples qui composent la règle complexe) : reprend l'ID principal, décliné par unité (exemple pour règle complexe 5000 : 5001-5002-5003...)
+
+   - id: 5000
+     id-excel: 315
+     message: "Partie composante : vérifier que le titre du document hôte enregistré en 463 est bien le même que celui enregistré en 305$a"
+     priorite: P2
+     type-doc:
+       - PC
+     regles:
+       - id: 5001
+         type: presencesouszone
+         zone: '463'
+         souszone:    t
+         presence: true
+       - id: 5002
+         type: presencesouszone
+         zone: '305'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+
+
+   - id: 5010
+     id-excel: 316
+     message: "Partie composante : vérifier que la date du document hôte enregistrée en 463 est bien la même que celle enregistrée en 305$a"
+     priorite: P2
+     type-doc:
+       - PC
+     regles:
+       - id: 5011
+         type: presencesouszone
+         zone: '463'
+         souszone:    d
+         presence: true
+       - id: 5012
+         type: presencesouszone
+         zone: '305'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+
+   - id: 5020
+     id-excel: 246
+     message: "Zone 328 : si la ressource est bien une thèse (reproduction), une sous-zone $z est obligatoire en début de zone"
+     priorite: P1
+     type-these:
+       - REPRO
+     regles:
+       - id: 5021
+         type: presencezone
+         zone: '328'
+         presence: true
+       - id: 5022
+         type: presencesouszone
+         zone: '328'
+         souszone:    z
+         presence: false
+         operateur-booleen: ET
+
+   
+   - id: 5030
+     id-excel: 269
+     message: "Enregistrement sonore : puisqu'une note de contenu a été enregistrée en 359$b, des liens doivent être faits en 464$t ou en 500$3 (au moins pour 3 contenus, au-delà c'est facultatif)"
+     priorite: P2
+     jeux-de-regles:
+       - 3  #liens
+     type-doc:
+       - N
+     regles:
+       - id: 5031
+         type: presencesouszone
+         zone: '464'
+         souszone:    t
+         presence: false
+       - id: 5032
+         type: presencesouszone
+         zone: '500'
+         souszone:    3
+         presence: false
+         operateur-booleen: ET
+       - id: 5033
+         type: presencesouszone
+         zone: '359'
+         souszone:    b
+         presence: true
+         operateur-booleen: ET
+         
+         
+   - id: 5040
+     id-excel: 272
+     message: "Puisqu'un lien vers une collection a été enregistré en zone 410, une mention de collection doit être enregistrée en 225. Utiliser le bon indicateur : 225 0# ou 225 2#"
+     priorite: P1
+     type-doc:
+       -    A
+       -    B
+       -    K
+       -    O
+       -    N
+       -    I
+       -    F
+       -    Z
+       -    G
+       -    M
+       -    PC
+     regles:
+       - id: 5041
+         type: presencezone
+         zone: '410'
+         presence: true
+       - id: 5042
+         type: presencezone
+         zone: '225'
+         presence: false
+         operateur-booleen: ET
+
+
+
+         
+   - id: 5050
+     id-excel: 158
+     message: "Zone 210  obsolète :  à remplacer par une zone 214"
+     priorite: P1
+     regles:
+       - id: 5051
+         type: presencezone
+         zone: '210'
+         presence: true
+       - id: 5052
+         type: presencezone
+         zone: '214'
+         presence: false
+         operateur-booleen: ET
+         
+                  
+   - id: 5060
+     id-excel: 321
+     message: "Puisque un autre type de relation est enregistré en zone 488, une note sur les zones de lien en zone 311 est obligatoire pour préciser la nature du lien entre les 2 documents"
+     priorite: P1
+     regles:
+       - id: 5061
+         type: presencezone
+         zone: '488'
+         presence: true
+       - id: 5062
+         type: presencezone
+         zone: '311'
+         presence: false
+         operateur-booleen: ET
+         
+         
+#règle 5070 : A CONSERVER / DOUBLON OK regle 5020
+   - id: 5070
+     id-excel: 99
+     message: "Carte : puisqu'une échelle est enregistrée en zone 123, elle doit aussi être transcrite en zone 206. Privilégier une zone 206 structurée (indicateur 1 = 0)"
+     priorite: P1
+     type-doc:
+       - K
+     regles:
+       - id: 5071
+         type: presencesouszone
+         zone: '206'
+         souszone:    a
+         presence: false
+       - id: 5072
+         type: presencesouszone
+         zone: '206'
+         souszone:    b
+         presence: false
+         operateur-booleen: OU
+       - id: 5073
+         type: presencezone
+         zone: '206'
+         presence: true
+         operateur-booleen: ET
+       - id: 5074
+         type: presencesouszone
+         zone: '123'
+         souszone:    b
+         presence: true
+         operateur-booleen: ET
+
+
+#Penser à supprimer règle simple nb de caractères règle 800
+   - id: 5080
+     id-excel: 445
+     message: "Zone 700 : les dates en sous-zone $f doivent être sous la forme AAAA-AAAA avec '.' à la place de l'année inconnue et '?' à la suite des années incertaines"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #responsabilités
+     regles:
+       - id: 5081
+         type: nombrecaractere
+         zone: '700'
+         souszone:   f
+         operateur:  INFERIEUR
+         occurrences: 9
+       - id: 5082
+         type: nombrecaractere
+         zone: '700'
+         souszone:   f
+         operateur:  SUPERIEUR
+         occurrences: 9
+         operateur-booleen: OU
+         
+
+
+   - id: 5090
+     id-excel: 268
+     message: "Zone 345 : s'il s'agit bien d'un EAN enregistré en $b, ce numéro a maintenant sa place en zone 073"
+     priorite: P2
+     regles:
+       - id: 5091
+         type: nombrecaractere
+         zone: '345'
+         souszone:   b
+         operateur:  EGAL
+         occurrences: 13
+       - id: 5092
+         type: typecaractere
+         zone: '345'
+         souszone:   b
+         type-caracteres:
+           - "NUMERIQUE"
+         operateur-booleen: ET
+
+
+
+   - id: 6000
+     id-excel: 70
+     message: "Zone 106 : si la ressource est bien un manuscrit, la valeur attendue en sous-zone $a est 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       - F
+     regles:
+       - id: 6001
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+       - id: 6002
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+
+   - id: 6010
+     id-excel: 408
+     message: "Zone 106 : puisque la mention 'braille' est déclarée en zone d'indexation 608, la sous-zone 106$a peut être précisée (valeur 'f'). Voir autorité en zone 608"
+     priorite: P2
+     regles:
+       - id: 6011
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: false
+       - id: 6012
+         type: presencesouszone
+         zone: '608'
+         souszone:    3
+         presence: true
+         operateur-booleen: ET
+       - id: 6013
+         type: dependance
+         zone: '608'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 6014
+         type: presencechainecaracteres
+         zone: '280'
+         souszone:   a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    braille
+           
+           
+
+   - id: 6020
+     id-excel: 306
+     message: "Zone 456 : puique la ressource est une thèse originelle, la notice liée doit être celle décrivant la reproduction et doit donc contenir une sous-zone 328$z. Corriger la notice liée ou utiliser une autre zone que la zone 456."
+     priorite: P2
+     type-these:
+       - SOUTENANCE
+     regles:
+       - id: 6021
+         type: presencesouszone
+         zone: '456'
+         souszone:    0
+         presence: true
+       - id: 6022
+         type: dependance
+         zone: '456'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 6023
+         type: presencesouszone
+         zone: '328'
+         souszone:   z
+         presence: false
+
+
+   - id: 6030
+     id-excel: 278
+     message: "Zone 412 : dans la notice du document source indiqué en $0, le lien réciproque en 413 est absent ou erroné. Ajouter ou corriger le lien vers cet extrait ou tiré-à-part."
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens
+     type-doc:
+       -    A
+       -    B
+       -    K
+       -    O
+       -    N
+       -    I
+       -    F
+       -    Z
+       -    V
+       -    G
+       -    M
+       -    PC
+     regles:
+       - id: 6031
+         type: presencesouszone
+         zone: '412'
+         souszone:    0
+         presence: true
+       - id: 6032
+         type: dependance
+         zone: '412'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 6033
+         type: reciprocite
+         zone: '413'
+         souszone:   0
+         
+         
+   - id: 6040
+     id-excel: 280
+     message: "Zone 413 : dans la notice de l'extrait ou du tiré-à-part indiqué en $0, le lien réciproque en 412 est absent ou erroné. Ajouter ou corriger vers ce document source."
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens
+     type-doc:
+       -    A
+       -    B
+       -    K
+       -    O
+       -    N
+       -    I
+       -    F
+       -    Z
+       -    V
+       -    G
+       -    M
+       -    PC
+     regles:
+       - id: 6041
+         type: presencesouszone
+         zone: '413'
+         souszone:    0
+         presence: true
+       - id: 6042
+         type: dependance
+         zone: '413'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 6043
+         type: reciprocite
+         zone: '412'
+         souszone:   0
+
+
+   - id: 6050
+     id-excel: 419
+     message: "Travaux universitaires (soutenance) : le code du système de classification attendu en sous-zone 686$2 est 'TEF'"
+     priorite: P1
+     jeux-de-regles:
+       - 2 #6XX
+     type-these:
+       - SOUTENANCE
+     regles:
+       - id: 6051
+         type: presencesouszone
+         zone: '686'
+         souszone:    2
+         presence: true
+       - id: 6052
+         type: presencechainecaracteres
+         zone: '686'
+         souszone:   2
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    TEF
+         operateur-booleen: ET
+
+
+
+   - id: 6060
+     id-excel: 440
+     message: "Zone 700 : le code fonction doit être 070 pour l'auteur ou co-auteur de la thèse"
+     priorite: P1
+     jeux-de-regles:
+       - 7 #7XX
+     type-these:
+       - SOUTENANCE
+       - REPRO
+     regles:
+       - id: 6061
+         type: presencesouszone
+         zone: '700'
+         souszone:    4
+         presence: true
+       - id: 6062
+         type: presencechainecaracteres
+         zone: '700'
+         souszone:   4
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    '070'
+         operateur-booleen: ET
+
+
+   - id: 6070
+     id-excel: 33
+     message: "Traduction : si la ressource est bien une traduction (indicateur 1=1), la zone 454 est obligatoire"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     regles:
+       - id: 6071
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '1'
+       - id: 6072
+         type: presencezone
+         zone: '454'
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 6080
+     id-excel: 34
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) zone(s) 454 n'ont pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     regles:
+       - id: 6081
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 6082
+         type: presencezone
+         zone: '454'
+         presence: true
+         operateur-booleen: ET
+
+
+   - id: 6090
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la sous-zone 700$4 contenant le code '730 (Traducteur)' n'a pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 6091
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 6092
+         type: presencechainecaracteres
+         zone: '700'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+
+
+   - id: 7000
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) sous-zone(s) 701$4 contenant le code '730 (Traducteur)' n'ont pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7001
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7002
+         type: presencechainecaracteres
+         zone: '701'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+
+   - id: 7010
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) sous-zone(s) 702$4 contenant le code '730 (Traducteur)' n'ont pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7011
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7012
+         type: presencechainecaracteres
+         zone: '702'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+
+
+   - id: 7020
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la sous-zone(s) 710$4 contenant le code '730 (Traducteur)' n'a pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7021
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7022
+         type: presencechainecaracteres
+         zone: '710'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+
+   - id: 7030
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) sous-zone(s) 711$4 contenant le code '730 (Traducteur)' n'ont pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7031
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7032
+         type: presencechainecaracteres
+         zone: '711'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+
+
+   - id: 7040
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) sous-zone(s) 712$4 contenant le code '730 (Traducteur)' n'ont pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7041
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7042
+         type: presencechainecaracteres
+         zone: '712'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+         
+
+
+   - id: 7050
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la sous-zone 720$4 contenant le code '730 (Traducteur)' n'a pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7051
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7052
+         type: presencechainecaracteres
+         zone: '720'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+
+
+
+   - id: 7060
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) sous-zone(s) 721$4 contenant le code '730 (Traducteur)' n'ont pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7061
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7062
+         type: presencechainecaracteres
+         zone: '721'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+   
+   
+   
+   - id: 7070
+     id-excel: 36
+     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) sous-zone(s) 722$4 contenant le code '730 (Traducteur)' n'ont pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+       - 7  #responsabilités
+     regles:
+       - id: 7071
+         type: indicateur
+         zone: '101'
+         indicateur: 1
+         valeur: '0'
+       - id: 7072
+         type: presencechainecaracteres
+         zone: '722'
+         souszone: 4
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "730"
+         operateur-booleen: ET
+
+         
+         
+  
