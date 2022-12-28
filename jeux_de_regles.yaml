@@ -1,6 +1,6 @@
 ---
 jeux-de-regles:
-  - id:          10
+  - i:          10
     libelle:     TEST
     description: TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
     position:    10
