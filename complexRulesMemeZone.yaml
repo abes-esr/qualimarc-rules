@@ -93,7 +93,7 @@ rules:
         presence: true
       - id: 25012
         type: indicateur
-        indicateur: 2
+        indicateur: 1
         valeur: "4"
       - id: 25013
         type: presencesouszone
