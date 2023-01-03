@@ -22,8 +22,8 @@ rules:
   - id:         701
     id-excel:   203
     type:       indicateur
-    message:    "MODIF TEST Zone 225 : l'indicateur 1 ne peut pas avoir la valeur #. Sa valeur doit être 0, 1 ou 2"
+    message:    "Zone 225 : l'indicateur 1 ne peut pas avoir la valeur #. Sa valeur doit être 0, 1 ou 2"
     zone:       225
     priorite:   P1
-    indicateur: 2
+    indicateur: 1
     valeur:     '#'
