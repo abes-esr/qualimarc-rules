@@ -94,7 +94,7 @@ rules:
       - id: 25012
         type: indicateur
         indicateur: 2
-        valeur: 4
+        valeur: "4"
       - id: 25013
         type: presencesouszone
         souszone: "d"
