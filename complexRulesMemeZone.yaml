@@ -99,3 +99,31 @@ rules:
         type: presencesouszone
         souszone: "d"
         presence: false
+
+
+
+  - id: 25020
+    id-excel: 338
+    message: "Zone 600 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 600
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25021
+        type: presencezone
+        presence: true
+      - id: 25022
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25023
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25024
+        type: presencesouszone
+        souszone: "3"
+        presence: false
