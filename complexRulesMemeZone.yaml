@@ -109,6 +109,7 @@ rules:
     priorite: P1
     jeux-de-regles:
       - 2 #6XX
+      - 3 #liens
     regles:
       - id: 25021
         type: presencezone
