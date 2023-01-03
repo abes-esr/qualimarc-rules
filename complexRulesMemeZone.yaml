@@ -44,8 +44,6 @@ rules:
       -    G
       -    M
       -    PC
-      -    TS
-      -    TR
     jeux-de-regles:
       - 4 #2XX
       - 6 #dates
