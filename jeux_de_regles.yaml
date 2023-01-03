@@ -28,11 +28,11 @@ jeux-de-regles:
   - id:          5
     libelle:     Translittération ($6/$7)
     description: "fait uniquement jouer les règles qui concernent une absence ou erreur dans les sous-zones dédiées à la translittération ($6 et $7)"
-    position:    6
+    position:    7
   - id:          6
     libelle:     Dates
     description: "fait uniquement jouer les règles qui concernent une absence ou erreur dans les dates"
-    position:    5
+    position:    6
   - id:          7
     libelle:     Responsabilités (7XX)
     description: "fait uniquement jouer les règles qui portent sur les zones 7XX"
@@ -40,7 +40,7 @@ jeux-de-regles:
   - id:          8
     libelle:     Nouvelles implémentations Unimarc
     description: "fait uniquement jouer les règles qui portent sur des zones/sous-zones nouvellement implémentées (depuis 2022) dans le Sudoc"
-    position:    7
+    position:    8
   - id:          9
     libelle:     Identification (0XX)
     description: "fait uniquement jouer les règles qui portent sur les zones 0XX"
