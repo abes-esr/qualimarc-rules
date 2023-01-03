@@ -31,6 +31,21 @@ rules:
     message: "Zone 214 : puisque l'indicateur 1 est '#' et l'indicateur 2 est '1', une sous-zone $d précisant une date est obligatoire"
     zone: 214
     priorite: P1
+    type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -	   PC
+      -    TS
+      -    TR
     jeux-de-regles:
       - 4 #2XX
       - 6 #dates
