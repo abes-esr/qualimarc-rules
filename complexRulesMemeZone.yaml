@@ -63,3 +63,39 @@ rules:
         type: presencesouszone
         souszone: "d"
         presence: false
+
+
+
+  - id: 25010
+    id-excel: 174
+    message: "Zone 214 : puisqu'une date de copyright ou de protection est déclarée (indicateur 2=4), la sous-zone $d est obligatoire"
+    zone: 214
+    priorite: P1
+    type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    PC
+    jeux-de-regles:
+      - 4 #2XX
+      - 6 #dates
+    regles:
+      - id: 25011
+        type: presencezone
+        presence: true
+      - id: 25012
+        type: indicateur
+        indicateur: 2
+        valeur: "4"
+      - id: 25013
+        type: presencesouszone
+        souszone: "d"
+        presence: false
