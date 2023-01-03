@@ -32,20 +32,20 @@ rules:
     zone: 214
     priorite: P1
     type-doc:
-      - A
-      - B
-      - K
-      - O
-      - N
-      - I
-      - F
-      - Z
-      - V
-      - G
-      - M
-      -	PC
-      - TS
-      - TR
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    PC
+      -    TS
+      -    TR
     jeux-de-regles:
       - 4 #2XX
       - 6 #dates
