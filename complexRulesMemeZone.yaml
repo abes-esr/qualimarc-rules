@@ -155,3 +155,87 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: true
+
+  
+  - id: 25040
+    id-excel: 350
+    message: "Zone 601 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 601
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25041
+        type: presencezone
+        presence: true
+      - id: 25042
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25043
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25044
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+  - id: 25050
+    id-excel: 358
+    message: "Zone 602 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 602
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25051
+        type: presencezone
+        presence: true
+      - id: 25052
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25053
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25054
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+  - id: 25060
+    id-excel: 370
+    message: "Zone 605 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 605
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25061
+        type: presencezone
+        presence: true
+      - id: 25062
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25063
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25064
+        type: presencesouszone
+        souszone: "3"
+        presence: false
