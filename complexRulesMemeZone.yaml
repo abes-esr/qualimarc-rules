@@ -128,3 +128,30 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
+
+
+  - id: 25030
+    id-excel: 341
+    message: "Zone 600 : le code du système d'exploitation enregistré en sous-zone $2 doit être 'rameau' (en minuscules)"
+    zone: 600
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25031
+        type: presencezone
+        presence: true
+      - id: 25032
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25033
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENTDIFFERENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25034
+        type: presencesouszone
+        souszone: "3"
+        presence: true
