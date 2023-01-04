@@ -289,10 +289,6 @@ rules:
         souszone: "3"
         presence: false
       - id: 25083
-        type: presencesouszone
-        souszone: "2"
-        presence: true
-      - id: 25084
         type: presencechainecaracteres
         souszone: "2"
         type-de-verification: STRICTEMENT
