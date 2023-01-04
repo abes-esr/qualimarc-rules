@@ -148,7 +148,7 @@ rules:
       - id: 25033
         type: presencechainecaracteres
         souszone: "2"
-        type-de-verification: STRICTEMENTDIFFERENT
+        type-de-verification: NECONTIENTPAS
         chaines-caracteres:
           -  rameau
       - id: 25034
