@@ -239,3 +239,62 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
+
+
+
+
+  - id: 25070
+    id-excel: 378
+    message: "Zone 606 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 606
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25071
+        type: presencezone
+        presence: true
+      - id: 25072
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25073
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25074
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+
+  - id: 25080
+    id-excel: 378
+    message: "Zone 606 : faire le lien vers la ou les notice(s) d'autorité fmesh (Tl) mentionnée(s) dans une sous-zone $3"
+    zone: 606
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25081
+        type: presencezone
+        presence: true
+      - id: 25082
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25083
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  fmesh
+      - id: 25084
+        type: presencesouszone
+        souszone: "3"
+        presence: false
