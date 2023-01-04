@@ -286,15 +286,15 @@ rules:
         presence: true
       - id: 25082
         type: presencesouszone
+        souszone: "3"
+        presence: false
+      - id: 25083
+        type: presencesouszone
         souszone: "2"
         presence: true
-      - id: 25083
+      - id: 25084
         type: presencechainecaracteres
         souszone: "2"
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  fmesh
-      - id: 25084
-        type: presencesouszone
-        souszone: "3"
-        presence: false
