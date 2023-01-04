@@ -327,3 +327,31 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
+
+
+  - id: 25100
+    id-excel: 401
+    message: "Zone 608 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 608
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25101
+        type: presencezone
+        presence: true
+      - id: 25102
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25103
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25104
+        type: presencesouszone
+        souszone: "3"
+        presence: false
