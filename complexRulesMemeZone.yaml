@@ -9,6 +9,7 @@ rules:
     jeux-de-regles:
       - 1
       - 2
+      - 10
     regles:
       - id: 81
         type: presencezone
