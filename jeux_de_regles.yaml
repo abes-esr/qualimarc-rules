@@ -45,4 +45,7 @@ jeux-de-regles:
     libelle:     Identification (0XX)
     description: "fait uniquement jouer les règles qui portent sur les zones 0XX"
     position:    0
-
+  - id:          10
+    libelle:     Test jeu de règle AFE
+    description: "ceci est un test"
+    position:    9
