@@ -2,7 +2,7 @@
 
 ![qualimarc](https://user-images.githubusercontent.com/328244/203315079-4cabb49a-58a8-4778-80b5-d789e48fb94d.PNG)
 
-## Documentation d'utilisation du dépot
+## Documentation d'utilisation du dépôt
 
 Ce document explique étape par étape comment ajouter ou modifier des règles dans le projet QualiMarc.
 

@@ -11,38 +11,41 @@ jeux-de-regles:
 ##pas toucher, jeux de regles d'aurélie
   - id:          1
     libelle:     Données codées (1XX)
-    description: Données codées (1XX)
-    position:    0
+    description: "fait uniquement jouer les règles qui portent sur les zones 1XX"
+    position:    1
   - id:          2
     libelle:     Indexation-matière (6XX)
-    description: Indexation-matière (6XX)
-    position:    1
+    description: "fait uniquement jouer les règles qui portent sur les zones 6XX"
+    position:    3
   - id:          3
     libelle:     Liens ($0/$3)
     description: "fait uniquement jouer les règles qui concernent une absence ou erreur de liens ($0 ou $3) dans les zones 4XX, 5XX, 6XX et 7XX"
-    position:    2
+    position:    5
   - id:          4
     libelle:     Informations descriptives (2XX)
-    description: Informations descriptives (2XX)
-    position:    3
+    description: "fait uniquement jouer les règles qui portent sur les zones 2XX"
+    position:    2
   - id:          5
     libelle:     Translittération ($6/$7)
-    description: Translittération ($6/$7)
-    position:    4
+    description: "fait uniquement jouer les règles qui concernent une absence ou erreur dans les sous-zones dédiées à la translittération ($6 et $7)"
+    position:    7
   - id:          6
     libelle:     Dates
-    description: Dates
-    position:    5
+    description: "fait uniquement jouer les règles qui concernent une absence ou erreur dans les dates"
+    position:    6
   - id:          7
     libelle:     Responsabilités (7XX)
-    description: Responsabilités (7XX)
-    position:    6
+    description: "fait uniquement jouer les règles qui portent sur les zones 7XX"
+    position:    4
   - id:          8
     libelle:     Nouvelles implémentations Unimarc
-    description: Nouvelles implémentations Unimarc
-    position:    7
+    description: "fait uniquement jouer les règles qui portent sur des zones/sous-zones nouvellement implémentées (depuis 2022) dans le Sudoc"
+    position:    8
   - id:          9
     libelle:     Identification (0XX)
-    description: Identification (0XX)
-    position:    8
-
+    description: "fait uniquement jouer les règles qui portent sur les zones 0XX"
+    position:    9
+  - id:          10
+    libelle:     Test jeu de règle AFE
+    description: "ceci est un test"
+    position:    0

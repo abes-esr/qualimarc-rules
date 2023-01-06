@@ -1,3 +1,4 @@
+# ID à partir de 25000 et par tranche de 10 (25000-25010-25020...), décliné en unité pour règle simple qui la compose (25001-25002 ; 25011-25012-25013....)
 ---
 rules:
   - id: 80
@@ -8,6 +9,7 @@ rules:
     jeux-de-regles:
       - 1
       - 2
+      - 10
     regles:
       - id: 81
         type: presencezone
@@ -23,4 +25,334 @@ rules:
       - id: 84
         type: presencesouszone
         souszone: "d"
+        presence: false
+
+  - id: 25000
+    id-excel: 160
+    message: "Zone 214 : puisque l'indicateur 1 est '#' et l'indicateur 2 est '1', une sous-zone $d précisant une date est obligatoire"
+    zone: 214
+    priorite: P1
+    type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    PC
+    jeux-de-regles:
+      - 4 #2XX
+      - 6 #dates
+    regles:
+      - id: 25001
+        type: presencezone
+        presence: true
+      - id: 25002
+        type: indicateur
+        indicateur: 1
+        valeur: "#"
+      - id: 25003
+        type: indicateur
+        indicateur: 2
+        valeur: "1"
+      - id: 25004
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+
+
+
+  - id: 25010
+    id-excel: 174
+    message: "Zone 214 : puisqu'une date de copyright ou de protection est déclarée (indicateur 2=4), la sous-zone $d est obligatoire"
+    zone: 214
+    priorite: P1
+    type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    PC
+    jeux-de-regles:
+      - 4 #2XX
+      - 6 #dates
+    regles:
+      - id: 25011
+        type: presencezone
+        presence: true
+      - id: 25012
+        type: indicateur
+        indicateur: 2
+        valeur: "4"
+      - id: 25013
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+
+
+
+  - id: 25020
+    id-excel: 338
+    message: "Zone 600 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 600
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25021
+        type: presencezone
+        presence: true
+      - id: 25022
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25023
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25024
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+  - id: 25030
+    id-excel: 341
+    message: "Zone 600 : le code du système d'exploitation enregistré en sous-zone $2 doit être 'rameau' (en minuscules)"
+    zone: 600
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25031
+        type: presencezone
+        presence: true
+      - id: 25032
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25033
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+      - id: 25034
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+
+  
+  - id: 25040
+    id-excel: 350
+    message: "Zone 601 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 601
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25041
+        type: presencezone
+        presence: true
+      - id: 25042
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25043
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25044
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+  - id: 25050
+    id-excel: 358
+    message: "Zone 602 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 602
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25051
+        type: presencezone
+        presence: true
+      - id: 25052
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25053
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25054
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+  - id: 25060
+    id-excel: 370
+    message: "Zone 605 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 605
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25061
+        type: presencezone
+        presence: true
+      - id: 25062
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25063
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25064
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+
+
+  - id: 25070
+    id-excel: 378
+    message: "Zone 606 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 606
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25071
+        type: presencezone
+        presence: true
+      - id: 25072
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25073
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25074
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+
+  - id: 25080
+    id-excel: 378
+    message: "Zone 606 : faire le lien vers la ou les notice(s) d'autorité fmesh (Tl) mentionnée(s) dans une sous-zone $3"
+    zone: 606
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25081
+        type: presencezone
+        presence: true
+      - id: 25082
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+      - id: 25083
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25084
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  fmesh
+
+
+
+  - id: 25090
+    id-excel: 391
+    message: "Zone 607 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 607
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25091
+        type: presencezone
+        presence: true
+      - id: 25092
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25093
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25094
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+  - id: 25100
+    id-excel: 402
+    message: "Zone 608 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 608
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25101
+        type: presencezone
+        presence: true
+      - id: 25102
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25103
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25104
+        type: presencesouszone
+        souszone: "3"
         presence: false
