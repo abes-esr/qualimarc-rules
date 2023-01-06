@@ -736,3 +736,40 @@ rules:
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: d
          operateur-booleen: OU
+
+
+ 
+   - id: 7100
+     id-excel: 696
+     message: "Zone 461 : puisqu'il s'agit d'une ressource électronique, le lien enregistré en 461$0 doit pointer vers une notice de collection électronique (Od) ou vers une notice de ressource continue électronique (Ob)"
+     priorite: P1
+     type-doc:
+       -    O
+     regles:
+       - id: 7101
+         type: presencesouszone
+         zone: '461'
+         souszone:    0
+         presence: true
+       - id: 7102
+         type: dependance
+         zone: '461'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7103
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: o
+       - id: 7104
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: d
+         operateur-booleen: OU
+       - id: 7105
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
+         operateur-booleen: OU
