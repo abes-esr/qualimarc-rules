@@ -821,7 +821,7 @@ rules:
        - id: 7121
          type: typedocument
          position:   1
-         type-de-verification:    STRICTEMENTDIFFERENT
+         type-de-verification:    STRICTEMENT
          valeur: o
        - id: 7122
          type: presencezone
