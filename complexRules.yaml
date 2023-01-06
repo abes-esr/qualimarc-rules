@@ -698,10 +698,10 @@ rules:
          type: typedocument
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
-         valeur: O
+         valeur: o
        - id: 7084
          type: typedocument
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: d
-         operateur-booleen: ET
+         operateur-booleen: OU
