@@ -705,3 +705,34 @@ rules:
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: d
          operateur-booleen: OU
+
+
+ 
+   - id: 7090
+     id-excel: 695
+     message: "Zone 410 : puisqu'il s'agit d'une monographie imprimée, le lien enregistré en 410$0 doit pointer vers une notice de collection de monographies imprimées (Ad)"
+     priorite: P1
+     type-doc:
+       -    A
+     regles:
+       - id: 7091
+         type: presencesouszone
+         zone: '410'
+         souszone:    0
+         presence: true
+       - id: 7092
+         type: dependance
+         zone: '410'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7093
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
+       - id: 7094
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: d
+         operateur-booleen: OU
