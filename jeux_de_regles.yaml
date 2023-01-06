@@ -1,13 +1,5 @@
 ---
 jeux-de-regles:
-  - id:          10
-    libelle:     TEST
-    description: TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
-    position:    10
-
-
-
-
 ##pas toucher, jeux de regles d'aurélie
   - id:          1
     libelle:     Données codées (1XX)
@@ -45,7 +37,3 @@ jeux-de-regles:
     libelle:     Identification (0XX)
     description: "fait uniquement jouer les règles qui portent sur les zones 0XX"
     position:    9
-  - id:          10
-    libelle:     Test jeu de règle AFE
-    description: "ceci est un test"
-    position:    0

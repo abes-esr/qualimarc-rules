@@ -1,17 +1,6 @@
 ---
 #ID de 400 à 499
 rules:
-  - id:          5
-    id-excel:    130
-    type:        nombresouszone
-    message:     nombre zonesous ansible SQN
-    zone:        603
-    souszone:    a
-    zonecible:   603
-    souszonecible: b
-    priorite:    P2
-    
-
 #REGLES VALIDEES AURELIE octobre 2022
   - id:          400
     id-excel:    42

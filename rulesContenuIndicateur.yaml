@@ -1,12 +1,5 @@
 # ID règles de 700 à 799
 rules:
-  - id:         50
-    type:       indicateur
-    message:    test indicateur
-    zone:       603
-    priorite:   P1
-    indicateur: 2
-    valeur:     '#'
 # /!\ le # tout seul creer un commentaire et donc pour l'inserer dans une valeur il faut le mettre entre cote
 
   - id:         700

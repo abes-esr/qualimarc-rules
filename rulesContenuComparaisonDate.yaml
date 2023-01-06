@@ -1,19 +1,6 @@
 ---
 #ID de 1100 à 1199
 rules:
-  - id: 70
-    id-excel: 45
-    type: comparaisondate
-    message: "La date 100$a doit etre egale a la date 214$d "
-    zone: "100"
-    souszone: "a"
-    positionstart: 9
-    positionend: 12
-    comparateur: "DIFFERENT"
-    zonecible: "214"
-    souszonecible: "d"
-    priorite: "P1"
-
 #ATTENTION règle 1100 : quand mise en prod QualiMarc effectuée, modifier les zones + cible en 100$A et 100$E car 100$a pos. 13-16 tape sur la 100$f et non pas la 100$e !!!!!
   - id: 1100
     id-excel: 28

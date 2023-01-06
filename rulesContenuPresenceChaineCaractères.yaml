@@ -1,22 +1,6 @@
 ---
 # ID de 1000 à 1099
 rules:
-    - id:                       99
-      id-excel:                 99
-      type:                     presencechainecaracteres
-      message:                  message de retour
-      zone:                     603
-      priorite:                 P1
-      souszone:                 a
-      type-de-verification:     CONTIENT
-      chaines-caracteres:
-        - chaine-caracteres:    premier chaine de caractères à chercher
-        - operateur:            ET
-          chaine-caracteres:    deuxième chaine de caractères à chercher
-        - operateur:            OU
-          chaine-caracteres:    deuxième chaine de caractères à chercher
-
-
     - id:                       1000
       id-excel:                 443
       type:                     presencechainecaracteres
