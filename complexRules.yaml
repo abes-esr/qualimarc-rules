@@ -809,3 +809,22 @@ rules:
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: b
          operateur-booleen: OU
+
+
+   - id: 7120
+     id-excel: 698
+     message: "Zone 371 : des précisions sur les conditions d'accès à la ressource électronique sont attendues dans une zone 371 avec indicateur 1 = 0"
+     priorite: P2
+     type-doc:
+       - BD
+     regles:
+       - id: 7121
+         type: typedocument
+         position:   1
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur: o
+       - id: 7122
+         type: presencezone
+         zone: '371'
+         presence: false
+         operateur-booleen: ET
