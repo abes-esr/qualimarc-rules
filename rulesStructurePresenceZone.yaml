@@ -428,3 +428,14 @@ rules:
       -    SOUTENANCE
       jeux-de-regles:
       - 2  #6XX
+
+
+    - id:          529
+      id-excel:    697
+      type:        presencezone
+      message:     "Zone 371 : des précisions sur les conditions d'accès à la ressource électronique sont attendues dans une zone 371 avec indicateur 1 = 0"
+      zone:        371
+      priorite:    P2
+      presence:    false
+      type-doc:
+      -    O
