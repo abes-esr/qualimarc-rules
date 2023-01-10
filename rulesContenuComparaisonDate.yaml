@@ -14,8 +14,8 @@ rules:
     souszonecible: "d"
     priorite: "P1"
 
-#ATTENTION règle 1100 : quand mise en prod QualiMarc effectuée, modifier les zones + cible en 100$A et 100$E car 100$a pos. 13-16 tape sur la 100$f et non pas la 100$e !!!!!
-  - id: 1100
+
+- id: 1100
     id-excel: 28
     type: comparaisondate
     message: "Zone 100 : corriger les dates, car l'année de parution ou de production (enregistrée en $a) doit être supérieure ou égale à l'année de l'original (fac-similés), de protection ou de production (enregistrée en $e)"
