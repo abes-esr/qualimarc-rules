@@ -1,29 +1,31 @@
 # ID règles de 700 à 799
 rules:
-  - id:         50
-    type:       indicateur
-    message:    test indicateur
-    zone:       603
-    priorite:   P1
-    indicateur: 2
-    valeur:     '#'
+  - id:                   50
+    type:                 indicateur
+    message:              test indicateur
+    zone:                 603
+    priorite:             P1
+    indicateur:           2
+    valeur:               '#'
+    type-de-verification: STRICTEMENT
 # /!\ le # tout seul creer un commentaire et donc pour l'inserer dans une valeur il faut le mettre entre cote
 
-  - id:         700
-    id-excel:   35
-    type:       indicateur
-    message:    "Zone 101 : l'indicateur 1 ne peut pas avoir la valeur #. Sa valeur doit être 0, 1 ou 2"
-    zone:       101
-    priorite:   P1
-    indicateur: 1
-    valeur:     '#'
+  - id:                   700
+    id-excel:             35
+    type:                 indicateur
+    message:              "Zone 101 : l'indicateur 1 ne peut pas avoir la valeur #. Sa valeur doit être 0, 1 ou 2"
+    zone:                 101
+    priorite:             P1
+    indicateur:           1
+    valeur:               '#'
+    type-de-verification: STRICTEMENT
 
-
-  - id:         701
-    id-excel:   203
-    type:       indicateur
-    message:    "Zone 225 : l'indicateur 1 ne peut pas avoir la valeur #. Sa valeur doit être 0, 1 ou 2"
-    zone:       225
-    priorite:   P1
-    indicateur: 1
-    valeur:     '#'
+  - id:                   701
+    id-excel:             203
+    type:                 indicateur
+    message:              "Zone 225 : l'indicateur 1 ne peut pas avoir la valeur #. Sa valeur doit être 0, 1 ou 2"
+    zone:                 225
+    priorite:             P1
+    indicateur:           1
+    valeur:              '#'
+    type-de-verification: STRICTEMENT
