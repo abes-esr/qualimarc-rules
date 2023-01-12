@@ -1,31 +1,6 @@
 # ID à partir de 25000 et par tranche de 10 (25000-25010-25020...), décliné en unité pour règle simple qui la compose (25001-25002 ; 25011-25012-25013....)
 ---
 rules:
-  - id: 80
-    id-excel: 1
-    message: "214 doit truc truc"
-    zone: 214
-    priorite: P2
-    jeux-de-regles:
-      - 1
-      - 2
-      - 10
-    regles:
-      - id: 81
-        type: presencezone
-        presence: true
-      - id: 82
-        type: indicateur
-        indicateur: 1
-        valeur: "#"
-      - id: 83
-        type: indicateur
-        indicateur: 2
-        valeur: "1"
-      - id: 84
-        type: presencesouszone
-        souszone: "d"
-        presence: false
 
   - id: 25000
     id-excel: 160
@@ -55,10 +30,12 @@ rules:
       - id: 25002
         type: indicateur
         indicateur: 1
+        type-de-verification: STRICTEMENT
         valeur: "#"
       - id: 25003
         type: indicateur
         indicateur: 2
+        type-de-verification: STRICTEMENT
         valeur: "1"
       - id: 25004
         type: presencesouszone
@@ -95,6 +72,7 @@ rules:
       - id: 25012
         type: indicateur
         indicateur: 2
+        type-de-verification: STRICTEMENT
         valeur: "4"
       - id: 25013
         type: presencesouszone
