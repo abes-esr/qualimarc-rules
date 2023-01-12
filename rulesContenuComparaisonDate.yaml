@@ -4,7 +4,7 @@ rules:
  - id: 1101
     id-excel: 190
     type: comparaisondate
-    message: "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur "Date la plus ancienne" dans l'onglet "Générales")"
+    message: "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
     zone: "214"
     souszone: "d"
     comparateur: "DIFFERENT"
