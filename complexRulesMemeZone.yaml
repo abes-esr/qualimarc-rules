@@ -336,22 +336,22 @@ rules:
         presence: false
 
 
-   - id: 25110
-     id-excel: 699
-     message: "Zone 214 : puisqu'il s'agit d'une monographie électronique, les indicateurs de la zone 214 doivent être '#2'"
-     zone: 214
-     priorite: P1
-     jeux-de-regles:
+  - id: 25110
+    id-excel: 699
+    message: "Zone 214 : puisqu'il s'agit d'une monographie électronique, les indicateurs de la zone 214 doivent être '#2'"
+    zone: 214
+    priorite: P1
+    jeux-de-regles:
       - 4 #2XX
-     type-doc:
+    type-doc:
        -  O
-     regles:
-       - id: 25111
+    regles:
+      - id: 25111
         type: indicateur
         indicateur: 1
         type-de-verification: STRICTEMENTDIFFERENT
         valeur: "#"
-       - id: 25112
+      - id: 25112
         type: indicateur
         indicateur: 2
         type-de-verification: STRICTEMENTDIFFERENT
