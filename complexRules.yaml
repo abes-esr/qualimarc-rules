@@ -441,6 +441,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '1'
        - id: 6072
          type: presencezone
