@@ -2,24 +2,24 @@
 #ID de 1100 à 1199
 rules:
  - id: 1101
-    id-excel: 190
-    type: comparaisondate
-    message: "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
-    zone: "214"
-    souszone: "d"
-    comparateur: "DIFFERENT"
-    zonecible: "100"
-    souszonecible: "A"
-    priorite: "P1"
+   id-excel: 190
+   type: comparaisondate
+   message: "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
+   zone: "214"
+   souszone: "d"
+   comparateur: "DIFFERENT"
+   zonecible: "100"
+   souszonecible: "A"
+   priorite: "P1"
 
 
  - id: 1100
-    id-excel: 28
-    type: comparaisondate
-    message: "Zone 100 : corriger les dates, car l'année de parution ou de production (enregistrée en $a) doit être supérieure ou égale à l'année de l'original (fac-similés), de protection ou de production (enregistrée en $e)"
-    zone: "100"
-    souszone: "A"
-    comparateur: "INFERIEUR"
-    zonecible: "100"
-    souszonecible: "E"
-    priorite: "P1"
+   id-excel: 28
+   type: comparaisondate
+   message: "Zone 100 : corriger les dates, car l'année de parution ou de production (enregistrée en $a) doit être supérieure ou égale à l'année de l'original (fac-similés), de protection ou de production (enregistrée en $e)"
+   zone: "100"
+   souszone: "A"
+   comparateur: "INFERIEUR"
+   zonecible: "100"
+   souszonecible: "E"
+   priorite: "P1"
