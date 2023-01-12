@@ -835,18 +835,18 @@ rules:
      message: "La notice ne peut pas comporter à la fois une zone 210 et une zone 214 : supprimer la zone 210 au profit de la/les zone(s) 214"
      priorite: P1
      type-doc:
-      -    A
-      -    B
-      -    K
-      -    O
-      -    N
-      -    I
-      -    F
-      -    Z
-      -    V
-      -    G
-      -    M
-      -	  PC
+       -    A
+       -    B
+       -    K
+       -    O
+       -    N
+       -    I
+       -    F
+       -    Z
+       -    V
+       -    G
+       -    M
+       -	   PC
      regles:
        - id: 7131
          type: presencezone
