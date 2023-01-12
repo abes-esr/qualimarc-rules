@@ -461,6 +461,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 6082
          type: presencezone
@@ -480,6 +481,7 @@ rules:
        - id: 6091
          type: indicateur
          zone: '101'
+         type-de-verification: STRICTEMENT
          indicateur: 1
          valeur: '0'
        - id: 6092
@@ -503,6 +505,7 @@ rules:
        - id: 7001
          type: indicateur
          zone: '101'
+         type-de-verification: STRICTEMENT
          indicateur: 1
          valeur: '0'
        - id: 7002
@@ -526,6 +529,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7012
          type: presencechainecaracteres
@@ -549,6 +553,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7022
          type: presencechainecaracteres
@@ -571,6 +576,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7032
          type: presencechainecaracteres
@@ -594,6 +600,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7042
          type: presencechainecaracteres
@@ -618,6 +625,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7052
          type: presencechainecaracteres
@@ -642,6 +650,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7062
          type: presencechainecaracteres
@@ -666,6 +675,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7072
          type: presencechainecaracteres
