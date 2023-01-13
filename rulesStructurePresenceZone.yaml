@@ -450,3 +450,13 @@ rules:
       presence:    false
       type-doc:
       -    O
+
+    - id:         531
+      id-excel:    259
+      type:        presencezone
+      message:     "Ressource électronique : la zone 336 est attendue"
+      zone:        336
+      priorite:    P2
+      presence:    false
+      type-doc:
+      -    O
