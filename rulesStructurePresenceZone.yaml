@@ -439,3 +439,14 @@ rules:
       presence:    false
       type-doc:
       -    O
+
+
+    - id:         530
+      id-excel:    510
+      type:        presencezone
+      message:     "Ressource électronique : si l'accès à cette ressource est direct et public, une zone 856 est obligatoire"
+      zone:        856
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    O
