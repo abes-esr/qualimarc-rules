@@ -359,7 +359,6 @@ rules:
       -    V
       -    G
       -    M
-      -    BD
       -    PC
       jeux-de-regles:
       - 1  #données codées
