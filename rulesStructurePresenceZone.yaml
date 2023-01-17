@@ -359,7 +359,6 @@ rules:
       -    V
       -    G
       -    M
-      -    BD
       -    PC
       jeux-de-regles:
       - 1  #données codées
@@ -428,3 +427,35 @@ rules:
       -    SOUTENANCE
       jeux-de-regles:
       - 2  #6XX
+
+
+    - id:          529
+      id-excel:    697
+      type:        presencezone
+      message:     "Zone 371 : des précisions sur les conditions d'accès à la ressource électronique sont attendues dans une zone 371 avec indicateur 1 = 0"
+      zone:        371
+      priorite:    P2
+      presence:    false
+      type-doc:
+      -    O
+
+
+    - id:         530
+      id-excel:    510
+      type:        presencezone
+      message:     "Ressource électronique : si l'accès à cette ressource est direct et public, une zone 856 est obligatoire"
+      zone:        856
+      priorite:    P1
+      presence:    false
+      type-doc:
+      -    O
+
+    - id:         531
+      id-excel:    259
+      type:        presencezone
+      message:     "Ressource électronique : la zone 336 est attendue"
+      zone:        336
+      priorite:    P2
+      presence:    false
+      type-doc:
+      -    O

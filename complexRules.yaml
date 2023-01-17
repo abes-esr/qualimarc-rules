@@ -441,6 +441,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '1'
        - id: 6072
          type: presencezone
@@ -460,6 +461,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 6082
          type: presencezone
@@ -479,6 +481,7 @@ rules:
        - id: 6091
          type: indicateur
          zone: '101'
+         type-de-verification: STRICTEMENT
          indicateur: 1
          valeur: '0'
        - id: 6092
@@ -502,6 +505,7 @@ rules:
        - id: 7001
          type: indicateur
          zone: '101'
+         type-de-verification: STRICTEMENT
          indicateur: 1
          valeur: '0'
        - id: 7002
@@ -525,6 +529,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7012
          type: presencechainecaracteres
@@ -548,6 +553,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7022
          type: presencechainecaracteres
@@ -570,6 +576,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7032
          type: presencechainecaracteres
@@ -593,6 +600,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7042
          type: presencechainecaracteres
@@ -617,6 +625,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7052
          type: presencechainecaracteres
@@ -641,6 +650,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7062
          type: presencechainecaracteres
@@ -665,6 +675,7 @@ rules:
          type: indicateur
          zone: '101'
          indicateur: 1
+         type-de-verification: STRICTEMENT
          valeur: '0'
        - id: 7072
          type: presencechainecaracteres
@@ -676,5 +687,227 @@ rules:
          operateur-booleen: ET
 
          
-         
-  
+ 
+   - id: 7080
+     id-excel: 274
+     message: "Zone 410 : puisqu'il s'agit d'une ressource électronique, le lien enregistré en 410$0 doit pointer vers une notice de collection électronique (Od*)"
+     priorite: P1
+     type-doc:
+       -    O
+     regles:
+       - id: 7081
+         type: presencesouszone
+         zone: '410'
+         souszone:    0
+         presence: true
+       - id: 7082
+         type: dependance
+         zone: '410'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7083
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: o
+       - id: 7084
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: d
+         operateur-booleen: OU
+
+
+ 
+   - id: 7090
+     id-excel: 695
+     message: "Zone 410 : puisqu'il s'agit d'une monographie imprimée, le lien enregistré en 410$0 doit pointer vers une notice de collection de monographies imprimées (Ad)"
+     priorite: P1
+     type-doc:
+       -    A
+     regles:
+       - id: 7091
+         type: presencesouszone
+         zone: '410'
+         souszone:    0
+         presence: true
+       - id: 7092
+         type: dependance
+         zone: '410'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7093
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
+       - id: 7094
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: d
+         operateur-booleen: OU
+
+
+ 
+   - id: 7100
+     id-excel: 696
+     message: "Zone 461 : puisqu'il s'agit d'une ressource électronique, le lien enregistré en 461$0 doit pointer vers une notice de collection électronique (Od) ou vers une notice de ressource continue électronique (Ob)"
+     priorite: P1
+     type-doc:
+       -    O
+     regles:
+       - id: 7101
+         type: presencesouszone
+         zone: '461'
+         souszone:    0
+         presence: true
+       - id: 7102
+         type: dependance
+         zone: '461'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7103
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: o
+       - id: 7104
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: d
+         operateur-booleen: OU
+       - id: 7105
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
+         operateur-booleen: OU
+
+
+   - id: 7110
+     id-excel: 701
+     message: "Zone 461 : puisqu'il s'agit d'une monographie imprimée, le lien enregistré en 461$0 doit pointer vers une notice de collection de monographies imprimées (Ad) ou vers une notice de ressource continue (Ab)"
+     priorite: P1
+     type-doc:
+       -    A
+     regles:
+       - id: 7111
+         type: presencesouszone
+         zone: '461'
+         souszone:    0
+         presence: true
+       - id: 7112
+         type: dependance
+         zone: '461'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7113
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
+       - id: 7114
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: d
+         operateur-booleen: OU
+       - id: 7115
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
+         operateur-booleen: OU
+
+
+   - id: 7120
+     id-excel: 698
+     message: "Zone 371 : des précisions sur les conditions d'accès à la ressource électronique sont attendues dans une zone 371 avec indicateur 1 = 0"
+     priorite: P2
+     type-doc:
+       - BD
+     regles:
+       - id: 7121
+         type: typedocument
+         position:   1
+         type-de-verification:    STRICTEMENT
+         valeur: o
+       - id: 7122
+         type: presencezone
+         zone: '371'
+         presence: false
+         operateur-booleen: ET
+
+       
+   - id: 7130
+     id-excel: 179
+     message: "La notice ne peut pas comporter à la fois une zone 210 et une zone 214 : supprimer la zone 210 au profit de la/les zone(s) 214"
+     priorite: P1
+     type-doc:
+       -  A
+       -  B
+       -  K
+       -  O
+       -  N
+       -  I
+       -  F
+       -  Z
+       -  V
+       -  G
+       -  M
+       -  PC
+     regles:
+       - id: 7131
+         type: presencezone
+         zone: '210'
+         presence: true
+       - id: 7132
+         type: presencezone
+         zone: '214'
+         presence: true
+         operateur-booleen: ET
+
+
+#7140 : complément de la règle github 522 (exclusion des ressources continues imprimées)
+   - id:         7140
+     id-excel:    113
+     message:     "Zone 135 : si le document décrit n'est pas une ressource continue électronique, la zone 135 doit être supprimée"
+     priorite:    P1
+     type-doc:
+     -    BD
+     jeux-de-regles:
+     - 1  #données codées
+     regles:
+       - id: 7141
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: o
+       - id: 7142
+         type: presencezone
+         zone: '135'
+         presence: true
+         operateur-booleen: ET
+
+
+
+#7150 : complément de la règle github 530 (inclusion des ressources continues électroniques)
+   - id:         7150
+     id-excel:    510
+     message:     "Ressource continue électronique : si l'accès à cette ressource est direct et public, une zone 856 est obligatoire"
+     priorite:    P1
+     type-doc:
+     -    BD
+     regles:
+       - id: 7151
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENT
+         valeur: o
+       - id: 7152
+         type: presencezone
+         zone: '856'
+         presence: false
+         operateur-booleen: ET

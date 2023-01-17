@@ -1,4 +1,4 @@
-# Qualimarc-rules
+# Qualimarc-rules 
 
 ![qualimarc](https://user-images.githubusercontent.com/328244/203315079-4cabb49a-58a8-4778-80b5-d789e48fb94d.PNG)
 
@@ -282,22 +282,24 @@ Si une sous-zone $a est présente ET une sous-zone $b est absente dans une même
 ### Valeur d'un indicateur
 Liste des champs propres au type de règle valeur d'un indicateur :
 - indicateur : ``obligatoire`` / de type entier. Indique sur quel indicateur de la zone porte la règle. Ce champ ne peut prendre que les valeurs 1 ou 2
-- valeur : ``obligatoire`` / de type chaine de caractère. Indique la valeur de l'indicateur que la règle doit vérifier. Cette valeur ne peut être qu'un entier entre 0 et 9 ou un '#' (# entre guillemets car en Yaml le # est utilisé pour écrire un commentaire)
+- valeur : ``obligatoire`` / de type chaine de caractères. Indique la valeur de l'indicateur que la règle doit vérifier. Cette valeur ne peut être qu'un entier entre 0 et 9 ou un '#' (# entre guillemets car en Yaml le # est utilisé pour écrire un commentaire)
+- type-de-verification : ``obligatoire`` / de type chaine de caractères. Indique le type de vérification à appliquer. Peut prendre les valeurs STRICTEMENT ou STRICTEMENTDIFFERENT 
 
 Exemple de fichier YAML : <br />
 
 ``` YAML
 rules:
-  - id:         1
-    id-excel:   1
-    type:       indicateur
-    message:    message test
-    zone:       200
-    priorite:   P1
-    indicateur: 2
-    valeur:     '#'
+  - id:                   1
+    id-excel:             1
+    type:                 indicateur
+    message:              message test
+    zone:                 200
+    priorite:             P1
+    indicateur:           2
+    valeur:               '#'
+    type-de-verification: STRICTEMENT
 ```
-Si le second indicateur de la zone 200 a la valeur # alors le message "message test" est envoyé à l'utilisateur.
+Si le second indicateur de la zone 200 a STRICTEMENT la valeur # alors le message "message test" est envoyé à l'utilisateur.
 
 ### Nombre de caractères
 Liste des champs propres au type de règle nombre de caractères : 
@@ -629,10 +631,12 @@ rules:
         type: indicateur
         indicateur: 1
         valeur: "#"
+        type-de-verification: STRICTEMENT
       - id: 4
         type: indicateur
         indicateur: 2
         valeur: "1"
+        type-de-verification: STRICTEMENT
       - id: 5
         type: presencesouszone
         souszone: "d"
@@ -772,3 +776,4 @@ jeux-de-regles:
     description: Liens ($0/$3)
     position:    2
 ```
+

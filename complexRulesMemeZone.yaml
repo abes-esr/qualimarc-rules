@@ -1,6 +1,7 @@
 # ID à partir de 25000 et par tranche de 10 (25000-25010-25020...), décliné en unité pour règle simple qui la compose (25001-25002 ; 25011-25012-25013....)
 ---
 rules:
+
   - id: 25000
     id-excel: 160
     message: "Zone 214 : puisque l'indicateur 1 est '#' et l'indicateur 2 est '1', une sous-zone $d précisant une date est obligatoire"
@@ -29,10 +30,12 @@ rules:
       - id: 25002
         type: indicateur
         indicateur: 1
+        type-de-verification: STRICTEMENT
         valeur: "#"
       - id: 25003
         type: indicateur
         indicateur: 2
+        type-de-verification: STRICTEMENT
         valeur: "1"
       - id: 25004
         type: presencesouszone
@@ -69,6 +72,7 @@ rules:
       - id: 25012
         type: indicateur
         indicateur: 2
+        type-de-verification: STRICTEMENT
         valeur: "4"
       - id: 25013
         type: presencesouszone
@@ -330,3 +334,25 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
+
+
+  - id: 25110
+    id-excel: 699
+    message: "Zone 214 : puisqu'il s'agit d'une monographie électronique, les indicateurs de la zone 214 doivent être '#2'"
+    zone: 214
+    priorite: P1
+    jeux-de-regles:
+      - 4 #2XX
+    type-doc:
+       -  O
+    regles:
+      - id: 25111
+        type: indicateur
+        indicateur: 1
+        type-de-verification: STRICTEMENTDIFFERENT
+        valeur: "#"
+      - id: 25112
+        type: indicateur
+        indicateur: 2
+        type-de-verification: STRICTEMENTDIFFERENT
+        valeur: "2"
