@@ -868,3 +868,25 @@ rules:
          zone: '214'
          presence: true
          operateur-booleen: ET
+
+
+#7140 : complément de la règle github 522 (exclusion des ressources continues imprimées)
+   - id:         7140
+     id-excel:    113
+     message:     "Zone 135 : si le document décrit n'est pas une ressource continue électronique, la zone 135 doit être supprimée"
+     priorite:    P1
+     type-doc:
+     -    BD
+     jeux-de-regles:
+     - 1  #données codées
+     regles:
+       - id: 7141
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: o
+       - id: 7142
+         type: presencezone
+         zone: '135'
+         presence: true
+         operateur-booleen: ET
