@@ -3,7 +3,6 @@
 #ID de 1200 à 1299
 
 rules:
-
     - id:                       1200
       id-excel:                 20
       type:                     comparaisoncontenusouszone
@@ -17,18 +16,3 @@ rules:
       type-de-verification:     NECONTIENTPAS
       zonecible:                328
       souszonecible:            d
-      
-# Exemple avec un nombre de caractères définis :
-# la 215$a est STRICTEMENTDIFFERENT de la 307$a => si cette comparaison est vérifiée alors un message est retourné.
-    - id:                       98
-      id-excel:                 98
-      type:                     comparaisoncontenusouszone
-      message:                  message de retour
-      zone:                     338
-      priorite:                 P1
-      type-these:
-          - REPRO
-      souszone:                 b
-      type-de-verification:     STRICTEMENTDIFFERENT
-      zonecible:                600
-      souszonecible:            a

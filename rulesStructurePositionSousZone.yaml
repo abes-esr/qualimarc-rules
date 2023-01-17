@@ -1,7 +1,7 @@
 ---
 #ID 200 à 299
 rules:
-  - id:          9
+  - id:          2
     id-excel:    9
     type:        positionsouszone
     message:     "TEST : faire le lien à l'autorité en sous-zone $3"

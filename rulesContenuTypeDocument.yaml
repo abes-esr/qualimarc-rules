@@ -1,14 +1,6 @@
 # ID de 1300 à 1399
 
 rules:
-  - id:         65
-    type:       typedocument
-    message:    test typedocument
-    priorite:   P1
-    type-de-verification:   STRICTEMENT
-    position:   1
-    valeur:     a
-    
   - id:         1300
     id-excel:   1            
     type:       typedocument
