@@ -890,3 +890,24 @@ rules:
          zone: '135'
          presence: true
          operateur-booleen: ET
+
+
+
+#7150 : complément de la règle github 530 (inclusion des ressources continues électroniques)
+   - id:         7150
+     id-excel:    510
+     message:     "Ressource continue électronique : si l'accès à cette ressource est direct et public, une zone 856 est obligatoire"
+     priorite:    P1
+     type-doc:
+     -    BD
+     regles:
+       - id: 7151
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENT
+         valeur: o
+       - id: 7152
+         type: presencezone
+         zone: '856'
+         presence: false
+         operateur-booleen: ET
