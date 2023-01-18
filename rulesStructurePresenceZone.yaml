@@ -468,3 +468,25 @@ rules:
       -    G
       jeux-de-regles:
       -  9  # Identifiants
+
+
+    - id:          533
+      id-excel:    230
+      type:        presencezone
+      message:     "Zone 326  : puisque la ressource n'est pas une ressource continue, la zone 326 est à supprimer"
+      zone:        326
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    PC
