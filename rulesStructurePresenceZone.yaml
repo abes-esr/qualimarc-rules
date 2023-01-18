@@ -499,3 +499,16 @@ rules:
       zone:        327
       priorite:    P2
       presence:    true
+
+
+    - id:          535
+      id-excel:    311
+      type:        presencezone
+      message:     "Partie composante : une zone 463 est attendue pour faire un lien spécifique vers le document hôte (ppn à enregistrer en sous-zone $0)"
+      zone:        463
+      priorite:    P2
+      presence:    false
+      type-doc:
+      -    PC
+      jeux-de-regles:
+      -  3  # liens
