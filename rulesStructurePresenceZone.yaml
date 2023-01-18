@@ -378,8 +378,6 @@ rules:
 
 
 
-
-
     - id:         525
       id-excel:    212
       type:        presencezone
@@ -398,7 +396,6 @@ rules:
       -    V
       -    G
       -    M
-      -    BD
       -    PC
       jeux-de-regles:
       - 4  #2XX
