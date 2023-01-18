@@ -911,3 +911,24 @@ rules:
          zone: '856'
          presence: false
          operateur-booleen: ET
+
+
+
+#7160 : complément de la règle github 525 (inclusion des ressources continues électroniques)
+   - id:         7160
+     id-excel:    212
+     message:     "Zone 230  : puisque la ressource continue décrite n'est pas électronique, la zone 230 doit être supprimée"
+     priorite:    P1
+     type-doc:
+     -    BD
+     regles:
+       - id: 7161
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: o
+       - id: 7162
+         type: presencezone
+         zone: '230'
+         presence: true
+         operateur-booleen: ET
