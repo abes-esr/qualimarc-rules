@@ -966,7 +966,7 @@ rules:
 
    - id:         7180
      id-excel:    702
-     message:     "Zone 110 : puisque la ressource continue décrite est une collection (valeur "d" en position 2 de la zone 008$a), la valeur enregistrée en 110$a doit être "b" (collection de monographies)"
+     message:     "Zone 110 : puisque la ressource continue décrite est une collection (valeur 'd' en position 2 de la zone 008$a), la valeur enregistrée en 110$a doit être 'b' (collection de monographies)"
      priorite:    P1
      type-doc:
        -  BD
