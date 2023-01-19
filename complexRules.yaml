@@ -1044,3 +1044,22 @@ rules:
          type-de-verification: STRICTEMENT
          valeur: b
          operateur-booleen: ET
+
+
+
+   - id:         7200
+     id-excel:    704
+     message:     "Partie composante : une zone 463 (lien vers le document hôte) doit obligatoirement s'accompagner d'une zone de note 305"
+     priorite:    P1
+     type-doc:
+       -  PC
+     regles:
+       - id: 7210
+         type: presencezone
+         zone: '463'
+         presence: true
+       - id: 7220
+         type: presencezone
+         zone: '305'
+         presence: false
+         operateur-booleen: ET
