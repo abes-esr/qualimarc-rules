@@ -116,7 +116,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
 - jeux-de-regles : ``optionnel`` : de type liste d'entier : indique les identifiants des jeux de règles auquel la règle appartient. (voir [ce fichier](https://docs.google.com/spreadsheets/d/1ao46m7mI-NhqtCuCn4eq0EH1iS4hXCZ8cqKbSKpJYaw/edit?usp=sharing "Fichier des correspondeances Identifiant au jeux de règles") )
 - type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
 > les valeurs possibles pour les types de documents sont les suivantes :
-> B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, TS : Thèse de soutenance, TR : Thèse de reproduction, PC : Partie composante
+> B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, PC : Partie composante
 - type-these : ``optionnel`` : de type liste de valeur : indique si la règle doit être appliquée sur les thèses.
 > les valeurs possibles pour les types de thèse sont REPRO ou SOUTENANCE
 - type : ``obligatoire`` : de type chaine de caractère : indique le type de règle qui est décrite. Les valeurs possibles sont : 
