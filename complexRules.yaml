@@ -921,6 +921,8 @@ rules:
      priorite:    P1
      type-doc:
      -    BD
+     jeux-de-regles:
+     -   4 #2XX
      regles:
        - id: 7161
          type: typedocument
@@ -970,6 +972,8 @@ rules:
      priorite:    P1
      type-doc:
        -  BD
+     jeux-de-regles:
+     - 1  #données codées
      regles:
        - id: 7181
          type: presencezone
@@ -1010,4 +1014,33 @@ rules:
          position: 2
          type-de-verification: STRICTEMENT
          valeur: d
+         operateur-booleen: ET
+
+
+   - id:         7190
+     id-excel:    703
+     message:     "Zone 110 : puisque la ressource continue décrite n'est une collection (valeur 'b' en position 2 de la zone 008$a), la valeur enregistrée en 110$a doit être différente de 'b'"
+     priorite:    P1
+     type-doc:
+       -  BD
+     jeux-de-regles:
+     - 1  #données codées
+     regles:
+       - id: 7191
+         type: presencezone
+         zone: '110'
+         presence: true
+       - id: 7192
+         type: presencechainecaracteres
+         zone: '110'
+         souszone: a
+         type-de-verification:     COMMENCE
+         chaines-caracteres:
+           - chaine-caracteres:    "b"
+         operateur-booleen: ET
+       - id: 7193
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENT
+         valeur: b
          operateur-booleen: ET
