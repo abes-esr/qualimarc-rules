@@ -988,23 +988,23 @@ rules:
              chaine-caracteres:    "d"
            - operateur: OU
              chaine-caracteres:    "e"
-           - operateur: OU  
+           - operateur: OU
              chaine-caracteres:    "f"
            - operateur: OU
              chaine-caracteres:    "g"
-           - operateur: OU          
+           - operateur: OU
              chaine-caracteres:    "h"
-           - operateur: OU           
+           - operateur: OU
              chaine-caracteres:    "i"
-           - operateur: OU         
+           - operateur: OU
              chaine-caracteres:    "j"
-           - operateur: OU          
+           - operateur: OU
              chaine-caracteres:    "m"
-           - operateur: OU           
+           - operateur: OU
              chaine-caracteres:    "n"
-           - operateur: OU              
+           - operateur: OU        
              chaine-caracteres:    "z"
-           - operateur: OU                 
+         operateur-booleen: ET
        - id: 7183
          type: typedocument
          position: 2
