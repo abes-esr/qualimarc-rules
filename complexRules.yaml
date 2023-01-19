@@ -1054,11 +1054,11 @@ rules:
      type-doc:
        -  PC
      regles:
-       - id: 7210
+       - id: 7201
          type: presencezone
          zone: '463'
          presence: true
-       - id: 7220
+       - id: 7202
          type: presencezone
          zone: '305'
          presence: false
