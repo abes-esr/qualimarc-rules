@@ -8,7 +8,7 @@ rules:
     jeux-de-regles:
     -  4 #(2XX)
     type:        nombrezone
-    message:     "Zone 215 : si la ressource est bien un document multimédia multisupport, plusieurs zones 215 doivent être enregistrées (autant de zones 215 que de types de support constituant le document)"
+    message:     "Document multimédia multisupport : plusieurs zones 215 doivent être enregistrées (il doit y avoir autant de zones 215 que de types de support constituant le document)"
     zone:        215
     priorite:    P1
     operateur:   INFERIEUR
@@ -32,7 +32,7 @@ rules:
     jeux-de-regles:
     -  4 #(2XX)
     type:        nombrezone
-    message:     "Zone 215 : si la ressource n'est pas un document multimédia multisupport, une seule zone 215 doit être enregistrée"
+    message:     "Zone 215 : puisque la ressource n'est pas un document multimédia multisupport, une seule zone 215 doit être enregistrée"
     zone:        215
     priorite:    P1
     operateur:   SUPERIEUR
