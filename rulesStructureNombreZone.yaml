@@ -1,11 +1,15 @@
 ---
 #ID de 300 à 399
 rules:
-  - id:          1
-    id-excel:    10
+  - id:          300
+    id-excel:    191
+    type-doc:
+    -  Z
+    jeux-de-regles:
+    -  4 #(2XX)
     type:        nombrezone
-    message:     nombre zone ansible SQN
-    zone:        603
+    message:     "Zone 215 : si la ressource est bien un document multimédia multisupport, plusieurs zones 215 doivent être enregistrées (autant de zones 215 que de types de support constituant le document)"
+    zone:        215
     priorite:    P1
-    operateur:   SUPERIEUR
-    occurrences: 3
+    operateur:   INFERIEUR
+    occurrences: 2
