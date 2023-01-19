@@ -962,3 +962,52 @@ rules:
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: o
          operateur-booleen: ET
+
+
+   - id:         7180
+     id-excel:    702
+     message:     "Zone 110 : puisque la ressource continue décrite est une collection (valeur "d" en position 2 de la zone 008$a), la valeur enregistrée en 110$a doit être "b" (collection de monographies)"
+     priorite:    P1
+     type-doc:
+       -  BD
+     regles:
+       - id: 7181
+         type: presencezone
+         zone: '110'
+         presence: true
+       - id: 7182
+         type: presencechainecaracteres
+         zone: '110'
+         souszone: a
+         type-de-verification:     COMMENCE
+         chaines-caracteres:
+           - chaine-caracteres:    "a"
+           - operateur: OU
+             chaine-caracteres:    "c"
+           - operateur: OU
+             chaine-caracteres:    "d"
+           - operateur: OU
+             chaine-caracteres:    "e"
+           - operateur: OU  
+             chaine-caracteres:    "f"
+           - operateur: OU
+             chaine-caracteres:    "g"
+           - operateur: OU          
+             chaine-caracteres:    "h"
+           - operateur: OU           
+             chaine-caracteres:    "i"
+           - operateur: OU         
+             chaine-caracteres:    "j"
+           - operateur: OU          
+             chaine-caracteres:    "m"
+           - operateur: OU           
+             chaine-caracteres:    "n"
+           - operateur: OU              
+             chaine-caracteres:    "z"
+           - operateur: OU                 
+       - id: 7183
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENT
+         valeur: d
+         operateur-booleen: ET
