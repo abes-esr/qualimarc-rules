@@ -13,3 +13,27 @@ rules:
     priorite:    P1
     operateur:   INFERIEUR
     occurrences: 2
+
+  - id:          301
+    id-excel:    192
+    type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    V
+      -    G
+      -    M
+      -    BD
+      -	   PC
+    jeux-de-regles:
+    -  4 #(2XX)
+    type:        nombrezone
+    message:     "Zone 215 : si la ressource n'est pas un document multimédia multisupport, une seule zone 215 doit être enregistrée"
+    zone:        215
+    priorite:    P1
+    operateur:   SUPERIEUR
+    occurrences: 1
