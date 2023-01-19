@@ -363,6 +363,7 @@ rules:
     message: "Zone 410 : faire le lien vers la notice de collection en sous-zone $0"
     zone: 410
     priorite: P1
+    jeux-de-regles:
       - 3 #liens
     regles:
       - id: 25121
