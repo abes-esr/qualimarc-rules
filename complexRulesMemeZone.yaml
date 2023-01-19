@@ -356,3 +356,19 @@ rules:
         indicateur: 2
         type-de-verification: STRICTEMENTDIFFERENT
         valeur: "2"
+
+
+  - id: 25120
+    id-excel: 273
+    message: "Zone 410 : faire le lien vers la notice de collection en sous-zone $0"
+    zone: 410
+    priorite: P1
+      - 3 #liens
+    regles:
+      - id: 25121
+        type: presencezone
+        presence: true
+      - id: 25122
+        type: presencesouszone
+        souszone: "0"
+        presence: false
