@@ -17,18 +17,18 @@ rules:
   - id:          301
     id-excel:    192
     type-doc:
-      -    A
-      -    B
-      -    K
-      -    O
-      -    N
-      -    I
-      -    F
-      -    V
-      -    G
-      -    M
-      -    BD
-      -	   PC
+    -    A
+    -    B
+    -    K
+    -    O
+    -    N
+    -    I
+    -    F
+    -    V
+    -    G
+    -    M
+    -    BD
+    -    PC
     jeux-de-regles:
     -  4 #(2XX)
     type:        nombrezone
