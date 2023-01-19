@@ -1086,3 +1086,27 @@ rules:
          type: reciprocite
          zone: '488'
          souszone:   0
+
+
+
+
+   - id: 7220
+     id-excel: 222
+     message: "Partie composante : afin d'indiquer clairement la relation entre la partie composante et le document hôte, la sous-zone 305$a doit toujours commencer par 'In :'"
+     priorite: P1
+     type-doc:
+       - PC
+     regles:
+       - id: 7221
+         type: presencesouszone
+         zone: '305'
+         souszone:    a
+         presence: true
+       - id: 7222
+         type: presencechainecaracteres
+         zone: '305'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    'In :'
+         operateur-booleen: ET
