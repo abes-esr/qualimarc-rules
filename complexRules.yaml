@@ -1299,25 +1299,25 @@ rules:
          type-de-verification:     NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    "FR"
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    "GP"
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    "GF"
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    "MQ"
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    "YT"
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    "NC"
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    "RE"
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    "PF"
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    "PM"
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    "SM"
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    "WF"
          operateur-booleen: ET
        - id: 7285
