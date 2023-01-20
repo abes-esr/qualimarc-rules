@@ -3,12 +3,16 @@
 rules:
 #règle test pour vérifier blocage de la complexe 5090 ( à supprimer) ppn 192909053
   - id:         900
+    id-excel:   19
     type:      typecaractere
-    message:   "Test type caractères numériques et spéciaux et majuscules en 330$a"
-    zone:      330
-    priorite:  P2
-    souszone:  a
+    jeux-de-regles:
+        - 9  #0XX
+    type-these:
+        - SOUTENANCE
+        - REPRO
+    message:   "Zone 029 : le numéro national de thèse enregistré en sous-zone $b ne peut contenir que des caractères alpha-numériques"
+    zone:      029
+    priorite:  P1
+    souszone:  b
     type-caracteres:
-      - "NUMERIQUE"
-      - "ALPHABETIQUE_MAJ"
       - "SPECIAL"
