@@ -412,18 +412,7 @@ rules:
       type-doc:
       -    O
 
-
-    - id:         528
-      id-excel:   418
-      type:        presencezone
-      message:     "Travaux universitaires : puisqu'il s'agit d'une thèse originelle ou d'une reproduction à l'identique, une zone 686 est obligatoire"
-      zone:        686
-      priorite:    P1
-      presence:    false
-      type-these:
-      -    SOUTENANCE
-      jeux-de-regles:
-      - 2  #6XX
+#suppression 528 >> complex rules
 
 
     - id:          529
