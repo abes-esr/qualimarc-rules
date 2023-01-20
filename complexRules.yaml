@@ -1110,3 +1110,24 @@ rules:
          chaines-caracteres:
            - chaine-caracteres:    'In :'
          operateur-booleen: ET
+
+
+   - id: 7230
+     id-excel: 4
+     message: "Ressource continue : la zone 011 est obligatoire : faire une demande de numérotation ISSN via Cidemis, et créer une sous-zone 301$a 'Demande de numérotation ISSN en cours'"
+     priorite: P1
+     jeux-de-regles:
+       - 9  #OXX
+     type-doc:
+       - BD
+     regles:
+       - id: 7231
+         type: presencezone
+         zone: '011'
+         presence: false
+       - id: 7232
+         type: presencesouszone
+         zone: '301'
+         souszone:    a
+         presence: false
+         operateur-booleen: ET
