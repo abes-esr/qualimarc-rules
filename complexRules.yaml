@@ -1261,3 +1261,69 @@ rules:
          operateur:  SUPERIEUR
          occurrences: 12
          operateur-booleen: OU
+
+
+
+   - id:         7280
+     id-excel:    47
+     message:     "Zone 102 : puisqu'il s'agit d'une thèse de doctorat française (029$aFR), la sous-zone $a (Onglet 'Pays') doit comporter un des codes suivants : FR, GP, GF, MQ, YT, NC, RE, PF, PM, SM ou WF"
+     priorite:    P1
+     type-these:
+       -  SOUTENANCE
+     jeux-de-regles:
+     - 1  #1XX
+     regles:
+       - id: 7281
+         type: presencesouszone
+         zone: '029'
+         souszone: 'a'
+         presence: true
+       - id: 7282
+         type: presencechainecaracteres
+         zone: '029'
+         souszone: 'a'
+         type-de-verification:     STRICTEMENT
+         chaines-caracteres:
+           - chaine-caracteres:    "FR"
+         operateur-booleen: ET     
+       - id: 7283
+         type: presencesouszone
+         zone: '102'
+         souszone: 'a'
+         presence: true
+         operateur-booleen: ET
+       - id: 7284
+         type: presencechainecaracteres
+         zone: '102'
+         souszone: 'a'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "FR"
+           - operateur:            OU
+             chaine-caracteres:    "GP"
+           - operateur:            OU
+             chaine-caracteres:    "GF"
+           - operateur:            OU
+             chaine-caracteres:    "MQ"
+           - operateur:            OU
+             chaine-caracteres:    "YT"
+           - operateur:            OU
+             chaine-caracteres:    "NC"
+           - operateur:            OU
+             chaine-caracteres:    "RE"
+           - operateur:            OU
+             chaine-caracteres:    "PF"
+           - operateur:            OU
+             chaine-caracteres:    "PM"
+           - operateur:            OU
+             chaine-caracteres:    "SM"
+           - operateur:            OU
+             chaine-caracteres:    "WF"
+         operateur-booleen: ET
+       - id: 7285
+         type: presencechainecaracteres
+         zone: '328'
+         souszone: 'b'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "doctorat"
