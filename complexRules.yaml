@@ -1274,25 +1274,6 @@ rules:
      - 1  #1XX
      regles:
        - id: 7281
-         type: presencesouszone
-         zone: '029'
-         souszone: 'a'
-         presence: true
-       - id: 7282
-         type: presencechainecaracteres
-         zone: '029'
-         souszone: 'a'
-         type-de-verification:     STRICTEMENT
-         chaines-caracteres:
-           - chaine-caracteres:    "FR"
-         operateur-booleen: ET     
-       - id: 7283
-         type: presencesouszone
-         zone: '102'
-         souszone: 'a'
-         presence: true
-         operateur-booleen: ET
-       - id: 7284
          type: presencechainecaracteres
          zone: '102'
          souszone: 'a'
@@ -1319,12 +1300,19 @@ rules:
              chaine-caracteres:    "SM"
            - operateur:            OU
              chaine-caracteres:    "WF"
-         operateur-booleen: ET
-       - id: 7285
+       - id: 7282
+         type: presencechainecaracteres
+         zone: '029'
+         souszone: 'a'
+         type-de-verification:     STRICTEMENT
+         chaines-caracteres:
+           - chaine-caracteres:    "FR"
+         operateur-booleen: ET     
+       - id: 7283
          type: presencechainecaracteres
          zone: '328'
          souszone: 'b'
-         type-de-verification:     NECONTIENTPAS
+         type-de-verification:     CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    "doctorat"
          operateur-booleen: ET
