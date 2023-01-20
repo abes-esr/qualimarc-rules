@@ -1275,13 +1275,6 @@ rules:
      regles:
        - id: 7281
          type: presencechainecaracteres
-         zone: '328'
-         souszone: 'b'
-         type-de-verification:     CONTIENT
-         chaines-caracteres:
-           - chaine-caracteres:    "doctorat"
-       - id: 7282
-         type: presencechainecaracteres
          zone: '102'
          souszone: 'a'
          type-de-verification:     NECONTIENTPAS
@@ -1307,12 +1300,19 @@ rules:
              chaine-caracteres:    "SM"
            - operateur:            OU
              chaine-caracteres:    "WF"
-         operateur-booleen: ET
-       - id: 7283
+       - id: 7282
          type: presencechainecaracteres
          zone: '029'
          souszone: 'a'
          type-de-verification:     STRICTEMENT
          chaines-caracteres:
            - chaine-caracteres:    "FR"
+         operateur-booleen: ET
+       - id: 7283
+         type: presencechainecaracteres
+         zone: '328'
+         souszone: 'b'
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "doctorat"
          operateur-booleen: ET
