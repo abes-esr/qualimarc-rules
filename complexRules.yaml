@@ -1130,3 +1130,33 @@ rules:
          zone: '301'
          presence: false
          operateur-booleen: ET
+
+
+ - id:         7240
+     id-excel:    10
+     message:     "Zone 017 : le code de référentiel enregistré en 017$2 doit être 'DOI', 'ISAN', 'NIPO', 'SBN'ou 'URN'"
+     priorite:    P1
+     jeux-de-regles:
+     - 9  #0XX
+     regles:
+       - id: 7241
+         type: presencesouszone
+         zone: '017'
+         souszone: '2'
+         presence: true
+       - id: 7242
+         type: presencechainecaracteres
+         zone: '017'
+         souszone: '2'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "DOI"
+           - operateur: OU
+             chaine-caracteres:    "ISAN"
+           - operateur: OU
+             chaine-caracteres:    "NIPO"
+           - operateur: OU
+             chaine-caracteres:    "SBN"
+           - operateur: OU
+             chaine-caracteres:    "URN"
+         operateur-booleen: ET
