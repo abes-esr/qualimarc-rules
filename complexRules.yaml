@@ -1316,3 +1316,26 @@ rules:
          chaines-caracteres:
            - chaine-caracteres:    "doctorat"
          operateur-booleen: ET
+
+
+   - id:         7290
+     id-excel:   418
+     message:     "Zone 686 : puisqu'il s'agit d'une thèse de doctorat, une zone 686 est obligatoire"
+     priorite:    P1
+     type-these:
+       -    SOUTENANCE
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7291
+         type: presencezone
+         zone: '686'
+         presence: false
+       - id: 7292
+         type: presencechainecaracteres
+         zone: '328'
+         souszone: 'b'
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "doctorat"
+         operateur-booleen: ET
