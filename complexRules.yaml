@@ -1266,7 +1266,7 @@ rules:
 
    - id:         7280
      id-excel:    47
-     message:     "Zone 102 : puisqu'il s'agit d'une thèse de doctorat française (029$aFR), la sous-zone $a (Onglet 'Pays') doit comporter un des codes suivants : FR, GP, GF, MQ, YT, NC, RE, PF, PM, SM ou WF"
+     message:     "Zone 102 : puisqu'il s'agit d'une thèse de doctorat française (328$b et 029$aFR), la sous-zone $a (Onglet 'Pays') doit comporter un des codes suivants : FR, GP, GF, MQ, YT, NC, RE, PF, PM, SM ou WF"
      priorite:    P1
      type-these:
        -  SOUTENANCE
@@ -1320,7 +1320,7 @@ rules:
 
    - id:         7290
      id-excel:   418
-     message:     "Zone 686 : puisqu'il s'agit d'une thèse de doctorat, une zone 686 est obligatoire"
+     message:     "Zone 686 : puisqu'il s'agit d'une thèse de doctorat (328$b), une zone 686 est obligatoire"
      priorite:    P1
      type-these:
        -    SOUTENANCE
