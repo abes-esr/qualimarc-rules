@@ -1153,4 +1153,10 @@ rules:
            - chaine-caracteres:    "DOI"
            - operateur: ET
              chaine-caracteres:    "ISAN"
+           - operateur: ET
+             chaine-caracteres:    "NIPO"
+           - operateur: ET
+             chaine-caracteres:    "SBN"
+           - operateur: ET
+             chaine-caracteres:    "URN"
          operateur-booleen: ET
