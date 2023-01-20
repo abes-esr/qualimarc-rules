@@ -1160,3 +1160,40 @@ rules:
            - operateur: ET
              chaine-caracteres:    "URN"
          operateur-booleen: ET
+
+
+
+   - id:         7250
+     id-excel:    14
+     message:     "Zone 029 :  puisqu'il est indiqué que le document est une thèse d'exercice (328$b), le numéro d'ordre est à enregistrer en sous-zone $e"
+     priorite:    P1
+     type-these:
+       -  SOUTENANCE
+       -  REPRO
+     jeux-de-regles:
+     - 9  #0XX
+     regles:
+       - id: 7251
+         type: presencezone
+         zone: '029'
+         presence: true
+       - id: 7252
+         type: presencesouszone
+         zone: '029'
+         souszone: 'e'
+         presence: false
+         operateur-booleen: ET
+       - id: 7253
+         type: presencesouszone
+         zone: '328'
+         souszone: 'b'
+         presence: true
+         operateur-booleen: ET
+       - id: 7254
+         type: presencechainecaracteres
+         zone: '328'
+         souszone: 'b'
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "exercice"
+         operateur-booleen: ET
