@@ -1233,4 +1233,6 @@ rules:
          type-de-verification:     CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    "mémoire"
+           - operateur:            OU
+             chaine-caracteres:    "Mémoire"
          operateur-booleen: ET
