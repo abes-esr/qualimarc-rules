@@ -1126,8 +1126,7 @@ rules:
          zone: '011'
          presence: false
        - id: 7232
-         type: presencesouszone
+         type: presencezone
          zone: '301'
-         souszone:    a
          presence: false
          operateur-booleen: ET
