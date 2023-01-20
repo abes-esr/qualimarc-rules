@@ -1132,7 +1132,7 @@ rules:
          operateur-booleen: ET
 
 
- - id:         7240
+   - id:         7240
      id-excel:    10
      message:     "Zone 017 : le code de référentiel enregistré en 017$2 doit être 'DOI', 'ISAN', 'NIPO', 'SBN'ou 'URN'"
      priorite:    P1
