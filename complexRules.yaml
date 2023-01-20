@@ -1151,6 +1151,6 @@ rules:
          type-de-verification:     NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    "DOI"
-           - operateur: OU
+           - operateur: ET
              chaine-caracteres:    "ISAN"
          operateur-booleen: ET
