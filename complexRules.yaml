@@ -1236,3 +1236,28 @@ rules:
            - operateur:            OU
              chaine-caracteres:    "Mémoire"
          operateur-booleen: ET
+
+
+   - id: 7270
+     id-excel: 18
+     message: "Zone 029 : le numéro national de thèse enregistré en sous-zone $b doit contenir 12 caractères"
+     priorite: P1
+     jeux-de-regles:
+       - 9  #0XX
+     type-these:
+       -  SOUTENANCE
+       -  REPRO
+     regles:
+       - id: 7271
+         type: nombrecaractere
+         zone: '029'
+         souszone:   b
+         operateur:  INFERIEUR
+         occurrences: 12
+       - id: 7272
+         type: nombrecaractere
+         zone: '029'
+         souszone:   b
+         operateur:  SUPERIEUR
+         occurrences: 12
+         operateur-booleen: OU
