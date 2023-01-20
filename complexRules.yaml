@@ -1327,3 +1327,4 @@ rules:
          type-de-verification:     NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    "doctorat"
+         operateur-booleen: ET
