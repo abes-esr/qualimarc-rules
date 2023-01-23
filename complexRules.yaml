@@ -1339,3 +1339,44 @@ rules:
          chaines-caracteres:
            - chaine-caracteres:    "doctorat"
          operateur-booleen: ET
+
+
+   - id:         7300
+     id-excel:    46
+     message:     "Zone 214 : puisqu'un pays de publication a été renseigné en sous-zone 102$a, la sous-zone 214$a peut être précisée"
+     priorite:    P1
+     jeux-de-regles:
+     - 1  #1XX
+     - 4  #2XX
+     regles:
+       - id: 7301
+         type: presencesouszone
+         zone: '102'
+         souszone: 'a'
+         presence: true
+       - id: 7302
+         type: presencechainecaracteres
+         zone: '102'
+         souszone: 'a'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "XX"
+           - operateur:            OU
+             chaine-caracteres:    "ZZ"
+         operateur-booleen: ET
+       - id: 7303
+         type: presencesouszone
+         zone: '214'
+         souszone: 'a'
+         presence: true
+         operateur-booleen: ET
+       - id: 7304
+         type: presencechainecaracteres
+         zone: '214'
+         souszone: 'a'
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "inconnu"
+           - operateur:            OU
+             chaine-caracteres:    "Inconnu"
+         operateur-booleen: ET
