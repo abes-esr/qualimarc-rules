@@ -1361,7 +1361,7 @@ rules:
          type-de-verification:     NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    "XX"
-           - operateur:            OU
+           - operateur:            ET
              chaine-caracteres:    "ZZ"
          operateur-booleen: ET
        - id: 7303
