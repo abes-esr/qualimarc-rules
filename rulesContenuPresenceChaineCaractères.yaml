@@ -79,8 +79,6 @@ rules:
       jeux-de-regles: 
       - 9 #identifiants
       
-      
-     
 
 
     - id:                       1006
@@ -95,3 +93,18 @@ rules:
       type-de-verification:     CONTIENT
       chaines-caracteres:
         - chaine-caracteres:    "http"
+
+
+
+    - id:                       1007
+      id-excel:                 45
+      type:                     presencechainecaracteres
+      message:                  "Zone 102 : le code du pays de publication XX (Pays inconnu) est à utiliser le moins possible en catalogage, uniquement lorsque le lieu de publication/diffusion/etc. est impossible à déterminer. Se référer au lieu renseigné en sous-zone 214$a"
+      zone:                     102
+      priorite:                 P2
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    "XX"
+      jeux-de-regles: 
+        - 1 #1XX
