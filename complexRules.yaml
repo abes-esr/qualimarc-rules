@@ -1451,3 +1451,50 @@ rules:
          chaines-caracteres:
            - chaine-caracteres:    h
          operateur-booleen: ET
+
+
+#règle 7330 complément de la 7310 (inclusion des Pa et des La
+   - id: 7330
+     id-excel: 71
+     message: "Zone 106 : puisque la ressource n'est pas de type manuscrit, la valeur attendue en sous-zone $a ne peut pas être 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       -    A
+       -    B
+       -    O
+       -    N
+       -    I
+       -    Z
+       -    V
+       -    G
+       -    BD
+       -    PC
+       -    K
+       -    M
+     regles:
+       - id: 7331
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur: L
+       - id: 7332
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur: P
+         operateur-booleen: OU
+       - id: 7333
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+       - id: 7334
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
