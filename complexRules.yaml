@@ -1453,25 +1453,14 @@ rules:
          operateur-booleen: ET
 
 
-#règle 7330 complément de la 7310 (inclusion des Pa et des La
+#règle 7330 complément de la 7310 (inclusion des La)
    - id: 7330
      id-excel: 71
-     message: "Zone 106 : puisque la ressource n'est pas de type manuscrit, la valeur attendue en sous-zone $a ne peut pas être 'h'"
+     message: "Zone 106 : puisque la ressource n'est pas une partition manuscrite, la valeur attendue en sous-zone $a ne peut pas être 'h'"
      priorite: P1
      jeux-de-regles:
        - 1  #données codées
      type-doc:
-       -    A
-       -    B
-       -    O
-       -    N
-       -    I
-       -    Z
-       -    V
-       -    G
-       -    BD
-       -    PC
-       -    K
        -    M
      regles:
        - id: 7331
@@ -1480,22 +1469,110 @@ rules:
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur: L
        - id: 7332
-         type: typedocument
-         position: 1
-         type-de-verification:    STRICTEMENTDIFFERENT
-         valeur: P
-         operateur-booleen: ET
-       - id: 7333
          type: presencesouszone
          zone: '106'
          souszone:    a
          presence: true
          operateur-booleen: ET
-       - id: 7334
+       - id: 7333
          type: presencechainecaracteres
          zone: '106'
          souszone:   a
          type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+
+#règle 7340 complément de la 7310 (inclusion des Pa)
+   - id: 7340
+     id-excel: 71
+     message: "Zone 106 : puisque la ressource n'est pas une carte manuscrite (Pa), la valeur attendue en sous-zone $a ne peut pas être 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       -    K
+     regles:
+       - id: 7341
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur: P
+       - id: 7342
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+       - id: 7343
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+
+
+#règle 7350 compélment de la 6000 (inclusion des Pa)
+   - id: 7320
+     id-excel: 70
+     message: "Zone 106 : si la ressource est bien une carte manuscrite (Pa), la valeur attendue en sous-zone $a est 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       - K
+     regles:
+       - id: 7351
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENT
+         valeur: P
+       - id: 7352
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+       - id: 7353
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+
+#règle 7360 compélment de la 6000 (inclusion des La)
+   - id: 7360
+     id-excel: 70
+     message: "Zone 106 : si la ressource est bien une partition manuscrite (La), la valeur attendue en sous-zone $a est 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       - M
+     regles:
+       - id: 7361
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENT
+         valeur: L
+       - id: 7362
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+       - id: 7363
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    h
          operateur-booleen: ET
