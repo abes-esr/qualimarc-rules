@@ -1436,7 +1436,7 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENT
          valeur: P
-         operateur-booleen: OU
+         operateur-booleen: ET
        - id: 7323
          type: presencesouszone
          zone: '106'
@@ -1484,7 +1484,7 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur: P
-         operateur-booleen: OU
+         operateur-booleen: ET
        - id: 7333
          type: presencesouszone
          zone: '106'
