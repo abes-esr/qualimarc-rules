@@ -1380,3 +1380,39 @@ rules:
            - operateur:            OU
              chaine-caracteres:    "Inconnu"
          operateur-booleen: ET
+
+
+
+   - id: 7310
+     id-excel: 71
+     message: "Zone 106 : puisque la ressource n'est pas un manuscrit (zone 008 différente de 'Fa'), la valeur attendue en sous-zone $a ne peut pas être 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    BD
+      -	  PC
+     regles:
+       - id: 7311
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+       - id: 7312
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
