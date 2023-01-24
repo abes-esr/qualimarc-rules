@@ -1390,18 +1390,16 @@ rules:
      jeux-de-regles:
        - 1  #données codées
      type-doc:
-      -    A
-      -    B
-      -    K
-      -    O
-      -    N
-      -    I
-      -    Z
-      -    V
-      -    G
-      -    M
-      -    BD
-      -	  PC
+       -    A
+       -    B
+       -    O
+       -    N
+       -    I
+       -    Z
+       -    V
+       -    G
+       -    BD
+       -    PC
      regles:
        - id: 7311
          type: presencesouszone
@@ -1413,6 +1411,43 @@ rules:
          zone: '106'
          souszone:   a
          type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+#règle 7320 compélment de la 6000 (inclusion des La et Pa)
+   - id: 7320
+     id-excel: 70
+     message: "Zone 106 : si la ressource est bien de type manuscrit, la valeur attendue en sous-zone $a est 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       - K
+       - M
+     regles:
+       - id: 7321
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENT
+         valeur: L
+       - id: 7322
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENT
+         valeur: P
+         operateur-booleen: OU
+       - id: 7323
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+       - id: 7324
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    h
          operateur-booleen: ET
