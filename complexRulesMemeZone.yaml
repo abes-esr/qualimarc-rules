@@ -560,3 +560,163 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
+
+
+  - id: 25230
+    id-excel: 499
+    message: "Zone 700 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 700
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25231
+        type: presencezone
+        presence: true
+      - id: 25232
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+          
+        
+  - id: 25240
+    id-excel: 499
+    message: "Zone 701 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 701
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25241
+        type: presencezone
+        presence: true
+      - id: 25242
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+        
+  - id: 25250
+    id-excel: 499
+    message: "Zone 702 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25251
+        type: presencezone
+        presence: true
+      - id: 25252
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+        
+        
+        
+  - id: 25260
+    id-excel: 499
+    message: "Zone 710 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25261
+        type: presencezone
+        presence: true
+      - id: 25262
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+          
+        
+  - id: 25270
+    id-excel: 499
+    message: "Zone 711 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 711
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25271
+        type: presencezone
+        presence: true
+      - id: 25272
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+        
+  - id: 25280
+    id-excel: 499
+    message: "Zone 712 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25281
+        type: presencezone
+        presence: true
+      - id: 25282
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+        
+        
+        
+  - id: 25290
+    id-excel: 499
+    message: "Zone 720 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 720
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25291
+        type: presencezone
+        presence: true
+      - id: 25292
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+          
+        
+  - id: 25300
+    id-excel: 499
+    message: "Zone 721 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 721
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25301
+        type: presencezone
+        presence: true
+      - id: 25302
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+        
+  - id: 25310
+    id-excel: 499
+    message: "Zone 722 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 722
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25311
+        type: presencezone
+        presence: true
+      - id: 25312
+        type: presencesouszone
+        souszone: "4"
+        presence: false
