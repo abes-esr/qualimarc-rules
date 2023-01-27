@@ -1622,4 +1622,4 @@ rules:
          type: typedocument
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
-         valeur: b
+         valeur: p
