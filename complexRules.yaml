@@ -1739,3 +1739,74 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: b
+
+
+
+   - id: 7440
+     id-excel: 482
+     message: "Zone 720 : la notice d'autorité liée doit obligatoirement être de type 'Nom de famille' (Ta) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7441
+         type: presencesouszone
+         zone: '720'
+         souszone:    3
+         presence: true
+       - id: 7442
+         type: dependance
+         zone: '720'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7443
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
+
+   - id: 7450
+     id-excel: 487
+     message: "Zone 721 : la notice d'autorité liée doit obligatoirement être de type 'Nom de famille' (Ta) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7451
+         type: presencesouszone
+         zone: '721'
+         souszone:    3
+         presence: true
+       - id: 7452
+         type: dependance
+         zone: '721'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7453
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
+
+   - id: 7460
+     id-excel: 491
+     message: "Zone 722 : la notice d'autorité liée doit obligatoirement être de type 'Nom de famille' (Ta) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7461
+         type: presencesouszone
+         zone: '722'
+         souszone:    3
+         presence: true
+       - id: 7462
+         type: dependance
+         zone: '722'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7463
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
