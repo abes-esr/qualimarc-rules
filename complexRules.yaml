@@ -1840,6 +1840,6 @@ rules:
          type-de-verification:    CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    070
-           - operateur:            OU
+           - operateur:            ET
              chaine-caracteres:    340
          operateur-booleen: ET
