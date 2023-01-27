@@ -108,3 +108,60 @@ rules:
         - chaine-caracteres:    "XX"
       jeux-de-regles: 
         - 1 #1XX
+
+
+    - id:                       1008
+      id-excel:                 501
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fonction '205' (Collaborateur) doit seulement être utilisé dans le cas où aucun autre code de fonction n'est pertinent. Vérifier si c'est le cas, sinon enregistrer un code de fonction plus adapté"
+      zone:                     "7XX"
+      priorite:                 P2
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    205
+      jeux-de-regles: 
+      - 7 #responsabilités   
+ 
+ 
+    - id:                       1009
+      id-excel:                 502
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fonction '570' (Autre) n'est pas utilisé dans le Sudoc. Employer le code '205' (Collaborateur) si aucun autre code de fonction n'est pertinent"
+      zone:                     "7XX"
+      priorite:                 P1
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    570
+      jeux-de-regles: 
+      - 7 #responsabilités
+      
+      
+    - id:                       1010
+      id-excel:                 503
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fonction '240' (Compositeur d'imprimerie) est obsolète. Employer le code 410 (Technicien graphique) ou 440 (Illustrateur)"
+      zone:                     "7XX"
+      priorite:                 P1
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    240
+      jeux-de-regles: 
+      - 7 #responsabilités   
+ 
+    
+    - id:                       1011
+      id-excel:                 504
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fonction '400' (Bailleur de fonds) est obsolète. Employer le code 723 (Parraineur)"
+      zone:                     "7XX"
+      priorite:                 P1
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    400
+      jeux-de-regles: 
+      - 7 #responsabilités   
+ 
