@@ -1669,3 +1669,73 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: p
+
+
+   - id: 7410
+     id-excel: 462
+     message: "Zone 710 : la notice d'autorité liée doit obligatoirement être de type 'Collectivité' (Tb) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7411
+         type: presencesouszone
+         zone: '710'
+         souszone:    3
+         presence: true
+       - id: 7412
+         type: dependance
+         zone: '710'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7413
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
+
+   - id: 7420
+     id-excel: 468
+     message: "Zone 711 : la notice d'autorité liée doit obligatoirement être de type 'Collectivité' (Tb) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7421
+         type: presencesouszone
+         zone: '711'
+         souszone:    3
+         presence: true
+       - id: 7422
+         type: dependance
+         zone: '711'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7423
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
+
+   - id: 7430
+     id-excel: 474
+     message: "Zone 712 : la notice d'autorité liée doit obligatoirement être de type 'Collectivité' (Tb) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7431
+         type: presencesouszone
+         zone: '712'
+         souszone:    3
+         presence: true
+       - id: 7432
+         type: dependance
+         zone: '712'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7433
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
