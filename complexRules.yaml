@@ -1814,7 +1814,7 @@ rules:
 
    - id: 7470
      id-excel: 507
-     message: "Zone 700 : sauf pour de très rares cas, les codes de fonction 070 (auteur) et 340 (éditeur scientifique) sont désormais proscrits dans les notices de périodiques : on enregistre le code de fonction 651 pour  les directeurs  de  publication, les rédacteurs en chef, les directeurs de collection, les directeurs scientifiques, les (co)ordonateurs etc."
+     message: "Zone 700 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
      priorite: P1
      jeux-de-regles:
        - 7  #7XX
