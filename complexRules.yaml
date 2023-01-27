@@ -1823,23 +1823,17 @@ rules:
        - BD
      regles:
        - id: 7471
-         type: typedocument
-         position: 2
-         type-de-verification:    STRICTEMENT
-         valeur: b
-       - id: 7472
-         type: presencesouszone
-         zone: '700'
-         souszone:    4
-         presence: true
-         operateur-booleen: ET
-       - id: 7473
          type: presencechainecaracteres
          zone: '700'
          souszone:   4
          type-de-verification:    CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    070
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    340
+       - id: 7472
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
          operateur-booleen: ET
