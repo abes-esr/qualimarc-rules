@@ -1599,3 +1599,27 @@ rules:
          zone: '700'
          presence: true
          operateur-booleen: ET
+
+
+   - id: 7380
+     id-excel: 439
+     message: "Zone 700 : la notice d'autorité liée doit obligatoirement être de type 'Nom de personne' (Tp) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7381
+         type: presencesouszone
+         zone: '700'
+         souszone:    3
+         presence: true
+       - id: 7382
+         type: dependance
+         zone: '700'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7383
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
