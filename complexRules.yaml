@@ -1967,3 +1967,81 @@ rules:
          type-de-verification:    STRICTEMENT
          valeur: b
          operateur-booleen: ET
+
+
+   - id: 7530
+     id-excel: 507
+     message: "Zone 720 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7531
+         type: presencechainecaracteres
+         zone: '720'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7532
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+
+
+   - id: 7540
+     id-excel: 507
+     message: "Zone 721 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7541
+         type: presencechainecaracteres
+         zone: '721'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7542
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+         
+ 
+   - id: 7550
+     id-excel: 507
+     message: "Zone 722 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7551
+         type: presencechainecaracteres
+         zone: '722'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7552
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
