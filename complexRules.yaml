@@ -1810,3 +1810,36 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
+
+
+
+   - id: 7470
+     id-excel: 507
+     message: "Zone 700 : sauf pour de très rares cas, les codes de fonction 070 (auteur) et 340 (éditeur scientifique) sont désormais proscrits dans les notices de périodiques : on enregistre le code de fonction 651 pour  les directeurs  de  publication, les rédacteurs en chef, les directeurs de collection, les directeurs scientifiques, les (co)ordonateurs etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7471
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+       - id: 7472
+         type: presencesouszone
+         zone: '700'
+         souszone:    4
+         presence: true
+         operateur-booleen: ET
+       - id: 7473
+         type: presencechainecaracteres
+         zone: '700'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+         operateur-booleen: ET
