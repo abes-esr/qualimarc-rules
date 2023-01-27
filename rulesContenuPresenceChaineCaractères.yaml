@@ -165,3 +165,18 @@ rules:
       jeux-de-regles: 
       - 7 #responsabilités   
  
+ 
+    - id:                       1012
+      id-excel:                 505
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : dans une ressource de type carte, un accès auteur est attendu pour désigner le(s) cartographe(s) avec un code fonction '180' en sous-zone $4"
+      zone:                     "7XX"
+      priorite:                 P2
+      type-doc:
+        - K
+      souszone:                 4
+      type-de-verification:     NECONTIENTPAS
+      chaines-caracteres:
+        - chaine-caracteres:    180
+      jeux-de-regles: 
+      - 7 #responsabilités   
