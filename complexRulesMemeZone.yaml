@@ -390,3 +390,173 @@ rules:
         type: presencesouszone
         souszone: "0"
         presence: false
+
+
+
+  - id: 25140
+    id-excel: 438
+    message: "Zone 700 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 700
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25141
+        type: presencezone
+        presence: true
+      - id: 25142
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+          
+        
+  - id: 25150
+    id-excel: 447
+    message: "Zone 701 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 701
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25151
+        type: presencezone
+        presence: true
+      - id: 25152
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+        
+  - id: 25160
+    id-excel: 456
+    message: "Zone 702 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25161
+        type: presencezone
+        presence: true
+      - id: 25162
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+        
+        
+        
+   - id: 25170
+    id-excel: 464
+    message: "Zone 710 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25171
+        type: presencezone
+        presence: true
+      - id: 25172
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+          
+        
+  - id: 25180
+    id-excel: 470
+    message: "Zone 711 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 711
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25181
+        type: presencezone
+        presence: true
+      - id: 25182
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+        
+  - id: 25190
+    id-excel: 475
+    message: "Zone 712 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25191
+        type: presencezone
+        presence: true
+      - id: 25192
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+        
+        
+        
+  - id: 25200
+    id-excel: 483
+    message: "Zone 720 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 720
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25201
+        type: presencezone
+        presence: true
+      - id: 25202
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+          
+        
+  - id: 25210
+    id-excel: 488
+    message: "Zone 721 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 721
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25211
+        type: presencezone
+        presence: true
+      - id: 25212
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+        
+  - id: 25220
+    id-excel: 
+    message: "Zone 722 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 722
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25221
+        type: presencezone
+        presence: true
+      - id: 25222
+        type: presencesouszone
+        souszone: "3"
+        presence: false
