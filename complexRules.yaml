@@ -1836,3 +1836,55 @@ rules:
          type-de-verification:    STRICTEMENT
          valeur: b
          operateur-booleen: ET
+
+
+   - id: 7480
+     id-excel: 507
+     message: "Zone 701 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7481
+         type: presencechainecaracteres
+         zone: '701'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7482
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+         
+ 
+   - id: 7490
+     id-excel: 507
+     message: "Zone 702 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7491
+         type: presencechainecaracteres
+         zone: '702'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7492
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
