@@ -1623,3 +1623,49 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: p
+
+   - id: 7390
+     id-excel: 448
+     message: "Zone 701 : la notice d'autorité liée doit obligatoirement être de type 'Nom de personne' (Tp) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7391
+         type: presencesouszone
+         zone: '701'
+         souszone:    3
+         presence: true
+       - id: 7392
+         type: dependance
+         zone: '701'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7393
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: p
+
+   - id: 7400
+     id-excel: 454
+     message: "Zone 702 : la notice d'autorité liée doit obligatoirement être de type 'Nom de personne' (Tp) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7401
+         type: presencesouszone
+         zone: '702'
+         souszone:    3
+         presence: true
+       - id: 7402
+         type: dependance
+         zone: '702'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7403
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: p
