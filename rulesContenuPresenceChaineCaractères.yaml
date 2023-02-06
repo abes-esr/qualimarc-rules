@@ -269,7 +269,7 @@ rules:
        
     - id: 1018
       id-excel: 196
-      message: "Zone 215 : la sous-zone $d contient une des termes génériques 'Dimensions' ou 'Format': compléter cette sous-zone"
+      message: "Zone 215 : la sous-zone $d contient un des termes génériques 'Dimensions' ou 'Format': compléter cette sous-zone"
       priorite: P1
       jeux-de-regles:
        - 4  #2XX
