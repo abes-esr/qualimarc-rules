@@ -179,8 +179,8 @@ rules:
       souszone:   d
       type-de-verification:    CONTIENT
       chaines-caracteres:
-        - chaine-caracteres:    'circa'
+        - chaine-caracteres:    "circa"
         - operateur:            OU
-             chaine-caracteres:    'environ'
+          chaine-caracteres:    "environ"
         - operateur:            OU
-             chaine-caracteres:    's.d.'
+          chaine-caracteres:    "s.d."
