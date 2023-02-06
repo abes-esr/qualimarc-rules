@@ -2045,3 +2045,28 @@ rules:
          type-de-verification:    STRICTEMENT
          valeur: b
          operateur-booleen: ET
+
+
+
+   - id: 7560
+     id-excel: 708
+     message: "Zone 214 : puisque la date renseignée en sous-zone $d est approximative, incertaine ou issue de sources extérieures à la ressource décrite (date figurant entre crochets), il est obligatoire de justifier cette date dans une zone 306"
+     priorite: P1
+     jeux-de-regles:
+       - 4  #2XX
+       - 6 #dates
+     regles:
+       - id: 7561
+         type: presencechainecaracteres
+         zone: '214'
+         souszone:   d
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    [
+           - operateur:            ET
+             chaine-caracteres:    ]
+       - id: 7562
+         type: presencezone
+         zone: '306'
+         presence: false
+         operateur-booleen: ET
