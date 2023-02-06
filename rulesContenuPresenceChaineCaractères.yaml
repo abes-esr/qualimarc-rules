@@ -225,3 +225,29 @@ rules:
         - operateur:            OU
           chaine-caracteres:    "Sn"
           
+
+    - id: 1015
+      id-excel: 185
+      message: "Zone 214 : la sous-zone $b contient le terme générique 'Adresse de l'éditeur' : compléter ou supprimer cette sous-zone"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '214'
+      souszone:   b
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Adresse de l'éditeur"
+        
+    - id: 1016
+      id-excel: 187
+      message: "Zone 214 : la sous-zone $c contient le terme générique 'Nom de l'éditeur' : compléter ou supprimer cette sous-zone"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '214'
+      souszone:   c
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Nom de l'éditeur"
