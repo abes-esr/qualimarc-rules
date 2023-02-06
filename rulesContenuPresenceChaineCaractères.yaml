@@ -251,3 +251,47 @@ rules:
       type-de-verification:    CONTIENT
       chaines-caracteres:
         - chaine-caracteres:    "Nom de l'éditeur"
+
+
+    - id: 1017
+      id-excel: 195
+      message: "Zone 215 : la sous-zone $c contient le terme générique 'Mention d'ill.' : compléter cette sous-zone"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '215'
+      souszone:   c
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Mention d'ill"
+       
+       
+    - id: 1018
+      id-excel: 196
+      message: "Zone 215 : la sous-zone $d contient une des termes génériques 'Dimensions' ou 'Format': compléter cette sous-zone"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '215'
+      souszone:   d
+      type-de-verification:    STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Dimensions"
+        - operateur:            OU
+          chaine-caracteres:    "Format"
+          
+          
+    - id: 1019
+      id-excel: 197
+      message: "Zone 215 : la sous-zone $e contient le terme générique 'Matériel d'accompagnement' : compléter cette sous-zone"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '215'
+      souszone:   e
+      type-de-verification:    STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Matériel d'accompagnement"
