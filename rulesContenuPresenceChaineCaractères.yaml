@@ -199,6 +199,12 @@ rules:
         - chaine-caracteres:    "s.l."
         - operateur:            OU
           chaine-caracteres:    "sl"
+        - operateur:            OU
+          chaine-caracteres:    "S.l."
+        - operateur:            OU
+          chaine-caracteres:    "Sl"
+          
+          
           
     - id: 1014
       id-excel: 186
@@ -214,3 +220,8 @@ rules:
         - chaine-caracteres:    "s.n."
         - operateur:            OU
           chaine-caracteres:    "sn"
+        - operateur:            OU
+          chaine-caracteres:    "S.n."
+        - operateur:            OU
+          chaine-caracteres:    "Sn"
+          
