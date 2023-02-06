@@ -184,3 +184,33 @@ rules:
           chaine-caracteres:    "environ"
         - operateur:            OU
           chaine-caracteres:    "s.d."
+
+    - id: 1013
+      id-excel: 184
+      message: "Zone 214 : la mention [s.l.] doit être remplacée par [Lieu de publication inconnu]"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '214'
+      souszone:   a
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "s.l."
+        - operateur:            OU
+          chaine-caracteres:    "sl"
+          
+    - id: 1014
+      id-excel: 186
+      message: "Zone 214 : la mention [s.n.] doit être remplacée par [éditeur inconnu]"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '214'
+      souszone:   c
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "s.n."
+        - operateur:            OU
+          chaine-caracteres:    "sn"
