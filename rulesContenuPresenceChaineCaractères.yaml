@@ -164,3 +164,23 @@ rules:
         - chaine-caracteres:    400
       jeux-de-regles: 
       - 7 #responsabilités 
+
+
+
+   - id: 1012
+     id-excel: 165
+     message: "Zone 214 : la date enregistrée en sous-zone $d ne peut pas comporter 'circa', 'environ' ou 's.d.'. Une date incertaine ou approximative doit être restituée entre crochets [AAAA]"
+     priorite: P1
+     jeux-de-regles:
+       - 4  #2XX
+       - 6 #dates
+     type: presencechainecaracteres
+     zone: '214'
+     souszone:   d
+     type-de-verification:    CONTIENT
+     chaines-caracteres:
+        - chaine-caracteres:    'circa'
+        - operateur:            OU
+             chaine-caracteres:    'environ'
+        - operateur:            OU
+             chaine-caracteres:    's.d.'
