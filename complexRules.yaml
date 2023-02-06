@@ -2062,9 +2062,9 @@ rules:
          souszone:   d
          type-de-verification:    CONTIENT
          chaines-caracteres:
-           - chaine-caracteres:    '['
+           - chaine-caracteres:    "["
            - operateur:            OU
-             chaine-caracteres:    ']'
+             chaine-caracteres:    "]"
        - id: 7562
          type: presencezone
          zone: '306'
