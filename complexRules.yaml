@@ -2063,7 +2063,7 @@ rules:
          type-de-verification:    CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    '['
-           - operateur:            ET
+           - operateur:            OU
              chaine-caracteres:    ']'
        - id: 7562
          type: presencezone
