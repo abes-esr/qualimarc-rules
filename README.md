@@ -776,4 +776,3 @@ jeux-de-regles:
     description: Liens ($0/$3)
     position:    2
 ```
-
