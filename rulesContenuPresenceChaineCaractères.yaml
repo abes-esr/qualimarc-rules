@@ -295,3 +295,27 @@ rules:
       type-de-verification:    STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    "Matériel d'accompagnement"
+
+
+    - id: 1020
+      id-excel: 231
+      message: "Zone 326 : la sous-zone $a contient le terme générique 'Périodicité' : compléter ou supprimer cette sous-zone"
+      priorite: P1
+      type: presencechainecaracteres
+      zone: '326'
+      souszone:   a
+      type-de-verification:    STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Périodicité"
+        
+        
+    - id: 1021
+      id-excel: 232
+      message: "Zone 326 : la sous-zone $b contient le terme générique 'Dates' : compléter ou supprimer cette sous-zone"
+      priorite: P1
+      type: presencechainecaracteres
+      zone: '326'
+      souszone:   b
+      type-de-verification:    STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Dates"
