@@ -6,7 +6,7 @@ rules:
     - id:                       1200
       id-excel:                 20
       type:                     comparaisoncontenusouszone
-      message:                  "Année de soutenance : enregistrer la même année en zone 029$b et en zone 328$d"
+      message:                  "Année de soutenance : l'année enregistrée en sous-zone 029$b (4 premiers caractères) et celle enregistrée en sous-zone 328$d doivent être les mêmes"
       zone:                     029
       priorite:                 P1
       type-these:

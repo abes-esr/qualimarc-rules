@@ -356,3 +356,367 @@ rules:
         indicateur: 2
         type-de-verification: STRICTEMENTDIFFERENT
         valeur: "2"
+
+
+  - id: 25120
+    id-excel: 273
+    message: "Zone 410 : faire le lien vers la notice de collection en sous-zone $0"
+    zone: 410
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25121
+        type: presencezone
+        presence: true
+      - id: 25122
+        type: presencesouszone
+        souszone: "0"
+        presence: false
+
+
+  - id: 25130
+    id-excel: 322
+    message: "Zone 488 : faire le lien vers la notice du document en relation en sous-zone $0"
+    zone: 488
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25131
+        type: presencezone
+        presence: true
+      - id: 25132
+        type: presencesouszone
+        souszone: "0"
+        presence: false
+
+
+
+  - id: 25140
+    id-excel: 438
+    message: "Zone 700 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 700
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25141
+        type: presencezone
+        presence: true
+      - id: 25142
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+          
+        
+  - id: 25150
+    id-excel: 447
+    message: "Zone 701 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 701
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25151
+        type: presencezone
+        presence: true
+      - id: 25152
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+        
+  - id: 25160
+    id-excel: 456
+    message: "Zone 702 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25161
+        type: presencezone
+        presence: true
+      - id: 25162
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+        
+        
+        
+  - id: 25170
+    id-excel: 464
+    message: "Zone 710 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25171
+        type: presencezone
+        presence: true
+      - id: 25172
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+          
+        
+  - id: 25180
+    id-excel: 470
+    message: "Zone 711 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 711
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25181
+        type: presencezone
+        presence: true
+      - id: 25182
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+        
+  - id: 25190
+    id-excel: 475
+    message: "Zone 712 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25191
+        type: presencezone
+        presence: true
+      - id: 25192
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+        
+        
+        
+  - id: 25200
+    id-excel: 483
+    message: "Zone 720 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 720
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25201
+        type: presencezone
+        presence: true
+      - id: 25202
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+          
+        
+  - id: 25210
+    id-excel: 488
+    message: "Zone 721 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 721
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25211
+        type: presencezone
+        presence: true
+      - id: 25212
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+        
+        
+  - id: 25220
+    id-excel: 
+    message: "Zone 722 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 722
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25221
+        type: presencezone
+        presence: true
+      - id: 25222
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+  - id: 25230
+    id-excel: 499
+    message: "Zone 700 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 700
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25231
+        type: presencezone
+        presence: true
+      - id: 25232
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+          
+        
+  - id: 25240
+    id-excel: 499
+    message: "Zone 701 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 701
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25241
+        type: presencezone
+        presence: true
+      - id: 25242
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+        
+  - id: 25250
+    id-excel: 499
+    message: "Zone 702 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25251
+        type: presencezone
+        presence: true
+      - id: 25252
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+        
+        
+        
+  - id: 25260
+    id-excel: 499
+    message: "Zone 710 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25261
+        type: presencezone
+        presence: true
+      - id: 25262
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+          
+        
+  - id: 25270
+    id-excel: 499
+    message: "Zone 711 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 711
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25271
+        type: presencezone
+        presence: true
+      - id: 25272
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+        
+  - id: 25280
+    id-excel: 499
+    message: "Zone 712 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25281
+        type: presencezone
+        presence: true
+      - id: 25282
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+        
+        
+        
+  - id: 25290
+    id-excel: 499
+    message: "Zone 720 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 720
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25291
+        type: presencezone
+        presence: true
+      - id: 25292
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+          
+        
+  - id: 25300
+    id-excel: 499
+    message: "Zone 721 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 721
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25301
+        type: presencezone
+        presence: true
+      - id: 25302
+        type: presencesouszone
+        souszone: "4"
+        presence: false
+        
+        
+  - id: 25310
+    id-excel: 499
+    message: "Zone 722 : un code de fonction (sous-zone $4) est obligatoire"
+    zone: 722
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25311
+        type: presencezone
+        presence: true
+      - id: 25312
+        type: presencesouszone
+        souszone: "4"
+        presence: false

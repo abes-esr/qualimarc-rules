@@ -911,3 +911,1162 @@ rules:
          zone: '856'
          presence: false
          operateur-booleen: ET
+
+
+
+#7160 : complément de la règle github 525 (inclusion des ressources continues électroniques)
+   - id:         7160
+     id-excel:    212
+     message:     "Zone 230  : puisque la ressource continue décrite n'est pas électronique, la zone 230 doit être supprimée"
+     priorite:    P1
+     type-doc:
+     -    BD
+     jeux-de-regles:
+     -   4 #2XX
+     regles:
+       - id: 7161
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: o
+       - id: 7162
+         type: presencezone
+         zone: '230'
+         presence: true
+         operateur-booleen: ET
+
+
+   - id:         7170
+     id-excel:    509
+     message:     "Zone 856 : puisque le document décrit n'est pas une ressource électronique, cette zone doit être supprimée"
+     priorite:    P1
+     type-doc:
+       -  A
+       -  B
+       -  K
+       -  BD
+       -  N
+       -  I
+       -  F
+       -  Z
+       -  V
+       -  G
+       -  M
+       -  PC
+     regles:
+       - id: 7171
+         type: presencezone
+         zone: '856'
+         presence: true
+       - id: 7172
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: o
+         operateur-booleen: ET
+
+
+   - id:         7180
+     id-excel:    702
+     message:     "Zone 110 : puisque la ressource continue décrite est une collection (valeur 'd' en position 2 de la zone 008$a), la valeur enregistrée en 110$a doit être 'b' (collection de monographies)"
+     priorite:    P1
+     type-doc:
+       -  BD
+     jeux-de-regles:
+     - 1  #données codées
+     regles:
+       - id: 7181
+         type: presencezone
+         zone: '110'
+         presence: true
+       - id: 7182
+         type: presencechainecaracteres
+         zone: '110'
+         souszone: a
+         type-de-verification:     COMMENCE
+         chaines-caracteres:
+           - chaine-caracteres:    "a"
+           - operateur: OU
+             chaine-caracteres:    "c"
+           - operateur: OU
+             chaine-caracteres:    "d"
+           - operateur: OU
+             chaine-caracteres:    "e"
+           - operateur: OU
+             chaine-caracteres:    "f"
+           - operateur: OU
+             chaine-caracteres:    "g"
+           - operateur: OU
+             chaine-caracteres:    "h"
+           - operateur: OU
+             chaine-caracteres:    "i"
+           - operateur: OU
+             chaine-caracteres:    "j"
+           - operateur: OU
+             chaine-caracteres:    "m"
+           - operateur: OU
+             chaine-caracteres:    "n"
+           - operateur: OU        
+             chaine-caracteres:    "z"
+         operateur-booleen: ET
+       - id: 7183
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENT
+         valeur: d
+         operateur-booleen: ET
+
+
+   - id:         7190
+     id-excel:    703
+     message:     "Zone 110 : puisque la ressource continue décrite n'est une collection (valeur 'b' en position 2 de la zone 008$a), la valeur enregistrée en 110$a doit être différente de 'b'"
+     priorite:    P1
+     type-doc:
+       -  BD
+     jeux-de-regles:
+     - 1  #données codées
+     regles:
+       - id: 7191
+         type: presencezone
+         zone: '110'
+         presence: true
+       - id: 7192
+         type: presencechainecaracteres
+         zone: '110'
+         souszone: a
+         type-de-verification:     COMMENCE
+         chaines-caracteres:
+           - chaine-caracteres:    "b"
+         operateur-booleen: ET
+       - id: 7193
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+
+
+
+   - id:         7200
+     id-excel:    704
+     message:     "Partie composante : une zone 463 (lien vers le document hôte) doit obligatoirement s'accompagner d'une zone de note 305"
+     priorite:    P1
+     type-doc:
+       -  PC
+     regles:
+       - id: 7201
+         type: presencezone
+         zone: '463'
+         presence: true
+       - id: 7202
+         type: presencezone
+         zone: '305'
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 7210
+     id-excel: 320
+     message: "Zone 488 : dans la notice du document lié indiqué en $0, le lien réciproque en 488 est absent ou erroné. Ajouter ou corriger le lien vers cette notice "
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7211
+         type: presencesouszone
+         zone: '488'
+         souszone:    0
+         presence: true
+       - id: 7212
+         type: dependance
+         zone: '488'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7213
+         type: reciprocite
+         zone: '488'
+         souszone:   0
+
+
+
+
+   - id: 7220
+     id-excel: 222
+     message: "Partie composante : afin d'indiquer clairement la relation entre la partie composante et le document hôte, la sous-zone 305$a doit toujours commencer par 'In :'"
+     priorite: P1
+     type-doc:
+       - PC
+     regles:
+       - id: 7221
+         type: presencesouszone
+         zone: '305'
+         souszone:    a
+         presence: true
+       - id: 7222
+         type: presencechainecaracteres
+         zone: '305'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    'In :'
+         operateur-booleen: ET
+
+
+   - id: 7230
+     id-excel: 4
+     message: "Ressource continue : la zone 011 est obligatoire : faire une demande de numérotation ISSN via Cidemis, et créer une sous-zone 301$a 'Demande de numérotation ISSN en cours'"
+     priorite: P1
+     jeux-de-regles:
+       - 9  #OXX
+     type-doc:
+       - BD
+     regles:
+       - id: 7231
+         type: presencezone
+         zone: '011'
+         presence: false
+       - id: 7232
+         type: presencezone
+         zone: '301'
+         presence: false
+         operateur-booleen: ET
+
+
+   - id:         7240
+     id-excel:    10
+     message:     "Zone 017 : le code de référentiel enregistré en 017$2 doit être 'DOI', 'ISAN', 'NIPO', 'SBN' ou 'URN'"
+     priorite:    P1
+     jeux-de-regles:
+     - 9  #0XX
+     regles:
+       - id: 7241
+         type: presencesouszone
+         zone: '017'
+         souszone: '2'
+         presence: true
+       - id: 7242
+         type: presencechainecaracteres
+         zone: '017'
+         souszone: '2'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "DOI"
+           - operateur: ET
+             chaine-caracteres:    "ISAN"
+           - operateur: ET
+             chaine-caracteres:    "NIPO"
+           - operateur: ET
+             chaine-caracteres:    "SBN"
+           - operateur: ET
+             chaine-caracteres:    "URN"
+         operateur-booleen: ET
+
+
+
+   - id:         7250
+     id-excel:    14
+     message:     "Zone 029 :  puisqu'il est indiqué que le document est une thèse d'exercice (328$b), le numéro d'ordre est à enregistrer en sous-zone $e"
+     priorite:    P1
+     type-these:
+       -  SOUTENANCE
+       -  REPRO
+     jeux-de-regles:
+     - 9  #0XX
+     regles:
+       - id: 7251
+         type: presencezone
+         zone: '029'
+         presence: true
+       - id: 7252
+         type: presencesouszone
+         zone: '029'
+         souszone: 'e'
+         presence: false
+         operateur-booleen: ET
+       - id: 7253
+         type: presencesouszone
+         zone: '328'
+         souszone: 'b'
+         presence: true
+         operateur-booleen: ET
+       - id: 7254
+         type: presencechainecaracteres
+         zone: '328'
+         souszone: 'b'
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "exercice"
+         operateur-booleen: ET
+
+
+
+   - id:         7260
+     id-excel:    15
+     message:     "Zone 029 : puisqu'il est indiqué que le document est un mémoire (328$b), le numéro d'ordre est à enregistrer en sous-zone $m"
+     priorite:    P1
+     type-these:
+       -  SOUTENANCE
+       -  REPRO
+     jeux-de-regles:
+     - 9  #0XX
+     regles:
+       - id: 7261
+         type: presencezone
+         zone: '029'
+         presence: true
+       - id: 7262
+         type: presencesouszone
+         zone: '029'
+         souszone: 'm'
+         presence: false
+         operateur-booleen: ET
+       - id: 7263
+         type: presencesouszone
+         zone: '328'
+         souszone: 'b'
+         presence: true
+         operateur-booleen: ET
+       - id: 7264
+         type: presencechainecaracteres
+         zone: '328'
+         souszone: 'b'
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "mémoire"
+           - operateur:            OU
+             chaine-caracteres:    "Mémoire"
+         operateur-booleen: ET
+
+
+   - id: 7270
+     id-excel: 18
+     message: "Zone 029 : le numéro national de thèse enregistré en sous-zone $b doit contenir 12 caractères"
+     priorite: P1
+     jeux-de-regles:
+       - 9  #0XX
+     type-these:
+       -  SOUTENANCE
+       -  REPRO
+     regles:
+       - id: 7271
+         type: nombrecaractere
+         zone: '029'
+         souszone:   b
+         operateur:  INFERIEUR
+         occurrences: 12
+       - id: 7272
+         type: nombrecaractere
+         zone: '029'
+         souszone:   b
+         operateur:  SUPERIEUR
+         occurrences: 12
+         operateur-booleen: OU
+
+
+
+   - id:         7280
+     id-excel:    47
+     message:     "Zone 102 : puisqu'il s'agit d'une thèse de doctorat française (328$b et 029$aFR), la sous-zone $a (Onglet 'Pays') doit comporter un des codes suivants : FR, GP, GF, MQ, YT, NC, RE, PF, PM, SM ou WF"
+     priorite:    P1
+     type-these:
+       -  SOUTENANCE
+     jeux-de-regles:
+     - 1  #1XX
+     regles:
+       - id: 7281
+         type: presencechainecaracteres
+         zone: '102'
+         souszone: 'a'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "FR"
+           - operateur:            ET
+             chaine-caracteres:    "GP"
+           - operateur:            ET
+             chaine-caracteres:    "GF"
+           - operateur:            ET
+             chaine-caracteres:    "MQ"
+           - operateur:            ET
+             chaine-caracteres:    "YT"
+           - operateur:            ET
+             chaine-caracteres:    "NC"
+           - operateur:            ET
+             chaine-caracteres:    "RE"
+           - operateur:            ET
+             chaine-caracteres:    "PF"
+           - operateur:            ET
+             chaine-caracteres:    "PM"
+           - operateur:            ET
+             chaine-caracteres:    "SM"
+           - operateur:            ET
+             chaine-caracteres:    "WF"
+       - id: 7282
+         type: presencechainecaracteres
+         zone: '029'
+         souszone: 'a'
+         type-de-verification:     STRICTEMENT
+         chaines-caracteres:
+           - chaine-caracteres:    "FR"
+         operateur-booleen: ET
+       - id: 7283
+         type: presencechainecaracteres
+         zone: '328'
+         souszone: 'b'
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "doctorat"
+         operateur-booleen: ET
+
+
+   - id:         7290
+     id-excel:   418
+     message:     "Zone 686 : puisqu'il s'agit d'une thèse de doctorat (328$b), une zone 686 est obligatoire"
+     priorite:    P1
+     type-these:
+       -    SOUTENANCE
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7291
+         type: presencezone
+         zone: '686'
+         presence: false
+       - id: 7292
+         type: presencechainecaracteres
+         zone: '328'
+         souszone: 'b'
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "doctorat"
+         operateur-booleen: ET
+
+
+   - id:         7300
+     id-excel:    46
+     message:     "Zone 214 : puisqu'un pays de publication a été renseigné en sous-zone 102$a, la sous-zone 214$a peut être précisée"
+     priorite:    P1
+     jeux-de-regles:
+     - 1  #1XX
+     - 4  #2XX
+     regles:
+       - id: 7301
+         type: presencesouszone
+         zone: '102'
+         souszone: 'a'
+         presence: true
+       - id: 7302
+         type: presencechainecaracteres
+         zone: '102'
+         souszone: 'a'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "XX"
+           - operateur:            ET
+             chaine-caracteres:    "ZZ"
+         operateur-booleen: ET
+       - id: 7303
+         type: presencesouszone
+         zone: '214'
+         souszone: 'a'
+         presence: true
+         operateur-booleen: ET
+       - id: 7304
+         type: presencechainecaracteres
+         zone: '214'
+         souszone: 'a'
+         type-de-verification:     CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "inconnu"
+           - operateur:            OU
+             chaine-caracteres:    "Inconnu"
+         operateur-booleen: ET
+
+
+
+   - id: 7310
+     id-excel: 71
+     message: "Zone 106 : puisque la ressource n'est pas un manuscrit (zone 008 différente de 'Fa'), la valeur attendue en sous-zone $a ne peut pas être 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       -    A
+       -    B
+       -    O
+       -    N
+       -    I
+       -    Z
+       -    V
+       -    G
+       -    BD
+       -    PC
+     regles:
+       - id: 7311
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+       - id: 7312
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+#règle 7320 compélment de la 6000 (inclusion des La et Pa)
+   - id: 7320
+     id-excel: 70
+     message: "Zone 106 : si la ressource est bien de type manuscrit, la valeur attendue en sous-zone $a est 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       - K
+       - M
+     regles:
+       - id: 7321
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENT
+         valeur: L
+       - id: 7322
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENT
+         valeur: P
+         operateur-booleen: ET
+       - id: 7323
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+       - id: 7324
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+
+#règle 7330 complément de la 7310 (inclusion des La)
+   - id: 7330
+     id-excel: 71
+     message: "Zone 106 : puisque la ressource n'est pas une partition manuscrite, la valeur attendue en sous-zone $a ne peut pas être 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       -    M
+     regles:
+       - id: 7331
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur: L
+       - id: 7332
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+       - id: 7333
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+
+#règle 7340 complément de la 7310 (inclusion des Pa)
+   - id: 7340
+     id-excel: 71
+     message: "Zone 106 : puisque la ressource n'est pas une carte manuscrite (Pa), la valeur attendue en sous-zone $a ne peut pas être 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       -    K
+     regles:
+       - id: 7341
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur: P
+       - id: 7342
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+       - id: 7343
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+
+
+#règle 7350 compélment de la 6000 (inclusion des Pa)
+   - id: 7320
+     id-excel: 70
+     message: "Zone 106 : si la ressource est bien une carte manuscrite (Pa), la valeur attendue en sous-zone $a est 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       - K
+     regles:
+       - id: 7351
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENT
+         valeur: P
+       - id: 7352
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+       - id: 7353
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+
+#règle 7360 compélment de la 6000 (inclusion des La)
+   - id: 7360
+     id-excel: 70
+     message: "Zone 106 : si la ressource est bien une partition manuscrite (La), la valeur attendue en sous-zone $a est 'h'"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #données codées
+     type-doc:
+       - M
+     regles:
+       - id: 7361
+         type: typedocument
+         position: 1
+         type-de-verification:    STRICTEMENT
+         valeur: L
+       - id: 7362
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+         operateur-booleen: ET
+       - id: 7363
+         type: presencechainecaracteres
+         zone: '106'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+
+
+   - id: 7370
+     id-excel: 437
+     message: "Zone 700  : la zone est exclusive des zones 710 et 720. Vérifier les mentions de responsabilité afin de déterminer les zones 7XX adéquates"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7371
+         type: presencezone
+         zone: '710'
+         presence: true
+       - id: 7372
+         type: presencezone
+         zone: '720'
+         presence: true
+         operateur-booleen: OU
+       - id: 7373
+         type: presencezone
+         zone: '700'
+         presence: true
+         operateur-booleen: ET
+
+
+   - id: 7380
+     id-excel: 439
+     message: "Zone 700 : la notice d'autorité liée doit obligatoirement être de type 'Nom de personne' (Tp) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7381
+         type: presencesouszone
+         zone: '700'
+         souszone:    3
+         presence: true
+       - id: 7382
+         type: dependance
+         zone: '700'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7383
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: p
+
+   - id: 7390
+     id-excel: 448
+     message: "Zone 701 : la notice d'autorité liée doit obligatoirement être de type 'Nom de personne' (Tp) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7391
+         type: presencesouszone
+         zone: '701'
+         souszone:    3
+         presence: true
+       - id: 7392
+         type: dependance
+         zone: '701'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7393
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: p
+
+   - id: 7400
+     id-excel: 454
+     message: "Zone 702 : la notice d'autorité liée doit obligatoirement être de type 'Nom de personne' (Tp) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7401
+         type: presencesouszone
+         zone: '702'
+         souszone:    3
+         presence: true
+       - id: 7402
+         type: dependance
+         zone: '702'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7403
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: p
+
+
+   - id: 7410
+     id-excel: 462
+     message: "Zone 710 : la notice d'autorité liée doit obligatoirement être de type 'Collectivité' (Tb) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7411
+         type: presencesouszone
+         zone: '710'
+         souszone:    3
+         presence: true
+       - id: 7412
+         type: dependance
+         zone: '710'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7413
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
+
+   - id: 7420
+     id-excel: 468
+     message: "Zone 711 : la notice d'autorité liée doit obligatoirement être de type 'Collectivité' (Tb) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7421
+         type: presencesouszone
+         zone: '711'
+         souszone:    3
+         presence: true
+       - id: 7422
+         type: dependance
+         zone: '711'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7423
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
+
+   - id: 7430
+     id-excel: 474
+     message: "Zone 712 : la notice d'autorité liée doit obligatoirement être de type 'Collectivité' (Tb) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7431
+         type: presencesouszone
+         zone: '712'
+         souszone:    3
+         presence: true
+       - id: 7432
+         type: dependance
+         zone: '712'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7433
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
+
+
+
+   - id: 7440
+     id-excel: 482
+     message: "Zone 720 : la notice d'autorité liée doit obligatoirement être de type 'Nom de famille' (Ta) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7441
+         type: presencesouszone
+         zone: '720'
+         souszone:    3
+         presence: true
+       - id: 7442
+         type: dependance
+         zone: '720'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7443
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
+
+   - id: 7450
+     id-excel: 487
+     message: "Zone 721 : la notice d'autorité liée doit obligatoirement être de type 'Nom de famille' (Ta) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7451
+         type: presencesouszone
+         zone: '721'
+         souszone:    3
+         presence: true
+       - id: 7452
+         type: dependance
+         zone: '721'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7453
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
+
+   - id: 7460
+     id-excel: 491
+     message: "Zone 722 : la notice d'autorité liée doit obligatoirement être de type 'Nom de famille' (Ta) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     regles:
+       - id: 7461
+         type: presencesouszone
+         zone: '722'
+         souszone:    3
+         presence: true
+       - id: 7462
+         type: dependance
+         zone: '722'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7463
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
+
+
+   - id: 7470
+     id-excel: 507
+     message: "Zone 700 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7471
+         type: presencechainecaracteres
+         zone: '700'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7472
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+
+
+   - id: 7480
+     id-excel: 507
+     message: "Zone 701 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7481
+         type: presencechainecaracteres
+         zone: '701'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7482
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+         
+ 
+   - id: 7490
+     id-excel: 507
+     message: "Zone 702 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7491
+         type: presencechainecaracteres
+         zone: '702'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7492
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+
+
+
+   - id: 7500
+     id-excel: 507
+     message: "Zone 710 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7501
+         type: presencechainecaracteres
+         zone: '710'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7502
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+
+
+   - id: 7510
+     id-excel: 507
+     message: "Zone 711 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7511
+         type: presencechainecaracteres
+         zone: '711'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7512
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+         
+ 
+   - id: 7520
+     id-excel: 507
+     message: "Zone 712 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7521
+         type: presencechainecaracteres
+         zone: '712'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7522
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+
+
+   - id: 7530
+     id-excel: 507
+     message: "Zone 720 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7531
+         type: presencechainecaracteres
+         zone: '720'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7532
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+
+
+   - id: 7540
+     id-excel: 507
+     message: "Zone 721 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7541
+         type: presencechainecaracteres
+         zone: '721'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7542
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+         
+ 
+   - id: 7550
+     id-excel: 507
+     message: "Zone 722 : sauf pour de rares cas, les codes de fonction 070 et 340 sont désormais proscrits dans les notices de périodiques. Utiliser le code de fonction 651 pour les directeurs de publication, rédacteurs en chef, directeurs de collection, etc."
+     priorite: P1
+     jeux-de-regles:
+       - 7  #7XX
+     type-doc:
+       - BD
+     regles:
+       - id: 7551
+         type: presencechainecaracteres
+         zone: '722'
+         souszone:   4
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    070
+           - operateur:            OU
+             chaine-caracteres:    340
+       - id: 7552
+         type: typedocument
+         position: 2
+         type-de-verification:    STRICTEMENT
+         valeur: b
+         operateur-booleen: ET
+
+
+
+   - id: 7560
+     id-excel: 708
+     message: "Zone 214 : puisque la date renseignée en sous-zone $d est approximative, incertaine ou issue de sources extérieures à la ressource décrite (date figurant entre crochets), il est obligatoire de justifier cette date dans une zone 306"
+     priorite: P1
+     jeux-de-regles:
+       - 4  #2XX
+       - 6 #dates
+     regles:
+       - id: 7561
+         type: presencechainecaracteres
+         zone: '214'
+         souszone:   d
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    "["
+           - operateur:            OU
+             chaine-caracteres:    "]"
+       - id: 7562
+         type: presencezone
+         zone: '306'
+         presence: false
+         operateur-booleen: ET

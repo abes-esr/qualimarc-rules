@@ -79,8 +79,6 @@ rules:
       jeux-de-regles: 
       - 9 #identifiants
       
-      
-     
 
 
     - id:                       1006
@@ -95,3 +93,229 @@ rules:
       type-de-verification:     CONTIENT
       chaines-caracteres:
         - chaine-caracteres:    "http"
+
+
+
+    - id:                       1007
+      id-excel:                 45
+      type:                     presencechainecaracteres
+      message:                  "Zone 102 : le code du pays de publication XX (Pays inconnu) est à utiliser le moins possible en catalogage, uniquement lorsque le lieu de publication/diffusion/etc. est impossible à déterminer. Se référer au lieu renseigné en sous-zone 214$a"
+      zone:                     102
+      priorite:                 P2
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    "XX"
+      jeux-de-regles: 
+        - 1 #1XX
+
+
+    - id:                       1008
+      id-excel:                 501
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fonction '205' (Collaborateur) doit seulement être utilisé dans le cas où aucun autre code de fonction n'est pertinent. Vérifier si c'est le cas, sinon enregistrer un code de fonction plus adapté"
+      zone:                     "7XX"
+      priorite:                 P2
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    205
+      jeux-de-regles: 
+      - 7 #responsabilités   
+ 
+ 
+    - id:                       1009
+      id-excel:                 502
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fonction '570' (Autre) n'est pas utilisé dans le Sudoc. Employer le code '205' (Collaborateur) si aucun autre code de fonction n'est pertinent"
+      zone:                     "7XX"
+      priorite:                 P1
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    570
+      jeux-de-regles: 
+      - 7 #responsabilités
+      
+      
+    - id:                       1010
+      id-excel:                 503
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fonction '240' (Compositeur d'imprimerie) est obsolète. Employer le code 410 (Technicien graphique) ou 440 (Illustrateur)"
+      zone:                     "7XX"
+      priorite:                 P1
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    240
+      jeux-de-regles: 
+      - 7 #responsabilités   
+ 
+    
+    - id:                       1011
+      id-excel:                 504
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fonction '400' (Bailleur de fonds) est obsolète. Employer le code 723 (Parraineur)"
+      zone:                     "7XX"
+      priorite:                 P1
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    400
+      jeux-de-regles: 
+      - 7 #responsabilités 
+
+
+
+    - id: 1012
+      id-excel: 165
+      message: "Zone 214 : la date enregistrée en sous-zone $d ne peut pas comporter 'circa', 'environ' ou 's.d.'. Une date incertaine ou approximative doit être restituée entre crochets [AAAA]"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+       - 6 #dates
+      type: presencechainecaracteres
+      zone: '214'
+      souszone:   d
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "circa"
+        - operateur:            OU
+          chaine-caracteres:    "environ"
+        - operateur:            OU
+          chaine-caracteres:    "s.d."
+
+    - id: 1013
+      id-excel: 184
+      message: "Zone 214 : la mention [s.l.] doit être remplacée par [Lieu de publication inconnu]"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '214'
+      souszone:   a
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "s.l."
+        - operateur:            OU
+          chaine-caracteres:    "sl"
+        - operateur:            OU
+          chaine-caracteres:    "S.l."
+        - operateur:            OU
+          chaine-caracteres:    "Sl"
+          
+          
+          
+    - id: 1014
+      id-excel: 186
+      message: "Zone 214 : la mention [s.n.] doit être remplacée par [éditeur inconnu]"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '214'
+      souszone:   c
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "s.n."
+        - operateur:            OU
+          chaine-caracteres:    "sn"
+        - operateur:            OU
+          chaine-caracteres:    "S.n."
+        - operateur:            OU
+          chaine-caracteres:    "Sn"
+          
+
+    - id: 1015
+      id-excel: 185
+      message: "Zone 214 : la sous-zone $b contient le terme générique 'Adresse de l'éditeur' : compléter ou supprimer cette sous-zone"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '214'
+      souszone:   b
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Adresse de l'éditeur"
+        
+    - id: 1016
+      id-excel: 187
+      message: "Zone 214 : la sous-zone $c contient le terme générique 'Nom de l'éditeur' : compléter ou supprimer cette sous-zone"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '214'
+      souszone:   c
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Nom de l'éditeur"
+
+
+    - id: 1017
+      id-excel: 195
+      message: "Zone 215 : la sous-zone $c contient le terme générique 'Mention d'ill.' : compléter cette sous-zone"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '215'
+      souszone:   c
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Mention d'ill"
+       
+       
+    - id: 1018
+      id-excel: 196
+      message: "Zone 215 : la sous-zone $d contient un des termes génériques 'Dimensions' ou 'Format': compléter cette sous-zone"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '215'
+      souszone:   d
+      type-de-verification:    STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Dimensions"
+        - operateur:            OU
+          chaine-caracteres:    "Format"
+          
+          
+    - id: 1019
+      id-excel: 197
+      message: "Zone 215 : la sous-zone $e contient le terme générique 'Matériel d'accompagnement' : compléter cette sous-zone"
+      priorite: P1
+      jeux-de-regles:
+       - 4  #2XX
+      type: presencechainecaracteres
+      zone: '215'
+      souszone:   e
+      type-de-verification:    STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Matériel d'accompagnement"
+
+
+    - id: 1020
+      id-excel: 231
+      message: "Zone 326 : la sous-zone $a contient le terme générique 'Périodicité' : compléter ou supprimer cette sous-zone"
+      priorite: P1
+      type: presencechainecaracteres
+      zone: '326'
+      souszone:   a
+      type-de-verification:    STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Périodicité"
+        
+        
+    - id: 1021
+      id-excel: 232
+      message: "Zone 326 : la sous-zone $b contient le terme générique 'Dates' : compléter ou supprimer cette sous-zone"
+      priorite: P1
+      type: presencechainecaracteres
+      zone: '326'
+      souszone:   b
+      type-de-verification:    STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Dates"

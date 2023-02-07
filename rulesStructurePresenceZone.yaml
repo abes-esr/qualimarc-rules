@@ -378,8 +378,6 @@ rules:
 
 
 
-
-
     - id:         525
       id-excel:    212
       type:        presencezone
@@ -398,7 +396,6 @@ rules:
       -    V
       -    G
       -    M
-      -    BD
       -    PC
       jeux-de-regles:
       - 4  #2XX
@@ -415,18 +412,7 @@ rules:
       type-doc:
       -    O
 
-
-    - id:         528
-      id-excel:   418
-      type:        presencezone
-      message:     "Travaux universitaires : puisqu'il s'agit d'une thèse originelle ou d'une reproduction à l'identique, une zone 686 est obligatoire"
-      zone:        686
-      priorite:    P1
-      presence:    false
-      type-these:
-      -    SOUTENANCE
-      jeux-de-regles:
-      - 2  #6XX
+#suppression 528 >> complex rules
 
 
     - id:          529
@@ -459,3 +445,59 @@ rules:
       presence:    false
       type-doc:
       -    O
+
+    - id:          532
+      id-excel:    6
+      type:        presencezone
+      message:     "Zone 013  : lorsque la ressource de type Enregistrement sonore (G*) est identifiée par un ISMN, sa transcription est obligatoire"
+      zone:        013
+      priorite:    P2
+      presence:    false
+      type-doc:
+      -    G
+      jeux-de-regles:
+      -  9  # Identifiants
+
+
+    - id:          533
+      id-excel:    230
+      type:        presencezone
+      message:     "Zone 326  : puisque le document n'est pas une ressource continue, la zone 326 est à supprimer"
+      zone:        326
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    M
+      -    PC
+
+
+    - id:          534
+      id-excel:    233
+      type:        presencezone
+      message:     "Zone 327 : vérifier si les informations enregistrées signalent bien la présence et/ou la nature d'un contenu intéressant dans le volume décrit. Toute information liée aux tables des matières/sommaires doit être enregistrée en zone 359"
+      zone:        327
+      priorite:    P2
+      presence:    true
+
+
+    - id:          535
+      id-excel:    311
+      type:        presencezone
+      message:     "Partie composante : une zone 463 est attendue pour faire un lien spécifique vers le document hôte (ppn à enregistrer en sous-zone $0)"
+      zone:        463
+      priorite:    P2
+      presence:    false
+      type-doc:
+      -    PC
+      jeux-de-regles:
+      -  3  # liens
