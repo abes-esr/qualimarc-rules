@@ -2070,3 +2070,29 @@ rules:
          zone: '306'
          presence: false
          operateur-booleen: ET
+
+
+   - id: 7570
+     id-excel: 283
+     message: "Zone 451 : la notice liée comme 'autre édition sur le même support' ne décrit pas une ressource électronique. Faire le lien vers une notice de ressource électronique ou remplacer par une zone 452 ('autre édition sur un support différent')"
+     priorite: P1
+     type-doc:
+       - O
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7571
+         type: presencesouszone
+         zone: '451'
+         souszone:    0
+         presence: true
+       - id: 7572
+         type: dependance
+         zone: '451'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7573
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: O
