@@ -720,3 +720,72 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
+
+
+  - id: 25320
+    id-excel: 287
+    message: "Zone 451 : faire le lien vers la notice 'autre édition sur le même support'"
+    zone: 451
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25321
+        type: presencezone
+        presence: true
+      - id: 25322
+        type: presencesouszone
+        souszone: "0"
+        presence: false
+        
+  - id: 25330
+    id-excel: 291
+    message: "Zone 452 : faire le lien vers la notice 'autre édition sur un autre support'"
+    zone: 452
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25331
+        type: presencezone
+        presence: true
+      - id: 25332
+        type: presencesouszone
+        souszone: "0"
+        presence: false
+ 
+ 
+        
+  - id: 25340
+    id-excel: 297
+    message: "Zone 455 : faire le lien vers la notice décrivant le document original"
+    zone: 455
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25341
+        type: presencezone
+        presence: true
+      - id: 25342
+        type: presencesouszone
+        souszone: "0"
+        presence: false
+        
+        
+        
+  - id: 25350
+    id-excel: 308
+    message: "Zone 456 : faire le lien vers la notice décrivant la reproduction"
+    zone: 456
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25351
+        type: presencezone
+        presence: true
+      - id: 25352
+        type: presencesouszone
+        souszone: "0"
+        presence: false
