@@ -2122,3 +2122,48 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: A
+
+
+   - id: 7590
+     id-excel: 299
+     message: "Zone 455 : puisque la ressource est une reproduction, la notice liée doit contenir un lien réciproque 'Est reproduit comme'. Corriger la notice liée ou utiliser une autre zone que la zone 455"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7591
+         type: presencesouszone
+         zone: '455'
+         souszone:    0
+         presence: true
+       - id: 7592
+         type: dependance
+         zone: '455'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7593
+         type: reciprocite
+         zone: '456'
+         souszone:   0
+         
+   - id: 7600
+     id-excel: 305
+     message: "Zone 456 : puisque la ressource est un document original, la notice liée doit contenir un lien réciproque 'Reproduction de'. Corriger la notice liée ou utiliser une autre zone que la zone 456"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 76001
+         type: presencesouszone
+         zone: '456'
+         souszone:    0
+         presence: true
+       - id: 7602
+         type: dependance
+         zone: '456'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7603
+         type: reciprocite
+         zone: '455'
+         souszone:   0
