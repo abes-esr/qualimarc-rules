@@ -724,7 +724,7 @@ rules:
 
   - id: 25320
     id-excel: 287
-    message: "Zone 451 : faire le lien vers la notice 'autre édition sur le même support'"
+    message: "Zone 451 : faire le lien vers la notice 'autre édition sur le même support' dans une sous-zone $0"
     zone: 451
     priorite: P1
     jeux-de-regles:
@@ -740,7 +740,7 @@ rules:
         
   - id: 25330
     id-excel: 291
-    message: "Zone 452 : faire le lien vers la notice 'autre édition sur un autre support'"
+    message: "Zone 452 : faire le lien vers la notice 'autre édition sur un autre support' dans une sous-zone $0"
     zone: 452
     priorite: P1
     jeux-de-regles:
@@ -758,7 +758,7 @@ rules:
         
   - id: 25340
     id-excel: 297
-    message: "Zone 455 : faire le lien vers la notice décrivant le document original"
+    message: "Zone 455 : faire le lien vers la notice décrivant le document original dans une sous-zone $0"
     zone: 455
     priorite: P1
     jeux-de-regles:
@@ -776,7 +776,7 @@ rules:
         
   - id: 25350
     id-excel: 308
-    message: "Zone 456 : faire le lien vers la notice décrivant la reproduction"
+    message: "Zone 456 : faire le lien vers la notice décrivant la reproduction dans une sous-zone $0"
     zone: 456
     priorite: P1
     jeux-de-regles:
