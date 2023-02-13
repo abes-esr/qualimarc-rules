@@ -2096,3 +2096,29 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: O
+
+
+   - id: 7580
+     id-excel: 284
+     message: "Zone 451 : la notice liée comme 'autre édition sur le même support' ne décrit pas une ressource imprimée. Faire le lien vers une notice de ressource imprimée ou remplacer par une zone 452 ('autre édition sur un support différent')"
+     priorite: P1
+     type-doc:
+       - A
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7581
+         type: presencesouszone
+         zone: '451'
+         souszone:    0
+         presence: true
+       - id: 7582
+         type: dependance
+         zone: '451'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7583
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: A
