@@ -352,3 +352,15 @@ rules:
           chaine-caracteres:    "Trad. de"
         - operateur:            OU
           chaine-caracteres:    "Titre original"
+         
+
+    - id: 1024
+      id-excel: 294
+      message: "Zone 454 : la sous-zone 454$t ne doit pas comporter de guillemets, sauf s'ils font réellement partie du titre"
+      priorite: P2
+      type: presencechainecaracteres
+      zone: '454'
+      souszone:   t
+      type-de-verification:    COMMENCE
+      chaines-caracteres:
+        - chaine-caracteres:    '"'
