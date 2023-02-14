@@ -2173,7 +2173,7 @@ rules:
 
    - id: 7610
      id-excel: 290
-     message: "Zone 452 : la notice liée comme 'autre édition sur le même support' ne décrit pas une ressource électronique. Faire le lien vers une notice de ressource électronique ou remplacer par une zone 452 ('autre édition sur un support différent')"
+     message: "Zone 452 : la notice liée comme 'autre édition sur un support différent' est aussi une ressource électronique. Faire le lien vers une notice de ressource imprimée ou remplacer par une zone 451 ('autre édition sur un même support')"
      priorite: P1
      type-doc:
        - O
@@ -2193,13 +2193,13 @@ rules:
        - id: 7613
          type: typedocument
          position: 1
-         type-de-verification: STRICTEMENTDIFFERENT
+         type-de-verification: STRICTEMENT
          valeur: O
 
 
    - id: 7620
      id-excel: 289
-     message: "Zone 452 : la notice liée comme 'autre édition sur le même support' ne décrit pas une ressource imprimée. Faire le lien vers une notice de ressource imprimée ou remplacer par une zone 452 ('autre édition sur un support différent')"
+     message: "Zone 452 : la notice liée comme 'autre édition sur un support différent' est aussi une ressource imprimée. Faire le lien vers une notice de ressource électronique ou remplacer par une zone 451 ('autre édition sur un même support')"
      priorite: P1
      type-doc:
        - A
@@ -2219,5 +2219,5 @@ rules:
        - id: 7623
          type: typedocument
          position: 1
-         type-de-verification: STRICTEMENTDIFFERENT
+         type-de-verification: STRICTEMENT
          valeur: A
