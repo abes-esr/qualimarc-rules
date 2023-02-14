@@ -319,3 +319,36 @@ rules:
       type-de-verification:    STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    "Dates"
+
+
+    - id: 1022
+      id-excel: 292
+      message: "Zone 453 : la sous-zone 453$t n'a pas vocation à recevoir de mention introductive (exemple : 'Traduit de'). Seul le titre traduit doit être enregistré"
+      priorite: P1
+      type: presencechainecaracteres
+      zone: '453'
+      souszone:   t
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Traduit de"
+        - operateur:            OU
+          chaine-caracteres:    "Traduit sous"
+        - operateur:            OU
+          chaine-caracteres:    "Titre traduit"
+
+
+
+    - id: 1023
+      id-excel: 293
+      message: "Zone 454 : la sous-zone 454$t n'a pas vocation à recevoir de mention introductive (exemple : 'Traduction de'). Seul le titre original doit être enregistré"
+      priorite: P1
+      type: presencechainecaracteres
+      zone: '454'
+      souszone:   t
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Traduction de"
+        - operateur:            OU
+          chaine-caracteres:    "Trad. de"
+        - operateur:            OU
+          chaine-caracteres:    "Titre original"
