@@ -2153,7 +2153,7 @@ rules:
      jeux-de-regles:
        - 3  #liens
      regles:
-       - id: 76001
+       - id: 7601
          type: presencesouszone
          zone: '456'
          souszone:    0
@@ -2167,3 +2167,57 @@ rules:
          type: reciprocite
          zone: '455'
          souszone:   0
+
+
+
+
+   - id: 7610
+     id-excel: 290
+     message: "Zone 452 : la notice liée comme 'autre édition sur le même support' ne décrit pas une ressource électronique. Faire le lien vers une notice de ressource électronique ou remplacer par une zone 452 ('autre édition sur un support différent')"
+     priorite: P1
+     type-doc:
+       - O
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7611
+         type: presencesouszone
+         zone: '452'
+         souszone:    0
+         presence: true
+       - id: 7612
+         type: dependance
+         zone: '452'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7613
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: O
+
+
+   - id: 7620
+     id-excel: 289
+     message: "Zone 452 : la notice liée comme 'autre édition sur le même support' ne décrit pas une ressource imprimée. Faire le lien vers une notice de ressource imprimée ou remplacer par une zone 452 ('autre édition sur un support différent')"
+     priorite: P1
+     type-doc:
+       - A
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7621
+         type: presencesouszone
+         zone: '452'
+         souszone:    0
+         presence: true
+       - id: 7622
+         type: dependance
+         zone: '451'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7623
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: A
