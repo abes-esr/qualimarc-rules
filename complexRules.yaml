@@ -2213,7 +2213,7 @@ rules:
          presence: true
        - id: 7622
          type: dependance
-         zone: '451'
+         zone: '452'
          souszone:   0
          type-notice-liee: BIBLIO
        - id: 7623
