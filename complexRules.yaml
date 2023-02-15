@@ -2250,3 +2250,28 @@ rules:
          operateur-booleen: ET
 
 
+
+   - id: 7640
+     id-excel: 130
+     message: "Zone 510 : il faut enregistrer autant de zones 510 que de titre parallèle enregistré en sous-zone 200$d (et une zone 464 si un des titres parallèles correspond au titre original de l'oeuvre)"
+     priorite: P1
+     jeux-de-regles:
+       - 4  #2XX
+     regles:
+       - id: 7641
+         type: nombresouszone
+         zone: '200'
+         souszone: d
+         zonecible: '510'
+         souszonecible:   a
+       - id: 7642
+         type: nombrezone
+         zone: '200'
+         operateur:    EGAL
+         occurences:  1
+         operateur-booleen: ET
+       - id: 7643
+         type: presencezone
+         zone: '464'
+         presence: false
+         operateur-booleen: ET
