@@ -364,3 +364,16 @@ rules:
       type-de-verification:    COMMENCE
       chaines-caracteres:
         - chaine-caracteres:    '"'
+
+
+
+    - id: 1025
+      id-excel: 335
+      message: "Zone 541 : la sous-zone 541$a n'a pas vocation à recevoir de mention introductive (de type 'Traduit de'). Seul le titre traduit doit être enregistré"
+      priorite: P1
+      type: presencechainecaracteres
+      zone: '541'
+      souszone:   a
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Traduit"
