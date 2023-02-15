@@ -789,3 +789,43 @@ rules:
         type: presencesouszone
         souszone: "0"
         presence: false
+
+
+
+
+  - id: 25360
+    id-excel: 139
+    message: "Zone 200 : pour chaque titre parallèle déclaré (en sous-zone $d), une sous-zone $z (langue du titre parallèle) est obligatoire"
+    zone: 200
+    priorite: P1
+    jeux-de-regles:
+      - 4 #2XX
+    regles:
+      - id: 25361
+        type: presencesouszone
+        souszone: "d"
+        presence: true
+      - id: 25362
+        type: presencesouszone
+        souszone: "z"
+        presence: false
+        
+        
+        
+
+  - id: 25370
+    id-excel: 139
+    message: "Zone 200 : pour chaque langue de titre parallèle déclarée (en sous-zone $z), une sous-zone $d (titre parallèle) est obligatoire"
+    zone: 200
+    priorite: P1
+    jeux-de-regles:
+      - 4 #2XX
+    regles:
+      - id: 25371
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+      - id: 25372
+        type: presencesouszone
+        souszone: "z"
+        presence: true
