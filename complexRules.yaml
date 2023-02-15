@@ -2221,3 +2221,32 @@ rules:
          position: 1
          type-de-verification: STRICTEMENT
          valeur: A
+
+
+   - id: 7630
+     id-excel: 139
+     message: "Zone 200 : il doit y avoir autant de titre parallèle déclaré (en sous-zone $d) que de langue de titre parallèle déclarée (en sous-zone $z)"
+     priorite: P1
+     jeux-de-regles:
+       - 4  #2XX
+     regles:
+       - id: 7631
+         type: presencesouszone
+         zone: '200'
+         souszone:    d
+         presence: true
+       - id: 7632
+         type: presencesouszone
+         zone: '200'
+         souszone:    z
+         presence: true
+         operateur-booleen: ET
+       - id: 7633
+         type: nombresouszone
+         zone: '200'
+         souszone: d
+         zonecible: '200'
+         souszonecible:   z
+         operateur-booleen: ET
+
+
