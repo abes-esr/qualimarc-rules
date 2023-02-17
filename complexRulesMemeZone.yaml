@@ -810,8 +810,6 @@ rules:
         souszone: "z"
         presence: false
         
-        
-        
 
   - id: 25370
     id-excel: 139
@@ -829,3 +827,35 @@ rules:
         type: presencesouszone
         souszone: "z"
         presence: true
+
+
+  - id: 25380
+    id-excel: 379
+    message: "Zone 606 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Nom commun' (Td), ou de type 'Forme ou Genre Rameau' (Tf) dans le cas où elle décrit bien le sujet de la ressource : revoir l'indexation"
+    zone: 606
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25381
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25382
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25383
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+          -chaine-caracteres: rameau
+      - id: 25384
+        type: dependance
+        zone: '606'
+        souszone: "3"
+      - id: 25385
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'd'
+         position: 2
