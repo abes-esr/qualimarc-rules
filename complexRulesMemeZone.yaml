@@ -849,7 +849,8 @@ rules:
         type: presencechainecaracteres
         souszone: "2"
         type-de-verification: STRICTEMENT
-           - chaine-caracteres: rameau 
+        chaines-caracteres:
+          - chaine-caracteres: rameau 
       - id: 25384
         type: dependance
         zone: '606'
