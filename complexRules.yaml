@@ -2346,12 +2346,12 @@ rules:
      regles:
        - id: 7671
          type: presencesouszone
-         zone: '601'
+         zone: '602'
          souszone:    3
          presence: true
        - id: 7672
          type: dependance
-         zone: '601'
+         zone: '602'
          souszone:   3
          type-notice-liee: AUTORITE
        - id: 7673
