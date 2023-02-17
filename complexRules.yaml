@@ -257,6 +257,8 @@ rules:
      id-excel: 408
      message: "Zone 106 : puisque la mention 'braille' est déclarée en zone d'indexation 608, la sous-zone 106$a peut être précisée (valeur 'f'). Voir autorité en zone 608"
      priorite: P2
+     jeux-de-regles:
+       - 1  #1XX
      regles:
        - id: 6011
          type: presencesouszone
@@ -2283,3 +2285,27 @@ rules:
          zone: '464'
          presence: false
          operateur-booleen: ET
+
+
+   - id: 7650
+     id-excel: 340
+     message: "Zone 600 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Personne' (Tp) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7651
+         type: presencesouszone
+         zone: '600'
+         souszone:    3
+         presence: true
+       - id: 7652
+         type: dependance
+         zone: '600'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7653
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'p'
+         position: 2
