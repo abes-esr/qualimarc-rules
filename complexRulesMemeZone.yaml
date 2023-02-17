@@ -856,7 +856,7 @@ rules:
         zone: '606'
         souszone: "3"
       - id: 25385
-         type: typedocument
-         type-de-verification:    STRICTEMENTDIFFERENT
-         valeur:  'd'
-         position: 2
+         type: presencesouszone
+         zone: '250'
+         souszone: 'a'
+         presence: true
