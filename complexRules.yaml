@@ -2433,3 +2433,27 @@ rules:
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur:  'g'
          position: 2
+
+
+   - id: 7710
+     id-excel: 410
+     message: "Zone 608 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Forme ou genre Rameau' (Tf) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7711
+         type: presencesouszone
+         zone: '608'
+         souszone:    3
+         presence: true
+       - id: 7712
+         type: dependance
+         zone: '608'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7713
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'f'
+         position: 2
