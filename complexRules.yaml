@@ -2359,3 +2359,52 @@ rules:
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur:  'a'
          position: 2
+
+
+
+   - id: 7680
+     id-excel: 366
+     message: "Zone 604 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Auteur/Titre' (Tq) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7681
+         type: presencesouszone
+         zone: '604'
+         souszone:    3
+         presence: true
+       - id: 7682
+         type: dependance
+         zone: '604'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7683
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'q'
+         position: 2
+         
+
+   - id: 7690
+     id-excel: 371
+     message: "Zone 605 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Titre uniforme' (Tu) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7691
+         type: presencesouszone
+         zone: '605'
+         souszone:    3
+         presence: true
+       - id: 7692
+         type: dependance
+         zone: '605'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7693
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'u'
+         position: 2
