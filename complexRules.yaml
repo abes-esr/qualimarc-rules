@@ -262,19 +262,27 @@ rules:
          type: presencesouszone
          zone: '106'
          souszone:    a
-         presence: false
+         presence: true
        - id: 6012
+         type: presencechainecaracteres
+         zone: '106'
+         souszone: a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    f
+         operateur-booleen: ET
+       - id: 6013
          type: presencesouszone
          zone: '608'
          souszone:    3
          presence: true
          operateur-booleen: ET
-       - id: 6013
+       - id: 6014
          type: dependance
          zone: '608'
          souszone:   3
          type-notice-liee: AUTORITE
-       - id: 6014
+       - id: 6015
          type: presencechainecaracteres
          zone: '280'
          souszone:   a
