@@ -861,3 +861,27 @@ rules:
    #     zone: '250'
     #    souszone: 'a'
     #    presence: true
+
+
+  - id: 25390
+    id-excel: 352
+    message: "Zone 601 : bien qu'elle contienne un lien vers une autorité 'Nom de collectivité' (Tb) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau"
+    zone: 601
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25391
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25392
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25393
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
