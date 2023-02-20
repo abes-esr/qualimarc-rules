@@ -93,6 +93,9 @@ rules:
     souszones:
       - souszone:           3
         presence:           false
+      - souszone:           a
+        presence:           true
+        operateur-booleen:  ET
     jeux-de-regles:
     -  2  #6XX
     -  3  #absence de liens $0$3
@@ -107,5 +110,8 @@ rules:
     souszones:
       - souszone:           2
         presence:           false
+      - souszone:           a
+        presence:           true
+        operateur-booleen:  ET
     jeux-de-regles:
     -  2  #6XX
