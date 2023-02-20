@@ -885,3 +885,78 @@ rules:
         type-de-verification: NECONTIENTPAS
         chaines-caracteres:
           -  rameau
+
+
+
+  - id: 25400
+    id-excel: 360
+    message: "Zone 602 : bien qu'elle contienne un lien vers une autorité 'Nom de famille' (Ta) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau"
+    zone: 602
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25401
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25402
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25403
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+          
+          
+          
+  - id: 25410
+    id-excel: 709
+    message: "Zone 600 : bien qu'elle contienne un lien vers une autorité 'Nom de personne' (Tp) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau"
+    zone: 600
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25411
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25412
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25413
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+          
+          
+          
+  - id: 25420
+    id-excel: 710
+    message: "Zone 604 : bien qu'elle contienne un lien vers une autorité 'Auteur/Titre' (Tq) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau"
+    zone: 604
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25421
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25422
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25423
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
