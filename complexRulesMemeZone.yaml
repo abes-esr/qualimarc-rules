@@ -1060,3 +1060,31 @@ rules:
         type-de-verification: NECONTIENTPAS
         chaines-caracteres:
           -  rameau
+
+
+  - id: 25470
+    id-excel: 714
+    message: "Zone 604 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 604
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25471
+        type: presencezone
+        presence: true
+      - id: 25472
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25473
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25474
+        type: presencesouszone
+        souszone: "3"
+        presence: false
