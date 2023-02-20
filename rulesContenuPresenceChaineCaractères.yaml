@@ -377,3 +377,18 @@ rules:
       type-de-verification:    CONTIENT
       chaines-caracteres:
         - chaine-caracteres:    "Traduit"
+
+
+
+    - id:                       1026
+      id-excel:                 346
+      type:                     presencechainecaracteres
+      message:                  "Zone 600 : la sous-zone $a ne contient pas une autorité mais le terme générique 'Personne' : modifier ou supprimer cette sous-zone"
+      zone:                     600
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Personne
+      jeux-de-regles: 
+      - 2 #6XX
