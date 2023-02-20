@@ -84,24 +84,8 @@ rules:
     -  5  # Tranlittération ($6/$7)
 
 
-  - id:       605
-    id-excel: 434
-    type:     presencesouszonesmemezone
-    message:  "Zones 6XX : faire le lien à l'autorité (ou aux autorités) en sous-zone $3"
-    zone:     "6XX"
-    priorite: P1
-    souszones:
-      - souszone:           3
-        presence:           false
-      - souszone:           a
-        presence:           true
-        operateur-booleen:  ET
-    jeux-de-regles:
-    -  2  #6XX
-    -  3  #absence de liens $0$3
-    
 
-  - id:       606
+  - id:       605
     id-excel: 433
     type:     presencesouszonesmemezone
     message:  "Zones 6XX : le code du système d'indexation en sous-zone $2 obligatoire"
