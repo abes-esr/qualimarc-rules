@@ -392,3 +392,34 @@ rules:
         - chaine-caracteres:    Personne
       jeux-de-regles: 
       - 2 #6XX
+
+
+    - id:                       1027
+      id-excel:                 347
+      type:                     presencechainecaracteres
+      message:                  "Zone 600 : la sous-zone $x ne contient pas une autorité mais le terme générique 'Subdivision de sujet' ou 'Forme': modifier ou supprimer cette sous-zone."
+      zone:                     600
+      priorite:                 P1
+      souszone:                 x
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Subdivision de sujet
+        - operateur:            OU
+          chaine-caracteres:    Forme
+      jeux-de-regles: 
+      - 2 #6XX
+      
+ 
+ 
+    - id:                       1028
+      id-excel:                 348
+      type:                     presencechainecaracteres
+      message:                  "Zone 600 : la sous-zone $x ne contient pas une autorité mais le terme générique 'Chronologique': modifier ou supprimer cette sous-zone."
+      zone:                     600
+      priorite:                 P1
+      souszone:                 z
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Chronologique
+      jeux-de-regles: 
+      - 2 #6XX
