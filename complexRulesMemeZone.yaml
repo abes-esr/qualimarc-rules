@@ -960,3 +960,103 @@ rules:
         type-de-verification: NECONTIENTPAS
         chaines-caracteres:
           -  rameau
+
+  - id: 25430
+    id-excel: 711
+    message: "Zone 605 : bien qu'elle contienne un lien vers une autorité 'Titre uniforme' (Tu) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau"
+    zone: 605
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25431
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25432
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25433
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+          
+          
+ 
+  - id: 25440
+    id-excel: 712
+    message: "Zone 606 : puisqu'elle contient un lien vers une autorité de type 'Nom commun' (Td, Tf ou Tl), la sous-zone $2 doit être 'rameau' (dans le cas d'une Td) ou 'fmesh' (dans le cas d'une Tl)"
+    zone: 606
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25441
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25442
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25443
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          - chaine-caracteres: rameau
+          - operateur:  OU
+            chaine-caracteres: fmesh
+ 
+ 
+ 
+ 
+  - id: 25450
+    id-excel: 393
+    message: "Zone 607 : bien qu'elle contienne un lien vers une autorité 'Nom géographique' (Tg) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau"
+    zone: 607
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25451
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25452
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25453
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+          
+
+  - id: 25460
+    id-excel: 713
+    message: "Zone 608 : puisqu'elle contient un lien vers une autorité 'Forme ou Genre' (Tf) la sous-zone $2 doit être 'rameau'"
+    zone: 608
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25461
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25462
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25463
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
