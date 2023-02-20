@@ -855,6 +855,7 @@ rules:
         type: dependance
         zone: '606'
         souszone: "3"
+        type-notice-liee: AUTORITE
       - id: 25385
         type: presencesouszone
         zone: '250'
