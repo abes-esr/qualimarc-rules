@@ -988,7 +988,7 @@ rules:
  
   - id: 25440
     id-excel: 712
-    message: "Zone 606 : puisqu'elle contient un lien vers une autorité de type 'Nom commun' (Td, Tf ou Tl), la sous-zone $2 doit être 'rameau' (dans le cas d'une Td) ou 'fmesh' (dans le cas d'une Tl)"
+    message: "Zone 606 : dès lors qu'elle comporte un lien vers une autorité, la sous-zone $2 doit être 'rameau' ou 'fmesh'"
     zone: 606
     priorite: P1
     jeux-de-regles:
@@ -1008,7 +1008,7 @@ rules:
         type-de-verification: NECONTIENTPAS
         chaines-caracteres:
           - chaine-caracteres: rameau
-          - operateur:  OU
+          - operateur:  ET
             chaine-caracteres: fmesh
  
  
