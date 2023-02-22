@@ -461,3 +461,30 @@ rules:
           chaine-caracteres:    'Nom géographique'
       jeux-de-regles: 
       - 2 #6XX
+
+
+    - id:                       1031
+      id-excel:                 396
+      type:                     presencechainecaracteres
+      message:                  "Zone 607 : la sous-zone $a contient le terme générique 'Nom géographique' : modifier ou supprimer cette sous-zone"
+      zone:                     607
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Nom géographique'
+      jeux-de-regles: 
+      - 2 #6XX
+      
+    - id:                       1032
+      id-excel:                 413
+      type:                     presencechainecaracteres
+      message:                  "Zone 608 : la sous-zone $a contient le terme générique 'Forme ou Genre' : modifier ou supprimer cette sous-zone"
+      zone:                     608
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Forme ou Genre'
+      jeux-de-regles: 
+      - 2 #6XX
