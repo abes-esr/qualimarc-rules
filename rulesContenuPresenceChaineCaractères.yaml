@@ -397,13 +397,13 @@ rules:
     - id:                       1027
       id-excel:                 347
       type:                     presencechainecaracteres
-      message:                  "Zone 600 : la sous-zone $x ne contient pas une autorité mais le terme générique 'Subdivision de sujet' ou 'Forme' : modifier ou supprimer cette sous-zone"
-      zone:                     600
+      message:                  "Zone 6XX : la sous-zone $x ne contient pas une autorité mais le terme générique 'Subdivision de sujet' ou 'Forme' : modifier ou supprimer cette sous-zone"
+      zone:                     6XX
       priorite:                 P1
       souszone:                 x
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
-        - chaine-caracteres:    Subdivision de sujet
+        - chaine-caracteres:    'Subdivision de sujet'
         - operateur:            OU
           chaine-caracteres:    Forme
       jeux-de-regles: 
@@ -421,5 +421,24 @@ rules:
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    Chronologique
+      jeux-de-regles: 
+      - 2 #6XX
+
+
+
+    - id:                       1029
+      id-excel:                 384
+      type:                     presencechainecaracteres
+      message:                  "Zone 606 : la sous-zone $a contient le terme générique 'Vedette' ou 'Sujet' ou 'Accès sujet - nom commun' : modifier ou supprimer cette sous-zone"
+      zone:                     606
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Vedette
+        - operateur:            OU
+          chaine-caracteres:    Sujet
+        - operateur:            OU
+          chaine-caracteres:    'Accès sujet - nom commun'
       jeux-de-regles: 
       - 2 #6XX
