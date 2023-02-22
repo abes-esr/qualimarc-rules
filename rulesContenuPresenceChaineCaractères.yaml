@@ -486,5 +486,7 @@ rules:
       type-de-verification:     CONTIENT
       chaines-caracteres:
         - chaine-caracteres:    'Forme ou Genre'
+        - operateur:            OU
+          chaine-caracteres:    'Forme ou genre'
       jeux-de-regles: 
       - 2 #6XX
