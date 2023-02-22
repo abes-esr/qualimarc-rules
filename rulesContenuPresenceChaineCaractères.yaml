@@ -414,8 +414,8 @@ rules:
     - id:                       1028
       id-excel:                 348
       type:                     presencechainecaracteres
-      message:                  "Zone 600 : la sous-zone $x ne contient pas une autorité mais le terme générique 'Chronologique' : modifier ou supprimer cette sous-zone"
-      zone:                     600
+      message:                  "Zone 6XX : la sous-zone $z ne contient pas une autorité mais le terme générique 'Chronologique' : modifier ou supprimer cette sous-zone"
+      zone:                     6XX
       priorite:                 P1
       souszone:                 z
       type-de-verification:     STRICTEMENT
