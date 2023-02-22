@@ -2457,3 +2457,26 @@ rules:
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur:  'f'
          position: 2
+
+   - id: 7720
+     id-excel: 417
+     message: "Zone 616 : la notice d'autorité liée enregistrée en élément d'entrée du point d'accès doit obligatoirement être de type 'Nom de marque' (Tm) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7721
+         type: presencesouszone
+         zone: '616'
+         souszone:    3
+         presence: true
+       - id: 7722
+         type: dependance
+         zone: '616'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7723
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'm'
+         position: 2
