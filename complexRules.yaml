@@ -2520,3 +2520,32 @@ rules:
          type-de-verification:    CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    'gros caractères'
+
+ 
+   - id: 7740
+     id-excel: 120
+     message: "Zone 104 : puisque la notice contient des données translittérées (présence de 200$7), la valeur attendue en sous-zone $c ne doit pas être 'y'"
+     priorite: P1
+     jeux-de-regles:
+       - 5  #translittération
+       - 1 #1XX
+     regles:
+       - id: 7741
+         type: presencesouszone
+         zone: '104'
+         souszone:   c
+         presence: true
+       - id: 7742
+         type: presencechainecaracteres
+         zone: '104'
+         souszone:   c
+         type-de-verification:    STRICTEMENT
+         chaines-caracteres:
+           - chaine-caracteres:    y
+         operateur-booleen: ET
+       - id: 7743
+         type: presencesouszone
+         zone: '200'
+         souszone:   7
+         presence: true
+         operateur-booleen: ET
