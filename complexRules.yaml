@@ -2482,8 +2482,6 @@ rules:
          position: 2
 
 
-
-
    - id: 7730
      id-excel: 409
      message: "Zone 106 : puisque la mention 'Livres en gros caractères' est déclarée en zone d'indexation 608, la sous-zone 106$a peut être précisée (valeur 'd'). Voir autorité en zone 608"
@@ -2521,4 +2519,4 @@ rules:
          souszone:   a
          type-de-verification:    CONTIENT
          chaines-caracteres:
-           - chaine-caracteres:    gros caractères
+           - chaine-caracteres:    'gros caractères'
