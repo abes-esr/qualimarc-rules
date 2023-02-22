@@ -421,6 +421,8 @@ rules:
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    Chronologique
+        - operateur:            OU
+          chaine-caracteres:    'Descripteur chronologique'
       jeux-de-regles: 
       - 2 #6XX
 
@@ -448,12 +450,14 @@ rules:
     - id:                       1030
       id-excel:                 387
       type:                     presencechainecaracteres
-      message:                  "Zone 6XX : la sous-zone $y ne contient pas une autorité mais le terme générique 'Géographique' : modifier ou supprimer cette sous-zone"
+      message:                  "Zone 6XX : la sous-zone $y ne contient pas une autorité mais le terme générique 'Géographique' ou 'Nom géographique' : modifier ou supprimer cette sous-zone"
       zone:                     6XX
       priorite:                 P1
       souszone:                 y
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    Géographique
+        - operateur:            OU
+          chaine-caracteres:    'Nom géographique'
       jeux-de-regles: 
       - 2 #6XX
