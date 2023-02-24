@@ -2570,3 +2570,24 @@ rules:
          souszone:    7
          presence: false
          operateur-booleen: ET
+
+
+   - id: 7760
+     id-excel: 123
+     message: "Zone 464 : il faut enregistrer autant de zones 464 que de titres enregistrés en sous-zone 200$a"
+     priorite: P1
+     jeux-de-regles:
+       - 4 #2XX
+     regles:
+       - id: 7761
+         type: nombresouszone
+         zone: '200'
+         souszone: a
+         zonecible: '464'
+         souszonecible: t
+       - id: 7762
+         type: nombrezone
+         zone: '200'
+         operateur: EGAL
+         occurrences: 1
+         operateur-booleen: ET
