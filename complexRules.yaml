@@ -2549,3 +2549,24 @@ rules:
          souszone:   7
          presence: true
          operateur-booleen: ET
+
+
+   - id: 7750
+     id-excel: 118
+     message: "Zone 200 : la zone n'est répétable que dans le cas de données translittérées (présence de sous-zone $6/$7). Ajouter les sous-zones $6/$7 ou ne conserver qu'une seule zone 200"
+     priorite: P1
+     jeux-de-regles:
+       - 5  #translittération
+       - 4 #2XX
+     regles:
+       - id: 7751
+         type: nombrezone
+         zone: '200'
+         operateur: SUPERIEUR
+         occurrences: 1
+       - id: 7752
+         type: presencesouszone
+         zone: '200'
+         souszone:    7
+         presence: false
+         operateur-booleen: ET
