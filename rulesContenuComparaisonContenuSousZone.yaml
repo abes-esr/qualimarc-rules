@@ -16,3 +16,18 @@ rules:
       type-de-verification:     NECONTIENTPAS
       zonecible:                328
       souszonecible:            d
+
+
+    - id:                       1201
+      id-excel:                 121
+      type:                     comparaisoncontenusouszone
+      message:                  "Zone 200 : le code d'écriture de catalogage indiqué en première sous-zone $7 ne correspond pas à celui indiqué en sous-zone 104$d. Corriger l'une ou l'autre de ces sous-zones pour rendre les données cohérentes"
+      zone:                     200
+      priorite:                 P1
+      jeux-de-regles:
+          - 1 #1XX
+          - 4 #2XX
+      souszone:                 7
+      type-de-verification:     STRICTEMENTDIFFERENT
+      zonecible:                104
+      souszonecible:            d
