@@ -531,7 +531,8 @@ rules:
       type-de-verification:     CONTIENT
       chaines-caracteres:
         - chaine-caracteres:    'Lien au titre de la Collection'
-        
+        - operateur:            OU
+          chaine-caracteres:    'Lien au titre de la collection'
         
  
     - id:                       1036
