@@ -518,4 +518,4 @@ rules:
       souszone:                 d
       type-de-verification:     NECONTIENTPAS
       chaines-caracteres:
-        - chaine-caracteres:    "= "
+        - chaine-caracteres:    '= '
