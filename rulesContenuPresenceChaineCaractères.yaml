@@ -506,7 +506,7 @@ rules:
       chaines-caracteres:
         - chaine-caracteres:    "@"
 
-
+#règle 1034 : inutile (mais non nuisible) puisque le '= ' est généré automatiquement à l'export s'il est absent en UNM Sudoc
     - id:                       1034
       id-excel:                 132
       type:                     presencechainecaracteres
@@ -519,3 +519,28 @@ rules:
       type-de-verification:     NECONTIENTPAS
       chaines-caracteres:
         - chaine-caracteres:    '= '
+
+
+    - id:                       1035
+      id-excel:                 275
+      type:                     presencechainecaracteres
+      message:                  "Zone 410 : la sous-zone $t doit contenir un titre. L'enregistrer à la place du terme générique 'Lien au titre de la Collection' ou supprimer cette sous-zone"
+      zone:                     410
+      priorite:                 P1
+      souszone:                 t
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Lien au titre de la Collection'
+        
+        
+ 
+    - id:                       1036
+      id-excel:                 276
+      type:                     presencechainecaracteres
+      message:                  "Zone 410 : la sous-zone $v doit contenir un numéro. Le saisir à la place du terme générique 'Numéro' ou supprimer cette sous-zone"
+      zone:                     410
+      priorite:                 P1
+      souszone:                 v
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Numéro'
