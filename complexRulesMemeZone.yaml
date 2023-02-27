@@ -1088,3 +1088,26 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
+
+
+  - id: 25480
+    id-excel: 168
+    message: "Zone 214 : si la ressource décrite est bien est un livre ou un périodique ancien (indicateur 2=#), les seules sous-zones autorisées sont : $r ou $s. Remplacer les sous-zones présentes ou modifier la valeur de l'indicateur 2"
+    zone: 214
+    priorite: P1
+    jeux-de-regles:
+      - 4 #2XX
+    regles:
+      - id: 25481
+        type: indicateur
+        indicateur: 2
+        type-de-verification: STRICTEMENT
+        valeur: "#"
+      - id: 25482
+        type: presencesouszone
+        souszone: "s"
+        presence: false
+      - id: 25483
+        type: presencesouszone
+        souszone: "r"
+        presence: false
