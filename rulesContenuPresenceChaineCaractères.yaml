@@ -492,6 +492,7 @@ rules:
       - 2 #6XX
 
 
+#règle 1033 : vérifier si contrôle @opossible dans basexml... si non, à supprimer
     - id:                       1033
       id-excel:                 126
       type:                     presencechainecaracteres
@@ -504,3 +505,17 @@ rules:
       type-de-verification:     NECONTIENTPAS
       chaines-caracteres:
         - chaine-caracteres:    "@"
+
+
+    - id:                       1034
+      id-excel:                 132
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : la sous-zone $d doit commencer par '=[espace]'"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 d
+      type-de-verification:     NECONTIENTPAS
+      chaines-caracteres:
+        - chaine-caracteres:    "= "
