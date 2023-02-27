@@ -490,3 +490,17 @@ rules:
           chaine-caracteres:    'Forme ou genre'
       jeux-de-regles: 
       - 2 #6XX
+
+
+    - id:                       1033
+      id-excel:                 126
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 :  le caractère de classement @ est obligatoire en sous-zone $a"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     NECONTIENTPAS
+      chaines-caracteres:
+        - chaine-caracteres:    "@"
