@@ -545,3 +545,19 @@ rules:
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    'Numéro'
+
+
+    - id:                       1037
+      id-excel:                 37
+      type:                     presencechainecaracteres
+      message:                  "Zone 101 : une des sous-zones $a est vide ou imprécise : préciser par un code de langue ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 1 #1XX
+      zone:                     101
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    '|'
+        - operateur:            OU
+          chaine-caracteres:    '?'
