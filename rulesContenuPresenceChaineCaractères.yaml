@@ -599,7 +599,7 @@ rules:
     - id:                       1040
       id-excel:                135 
       type:                     presencechainecaracteres
-      message:                  "Zone 200 : la sous-zone $e contient le terme générique 'Complément du titre' : remplacer ou supprimer cette sous-zone"
+      message:                  "Zone 200 : une sous-zone $e contient le terme générique 'Complément du titre' : remplacer ou supprimer cette sous-zone"
       jeux-de-regles:
       - 4 #2XX
       zone:                     200
@@ -613,7 +613,7 @@ rules:
     - id:                       1041
       id-excel:                 136
       type:                     presencechainecaracteres
-      message:                  "Zone 200 : la sous-zone $f contient le terme générique 'Auteur' ou '1ère mention de responsabilité' : remplacer ou supprimer cette sous-zone"
+      message:                  "Zone 200 : une sous-zone $f contient le terme générique 'Auteur' ou '1ère mention de responsabilité' : remplacer ou supprimer cette sous-zone"
       jeux-de-regles:
       - 4 #2XX
       zone:                     200
@@ -626,12 +626,14 @@ rules:
           chaine-caracteres:    '1ere mention de responsabilité'
         - operateur:            OU
           chaine-caracteres:    '1ère mention de responsabilité'
+        - operateur:            OU
+          chaine-caracteres:    'Première mention de responsabilité'
 
 
     - id:                       1042
       id-excel:                 137
       type:                     presencechainecaracteres
-      message:                  "Zone 200 : la sous-zone $g contient le terme générique 'Sous la direction de' ou 'Mention de responsabilité' : remplacer ou supprimer cette sous-zone"
+      message:                  "Zone 200 : une sous-zone $g contient le terme générique 'Sous la direction de' ou 'Mention de responsabilité' : remplacer ou supprimer cette sous-zone"
       jeux-de-regles:
       - 4 #2XX
       zone:                     200
@@ -646,7 +648,8 @@ rules:
           chaine-caracteres:    'Mention de responsabilité de fonction différente'
         - operateur:            OU
           chaine-caracteres:    'Mention de responsabilité différente'
-
+        - operateur:            OU
+          chaine-caracteres:    'Mention de responsabilité suivante'
 
 
     - id:                       1043
