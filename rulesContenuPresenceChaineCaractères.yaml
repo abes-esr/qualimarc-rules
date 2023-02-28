@@ -561,3 +561,36 @@ rules:
         - chaine-caracteres:    '|'
         - operateur:            OU
           chaine-caracteres:    '?'
+
+
+    - id:                       1038
+      id-excel:                 37
+      type:                     presencechainecaracteres
+      message:                  "Zone 101 : une des sous-zones $b est vide ou imprécise : préciser par un code de langue ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 1 #1XX
+      zone:                     101
+      priorite:                 P1
+      souszone:                 b
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    '|'
+        - operateur:            OU
+          chaine-caracteres:    '?'
+          
+          
+ 
+    - id:                       1039
+      id-excel:                 37
+      type:                     presencechainecaracteres
+      message:                  "Zone 101 : une des sous-zones $c est vide ou imprécise : préciser par un code de langue ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 1 #1XX
+      zone:                     101
+      priorite:                 P1
+      souszone:                 c
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    '|'
+        - operateur:            OU
+          chaine-caracteres:    '?'
