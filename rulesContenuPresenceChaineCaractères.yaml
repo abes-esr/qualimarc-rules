@@ -634,7 +634,7 @@ rules:
       message:                  "Zone 200 : la sous-zone $g contient le terme générique 'Sous la direction de' ou 'Mention de responsabilité' : remplacer ou supprimer cette sous-zone"
       jeux-de-regles:
       - 4 #2XX
-      zone:                     101
+      zone:                     200
       priorite:                 P1
       souszone:                 g
       type-de-verification:     STRICTEMENT
