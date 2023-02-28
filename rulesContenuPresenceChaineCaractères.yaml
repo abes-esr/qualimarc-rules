@@ -652,7 +652,7 @@ rules:
     - id:                       1043
       id-excel:                 138 
       type:                     presencechainecaracteres
-      message:                  "Zone 200 : supprimer le double espace en sous-zone $a"
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $a"
       jeux-de-regles:
       - 4 #2XX
       zone:                     200
@@ -662,4 +662,73 @@ rules:
       chaines-caracteres:
         - chaine-caracteres:    '  '
 
+
+    - id:                       1044
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $d"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 d
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
+    - id:                       1045
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $e"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 e
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
+    - id:                       1046
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $f"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 f
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
+    - id:                       1047
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $g"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 g
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
+    - id:                       1048
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $c"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 c
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
 
