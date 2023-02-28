@@ -512,3 +512,54 @@ rules:
       presence:    true
       type-these:
       -    SOUTENANCE
+
+
+
+
+    - id:         537
+      id-excel:    717
+      type:        presencezone
+      message:     "Zone 208 : si la ressource n'est pas une partition, la zone 208 doit être supprimée"
+      zone:        208
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    K
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    BD
+      -	  PC
+
+
+
+    - id:         538
+      id-excel:    718
+      type:        presencezone
+      message:     "Zone 206 : si la ressource n'est pas une carte, la zone 206 doit être supprimée"
+      zone:        206
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    A
+      -    B
+      -    M
+      -    O
+      -    N
+      -    I
+      -    F
+      -    Z
+      -    V
+      -    G
+      -    BD
+      -	  PC
+
+
+
+
