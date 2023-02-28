@@ -2664,3 +2664,68 @@ rules:
          valeur: '1'
          type-de-verification: STRICTEMENT
          operateur-booleen: ET
+
+
+   - id: 7780
+     id-excel: 
+     message: "Zone 205 : la zone n'est répétable que dans le cas de données translittérées (présence de sous-zone $6/$7). Ajouter les sous-zones $6/$7 ou ne conserver qu'une seule zone 205"
+     priorite: P1
+     jeux-de-regles:
+       - 5  #translittération
+       - 4 #2XX
+     regles:
+       - id: 7781
+         type: nombrezone
+         zone: '205'
+         operateur: SUPERIEUR
+         occurrences: 1
+       - id: 7782
+         type: presencesouszone
+         zone: '205'
+         souszone:    7
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 7790
+     id-excel: 
+     message: "Zone 207 : la zone n'est répétable que dans le cas de données translittérées (présence de sous-zone $6/$7). Ajouter les sous-zones $6/$7 ou ne conserver qu'une seule zone 207"
+     priorite: P1
+     jeux-de-regles:
+       - 5  #translittération
+       - 4 #2XX
+     regles:
+       - id: 7791
+         type: nombrezone
+         zone: '207'
+         operateur: SUPERIEUR
+         occurrences: 1
+       - id: 7792
+         type: presencesouszone
+         zone: '207'
+         souszone:    7
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 7800
+     id-excel: 
+     message: "Zone 208 : la zone n'est répétable que dans le cas de données translittérées (présence de sous-zone $6/$7). Ajouter les sous-zones $6/$7 ou ne conserver qu'une seule zone 208"
+     priorite: P1
+     jeux-de-regles:
+       - 5  #translittération
+       - 4 #2XX
+     regles:
+       - id: 7801
+         type: nombrezone
+         zone: '208'
+         operateur: SUPERIEUR
+         occurrences: 1
+       - id: 7802
+         type: presencesouszone
+         zone: '208'
+         souszone:    7
+         presence: false
+         operateur-booleen: ET
+
+
