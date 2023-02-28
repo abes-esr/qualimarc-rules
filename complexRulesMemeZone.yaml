@@ -1111,3 +1111,27 @@ rules:
         type: presencesouszone
         souszone: "r"
         presence: false
+
+
+  - id: 25490
+    id-excel: 31
+    message: "Zone 101 : puisque la ressource est décrite comme étant une traduction (indicateur 1 = '1'), il manque une sous-zone $c (langue de l'oeuvre originale) ou $b (langue d'un texte intermédiaire)"
+    zone: 101
+    priorite: P1
+    jeux-de-regles:
+      - 1 #1XX
+    regles:
+      - id: 25491
+        type: indicateur
+        indicateur: 1
+        type-de-verification: STRICTEMENT
+        valeur: "1"
+      - id: 25492
+        type: presencesouszone
+        souszone: "b"
+        presence: false
+      - id: 25493
+        type: presencesouszone
+        souszone: "c"
+        presence: false
+
