@@ -2574,7 +2574,7 @@ rules:
 
    - id: 7760
      id-excel: 39
-     message: "Zone 101 : les codes de langue enregistrés en 101$a et en 101$c sont identiques. S'il s'agit d'une traduction (indicateur 2 différent de '0'), ces codes doivent être différents. Sinon, la 101$c n'a pas lieu d'être"
+     message: "Zone 101 : les codes de langue enregistrés en 101$a et en 101$c sont identiques. Si la ressource est bien dans la langue originale de l'oeuvre (indicateur 1 = '0'), la 101$c n'a pas lieu d'être"
      priorite: P1
      jeux-de-regles:
        - 1 #1XX
@@ -2610,5 +2610,55 @@ rules:
          zonecible: '101'
          souszonecible: c
          operateur-booleen: ET
+       - id: 7766
+         type: indicateur
+         zone: '101'
+         indicateur:    1
+         valeur: '0'
+         operateur-booleen: ET
 
 
+   - id: 7770
+     id-excel: 39
+     message: "Zone 101 : les codes de langue enregistrés en 101$a et en 101$c sont identiques. Si la ressource est bien une traduction (indicateur 1 = '1'), la langue originale enregistrée en $c doit être différente de la langue du texte enregistrée en $a"
+     priorite: P1
+     jeux-de-regles:
+       - 1 #1XX
+     regles:
+       - id: 7771
+         type: nombrezone
+         zone: '101'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7772
+         type: positionsouszone
+         zone: '101'
+         souszone:    a
+         position: 1
+         operateur-booleen: ET
+       - id: 7773
+         type: positionsouszone
+         zone: '101'
+         souszone:    c
+         position: 2
+         operateur-booleen: ET
+       - id: 7774
+         type: positionsouszone
+         zone: '101'
+         souszone:    2
+         position: 3
+         operateur-booleen: ET
+       - id: 7775
+         type: comparaisoncontenusouszone
+         zone: '101'
+         souszone:    a
+         type-de-verification: STRICTEMENT
+         zonecible: '101'
+         souszonecible: c
+         operateur-booleen: ET
+       - id: 7776
+         type: indicateur
+         zone: '101'
+         indicateur:    1
+         valeur: '1'
+         operateur-booleen: ET
