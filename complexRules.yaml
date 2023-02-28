@@ -2597,6 +2597,12 @@ rules:
          position: 2
          operateur-booleen: ET
        - id: 7764
+         type: positionsouszone
+         zone: '101'
+         souszone:    2
+         position: 3
+         operateur-booleen: ET
+       - id: 7765
          type: comparaisoncontenusouszone
          zone: '101'
          souszone:    a
