@@ -2615,6 +2615,7 @@ rules:
          zone: '101'
          indicateur:    1
          valeur: '0'
+         type-de-verification: STRICTEMENT
          operateur-booleen: ET
 
 
@@ -2661,4 +2662,5 @@ rules:
          zone: '101'
          indicateur:    1
          valeur: '1'
+         type-de-verification: STRICTEMENT
          operateur-booleen: ET
