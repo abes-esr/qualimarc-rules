@@ -735,3 +735,18 @@ rules:
       chaines-caracteres:
         - chaine-caracteres:    '  '
 
+
+
+    - id:                      1049
+      id-excel:                716
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : une sous-zone $d contient le terme générique 'Titre parallèle' : remplacer ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 d
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Titre parallèle'
+
