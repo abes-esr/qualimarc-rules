@@ -594,3 +594,55 @@ rules:
         - chaine-caracteres:    '|'
         - operateur:            OU
           chaine-caracteres:    '?'
+
+
+   - id:                       1040
+      id-excel:                135 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : la sous-zone $e contient le terme générique 'Complément du titre' : remplacer ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 e
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Complément du titre'
+
+
+    - id:                       1041
+      id-excel:                 136
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : la sous-zone $f contient le terme générique 'Auteur' ou '1ère mention de responsabilité' : remplacer ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 f
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Auteur'
+        - operateur:            OU
+          chaine-caracteres:    '1ere mention de responsabilité'
+        - operateur:            OU
+          chaine-caracteres:    '1ère mention de responsabilité'
+
+
+    - id:                       1042
+      id-excel:                 137
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : la sous-zone $g contient le terme générique 'Sous la direction de' ou 'Mention de responsabilité' : remplacer ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     101
+      priorite:                 P1
+      souszone:                 g
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Sous la direction de'
+        - operateur:            OU
+          chaine-caracteres:    'Mention de responsabilité'
+        - operateur:            OU
+          chaine-caracteres:    'Mention de responsabilité de fonction différente'
+        - operateur:            OU
+          chaine-caracteres:    'Mention de responsabilité différente'
