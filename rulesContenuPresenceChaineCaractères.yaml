@@ -596,7 +596,7 @@ rules:
           chaine-caracteres:    '?'
 
 
-   - id:                       1040
+    - id:                       1040
       id-excel:                135 
       type:                     presencechainecaracteres
       message:                  "Zone 200 : la sous-zone $e contient le terme générique 'Complément du titre' : remplacer ou supprimer cette sous-zone"
