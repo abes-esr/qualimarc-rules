@@ -646,3 +646,20 @@ rules:
           chaine-caracteres:    'Mention de responsabilité de fonction différente'
         - operateur:            OU
           chaine-caracteres:    'Mention de responsabilité différente'
+
+
+
+    - id:                       1043
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace en sous-zone $a"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
