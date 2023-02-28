@@ -523,6 +523,8 @@ rules:
       zone:        208
       priorite:    P1
       presence:    true
+      jeux-de-regles:
+      -  4  #2XX
       type-doc:
       -    A
       -    B
@@ -535,7 +537,7 @@ rules:
       -    V
       -    G
       -    BD
-      -	  PC
+      -    PC
 
 
 
@@ -546,6 +548,8 @@ rules:
       zone:        206
       priorite:    P1
       presence:    true
+      jeux-de-regles:
+      -  4  #2XX
       type-doc:
       -    A
       -    B
@@ -558,7 +562,7 @@ rules:
       -    V
       -    G
       -    BD
-      -	  PC
+      -    PC
 
 
 
