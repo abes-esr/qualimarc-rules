@@ -492,19 +492,21 @@ rules:
       - 2 #6XX
 
 
+
 #règle 1033 : vérifier si contrôle @opossible dans basexml... si non, à supprimer
-    - id:                       1033
-      id-excel:                 126
-      type:                     presencechainecaracteres
-      message:                  "Zone 200 :  le caractère de classement @ est obligatoire en sous-zone $a"
-      jeux-de-regles:
-      - 4 #2XX
-      zone:                     200
-      priorite:                 P1
-      souszone:                 a
-      type-de-verification:     NECONTIENTPAS
-      chaines-caracteres:
-        - chaine-caracteres:    "@"
+ #   - id:                       1033
+  #    id-excel:                 126
+  #    type:                     presencechainecaracteres
+   #   message:                  "Zone 200 :  le caractère de classement @ est obligatoire en sous-zone $a"
+    #  jeux-de-regles:
+     # - 4 #2XX
+    #  zone:                     200
+     # priorite:                 P1
+     # souszone:                 a
+      #type-de-verification:     NECONTIENTPAS
+      #chaines-caracteres:
+       # - chaine-caracteres:    "@"
+
 
 #règle 1034 : inutile (mais non nuisible) puisque le '= ' est généré automatiquement à l'export s'il est absent en UNM Sudoc
     - id:                       1034
