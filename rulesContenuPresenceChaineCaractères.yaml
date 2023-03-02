@@ -6,7 +6,7 @@ rules:
       type:                     presencechainecaracteres
       message:                  "Zone 700 : la sous-zone $a contient le terme générique 'Nom' ou 'Nom Auteur' ou 'Nom Auteur relatif à l'oeuvre ou à l'expression' : modifier ou supprimer cette sous-zone."
       zone:                     700
-      priorite:                 P2
+      priorite:                 P1
       souszone:                 a
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
@@ -24,7 +24,7 @@ rules:
       type:                     presencechainecaracteres
       message:                  "Zone 225 : la sous-zone $a contient le terme générique 'Titre de la Collection' : compléter ou supprimer cette sous-zone"
       zone:                     225
-      priorite:                 P2
+      priorite:                 P1
       souszone:                 a
       type-de-verification:     STRICTEMENT
       chaines-caracteres:
@@ -319,3 +319,434 @@ rules:
       type-de-verification:    STRICTEMENT
       chaines-caracteres:
         - chaine-caracteres:    "Dates"
+
+
+    - id: 1022
+      id-excel: 292
+      message: "Zone 453 : la sous-zone 453$t n'a pas vocation à recevoir de mention introductive (exemple : 'Traduit de'). Seul le titre traduit doit être enregistré"
+      priorite: P1
+      type: presencechainecaracteres
+      zone: '453'
+      souszone:   t
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Traduit de"
+        - operateur:            OU
+          chaine-caracteres:    "Traduit sous"
+        - operateur:            OU
+          chaine-caracteres:    "Titre traduit"
+
+
+
+    - id: 1023
+      id-excel: 293
+      message: "Zone 454 : la sous-zone 454$t n'a pas vocation à recevoir de mention introductive (exemple : 'Traduction de'). Seul le titre original doit être enregistré"
+      priorite: P1
+      type: presencechainecaracteres
+      zone: '454'
+      souszone:   t
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Traduction de"
+        - operateur:            OU
+          chaine-caracteres:    "Trad. de"
+        - operateur:            OU
+          chaine-caracteres:    "Titre original"
+         
+
+    - id: 1024
+      id-excel: 294
+      message: "Zone 454 : la sous-zone 454$t ne doit pas comporter de guillemets, sauf s'ils font réellement partie du titre"
+      priorite: P2
+      type: presencechainecaracteres
+      zone: '454'
+      souszone:   t
+      type-de-verification:    COMMENCE
+      chaines-caracteres:
+        - chaine-caracteres:    '"'
+
+
+
+    - id: 1025
+      id-excel: 335
+      message: "Zone 541 : la sous-zone 541$a n'a pas vocation à recevoir de mention introductive (de type 'Traduit de'). Seul le titre traduit doit être enregistré"
+      priorite: P1
+      type: presencechainecaracteres
+      zone: '541'
+      souszone:   a
+      type-de-verification:    CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    "Traduit"
+
+
+
+    - id:                       1026
+      id-excel:                 346
+      type:                     presencechainecaracteres
+      message:                  "Zone 600 : la sous-zone $a ne contient pas une autorité mais le terme générique 'Personne' : modifier ou supprimer cette sous-zone"
+      zone:                     600
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Personne
+      jeux-de-regles: 
+      - 2 #6XX
+
+
+    - id:                       1027
+      id-excel:                 347
+      type:                     presencechainecaracteres
+      message:                  "Zone 6XX : la sous-zone $x ne contient pas une autorité mais le terme générique 'Subdivision de sujet' ou 'Forme' : modifier ou supprimer cette sous-zone"
+      zone:                     6XX
+      priorite:                 P1
+      souszone:                 x
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Subdivision de sujet'
+        - operateur:            OU
+          chaine-caracteres:    Forme
+      jeux-de-regles: 
+      - 2 #6XX
+      
+ 
+ 
+    - id:                       1028
+      id-excel:                 348
+      type:                     presencechainecaracteres
+      message:                  "Zone 6XX : la sous-zone $z ne contient pas une autorité mais le terme générique 'Chronologique' : modifier ou supprimer cette sous-zone"
+      zone:                     6XX
+      priorite:                 P1
+      souszone:                 z
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Chronologique
+        - operateur:            OU
+          chaine-caracteres:    'Descripteur chronologique'
+      jeux-de-regles: 
+      - 2 #6XX
+
+
+
+    - id:                       1029
+      id-excel:                 384
+      type:                     presencechainecaracteres
+      message:                  "Zone 606 : la sous-zone $a contient le terme générique 'Vedette' ou 'Sujet' ou 'Accès sujet - nom commun' : modifier ou supprimer cette sous-zone"
+      zone:                     606
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Vedette
+        - operateur:            OU
+          chaine-caracteres:    Sujet
+        - operateur:            OU
+          chaine-caracteres:    'Accès sujet - nom commun'
+      jeux-de-regles: 
+      - 2 #6XX
+
+
+ 
+    - id:                       1030
+      id-excel:                 387
+      type:                     presencechainecaracteres
+      message:                  "Zone 6XX : la sous-zone $y ne contient pas une autorité mais le terme générique 'Géographique' ou 'Nom géographique' : modifier ou supprimer cette sous-zone"
+      zone:                     6XX
+      priorite:                 P1
+      souszone:                 y
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Géographique
+        - operateur:            OU
+          chaine-caracteres:    'Nom géographique'
+      jeux-de-regles: 
+      - 2 #6XX
+
+
+    - id:                       1031
+      id-excel:                 396
+      type:                     presencechainecaracteres
+      message:                  "Zone 607 : la sous-zone $a contient le terme générique 'Nom géographique' : modifier ou supprimer cette sous-zone"
+      zone:                     607
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Nom géographique'
+      jeux-de-regles: 
+      - 2 #6XX
+      
+    - id:                       1032
+      id-excel:                 413
+      type:                     presencechainecaracteres
+      message:                  "Zone 608 : la sous-zone $a contient le terme générique 'Forme ou Genre' : modifier ou supprimer cette sous-zone"
+      zone:                     608
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Forme ou Genre'
+        - operateur:            OU
+          chaine-caracteres:    'Forme ou genre'
+      jeux-de-regles: 
+      - 2 #6XX
+
+
+#règle 1033 : vérifier si contrôle @opossible dans basexml... si non, à supprimer
+    - id:                       1033
+      id-excel:                 126
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 :  le caractère de classement @ est obligatoire en sous-zone $a"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     NECONTIENTPAS
+      chaines-caracteres:
+        - chaine-caracteres:    "@"
+
+#règle 1034 : inutile (mais non nuisible) puisque le '= ' est généré automatiquement à l'export s'il est absent en UNM Sudoc
+    - id:                       1034
+      id-excel:                 132
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : la sous-zone $d doit commencer par '=[espace]'"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 d
+      type-de-verification:     NECONTIENTPAS
+      chaines-caracteres:
+        - chaine-caracteres:    '= '
+
+
+    - id:                       1035
+      id-excel:                 275
+      type:                     presencechainecaracteres
+      message:                  "Zone 410 : la sous-zone $t doit contenir un titre. L'enregistrer à la place du terme générique 'Lien au titre de la Collection' ou supprimer cette sous-zone"
+      zone:                     410
+      priorite:                 P1
+      souszone:                 t
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Lien au titre de la Collection'
+        - operateur:            OU
+          chaine-caracteres:    'Lien au titre de la collection'
+        
+ 
+    - id:                       1036
+      id-excel:                 276
+      type:                     presencechainecaracteres
+      message:                  "Zone 410 : la sous-zone $v doit contenir un numéro. Le saisir à la place du terme générique 'Numéro' ou supprimer cette sous-zone"
+      zone:                     410
+      priorite:                 P1
+      souszone:                 v
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Numéro'
+
+
+    - id:                       1037
+      id-excel:                 37
+      type:                     presencechainecaracteres
+      message:                  "Zone 101 : une des sous-zones $a est vide ou imprécise : préciser par un code de langue ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 1 #1XX
+      zone:                     101
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    '|'
+        - operateur:            OU
+          chaine-caracteres:    '?'
+
+
+    - id:                       1038
+      id-excel:                 37
+      type:                     presencechainecaracteres
+      message:                  "Zone 101 : une des sous-zones $b est vide ou imprécise : préciser par un code de langue ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 1 #1XX
+      zone:                     101
+      priorite:                 P1
+      souszone:                 b
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    '|'
+        - operateur:            OU
+          chaine-caracteres:    '?'
+          
+          
+ 
+    - id:                       1039
+      id-excel:                 37
+      type:                     presencechainecaracteres
+      message:                  "Zone 101 : une des sous-zones $c est vide ou imprécise : préciser par un code de langue ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 1 #1XX
+      zone:                     101
+      priorite:                 P1
+      souszone:                 c
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    '|'
+        - operateur:            OU
+          chaine-caracteres:    '?'
+
+
+    - id:                       1040
+      id-excel:                135 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : une sous-zone $e contient le terme générique 'Complément du titre' : remplacer ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 e
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Complément du titre'
+
+
+    - id:                       1041
+      id-excel:                 136
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : une sous-zone $f contient le terme générique 'Auteur' ou '1ère mention de responsabilité' : remplacer ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 f
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Auteur'
+        - operateur:            OU
+          chaine-caracteres:    '1ere mention de responsabilité'
+        - operateur:            OU
+          chaine-caracteres:    '1ère mention de responsabilité'
+        - operateur:            OU
+          chaine-caracteres:    'Première mention de responsabilité'
+
+
+    - id:                       1042
+      id-excel:                 137
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : une sous-zone $g contient le terme générique 'Sous la direction de' ou 'Mention de responsabilité' : remplacer ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 g
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Sous la direction de'
+        - operateur:            OU
+          chaine-caracteres:    'Mention de responsabilité'
+        - operateur:            OU
+          chaine-caracteres:    'Mention de responsabilité de fonction différente'
+        - operateur:            OU
+          chaine-caracteres:    'Mention de responsabilité différente'
+        - operateur:            OU
+          chaine-caracteres:    'Mention de responsabilité suivante'
+
+
+    - id:                       1043
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $a"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
+    - id:                       1044
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $d"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 d
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
+    - id:                       1045
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $e"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 e
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
+    - id:                       1046
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $f"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 f
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
+    - id:                       1047
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $g"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 g
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
+    - id:                       1048
+      id-excel:                 138 
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : supprimer le double espace présent en sous-zone $c"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 c
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    '  '
+
+
+
+    - id:                      1049
+      id-excel:                716
+      type:                     presencechainecaracteres
+      message:                  "Zone 200 : une sous-zone $d contient le terme générique 'Titre parallèle' : remplacer ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     200
+      priorite:                 P1
+      souszone:                 d
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Titre parallèle'
+

@@ -720,3 +720,418 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
+
+
+  - id: 25320
+    id-excel: 287
+    message: "Zone 451 : faire le lien vers la notice 'autre édition sur le même support' dans une sous-zone $0"
+    zone: 451
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25321
+        type: presencezone
+        presence: true
+      - id: 25322
+        type: presencesouszone
+        souszone: "0"
+        presence: false
+        
+  - id: 25330
+    id-excel: 291
+    message: "Zone 452 : faire le lien vers la notice 'autre édition sur un autre support' dans une sous-zone $0"
+    zone: 452
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25331
+        type: presencezone
+        presence: true
+      - id: 25332
+        type: presencesouszone
+        souszone: "0"
+        presence: false
+ 
+ 
+        
+  - id: 25340
+    id-excel: 297
+    message: "Zone 455 : faire le lien vers la notice décrivant le document original dans une sous-zone $0"
+    zone: 455
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25341
+        type: presencezone
+        presence: true
+      - id: 25342
+        type: presencesouszone
+        souszone: "0"
+        presence: false
+        
+        
+        
+  - id: 25350
+    id-excel: 308
+    message: "Zone 456 : faire le lien vers la notice décrivant la reproduction dans une sous-zone $0"
+    zone: 456
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25351
+        type: presencezone
+        presence: true
+      - id: 25352
+        type: presencesouszone
+        souszone: "0"
+        presence: false
+
+
+
+
+  - id: 25360
+    id-excel: 139
+    message: "Zone 200 : pour chaque titre parallèle déclaré (en sous-zone $d), une sous-zone $z (langue du titre parallèle) est obligatoire"
+    zone: 200
+    priorite: P1
+    jeux-de-regles:
+      - 4 #2XX
+    regles:
+      - id: 25361
+        type: presencesouszone
+        souszone: "d"
+        presence: true
+      - id: 25362
+        type: presencesouszone
+        souszone: "z"
+        presence: false
+        
+
+  - id: 25370
+    id-excel: 139
+    message: "Zone 200 : pour chaque langue de titre parallèle déclarée (en sous-zone $z), une sous-zone $d (titre parallèle) est obligatoire"
+    zone: 200
+    priorite: P1
+    jeux-de-regles:
+      - 4 #2XX
+    regles:
+      - id: 25371
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+      - id: 25372
+        type: presencesouszone
+        souszone: "z"
+        presence: true
+
+#REGLE 25380 NOK - A SUPPRIMER CAR TYPE DEPENDANCE EXCLUE DES REGLES COMPLEXES MEME ZONE - EVOLUTION DEMANDEE EN V2 ?
+  #- id: 25380
+   # id-excel: 379
+    # message: "Zone 606 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Nom commun' (Td), ou de type 'Forme ou Genre Rameau' (Tf) dans le cas où elle décrit bien le sujet de la ressource : revoir l'indexation"
+    # zone: 606
+   # priorite: P1
+   # jeux-de-regles:
+   #   - 2 #6XX
+  #  regles:
+   #   - id: 25381
+   #     type: presencesouszone
+   #     souszone: "3"
+    #    presence: true
+  #    - id: 25382
+   #     type: presencesouszone
+   #     souszone: "2"
+    #    presence: true
+    #  - id: 25383
+    #    type: presencechainecaracteres
+     #   souszone: "2"
+   #     type-de-verification: STRICTEMENT
+      #  chaines-caracteres:
+     #     - chaine-caracteres: rameau 
+    #  - id: 25384
+   #     type: dependance
+    #    zone: '606'
+   #     souszone: "3"
+    #    type-notice-liee: AUTORITE
+   #   - id: 25385
+   #     type: presencesouszone
+   #     zone: '250'
+    #    souszone: 'a'
+    #    presence: true
+
+
+  - id: 25390
+    id-excel: 352
+    message: "Zone 601 : bien qu'elle contienne un lien vers une autorité 'Nom de collectivité' (Tb) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau (en minuscules)"
+    zone: 601
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25391
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25392
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25393
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+
+
+
+  - id: 25400
+    id-excel: 360
+    message: "Zone 602 : bien qu'elle contienne un lien vers une autorité 'Nom de famille' (Ta) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau (en minuscules)"
+    zone: 602
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25401
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25402
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25403
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+          
+          
+          
+  - id: 25410
+    id-excel: 709
+    message: "Zone 600 : bien qu'elle contienne un lien vers une autorité 'Nom de personne' (Tp) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau (en minuscules)"
+    zone: 600
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25411
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25412
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25413
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+          
+          
+          
+  - id: 25420
+    id-excel: 710
+    message: "Zone 604 : bien qu'elle contienne un lien vers une autorité 'Auteur/Titre' (Tq) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau (en minuscules)"
+    zone: 604
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25421
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25422
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25423
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+
+  - id: 25430
+    id-excel: 711
+    message: "Zone 605 : bien qu'elle contienne un lien vers une autorité 'Titre uniforme' (Tu) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau (en minuscules)"
+    zone: 605
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25431
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25432
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25433
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+          
+          
+ 
+  - id: 25440
+    id-excel: 712
+    message: "Zone 606 : dès lors qu'elle comporte un lien vers une autorité, la sous-zone $2 doit être 'rameau' ou 'fmesh' (en minuscules)"
+    zone: 606
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25441
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25442
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25443
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          - chaine-caracteres: rameau
+          - operateur:  ET
+            chaine-caracteres: fmesh
+ 
+ 
+ 
+ 
+  - id: 25450
+    id-excel: 393
+    message: "Zone 607 : bien qu'elle contienne un lien vers une autorité 'Nom géographique' (Tg) qui n'appartient pas à RAMEAU, il est demandé d'y saisir par convention une sous-zone $2rameau (en minuscules)"
+    zone: 607
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25451
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25452
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25453
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+          
+
+  - id: 25460
+    id-excel: 713
+    message: "Zone 608 : puisqu'elle contient un lien vers une autorité 'Forme ou Genre' (Tf) la sous-zone $2 doit être 'rameau' (en minuscules)"
+    zone: 608
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+    regles:
+      - id: 25461
+        type: presencesouszone
+        souszone: "3"
+        presence: true
+      - id: 25462
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25463
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: NECONTIENTPAS
+        chaines-caracteres:
+          -  rameau
+
+
+  - id: 25470
+    id-excel: 714
+    message: "Zone 604 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 604
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25471
+        type: presencezone
+        presence: true
+      - id: 25472
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25473
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25474
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
+
+  - id: 25480
+    id-excel: 168
+    message: "Zone 214 : si la ressource décrite est bien est un livre ou un périodique ancien (indicateur 2=#), les seules sous-zones autorisées sont : $r ou $s. Remplacer les sous-zones présentes ou modifier la valeur de l'indicateur 2"
+    zone: 214
+    priorite: P1
+    jeux-de-regles:
+      - 4 #2XX
+    regles:
+      - id: 25481
+        type: indicateur
+        indicateur: 2
+        type-de-verification: STRICTEMENT
+        valeur: "#"
+      - id: 25482
+        type: presencesouszone
+        souszone: "s"
+        presence: false
+      - id: 25483
+        type: presencesouszone
+        souszone: "r"
+        presence: false
+
+
+  - id: 25490
+    id-excel: 31
+    message: "Zone 101 : puisque la ressource est décrite comme étant une traduction (indicateur 1 = '1'), il manque une sous-zone $c (langue de l'oeuvre originale) ou $b (langue d'un texte intermédiaire)"
+    zone: 101
+    priorite: P1
+    jeux-de-regles:
+      - 1 #1XX
+    regles:
+      - id: 25491
+        type: indicateur
+        indicateur: 1
+        type-de-verification: STRICTEMENT
+        valeur: "1"
+      - id: 25492
+        type: presencesouszone
+        souszone: "b"
+        presence: false
+      - id: 25493
+        type: presencesouszone
+        souszone: "c"
+        presence: false
+

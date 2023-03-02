@@ -257,24 +257,34 @@ rules:
      id-excel: 408
      message: "Zone 106 : puisque la mention 'braille' est déclarée en zone d'indexation 608, la sous-zone 106$a peut être précisée (valeur 'f'). Voir autorité en zone 608"
      priorite: P2
+     jeux-de-regles:
+       - 1  #1XX
      regles:
        - id: 6011
          type: presencesouszone
          zone: '106'
          souszone:    a
-         presence: false
+         presence: true
        - id: 6012
+         type: presencechainecaracteres
+         zone: '106'
+         souszone: a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    f
+         operateur-booleen: ET
+       - id: 6013
          type: presencesouszone
          zone: '608'
          souszone:    3
          presence: true
          operateur-booleen: ET
-       - id: 6013
+       - id: 6014
          type: dependance
          zone: '608'
          souszone:   3
          type-notice-liee: AUTORITE
-       - id: 6014
+       - id: 6015
          type: presencechainecaracteres
          zone: '280'
          souszone:   a
@@ -2070,3 +2080,652 @@ rules:
          zone: '306'
          presence: false
          operateur-booleen: ET
+
+
+   - id: 7570
+     id-excel: 283
+     message: "Zone 451 : la notice liée comme 'autre édition sur le même support' ne décrit pas une ressource électronique. Faire le lien vers une notice de ressource électronique ou remplacer par une zone 452 ('autre édition sur un support différent')"
+     priorite: P1
+     type-doc:
+       - O
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7571
+         type: presencesouszone
+         zone: '451'
+         souszone:    0
+         presence: true
+       - id: 7572
+         type: dependance
+         zone: '451'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7573
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: O
+
+
+   - id: 7580
+     id-excel: 284
+     message: "Zone 451 : la notice liée comme 'autre édition sur le même support' ne décrit pas une ressource imprimée. Faire le lien vers une notice de ressource imprimée ou remplacer par une zone 452 ('autre édition sur un support différent')"
+     priorite: P1
+     type-doc:
+       - A
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7581
+         type: presencesouszone
+         zone: '451'
+         souszone:    0
+         presence: true
+       - id: 7582
+         type: dependance
+         zone: '451'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7583
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: A
+
+
+   - id: 7590
+     id-excel: 299
+     message: "Zone 455 : puisque la ressource est une reproduction, la notice liée doit contenir un lien réciproque 'Est reproduit comme'. Corriger la notice liée ou utiliser une autre zone que la zone 455"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7591
+         type: presencesouszone
+         zone: '455'
+         souszone:    0
+         presence: true
+       - id: 7592
+         type: dependance
+         zone: '455'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7593
+         type: reciprocite
+         zone: '456'
+         souszone:   0
+         
+   - id: 7600
+     id-excel: 305
+     message: "Zone 456 : puisque la ressource est un document original, la notice liée doit contenir un lien réciproque 'Reproduction de'. Corriger la notice liée ou utiliser une autre zone que la zone 456"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7601
+         type: presencesouszone
+         zone: '456'
+         souszone:    0
+         presence: true
+       - id: 7602
+         type: dependance
+         zone: '456'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7603
+         type: reciprocite
+         zone: '455'
+         souszone:   0
+
+
+
+
+   - id: 7610
+     id-excel: 290
+     message: "Zone 452 : la notice liée comme 'autre édition sur un support différent' est aussi une ressource électronique. Faire le lien vers une notice de ressource imprimée ou remplacer par une zone 451 ('autre édition sur un même support')"
+     priorite: P1
+     type-doc:
+       - O
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7611
+         type: presencesouszone
+         zone: '452'
+         souszone:    0
+         presence: true
+       - id: 7612
+         type: dependance
+         zone: '452'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7613
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENT
+         valeur: O
+
+
+   - id: 7620
+     id-excel: 289
+     message: "Zone 452 : la notice liée comme 'autre édition sur un support différent' est aussi une ressource imprimée. Faire le lien vers une notice de ressource électronique ou remplacer par une zone 451 ('autre édition sur un même support')"
+     priorite: P1
+     type-doc:
+       - A
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7621
+         type: presencesouszone
+         zone: '452'
+         souszone:    0
+         presence: true
+       - id: 7622
+         type: dependance
+         zone: '452'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7623
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENT
+         valeur: A
+
+
+   - id: 7630
+     id-excel: 139
+     message: "Zone 200 : il doit y avoir autant de titre parallèle déclaré (en sous-zone $d) que de langue de titre parallèle déclarée (en sous-zone $z)"
+     priorite: P1
+     jeux-de-regles:
+       - 4  #2XX
+     regles:
+       - id: 7631
+         type: presencesouszone
+         zone: '200'
+         souszone:    d
+         presence: true
+       - id: 7632
+         type: presencesouszone
+         zone: '200'
+         souszone:    z
+         presence: true
+         operateur-booleen: ET
+       - id: 7633
+         type: nombresouszone
+         zone: '200'
+         souszone: d
+         zonecible: '200'
+         souszonecible:   z
+         operateur-booleen: ET
+
+
+
+   - id: 7640
+     id-excel: 130
+     message: "Zone 510 : il faut enregistrer autant de zones 510 que de titre parallèle enregistré en sous-zone 200$d (et une zone 464 si un des titres parallèles correspond au titre original de l'oeuvre)"
+     priorite: P1
+     jeux-de-regles:
+       - 4  #2XX
+     regles:
+       - id: 7641
+         type: nombresouszone
+         zone: '200'
+         souszone: d
+         zonecible: '510'
+         souszonecible:   a
+       - id: 7642
+         type: nombrezone
+         zone: '200'
+         operateur:    EGAL
+         occurrences:  1
+         operateur-booleen: ET
+       - id: 7643
+         type: presencezone
+         zone: '464'
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 7650
+     id-excel: 340
+     message: "Zone 600 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Personne' (Tp) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7651
+         type: presencesouszone
+         zone: '600'
+         souszone:    3
+         presence: true
+       - id: 7652
+         type: dependance
+         zone: '600'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7653
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'p'
+         position: 2
+
+
+
+   - id: 7660
+     id-excel: 351
+     message: "Zone 601 : la notice d'autorité liée en point d'entrée du point d'accès doit obligatoirement être de type 'Collectivité' (Tb) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7661
+         type: presencesouszone
+         zone: '601'
+         souszone:    3
+         presence: true
+       - id: 7662
+         type: dependance
+         zone: '601'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7663
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'b'
+         position: 2
+         
+
+
+   - id: 7670
+     id-excel: 359
+     message: "Zone 602 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Nom de famille' (Ta) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7671
+         type: presencesouszone
+         zone: '602'
+         souszone:    3
+         presence: true
+       - id: 7672
+         type: dependance
+         zone: '602'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7673
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'a'
+         position: 2
+
+
+
+   - id: 7680
+     id-excel: 366
+     message: "Zone 604 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Auteur/Titre' (Tq) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7681
+         type: presencesouszone
+         zone: '604'
+         souszone:    3
+         presence: true
+       - id: 7682
+         type: dependance
+         zone: '604'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7683
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'q'
+         position: 2
+         
+
+   - id: 7690
+     id-excel: 371
+     message: "Zone 605 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Titre uniforme' (Tu) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7691
+         type: presencesouszone
+         zone: '605'
+         souszone:    3
+         presence: true
+       - id: 7692
+         type: dependance
+         zone: '605'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7693
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'u'
+         position: 2
+
+
+
+   - id: 7700
+     id-excel: 392
+     message: "Zone 607 : la notice d'autorité liée en élément du point d'entrée d'accès doit obligatoirement être de type 'Nom géographique' (Tg) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7701
+         type: presencesouszone
+         zone: '607'
+         souszone:    3
+         presence: true
+       - id: 7702
+         type: dependance
+         zone: '607'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7703
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'g'
+         position: 2
+
+
+   - id: 7710
+     id-excel: 410
+     message: "Zone 608 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Forme ou genre Rameau' (Tf) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7711
+         type: presencesouszone
+         zone: '608'
+         souszone:    3
+         presence: true
+       - id: 7712
+         type: dependance
+         zone: '608'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7713
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'f'
+         position: 2
+
+   - id: 7720
+     id-excel: 417
+     message: "Zone 616 : la notice d'autorité liée enregistrée en élément d'entrée du point d'accès doit obligatoirement être de type 'Nom de marque' (Tm) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7721
+         type: presencesouszone
+         zone: '616'
+         souszone:    3
+         presence: true
+       - id: 7722
+         type: dependance
+         zone: '616'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7723
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'm'
+         position: 2
+
+
+   - id: 7730
+     id-excel: 409
+     message: "Zone 106 : puisque la mention 'Livres en gros caractères' est déclarée en zone d'indexation 608, la sous-zone 106$a peut être précisée (valeur 'd'). Voir autorité en zone 608"
+     priorite: P2
+     jeux-de-regles:
+       - 1  #1XX
+     regles:
+       - id: 7731
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+       - id: 7732
+         type: presencechainecaracteres
+         zone: '106'
+         souszone: a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    d
+         operateur-booleen: ET
+       - id: 7733
+         type: presencesouszone
+         zone: '608'
+         souszone:    3
+         presence: true
+         operateur-booleen: ET
+       - id: 7734
+         type: dependance
+         zone: '608'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7735
+         type: presencechainecaracteres
+         zone: '280'
+         souszone:   a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    'gros caractères'
+
+ 
+   - id: 7740
+     id-excel: 120
+     message: "Zone 104 : puisque la notice contient des données translittérées (présence de 200$7), la valeur attendue en sous-zone $c ne doit pas être 'y'"
+     priorite: P1
+     jeux-de-regles:
+       - 5  #translittération
+       - 1 #1XX
+     regles:
+       - id: 7741
+         type: presencesouszone
+         zone: '104'
+         souszone:   c
+         presence: true
+       - id: 7742
+         type: presencechainecaracteres
+         zone: '104'
+         souszone:   c
+         type-de-verification:    STRICTEMENT
+         chaines-caracteres:
+           - chaine-caracteres:    y
+         operateur-booleen: ET
+       - id: 7743
+         type: presencesouszone
+         zone: '200'
+         souszone:   7
+         presence: true
+         operateur-booleen: ET
+
+
+   - id: 7750
+     id-excel: 118
+     message: "Zone 200 : la zone n'est répétable que dans le cas de données translittérées (présence de sous-zone $6/$7). Ajouter les sous-zones $6/$7 ou ne conserver qu'une seule zone 200"
+     priorite: P1
+     jeux-de-regles:
+       - 5  #translittération
+       - 4 #2XX
+     regles:
+       - id: 7751
+         type: nombrezone
+         zone: '200'
+         operateur: SUPERIEUR
+         occurrences: 1
+       - id: 7752
+         type: presencesouszone
+         zone: '200'
+         souszone:    7
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 7760
+     id-excel: 39
+     message: "Zone 101 : les codes de langue enregistrés en 101$a et en 101$c sont identiques. Si la ressource est bien dans la langue originale de l'oeuvre (indicateur 1 = '0'), la 101$c n'a pas lieu d'être"
+     priorite: P1
+     jeux-de-regles:
+       - 1 #1XX
+     regles:
+       - id: 7761
+         type: nombrezone
+         zone: '101'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7762
+         type: positionsouszone
+         zone: '101'
+         souszone:    a
+         position: 1
+         operateur-booleen: ET
+       - id: 7763
+         type: positionsouszone
+         zone: '101'
+         souszone:    c
+         position: 2
+         operateur-booleen: ET
+       - id: 7764
+         type: positionsouszone
+         zone: '101'
+         souszone:    2
+         position: 3
+         operateur-booleen: ET
+       - id: 7765
+         type: comparaisoncontenusouszone
+         zone: '101'
+         souszone:    a
+         type-de-verification: STRICTEMENT
+         zonecible: '101'
+         souszonecible: c
+         operateur-booleen: ET
+       - id: 7766
+         type: indicateur
+         zone: '101'
+         indicateur:    1
+         valeur: '0'
+         type-de-verification: STRICTEMENT
+         operateur-booleen: ET
+
+
+   - id: 7770
+     id-excel: 39
+     message: "Zone 101 : les codes de langue enregistrés en 101$a et en 101$c sont identiques. Si la ressource est bien une traduction (indicateur 1 = '1'), la langue originale enregistrée en $c doit être différente de la langue du texte enregistrée en $a"
+     priorite: P1
+     jeux-de-regles:
+       - 1 #1XX
+     regles:
+       - id: 7771
+         type: nombrezone
+         zone: '101'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7772
+         type: positionsouszone
+         zone: '101'
+         souszone:    a
+         position: 1
+         operateur-booleen: ET
+       - id: 7773
+         type: positionsouszone
+         zone: '101'
+         souszone:    c
+         position: 2
+         operateur-booleen: ET
+       - id: 7774
+         type: positionsouszone
+         zone: '101'
+         souszone:    2
+         position: 3
+         operateur-booleen: ET
+       - id: 7775
+         type: comparaisoncontenusouszone
+         zone: '101'
+         souszone:    a
+         type-de-verification: STRICTEMENT
+         zonecible: '101'
+         souszonecible: c
+         operateur-booleen: ET
+       - id: 7776
+         type: indicateur
+         zone: '101'
+         indicateur:    1
+         valeur: '1'
+         type-de-verification: STRICTEMENT
+         operateur-booleen: ET
+
+
+   - id: 7780
+     id-excel: 140
+     message: "Zone 205 : la zone n'est répétable que dans le cas de données translittérées (présence de sous-zone $6/$7). Ajouter les sous-zones $6/$7 ou ne conserver qu'une seule zone 205"
+     priorite: P1
+     jeux-de-regles:
+       - 5  #translittération
+       - 4 #2XX
+     regles:
+       - id: 7781
+         type: nombrezone
+         zone: '205'
+         operateur: SUPERIEUR
+         occurrences: 1
+       - id: 7782
+         type: presencesouszone
+         zone: '205'
+         souszone:    7
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 7790
+     id-excel: 150
+     message: "Zone 207 : la zone n'est répétable que dans le cas de données translittérées (présence de sous-zone $6/$7). Ajouter les sous-zones $6/$7 ou ne conserver qu'une seule zone 207"
+     priorite: P1
+     jeux-de-regles:
+       - 5  #translittération
+       - 4 #2XX
+     regles:
+       - id: 7791
+         type: nombrezone
+         zone: '207'
+         operateur: SUPERIEUR
+         occurrences: 1
+       - id: 7792
+         type: presencesouszone
+         zone: '207'
+         souszone:    7
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 7800
+     id-excel: 154
+     message: "Zone 208 : la zone n'est répétable que dans le cas de données translittérées (présence de sous-zone $6/$7). Ajouter les sous-zones $6/$7 ou ne conserver qu'une seule zone 208"
+     priorite: P1
+     jeux-de-regles:
+       - 5  #translittération
+       - 4 #2XX
+     regles:
+       - id: 7801
+         type: nombrezone
+         zone: '208'
+         operateur: SUPERIEUR
+         occurrences: 1
+       - id: 7802
+         type: presencesouszone
+         zone: '208'
+         souszone:    7
+         presence: false
+         operateur-booleen: ET
+
+

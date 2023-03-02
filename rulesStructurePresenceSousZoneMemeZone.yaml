@@ -82,3 +82,55 @@ rules:
         operateur-booleen:  ET
     jeux-de-regles:
     -  5  # Tranlittération ($6/$7)
+
+
+
+  - id:       605
+    id-excel: 433
+    type:     presencesouszonesmemezone
+    message:  "Zones 6XX : le code du système d'indexation en sous-zone $2 obligatoire"
+    zone:     "6XX"
+    priorite: P1
+    souszones:
+      - souszone:           2
+        presence:           false
+      - souszone:           a
+        presence:           true
+        operateur-booleen:  ET
+    jeux-de-regles:
+    -  2  #6XX
+
+
+
+  - id:       606
+    id-excel: 345
+    type:     presencesouszonesmemezone
+    message:  "Zone 6XX : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
+    zone:     "6XX"
+    priorite: P1
+    souszones:
+      - souszone:           7
+        presence:           true
+      - souszone:           6
+        presence:           false
+        operateur-booleen:  ET
+    jeux-de-regles:
+    -  5  # Tranlittération ($6/$7)
+    -  2  #6XX
+
+
+  - id:       607
+    id-excel: 442
+    type:     presencesouszonesmemezone
+    message:  "Zone 7XX : une sous-zone $7 doit toujours être précédée d'une sous-zone $6"
+    zone:     "7XX"
+    priorite: P1
+    souszones:
+      - souszone:           7
+        presence:           true
+      - souszone:           6
+        presence:           false
+        operateur-booleen:  ET
+    jeux-de-regles:
+    -  5  # Tranlittération ($6/$7)
+    -  7  #7XX
