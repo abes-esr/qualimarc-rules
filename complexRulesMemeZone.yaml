@@ -1135,3 +1135,20 @@ rules:
         souszone: "c"
         presence: false
 
+
+  - id: 25500
+    id-excel: 325
+    message: "Zone 500 : faire le lien vers la notice d'autorité 'Titre uniforme' (Tu) mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 500
+    priorite: P1
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25501
+        type: presencezone
+        presence: true
+      - id: 25502
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+
