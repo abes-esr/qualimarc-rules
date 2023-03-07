@@ -2293,6 +2293,7 @@ rules:
      priorite: P1
      jeux-de-regles:
        - 2  #6XX
+       - 3  #liens
      regles:
        - id: 7651
          type: presencesouszone
@@ -2318,6 +2319,7 @@ rules:
      priorite: P1
      jeux-de-regles:
        - 2  #6XX
+       - 3  #liens
      regles:
        - id: 7661
          type: presencesouszone
@@ -2343,6 +2345,7 @@ rules:
      priorite: P1
      jeux-de-regles:
        - 2  #6XX
+       - 3  #liens
      regles:
        - id: 7671
          type: presencesouszone
@@ -2368,6 +2371,7 @@ rules:
      priorite: P1
      jeux-de-regles:
        - 2  #6XX
+       - 3  #liens
      regles:
        - id: 7681
          type: presencesouszone
@@ -2392,6 +2396,7 @@ rules:
      priorite: P1
      jeux-de-regles:
        - 2  #6XX
+       - 3  #liens
      regles:
        - id: 7691
          type: presencesouszone
@@ -2417,6 +2422,7 @@ rules:
      priorite: P1
      jeux-de-regles:
        - 2  #6XX
+       - 3  #liens
      regles:
        - id: 7701
          type: presencesouszone
@@ -2441,6 +2447,7 @@ rules:
      priorite: P1
      jeux-de-regles:
        - 2  #6XX
+       - 3  #liens
      regles:
        - id: 7711
          type: presencesouszone
@@ -2464,6 +2471,7 @@ rules:
      priorite: P1
      jeux-de-regles:
        - 2  #6XX
+       - 3  #liens
      regles:
        - id: 7721
          type: presencesouszone
@@ -2729,3 +2737,25 @@ rules:
          operateur-booleen: ET
 
 
+   - id: 7810
+     id-excel: 719
+     message: "Zone 500 : la notice d'autorité liée en sous-zone $3 doit obligatoirement être de type 'Titre uniforme' (Tu) : revoir l'indexation"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7811
+         type: presencesouszone
+         zone: '500'
+         souszone:    3
+         presence: true
+       - id: 7812
+         type: dependance
+         zone: '500'
+         souszone:   3
+         type-notice-liee: AUTORITE
+       - id: 7813
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'u'
+         position: 2
