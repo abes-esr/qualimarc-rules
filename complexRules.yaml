@@ -92,7 +92,7 @@ rules:
          
    - id: 5040
      id-excel: 272
-     message: "Puisqu'un lien vers une collection a été enregistré en zone 410, une mention de collection doit être enregistrée en 225. Utiliser le bon indicateur : 225 0# ou 225 2#"
+     message: "Puisqu'un lien vers une notice de collection a été enregistré en sous-zone 410$0, une mention de collection doit être enregistrée en 225. Utiliser le bon indicateur : 225 0# ou 225 2#"
      priorite: P1
      type-doc:
        -    A
@@ -108,8 +108,9 @@ rules:
        -    PC
      regles:
        - id: 5041
-         type: presencezone
+         type: presencesouszone
          zone: '410'
+         souszone: 0
          presence: true
        - id: 5042
          type: presencezone
