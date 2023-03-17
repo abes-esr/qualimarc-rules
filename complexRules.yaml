@@ -2419,7 +2419,7 @@ rules:
 
    - id: 7700
      id-excel: 392
-     message: "Zone 607 : la notice d'autorité liée en élément du point d'entrée d'accès doit obligatoirement être de type 'Nom géographique' (Tg) : revoir l'indexation"
+     message: "Zone 607 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Nom géographique' (Tg) : revoir l'indexation"
      priorite: P1
      jeux-de-regles:
        - 2  #6XX
