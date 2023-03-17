@@ -405,7 +405,7 @@ rules:
     - id:         527
       id-excel:    260
       type:        presencezone
-      message:     "Ressource électronique : une zone 337 (note sur la configuration requise) est attendue"
+      message:     "Ressource électronique : une zone 337 (note sur la configuration requise) peut être utile"
       zone:        337
       priorite:    P2
       presence:    false
@@ -439,7 +439,7 @@ rules:
     - id:         531
       id-excel:    259
       type:        presencezone
-      message:     "Ressource électronique : la zone 336 est attendue"
+      message:     "Ressource électronique : vérifier si une zone 336 peut éventuellement être créée pour préciser et complèter les informations données en zone 230"
       zone:        336
       priorite:    P2
       presence:    false
