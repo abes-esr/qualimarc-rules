@@ -107,6 +107,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
+      - id: 25025
+        type: presencesouszone
+        souszone: "1"
+        presence: false
 
 
   - id: 25030
@@ -162,6 +166,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
+      - id: 25045
+        type: presencesouszone
+        souszone: "1"
+        presence: false
 
 
   - id: 25050
@@ -189,6 +197,10 @@ rules:
       - id: 25054
         type: presencesouszone
         souszone: "3"
+        presence: false
+      - id: 25055
+        type: presencesouszone
+        souszone: "1"
         presence: false
 
 
@@ -218,7 +230,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-
+      - id: 25065
+        type: presencesouszone
+        souszone: "1"
+        presence: false
 
 
 
@@ -248,7 +263,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-
+      - id: 25075
+        type: presencesouszone
+        souszone: "1"
+        presence: false
 
 
   - id: 25080
@@ -277,7 +295,10 @@ rules:
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  fmesh
-
+      - id: 25085
+        type: presencesouszone
+        souszone: "1"
+        presence: false
 
 
   - id: 25090
@@ -305,6 +326,10 @@ rules:
       - id: 25094
         type: presencesouszone
         souszone: "3"
+        presence: false
+      - id: 25095
+        type: presencesouszone
+        souszone: "1"
         presence: false
 
 
@@ -334,7 +359,12 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-
+      - id: 25065
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        
+        
 # désactivation 25110 car s'applique juste aux MONOS électroniques HORS THESE + tjs double présence de 214 : 214#0 et 214 #2
 #   - id: 25110
 #     id-excel: 699
@@ -409,7 +439,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-        
+      - id: 25143
+        type: presencesouszone
+        souszone: "1"
+        presence: false
           
         
   - id: 25150
@@ -428,7 +461,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-        
+      - id: 25153
+        type: presencesouszone
+        souszone: "1"
+        presence: false
         
   - id: 25160
     id-excel: 456
@@ -446,7 +482,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-        
+      - id: 25163
+        type: presencesouszone
+        souszone: "1"
+        presence: false
         
         
         
@@ -466,9 +505,12 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-        
-          
-        
+      - id: 25173
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
   - id: 25180
     id-excel: 470
     message: "Zone 711 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -485,8 +527,12 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-        
-        
+      - id: 25183
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
   - id: 25190
     id-excel: 475
     message: "Zone 712 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -503,7 +549,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-        
+      - id: 25193
+        type: presencesouszone
+        souszone: "1"
+        presence: false
         
         
         
@@ -523,7 +572,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-        
+      - id: 25203
+        type: presencesouszone
+        souszone: "1"
+        presence: false
           
         
   - id: 25210
@@ -542,7 +594,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-        
+      - id: 25213
+        type: presencesouszone
+        souszone: "1"
+        presence: false
         
   - id: 25220
     id-excel: 
@@ -559,6 +614,10 @@ rules:
       - id: 25222
         type: presencesouszone
         souszone: "3"
+        presence: false
+      - id: 25223
+        type: presencesouszone
+        souszone: "1"
         presence: false
 
 
