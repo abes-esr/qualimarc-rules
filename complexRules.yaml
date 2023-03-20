@@ -797,40 +797,40 @@ rules:
          operateur-booleen: OU
 
 #DESACTIVATION MOMENTANEE / BUG EN PROD !!!!!!!!! URGENT A TRAITER
-  # - id: 7110
-  #   id-excel: 701
-  #   message: "Zone 461 : puisqu'il s'agit d'une monographie imprimée, le lien enregistré en 461$0 doit pointer vers une notice de collection de monographies imprimées (Ad) ou vers une notice de ressource continue (Ab)"
-  #   priorite: P1
-  #   type-doc:
-  #     -    A
-  #   regles:
-  #     - id: 7111
-  #       type: presencesouszone
- #        zone: '461'
-  #       souszone:    0
-  #       presence: true
-  #     - id: 7112
-  #       type: dependance
-  #       zone: '461'
-  #       souszone:   0
-   #      type-notice-liee: BIBLIO
-  #     - id: 7113
-    #     type: typedocument
-    #     position: 1
-     #    type-de-verification: STRICTEMENTDIFFERENT
-     #    valeur: a
-     #  - id: 7114
-     #    type: typedocument
-     #    position: 2
-     #    type-de-verification: STRICTEMENTDIFFERENT
-     #    valeur: d
-     #    operateur-booleen: OU
-     #  - id: 7115
-     #    type: typedocument
-     #    position: 2
-     #    type-de-verification: STRICTEMENTDIFFERENT
-     #    valeur: b
-     #    operateur-booleen: OU
+   - id: 7110
+     id-excel: 701
+     message: "Zone 461 : puisqu'il s'agit d'une monographie imprimée, le lien enregistré en 461$0 doit pointer vers une notice de collection de monographies imprimées (Ad) ou vers une notice de ressource continue (Ab)"
+     priorite: P1
+     type-doc:
+       -    A
+     regles:
+       - id: 7111
+         type: presencesouszone
+         zone: '461'
+         souszone:    0
+         presence: true
+       - id: 7112
+         type: dependance
+         zone: '461'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7113
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
+       - id: 7114
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: d
+         operateur-booleen: ET
+       - id: 7115
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: b
+         operateur-booleen: OU
 
 
    - id: 7120
