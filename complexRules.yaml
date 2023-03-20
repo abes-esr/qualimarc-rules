@@ -820,6 +820,7 @@ rules:
          zone: '461'
          souszone:    0
          presence: true
+         operateur-booleen: ET
        - id: 7114
          type: dependance
          zone: '461'
