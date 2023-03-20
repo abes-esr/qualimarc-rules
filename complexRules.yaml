@@ -817,15 +817,21 @@ rules:
        - id: 7113
          type: typedocument
          position: 2
-         type-de-verification: STRICTEMENTDIFFERENT
-         valeur: b
+         type-de-verification: STRICTEMENT
+         valeur: r
        - id: 7114
          type: typedocument
          position: 2
-         type-de-verification: STRICTEMENTDIFFERENT
-         valeur: d
+         type-de-verification: STRICTEMENT
+         valeur: a
          operateur-booleen: OU
        - id: 7115
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENT
+         valeur: s
+         operateur-booleen: OU
+       - id: 7116
          type: typedocument
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
