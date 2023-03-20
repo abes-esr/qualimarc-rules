@@ -819,7 +819,6 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
-         operateur-booleen: OU
        - id: 7114
          type: typedocument
          position: 2
