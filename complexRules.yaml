@@ -816,23 +816,21 @@ rules:
          type-notice-liee: BIBLIO
        - id: 7113
          type: typedocument
-         position: 1
-         type-de-verification: STRICTEMENTDIFFERENT
-         valeur: a
-       - id: 7114
-         type: typedocument
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: b
-         operateur-booleen: ET
-       - id: 7115
+       - id: 7114
          type: typedocument
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: d
          operateur-booleen: OU
-
-
+       - id: 7115
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
+         operateur-booleen: ET
 
 
    - id: 7120
