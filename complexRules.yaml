@@ -805,32 +805,31 @@ rules:
        -    A
      regles:
        - id: 7111
-         type: presencesouszone
-         zone: '461'
-         souszone:    0
-         presence: true
-       - id: 7112
-         type: dependance
-         zone: '461'
-         souszone:   0
-         type-notice-liee: BIBLIO
-       - id: 7113
-         type: typedocument
-         position: 1
-         type-de-verification: STRICTEMENTDIFFERENT
-         valeur: a
-       - id: 7114
-         type: typedocument
-         position: 2
-         type-de-verification: STRICTEMENTDIFFERENT
-         valeur: d
-         operateur-booleen: ET
-       - id: 7115
          type: typedocument
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: b
+       - id: 7112
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: d
          operateur-booleen: OU
+       - id: 7113
+         type: presencesouszone
+         zone: '461'
+         souszone:    0
+         presence: true
+       - id: 7114
+         type: dependance
+         zone: '461'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7115
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: a
 
 
    - id: 7120
