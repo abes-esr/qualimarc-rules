@@ -2280,6 +2280,7 @@ rules:
          zone: '200'
          souszone: '7'
          presence: false
+         operateur-booleen: ET
        - id: 7643
          type: presencesouszone
          zone: '510'
