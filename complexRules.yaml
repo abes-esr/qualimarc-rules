@@ -824,7 +824,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: d
-         operateur-booleen: OU
+         operateur-booleen: ET
        - id: 7115
          type: typedocument
          position: 1
