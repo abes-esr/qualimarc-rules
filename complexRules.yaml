@@ -760,7 +760,7 @@ rules:
          operateur-booleen: OU
 
 
- 
+#correction comme pour 7110 le 20/03/23 
    - id: 7100
      id-excel: 696
      message: "Zone 461 : puisqu'il s'agit d'une ressource électronique, le lien enregistré en 461$0 doit pointer vers une notice de collection électronique (Od) ou vers une notice de ressource continue électronique (Ob)"
@@ -786,17 +786,23 @@ rules:
        - id: 7104
          type: typedocument
          position: 2
-         type-de-verification: STRICTEMENTDIFFERENT
-         valeur: d
+         type-de-verification: STRICTEMENT
+         valeur: a
          operateur-booleen: OU
        - id: 7105
          type: typedocument
          position: 2
-         type-de-verification: STRICTEMENTDIFFERENT
-         valeur: b
+         type-de-verification: STRICTEMENT
+         valeur: s
          operateur-booleen: OU
-
-#DESACTIVATION MOMENTANEE / BUG EN PROD !!!!!!!!! URGENT A TRAITER
+       - id: 7106
+         type: typedocument
+         position: 2
+         type-de-verification: STRICTEMENT
+         valeur: r
+         operateur-booleen: OU
+         
+#DESACTIVATION MOMENTANEE / BUG EN PROD !!!!!!!!! URGENT A TRAITER : OK BUG TRAITE LE 20/03/23 >> attention, ne pas utliser strictementdifferent quand opérateur booleen OU sur même zone/souszone !
    - id: 7110
      id-excel: 701
      message: "Zone 461 : puisqu'il s'agit d'une monographie imprimée, le lien enregistré en 461$0 doit pointer vers une notice de collection de monographies imprimées (Ad) ou vers une notice de ressource continue (Ab)"
