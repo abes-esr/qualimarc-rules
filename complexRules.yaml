@@ -2276,12 +2276,17 @@ rules:
          zonecible: '510'
          souszonecible:   a
        - id: 7642
-         type: nombrezone
+         type: presencesouszone
          zone: '200'
-         operateur:    EGAL
-         occurrences:  1
-         operateur-booleen: ET
+         souszone: '7'
+         presence: false
        - id: 7643
+         type: presencesouszone
+         zone: '510'
+         souszone: '7'
+         presence: false
+         operateur-booleen: ET
+       - id: 7644
          type: presencezone
          zone: '464'
          presence: false
