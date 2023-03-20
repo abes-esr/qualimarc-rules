@@ -824,13 +824,13 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: d
-         operateur-booleen: ET
+         operateur-booleen: OU
        - id: 7115
          type: typedocument
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
-         operateur-booleen: ET
+         operateur-booleen: OU
 
 
    - id: 7120
