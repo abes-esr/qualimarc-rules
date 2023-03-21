@@ -636,7 +636,10 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-        
+      - id: 25233
+        type: presencesouszone
+        souszone: "1"
+        presence: false
           
         
   - id: 25240
@@ -654,7 +657,10 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-        
+      - id: 25243
+        type: presencesouszone
+        souszone: "1"
+        presence: false
         
   - id: 25250
     id-excel: 499
@@ -671,7 +677,10 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-        
+      - id: 25253
+        type: presencesouszone
+        souszone: "1"
+        presence: false
         
         
         
@@ -690,7 +699,10 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-        
+      - id: 25263
+        type: presencesouszone
+        souszone: "1"
+        presence: false
           
         
   - id: 25270
@@ -708,7 +720,10 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-        
+      - id: 25273
+        type: presencesouszone
+        souszone: "1"
+        presence: false
         
   - id: 25280
     id-excel: 499
@@ -725,7 +740,10 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-        
+      - id: 25283
+        type: presencesouszone
+        souszone: "1"
+        presence: false
         
         
         
@@ -744,7 +762,10 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-        
+      - id: 25293
+        type: presencesouszone
+        souszone: "1"
+        presence: false
           
         
   - id: 25300
@@ -762,7 +783,10 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-        
+      - id: 25303
+        type: presencesouszone
+        souszone: "1"
+        presence: false
         
   - id: 25310
     id-excel: 499
@@ -779,7 +803,10 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-
+      - id: 25313
+        type: presencesouszone
+        souszone: "1"
+        presence: false
 
   - id: 25320
     id-excel: 287
