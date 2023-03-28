@@ -1,16 +1,17 @@
 ---
 #ID de 1100 à 1199
 rules:
- - id: 1101
-   id-excel: 190
-   type: comparaisondate
-   message: "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
-   zone: "214"
-   souszone: "d"
-   comparateur: "DIFFERENT"
-   zonecible: "100"
-   souszonecible: "A"
-   priorite: "P1"
+#1101 désactivée pour être réécrite en complexe (ncéssaire d'ajouter si seulement 1 occ de zone 214.... + éventuellement ajouter dans message d'erreur que sous réserve de présence de crochets, ?, etc.)
+#  - id: 1101
+#    id-excel: 190
+#    type: comparaisondate
+#    message: "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
+#    zone: "214"
+#    souszone: "d"
+#    comparateur: "DIFFERENT"
+#    zonecible: "100"
+#    souszonecible: "A"
+#    priorite: "P1"
 
 
  - id: 1100
