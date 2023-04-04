@@ -449,12 +449,12 @@ rules:
     - id:          532
       id-excel:    6
       type:        presencezone
-      message:     "Zone 013  : lorsque la ressource de type Enregistrement sonore (G*) est identifiée par un ISMN, sa transcription est obligatoire"
+      message:     "Zone 013  : si la partition imprimée est identifiée par un ISMN, sa transcription est obligatoire en zone 103"
       zone:        013
       priorite:    P2
       presence:    false
       type-doc:
-      -    G
+      -    M
       jeux-de-regles:
       -  9  # Identifiants
 
