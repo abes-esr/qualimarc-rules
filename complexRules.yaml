@@ -2841,9 +2841,8 @@ rules:
            - chaine-caracteres:    "inconnu"
          operateur-booleen: ET
        - id: 7833
-         type: presencesouszone
+         type: presencezone
          zone: '102'
-         souszone: 'a'
          presence: false
          operateur-booleen: ET
 
