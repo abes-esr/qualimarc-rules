@@ -1366,8 +1366,8 @@ rules:
 
    - id:         7300
      id-excel:    46
-     message:     "Zone 214 : puisqu'un pays de publication a été renseigné en sous-zone 102$a, la sous-zone 214$a peut être précisée"
-     priorite:    P1
+     message:     "Zone 214 : puisqu'un pays de publication a été renseigné en sous-zone 102$a, la sous-zone 214$a pourrait peut-être être précisée"
+     priorite:    P2
      jeux-de-regles:
      - 1  #1XX
      - 4  #2XX
@@ -2778,3 +2778,80 @@ rules:
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur:  'u'
          position: 2
+
+
+#7820 : réciproque de la 7300
+   - id:         7820
+     id-excel:    722
+     message:     "Zone 102 : puisqu'un lieu a été renseigné en sous-zone 214$a, la sous-zone 102$a peut être précisée avec un pays de publication (hors code pays 'XX')"
+     priorite:    P1
+     jeux-de-regles:
+     - 1  #1XX
+     - 4  #2XX
+     regles:
+       - id: 7821
+         type: presencesouszone
+         zone: '214'
+         souszone: 'a'
+         presence: true
+       - id: 7822
+         type: presencechainecaracteres
+         zone: '214'
+         souszone: 'a'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "inconnu"
+           - operateur:            OU
+             chaine-caracteres:    "Inconnu"
+         operateur-booleen: ET
+       - id: 7823
+         type: presencesouszone
+         zone: '102'
+         souszone: 'a'
+         presence: true
+         operateur-booleen: ET
+       - id: 7824
+         type: presencechainecaracteres
+         zone: '102'
+         souszone: 'a'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "XX"
+         operateur-booleen: ET
+
+
+#7820 : réciproque BIS de la 7300
+   - id:         7830
+     id-excel:    721
+     message:     "Zone 102 : puisqu'un lieu a été renseigné en sous-zone 214$a, la sous-zone 102$a peut être précisée avec un pays de publication (hors code pays 'XX')"
+     priorite:    P1
+     jeux-de-regles:
+     - 1  #1XX
+     - 4  #2XX
+     regles:
+       - id: 7831
+         type: presencesouszone
+         zone: '214'
+         souszone: 'a'
+         presence: true
+       - id: 7832
+         type: presencechainecaracteres
+         zone: '214'
+         souszone: 'a'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "inconnu"
+           - operateur:            OU
+             chaine-caracteres:    "Inconnu"
+         operateur-booleen: ET
+       - id: 7833
+         type: presencesouszone
+         zone: '102'
+         souszone: 'a'
+         presence: false
+         operateur-booleen: ET
+
+
+
+
+
