@@ -2828,11 +2828,16 @@ rules:
      - 4  #2XX
      regles:
        - id: 7831
+         type: presencezone
+         zone: '102'
+         presence: false
+       - id: 7832
          type: presencesouszone
          zone: '214'
          souszone: 'a'
          presence: true
-       - id: 7832
+         operateur-booleen: ET         
+       - id: 7833
          type: presencechainecaracteres
          zone: '214'
          souszone: 'a'
@@ -2840,11 +2845,7 @@ rules:
          chaines-caracteres:
            - chaine-caracteres:    "inconnu"
          operateur-booleen: ET
-       - id: 7833
-         type: presencezone
-         zone: '102'
-         presence: false
-         operateur-booleen: ET
+
 
 
 
