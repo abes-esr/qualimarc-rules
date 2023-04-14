@@ -2812,7 +2812,7 @@ rules:
          type: presencechainecaracteres
          zone: '102'
          souszone: 'a'
-         type-de-verification:     NECONTIENTPAS
+         type-de-verification:     CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    "XX"
          operateur-booleen: ET
@@ -2821,7 +2821,7 @@ rules:
 #7820 : réciproque BIS de la 7300
    - id:         7830
      id-excel:    721
-     message:     "Zone 102 : puisqu'un lieu a été renseigné en sous-zone 214$a, la sous-zone 102$a peut être précisée avec un pays de publication (hors code pays 'XX')"
+     message:     "Zone 102 : puisqu'un lieu a été renseigné en sous-zone 214$a, une sous-zone 102$a peut être créée, mentionnant le code du pays de publication"
      priorite:    P1
      jeux-de-regles:
      - 1  #1XX
@@ -2838,7 +2838,7 @@ rules:
          souszone: 'a'
          type-de-verification:     NECONTIENTPAS
          chaines-caracteres:
-           - chaine-caracteres:    "inconnu"
+           - chaine-caracteres:    "lieu inconnu"
          operateur-booleen: ET
        - id: 7833
          type: presencesouszone
