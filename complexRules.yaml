@@ -2800,7 +2800,7 @@ rules:
          souszone: 'a'
          type-de-verification:     NECONTIENTPAS
          chaines-caracteres:
-           - chaine-caracteres:    "lieu inconnu"
+           - chaine-caracteres:    "inconnu"
          operateur-booleen: ET
        - id: 7823
          type: presencesouszone
@@ -2838,7 +2838,7 @@ rules:
          souszone: 'a'
          type-de-verification:     NECONTIENTPAS
          chaines-caracteres:
-           - chaine-caracteres:    "lieu inconnu"
+           - chaine-caracteres:    "inconnu"
          operateur-booleen: ET
        - id: 7833
          type: presencesouszone
