@@ -214,7 +214,7 @@ Liste des champs propres au type de règle nombre de sous-zones :
 - zonecible : ``obligatoire`` / de type chaine de caractères. La zone sur laquelle va s'effectuer la comparaison
 - souszonecible : ``obligatoire`` / de type caractère. La sous zone sur laquelle va s'effectuer la comparaison. ATTENTION : le $ du format Unimarc NE doit PAS être renseigné.
 
-Si le nombre de souszone dans la zone est différent du nombre de sous zones dans la zone cible, le message est envoyé à l'utilisateur. En cas de zone répétée, toutes les occurrences de toutes les zones sont cumulées.
+Si le nombre de sous-zones dans la zone est différent du nombre de sous-zones dans la zone cible, le message est envoyé à l'utilisateur. En cas de zone répétée, toutes les occurrences de toutes les zones sont cumulées.
 
 Exemple de fichier YAML :  
 ``` YAML
