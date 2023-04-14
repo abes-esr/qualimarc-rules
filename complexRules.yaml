@@ -2801,8 +2801,6 @@ rules:
          type-de-verification:     NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    "inconnu"
-           - operateur:            OU
-             chaine-caracteres:    "Inconnu"
          operateur-booleen: ET
        - id: 7823
          type: presencesouszone
@@ -2841,8 +2839,6 @@ rules:
          type-de-verification:     NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    "inconnu"
-           - operateur:            OU
-             chaine-caracteres:    "Inconnu"
          operateur-booleen: ET
        - id: 7833
          type: presencesouszone
