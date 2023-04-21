@@ -407,7 +407,7 @@ rules:
 
   - id: 25130
     id-excel: 322
-    message: "Zone 488 : faire le lien vers la notice du document en relation en sous-zone $0"
+    message: "Zone 488 : faire le lien vers la notice du document en relation en sous-zone $0 (sauf thèse soutenue sur travaux)"
     zone: 488
     priorite: P1
     jeux-de-regles:

@@ -185,6 +185,7 @@ rules:
         - operateur:            OU
           chaine-caracteres:    "s.d."
 
+
     - id: 1013
       id-excel: 184
       message: "Zone 214 : la mention [s.l.] doit être remplacée par [Lieu de publication inconnu]"
@@ -196,13 +197,11 @@ rules:
       souszone:   a
       type-de-verification:    CONTIENT
       chaines-caracteres:
-        - chaine-caracteres:    "s.l."
+        - chaine-caracteres:    "s.l"
         - operateur:            OU
-          chaine-caracteres:    "sl"
+          chaine-caracteres:    "S.L"
         - operateur:            OU
-          chaine-caracteres:    "S.l."
-        - operateur:            OU
-          chaine-caracteres:    "Sl"
+          chaine-caracteres:    "S.l"
           
           
           
@@ -217,14 +216,13 @@ rules:
       souszone:   c
       type-de-verification:    CONTIENT
       chaines-caracteres:
-        - chaine-caracteres:    "s.n."
+        - chaine-caracteres:    "s.n"
         - operateur:            OU
-          chaine-caracteres:    "sn"
+          chaine-caracteres:    "S.n"
         - operateur:            OU
-          chaine-caracteres:    "S.n."
+          chaine-caracteres:    "S.N"
         - operateur:            OU
-          chaine-caracteres:    "Sn"
-          
+          chaine-caracteres:    "sn"          
 
     - id: 1015
       id-excel: 185
