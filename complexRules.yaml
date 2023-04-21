@@ -805,7 +805,7 @@ rules:
 #DESACTIVATION MOMENTANEE / BUG EN PROD !!!!!!!!! URGENT A TRAITER : OK BUG TRAITE LE 20/03/23 >> attention, ne pas utliser strictementdifferent quand opérateur booleen OU sur même zone/souszone !
    - id: 7110
      id-excel: 701
-     message: "Zone 461 : puisqu'il s'agit d'une monographie imprimée, le lien enregistré en 461$0 doit pointer vers une notice de collection de monographies imprimées (Ad) ou vers une notice de ressource continue (Ab)"
+     message: "Zone 461 : puisqu'il s'agit d'une monographie imprimée, le lien enregistré en 461$0 doit pointer vers une notice de collection de monographies imprimées (Ad) ou vers une notice de ressource continue (Ab) - sauf dans le cas particulier de coffrets"
      priorite: P1
      type-doc:
        -    A
