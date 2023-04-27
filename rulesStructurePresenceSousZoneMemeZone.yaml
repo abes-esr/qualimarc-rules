@@ -84,7 +84,7 @@ rules:
     -  5  # Tranlittération ($6/$7)
 
 
-
+#rajout absence de $1 pour écarter les zones de données locales L60X
   - id:       605
     id-excel: 433
     type:     presencesouszonesmemezone
@@ -96,6 +96,9 @@ rules:
         presence:           false
       - souszone:           a
         presence:           true
+        operateur-booleen:  ET
+      - souszone:           1
+        presence:           false
         operateur-booleen:  ET
     jeux-de-regles:
     -  2  #6XX
