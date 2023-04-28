@@ -2847,7 +2847,151 @@ rules:
          operateur-booleen: ET
 
 
+   - id: 7840
+     id-excel: 198
+     message: "Zone 225 : puisqu'une mention de collection est déclarée (indicateur 1 = 0), une zone 410 (avec lien à la notice de collection en sous-zone $0) est obligatoire"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens$0/$3
+       - 4 #2XX
+     regles:
+       - id: 7841
+         type: nombrezone
+         zone: '225'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7842
+         type: presencezone
+         zone: '410'
+         presence: false
+         operateur-booleen: ET
+       - id: 7843
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '0'
+         operateur-booleen: ET
 
 
 
+   - id: 7850
+     id-excel: 199
+     message: "Zone 225 : puisqu'une mention de collection est déclarée (indicateur 1 = 0), la zone 410 doit obligatoirement comporter un lien à la notice de collection dans une sous-zone $0"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens$0/$3
+       - 4 #2XX
+     regles:
+       - id: 7851
+         type: nombrezone
+         zone: '225'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7852
+         type: presencezone
+         zone: '410'
+         presence: true
+         operateur-booleen: ET
+       - id: 7853
+         type: presencesouszone
+         zone: '410'
+         souszone: '0'
+         presence: false
+         operateur-booleen: ET
+       - id: 7854
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '0'
+         operateur-booleen: ET
 
+
+
+   - id: 7860
+     id-excel: 200
+     message: "Zone 225 : puisqu'une mention de collection est déclarée (indicateur 1 = 2), la zone 410 doit obligatoirement comporter un lien à la notice de collection dans une sous-zone $0"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens$0/$3
+       - 4 #2XX
+     regles:
+       - id: 7861
+         type: nombrezone
+         zone: '225'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7862
+         type: presencezone
+         zone: '410'
+         presence: true
+         operateur-booleen: ET
+       - id: 7863
+         type: presencesouszone
+         zone: '410'
+         souszone: '0'
+         presence: false
+         operateur-booleen: ET
+       - id: 7864
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '2'
+         operateur-booleen: ET
+
+
+   - id: 7870
+     id-excel: 202
+     message: "Zone 225 : puisque une mention de collection est déclarée (indicateur 1 = 2), une zone 410 (avec lien à la notice de collection) est obligatoire"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens$0/$3
+       - 4 #2XX
+     regles:
+       - id: 7871
+         type: nombrezone
+         zone: '225'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7872
+         type: presencezone
+         zone: '410'
+         presence: false
+         operateur-booleen: ET
+       - id: 7873
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '2'
+         operateur-booleen: ET
+
+
+   - id: 7880
+     id-excel: 722
+     message: "Zone 225 : incohérence entre l'indicateur 1 = 1 et la présence d'un lien vers une notice de collection enregistré en sous-zone 410$0. Modifier la valeur de l'indicateur 1 en '0' ou '2' de la zone 225"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens$0/$3
+       - 4 #2XX
+     regles:
+       - id: 7881
+         type: nombrezone
+         zone: '225'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7882
+         type: presencesouszone
+         zone: '410'
+         souszone: '0'
+         presence: true
+         operateur-booleen: ET
+       - id: 7883
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '1'
+         operateur-booleen: ET
