@@ -2958,15 +2958,9 @@ rules:
        - id: 7872
          type: presencezone
          zone: '410'
-         presence: true
-         operateur-booleen: ET
-       - id: 7873
-         type: presencesouszone
-         zone: '410'
-         souszone: '0'
          presence: false
          operateur-booleen: ET
-       - id: 7874
+       - id: 7873
          type: indicateur
          zone: '225'
          indicateur: 1
