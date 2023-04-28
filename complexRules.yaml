@@ -2847,7 +2847,28 @@ rules:
          operateur-booleen: ET
 
 
-
-
-
-
+   - id: 7840
+     id-excel: 198
+     message: "Zone 225 : puisqu'une mention de collection est déclarée (indicateur 1 = 0), une zone 410 (avec lien à la notice de collection en sous-zone $0) est obligatoire"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens$0/$3
+       - 4 #2XX
+     regles:
+       - id: 7841
+         type: nombrezone
+         zone: '225'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7842
+         type: presencezone
+         zone: '410'
+         presence: false
+         operateur-booleen: ET
+       - id: 7843
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '0'
+         operateur-booleen: ET
