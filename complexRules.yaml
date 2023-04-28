@@ -2872,3 +2872,37 @@ rules:
          type-de-verification: STRICTEMENT
          valeur: '0'
          operateur-booleen: ET
+
+
+
+   - id: 7850
+     id-excel: 199
+     message: "Zone 225 : puisqu'une mention de collection est déclarée (indicateur 1 = 0), la zone 410 doit obligatoirement comporter un lien à la notice de collection dans une sous-zone $0"
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens$0/$3
+       - 4 #2XX
+     regles:
+       - id: 7851
+         type: nombrezone
+         zone: '225'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7852
+         type: presencezone
+         zone: '410'
+         presence: true
+         operateur-booleen: ET
+       - id: 7853
+         type: presencesouszone
+         zone: '410'
+         souszone: '0'
+         presence: false
+         operateur-booleen: ET
+       - id: 7854
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '0'
+         operateur-booleen: ET
