@@ -1238,3 +1238,25 @@ rules:
         souszone: "3"
         presence: false
 
+  - id: 25510
+    id-excel: 
+    message: "Zone 702 : TEST code fonction 702$4 010, 018 ou 030"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25511
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '010'
+          - operateur:  OU
+            chaine-caracteres: '018'
+          - operateur:  OU
+            chaine-caracteres: '030'  
+      - id: 25512
+        type: presencesouszone
+        souszone: "1"
+        presence: false
