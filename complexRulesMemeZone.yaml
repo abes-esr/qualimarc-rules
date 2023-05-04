@@ -1551,6 +1551,24 @@ rules:
         presence: false
 
 
+  - id: 25610
+    id-excel: 
+    message: "Zone 712 : le code fonction 725 doit être enregistré dans une zone 710 ou 711, niveau Oeuvre"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25611
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '725'         
+      - id: 25612
+        type: presencesouszone
+        souszone: "1"
+        presence: false
 
 
 
