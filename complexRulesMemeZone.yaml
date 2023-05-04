@@ -1404,13 +1404,14 @@ rules:
             chaine-caracteres: '060'
           - operateur:  OU
             chaine-caracteres: '407'
-          - chaine-caracteres: '640'
+          - operateur:  OU
+            chaine-caracteres: '640'
           - operateur:  OU
             chaine-caracteres: '680'
           - operateur:  OU
             chaine-caracteres: '700'
           - operateur:  OU
-          - chaine-caracteres: '750'
+            chaine-caracteres: '750'
           - operateur:  OU
             chaine-caracteres: '753'
       - id: 25552
@@ -1436,13 +1437,14 @@ rules:
             chaine-caracteres: '060'
           - operateur:  OU
             chaine-caracteres: '407'
-          - chaine-caracteres: '640'
+          - operateur:  OU
+            chaine-caracteres: '640'
           - operateur:  OU
             chaine-caracteres: '680'
           - operateur:  OU
             chaine-caracteres: '700'
           - operateur:  OU
-          - chaine-caracteres: '750'
+            chaine-caracteres: '750'
           - operateur:  OU
             chaine-caracteres: '753'
       - id: 25562
@@ -1469,7 +1471,7 @@ rules:
           - operateur:  OU
             chaine-caracteres: '983'
           - operateur:  OU
-          - chaine-caracteres: '984'
+            chaine-caracteres: '984'
           - operateur:  OU
             chaine-caracteres: '995'
           - operateur:  OU
@@ -1498,7 +1500,7 @@ rules:
           - operateur:  OU
             chaine-caracteres: '983'
           - operateur:  OU
-          - chaine-caracteres: '984'
+            chaine-caracteres: '984'
           - operateur:  OU
             chaine-caracteres: '995'
           - operateur:  OU
