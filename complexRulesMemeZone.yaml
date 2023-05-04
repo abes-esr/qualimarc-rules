@@ -1386,3 +1386,64 @@ rules:
         souszone: "1"
         presence: false
 
+  - id: 25550
+    id-excel: 
+    message: "Zone 700 : les codes fonction 020/060/407/640/680/700/750/753 doivent être enregistrés dans une zone 702, niveau Manifestation"
+    zone: 700
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25551
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '020'
+          - operateur:  OU
+            chaine-caracteres: '060'
+          - operateur:  OU
+            chaine-caracteres: '407'
+          - chaine-caracteres: '640'
+          - operateur:  OU
+            chaine-caracteres: '680'
+          - operateur:  OU
+            chaine-caracteres: '700'            
+          - chaine-caracteres: '750'
+          - operateur:  OU
+            chaine-caracteres: '753'
+      - id: 25552
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+  - id: 25560
+    id-excel: 
+    message: "Zone 701 : les codes fonction 020/060/407/640/680/700/750/753 doivent être enregistrés dans une zone 702, niveau Manifestation"
+    zone: 701
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25561
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '020'
+          - operateur:  OU
+            chaine-caracteres: '060'
+          - operateur:  OU
+            chaine-caracteres: '407'
+          - chaine-caracteres: '640'
+          - operateur:  OU
+            chaine-caracteres: '680'
+          - operateur:  OU
+            chaine-caracteres: '700'            
+          - chaine-caracteres: '750'
+          - operateur:  OU
+            chaine-caracteres: '753'
+      - id: 25562
+        type: presencesouszone
+        souszone: "1"
+        presence: false
