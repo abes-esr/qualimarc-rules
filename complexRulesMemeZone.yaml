@@ -1510,3 +1510,47 @@ rules:
         souszone: "1"
         presence: false
 
+
+  - id: 25590
+    id-excel: 
+    message: "Zone 710 : le code fonction 015 doit être enregistré dans une zone 712, niveau Manifestation"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25591
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '015'         
+      - id: 25592
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
+  - id: 25600
+    id-excel: 
+    message: "Zone 711 : le code fonction 015 doit être enregistré dans une zone 712, niveau Manifestation"
+    zone: 711
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25601
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '015'         
+      - id: 25602
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
+
+
+
