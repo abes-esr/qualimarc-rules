@@ -1354,6 +1354,8 @@ rules:
         chaines-caracteres:
           - chaine-caracteres: '555'
           - operateur:  OU
+            chaine-caracteres: '727'
+          - operateur:  OU
             chaine-caracteres: '956'
           - operateur:  OU
             chaine-caracteres: '958'
@@ -1377,6 +1379,8 @@ rules:
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           - chaine-caracteres: '555'
+          - operateur:  OU
+            chaine-caracteres: '727'
           - operateur:  OU
             chaine-caracteres: '956'
           - operateur:  OU
