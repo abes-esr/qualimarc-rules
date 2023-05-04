@@ -1286,3 +1286,54 @@ rules:
         type: presencesouszone
         souszone: "1"
         presence: false
+
+
+
+  - id: 25520
+    id-excel: 
+    message: "Zone 702 : les codes fonction 535/550/595/605/632/633/655/670/673/677/695/710/726/730/735/755 doivent être enregistrés au niveau Oeuvre, dans une zone 700 ou 701"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25521
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '535'
+          - operateur:  OU
+            chaine-caracteres: '550'
+          - operateur:  OU
+            chaine-caracteres: '595'
+          - operateur:  OU
+            chaine-caracteres: '605'
+          - operateur:  OU
+            chaine-caracteres: '632'
+          - operateur:  OU
+            chaine-caracteres: '633'
+          - operateur:  OU
+            chaine-caracteres: '655'
+          - operateur:  OU
+            chaine-caracteres: '670'
+          - operateur:  OU
+            chaine-caracteres: '673'
+          - operateur:  OU
+            chaine-caracteres: '677'
+          - operateur:  OU
+            chaine-caracteres: '695'
+          - operateur:  OU
+            chaine-caracteres: '710'
+          - operateur:  OU
+            chaine-caracteres: '726'
+          - operateur:  OU
+            chaine-caracteres: '730'
+          - operateur:  OU
+            chaine-caracteres: '735'
+          - operateur:  OU
+            chaine-caracteres: '755'
+      - id: 25522
+        type: presencesouszone
+        souszone: "1"
+        presence: false
