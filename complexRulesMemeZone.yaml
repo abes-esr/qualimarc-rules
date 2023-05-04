@@ -1408,7 +1408,8 @@ rules:
           - operateur:  OU
             chaine-caracteres: '680'
           - operateur:  OU
-            chaine-caracteres: '700'            
+            chaine-caracteres: '700'
+          - operateur:  OU
           - chaine-caracteres: '750'
           - operateur:  OU
             chaine-caracteres: '753'
@@ -1439,7 +1440,8 @@ rules:
           - operateur:  OU
             chaine-caracteres: '680'
           - operateur:  OU
-            chaine-caracteres: '700'            
+            chaine-caracteres: '700'
+          - operateur:  OU
           - chaine-caracteres: '750'
           - operateur:  OU
             chaine-caracteres: '753'
@@ -1447,3 +1449,62 @@ rules:
         type: presencesouszone
         souszone: "1"
         presence: false
+
+  - id: 25570
+    id-excel: 
+    message: "Zone 710 : les codes fonction 981/982/983/984/995/996 doivent être enregistrés dans une zone 711, niveau Oeuvre"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25571
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '981'
+          - operateur:  OU
+            chaine-caracteres: '982'
+          - operateur:  OU
+            chaine-caracteres: '983'
+          - operateur:  OU
+          - chaine-caracteres: '984'
+          - operateur:  OU
+            chaine-caracteres: '995'
+          - operateur:  OU
+            chaine-caracteres: '996'            
+      - id: 25572
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+  - id: 25580
+    id-excel: 
+    message: "Zone 712 : les codes fonction 981/982/983/984/995/996 doivent être enregistrés dans une zone 711, niveau Oeuvre"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25581
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '981'
+          - operateur:  OU
+            chaine-caracteres: '982'
+          - operateur:  OU
+            chaine-caracteres: '983'
+          - operateur:  OU
+          - chaine-caracteres: '984'
+          - operateur:  OU
+            chaine-caracteres: '995'
+          - operateur:  OU
+            chaine-caracteres: '996'            
+      - id: 25582
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
