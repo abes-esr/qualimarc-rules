@@ -1570,5 +1570,42 @@ rules:
         souszone: "1"
         presence: false
 
+  - id: 25620
+    id-excel: 
+    message: "Zone 710 : le code fonction 295 doit être enregistré dans une zone 711, niveau Oeuvre"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25621
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '295'         
+      - id: 25622
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+  - id: 25630
+    id-excel: 
+    message: "Zone 712 : le code fonction 295 doit être enregistré dans une zone 711, niveau Oeuvre"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25631
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '295'         
+      - id: 25632
+        type: presencesouszone
+        souszone: "1"
+        presence: false
 
 
