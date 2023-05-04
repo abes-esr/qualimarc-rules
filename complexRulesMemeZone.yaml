@@ -1238,3 +1238,378 @@ rules:
         souszone: "3"
         presence: false
 
+  - id: 25510
+    id-excel: 
+    message: "Zone 702 : les codes fonction 003/005/065/195/200/202/207/250/270/273/275/370/445/480 doivent être enregistrés au niveau Oeuvre, dans une zone 700 ou 701"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25511
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '003'
+          - operateur:  OU
+            chaine-caracteres: '005'
+          - operateur:  OU
+            chaine-caracteres: '065'
+          - operateur:  OU
+            chaine-caracteres: '195'
+          - operateur:  OU
+            chaine-caracteres: '200'
+          - operateur:  OU
+            chaine-caracteres: '202'
+          - operateur:  OU
+            chaine-caracteres: '207'
+          - operateur:  OU
+            chaine-caracteres: '250'
+          - operateur:  OU
+            chaine-caracteres: '270'
+          - operateur:  OU
+            chaine-caracteres: '273'
+          - operateur:  OU
+            chaine-caracteres: '275'
+          - operateur:  OU
+            chaine-caracteres: '370'
+          - operateur:  OU
+            chaine-caracteres: '445'
+          - operateur:  OU
+            chaine-caracteres: '460'
+          - operateur:  OU
+            chaine-caracteres: '470'
+          - operateur:  OU
+            chaine-caracteres: '480'
+      - id: 25512
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
+
+  - id: 25520
+    id-excel: 
+    message: "Zone 702 : les codes fonction 535/550/595/605/632/633/655/670/673/677/695/710/726/730/735/755 doivent être enregistrés au niveau Oeuvre, dans une zone 700 ou 701"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25521
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '535'
+          - operateur:  OU
+            chaine-caracteres: '550'
+          - operateur:  OU
+            chaine-caracteres: '595'
+          - operateur:  OU
+            chaine-caracteres: '605'
+          - operateur:  OU
+            chaine-caracteres: '632'
+          - operateur:  OU
+            chaine-caracteres: '633'
+          - operateur:  OU
+            chaine-caracteres: '655'
+          - operateur:  OU
+            chaine-caracteres: '670'
+          - operateur:  OU
+            chaine-caracteres: '673'
+          - operateur:  OU
+            chaine-caracteres: '677'
+          - operateur:  OU
+            chaine-caracteres: '695'
+          - operateur:  OU
+            chaine-caracteres: '710'
+          - operateur:  OU
+            chaine-caracteres: '726'
+          - operateur:  OU
+            chaine-caracteres: '730'
+          - operateur:  OU
+            chaine-caracteres: '735'
+          - operateur:  OU
+            chaine-caracteres: '755'
+      - id: 25522
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
+  - id: 25530
+    id-excel: 
+    message: "Zone 702 : les codes fonction 555/727/956/958 doivent être enregistrés dans une zone 701, niveau Oeuvre"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25531
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '555'
+          - operateur:  OU
+            chaine-caracteres: '727'
+          - operateur:  OU
+            chaine-caracteres: '956'
+          - operateur:  OU
+            chaine-caracteres: '958'
+      - id: 25532
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
+  - id: 25540
+    id-excel: 
+    message: "Zone 700 : les codes fonction 555/727/956/958 doivent être enregistrés dans une zone 701, niveau Oeuvre"
+    zone: 700
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25541
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '555'
+          - operateur:  OU
+            chaine-caracteres: '727'
+          - operateur:  OU
+            chaine-caracteres: '956'
+          - operateur:  OU
+            chaine-caracteres: '958'
+      - id: 25542
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+  - id: 25550
+    id-excel: 
+    message: "Zone 700 : les codes fonction 020/060/407/640/680/700/750/753 doivent être enregistrés dans une zone 702, niveau Manifestation"
+    zone: 700
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25551
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '020'
+          - operateur:  OU
+            chaine-caracteres: '060'
+          - operateur:  OU
+            chaine-caracteres: '407'
+          - operateur:  OU
+            chaine-caracteres: '640'
+          - operateur:  OU
+            chaine-caracteres: '680'
+          - operateur:  OU
+            chaine-caracteres: '700'
+          - operateur:  OU
+            chaine-caracteres: '750'
+          - operateur:  OU
+            chaine-caracteres: '753'
+      - id: 25552
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+  - id: 25560
+    id-excel: 
+    message: "Zone 701 : les codes fonction 020/060/407/640/680/700/750/753 doivent être enregistrés dans une zone 702, niveau Manifestation"
+    zone: 701
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25561
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '020'
+          - operateur:  OU
+            chaine-caracteres: '060'
+          - operateur:  OU
+            chaine-caracteres: '407'
+          - operateur:  OU
+            chaine-caracteres: '640'
+          - operateur:  OU
+            chaine-caracteres: '680'
+          - operateur:  OU
+            chaine-caracteres: '700'
+          - operateur:  OU
+            chaine-caracteres: '750'
+          - operateur:  OU
+            chaine-caracteres: '753'
+      - id: 25562
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+  - id: 25570
+    id-excel: 
+    message: "Zone 710 : les codes fonction 981/982/983/984/995/996 doivent être enregistrés dans une zone 711, niveau Oeuvre"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25571
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '981'
+          - operateur:  OU
+            chaine-caracteres: '982'
+          - operateur:  OU
+            chaine-caracteres: '983'
+          - operateur:  OU
+            chaine-caracteres: '984'
+          - operateur:  OU
+            chaine-caracteres: '995'
+          - operateur:  OU
+            chaine-caracteres: '996'            
+      - id: 25572
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+  - id: 25580
+    id-excel: 
+    message: "Zone 712 : les codes fonction 981/982/983/984/995/996 doivent être enregistrés dans une zone 711, niveau Oeuvre"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25581
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '981'
+          - operateur:  OU
+            chaine-caracteres: '982'
+          - operateur:  OU
+            chaine-caracteres: '983'
+          - operateur:  OU
+            chaine-caracteres: '984'
+          - operateur:  OU
+            chaine-caracteres: '995'
+          - operateur:  OU
+            chaine-caracteres: '996'            
+      - id: 25582
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
+  - id: 25590
+    id-excel: 
+    message: "Zone 710 : le code fonction 015 doit être enregistré dans une zone 712, niveau Manifestation"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25591
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '015'         
+      - id: 25592
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
+  - id: 25600
+    id-excel: 
+    message: "Zone 711 : le code fonction 015 doit être enregistré dans une zone 712, niveau Manifestation"
+    zone: 711
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25601
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '015'         
+      - id: 25602
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
+  - id: 25610
+    id-excel: 
+    message: "Zone 712 : le code fonction 725 doit être enregistré dans une zone 710 ou 711, niveau Oeuvre"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25611
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '725'         
+      - id: 25612
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+  - id: 25620
+    id-excel: 
+    message: "Zone 710 : le code fonction 295 doit être enregistré dans une zone 711, niveau Oeuvre"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25621
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '295'         
+      - id: 25622
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+  - id: 25630
+    id-excel: 
+    message: "Zone 712 : le code fonction 295 doit être enregistré dans une zone 711, niveau Oeuvre"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25631
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '295'         
+      - id: 25632
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
