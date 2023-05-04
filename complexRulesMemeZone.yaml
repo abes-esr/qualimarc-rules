@@ -1337,3 +1337,52 @@ rules:
         type: presencesouszone
         souszone: "1"
         presence: false
+
+
+  - id: 25530
+    id-excel: 
+    message: "Zone 702 : les codes fonction 555/956/958 doivent être enregistrés dans une zone 701, niveau Oeuvre"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25531
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '555'
+          - operateur:  OU
+            chaine-caracteres: '956'
+          - operateur:  OU
+            chaine-caracteres: '958'
+      - id: 25532
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
+
+  - id: 25540
+    id-excel: 
+    message: "Zone 700 : les codes fonction 555/956/958 doivent être enregistrés dans une zone 701, niveau Oeuvre"
+    zone: 700
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25541
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '555'
+          - operateur:  OU
+            chaine-caracteres: '956'
+          - operateur:  OU
+            chaine-caracteres: '958'
+      - id: 25542
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+
