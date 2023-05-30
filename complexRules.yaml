@@ -3006,6 +3006,10 @@ rules:
        - Z
      regles:
        - id: 7891
+         type: presencezone
+         zone: '183'
+         presence: false
+       - id: 7892
          type: presencechainecaracteres
          zone: '183'
          souszone: a
@@ -3032,6 +3036,7 @@ rules:
              chaine-caracteres:    "cb"
            - operateur: OU
              chaine-caracteres:    "cc"
+         operateur-booleen: OU
        - id: 7893
          type: nombrezone
          zone: '215'
