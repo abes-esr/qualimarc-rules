@@ -3018,5 +3018,5 @@ rules:
          type: nombrezone
          zone: '215'
          operateur:    INFERIEUR
-         occurences: 2
+         occurrences: 2
          presence: true
