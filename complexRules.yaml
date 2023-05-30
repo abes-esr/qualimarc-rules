@@ -3019,7 +3019,7 @@ rules:
          type-de-verification:    NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    czz
-         operateur-booleen: OU
+         operateur-booleen: ET
        - id: 7893
          type: nombrezone
          zone: '215'
