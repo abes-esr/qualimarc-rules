@@ -3032,7 +3032,6 @@ rules:
              chaine-caracteres:    "cb"
            - operateur: OU
              chaine-caracteres:    "cc"
-         operateur-booleen: ET
        - id: 7893
          type: nombrezone
          zone: '215'
