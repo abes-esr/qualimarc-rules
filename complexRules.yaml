@@ -3008,17 +3008,30 @@ rules:
        - id: 7891
          type: presencechainecaracteres
          zone: '183'
-         souszone:   a
-         type-de-verification:    NECONTIENTPAS
+         souszone: a
+         type-de-verification:     COMMENCE
          chaines-caracteres:
-           - chaine-caracteres:    ceb
-       - id: 7892
-         type: presencechainecaracteres
-         zone: '183'
-         souszone:   a
-         type-de-verification:    NECONTIENTPAS
-         chaines-caracteres:
-           - chaine-caracteres:    czz
+           - chaine-caracteres:    "s"
+           - operateur: OU
+             chaine-caracteres:    "g"
+           - operateur: OU
+             chaine-caracteres:    "h"
+           - operateur: OU
+             chaine-caracteres:    "p"
+           - operateur: OU
+             chaine-caracteres:    "n"
+           - operateur: OU
+             chaine-caracteres:    "e"
+           - operateur: OU
+             chaine-caracteres:    "v"
+           - operateur: OU
+             chaine-caracteres:    "cd"
+           - operateur: OU
+             chaine-caracteres:    "ca"
+           - operateur: OU
+             chaine-caracteres:    "cb"
+           - operateur: OU
+             chaine-caracteres:    "cc"
          operateur-booleen: ET
        - id: 7893
          type: nombrezone
