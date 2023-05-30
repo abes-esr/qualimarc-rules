@@ -3012,9 +3012,15 @@ rules:
          type-de-verification:    NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    ceb
-           - operateur:            ET
-             chaine-caracteres:    czz
        - id: 7892
+         type: presencechainecaracteres
+         zone: '183'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    czz
+         operateur-booleen: OU
+       - id: 7893
          type: nombrezone
          zone: '215'
          operateur:    INFERIEUR
