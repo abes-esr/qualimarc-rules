@@ -3012,7 +3012,7 @@ rules:
          type-de-verification:    NECONTIENTPAS
          chaines-caracteres:
            - chaine-caracteres:    ceb
-           - operateur:            OU
+           - operateur:            ET
              chaine-caracteres:    czz
        - id: 7892
          type: nombrezone
