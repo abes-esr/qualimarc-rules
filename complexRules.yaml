@@ -3019,3 +3019,4 @@ rules:
          zone: '215'
          operateur:    INFERIEUR
          occurrences: 2
+         operateur-booleen: ET
