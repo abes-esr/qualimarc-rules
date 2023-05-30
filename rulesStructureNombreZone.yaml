@@ -1,18 +1,18 @@
 ---
 #ID de 300 à 399
 rules:
-  - id:          300
-    id-excel:    191
-    type-doc:
-    -  Z
-    jeux-de-regles:
-    -  4 #(2XX)
-    type:        nombrezone
-    message:     "Document multimédia multisupport : plusieurs zones 215 doivent être enregistrées (il doit y avoir autant de zones 215 que de types de support constituant le document)"
-    zone:        215
-    priorite:    P1
-    operateur:   INFERIEUR
-    occurrences: 2
+#   - id:          300
+#     id-excel:    191
+#     type-doc:
+#     -  Z
+#     jeux-de-regles:
+#     -  4 #(2XX)
+#     type:        nombrezone
+#     message:     "Document multimédia multisupport : plusieurs zones 215 doivent être enregistrées (il doit y avoir autant de zones 215 que de types de support constituant le document)"
+#     zone:        215
+#     priorite:    P1
+#     operateur:   INFERIEUR
+#     occurrences: 2
 
   - id:          301
     id-excel:    192
