@@ -2995,3 +2995,28 @@ rules:
          type-de-verification: STRICTEMENT
          valeur: '1'
          operateur-booleen: ET
+
+
+#annule et replace la règle 300 (ajout de condition de présence de 183$a ceb/czz)
+   - id: 7890
+     id-excel: 191
+     message: "Document multimédia multisupport : plusieurs zones 215 doivent être enregistrées (il doit y avoir autant de zones 215 que de types de support constituant le document)"
+     priorite: P1
+     type-doc:
+       - Z
+     regles:
+       - id: 7891
+         type: presencechainecaracteres
+         zone: '183'
+         souszone:   a
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    ceb
+           - operateur:            OU
+             chaine-caracteres:    czz
+       - id: 7892
+         type: nombrezone
+         zone: '215'
+         operateur:    INFERIEUR
+         occurences: 2
+         presence: true
