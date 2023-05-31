@@ -3004,7 +3004,7 @@ rules:
      priorite: P1
      type-doc:
        - Z
-    jeux-de-regles:
+     jeux-de-regles:
        - 4 #2XX
      regles:
        - id: 7891
