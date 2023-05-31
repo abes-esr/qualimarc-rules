@@ -3004,6 +3004,8 @@ rules:
      priorite: P1
      type-doc:
        - Z
+    jeux-de-regles:
+       - 4 #2XX
      regles:
        - id: 7891
          type: presencezone
@@ -3042,4 +3044,56 @@ rules:
          zone: '215'
          operateur:    INFERIEUR
          occurrences: 2
+         operateur-booleen: ET
+
+   - id: 7900
+     id-excel: 723
+     message: "Zones 60X : le document ne comporte aucune zone d'indexation sujet/genre-forme. Vérifiez s'il pourrait être enrichi par une ou plusieurs zones d'indexation 60X"
+     priorite: P2
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 7901
+         type: presencezone
+         zone: '600'
+         presence: false
+       - id: 7902
+         type: presencezone
+         zone: '601'
+         presence: false
+         operateur-booleen: ET
+       - id: 7903
+         type: presencezone
+         zone: '602'
+         presence: false
+         operateur-booleen: ET
+       - id: 7904
+         type: presencezone
+         zone: '604'
+         presence: false
+         operateur-booleen: ET
+        - id: 7905
+         type: presencezone
+         zone: '605'
+         presence: false
+         operateur-booleen: ET
+        - id: 7906
+         type: presencezone
+         zone: '606'
+         presence: false
+         operateur-booleen: ET
+       - id: 7907
+         type: presencezone
+         zone: '607'
+         presence: false
+         operateur-booleen: ET
+        - id: 7908
+         type: presencezone
+         zone: '608'
+         presence: false
+         operateur-booleen: ET
+       - id: 7909
+         type: presencezone
+         zone: '616'
+         presence: false
          operateur-booleen: ET
