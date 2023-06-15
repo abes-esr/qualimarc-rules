@@ -120,11 +120,24 @@ rules:
 
 
 
-         
+  #exclusion type doc BD (ressources continues) pour cohérence avec consignes et GM / juin 2023       
    - id: 5050
      id-excel: 158
      message: "Zone 210  obsolète :  à remplacer par une zone 214 (document en main, en sélectionnant les bons indicateurs)"
      priorite: P1
+     type-doc:
+       -    A
+       -    B
+       -    K
+       -    O
+       -    N
+       -    I
+       -    F
+       -    Z
+       -    V
+       -    G
+       -    M
+       -    PC
      regles:
        - id: 5051
          type: presencezone
