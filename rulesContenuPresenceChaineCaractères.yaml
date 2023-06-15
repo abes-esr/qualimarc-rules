@@ -204,7 +204,7 @@ rules:
           chaine-caracteres:    "S.l"
           
           
-          
+#suppression du terme "sn" car engendre des erreur de détection (comme sur Disney !) juin 2023         
     - id: 1014
       id-excel: 186
       message: "Zone 214 : la mention [s.n.] doit être remplacée par [éditeur inconnu]"
@@ -220,9 +220,7 @@ rules:
         - operateur:            OU
           chaine-caracteres:    "S.n"
         - operateur:            OU
-          chaine-caracteres:    "S.N"
-        - operateur:            OU
-          chaine-caracteres:    "sn"          
+          chaine-caracteres:    "S.N"        
 
     - id: 1015
       id-excel: 185
