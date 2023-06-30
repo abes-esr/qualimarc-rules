@@ -1101,27 +1101,27 @@ rules:
          operateur-booleen: ET
 
 # désactivation temporaire règle 7210 pour débugage le 20/06/23 - voir Jira 
-   # - id: 7210
-   #   id-excel: 320
-   #   message: "Zone 488 : dans la notice du document lié indiqué en $0, le lien réciproque en 488 est absent ou erroné. Ajouter ou corriger le lien vers cette notice "
-   #   priorite: P1
-   #   jeux-de-regles:
-   #     - 3  #liens
-   #   regles:
-   #     - id: 7211
-   #       type: presencesouszone
-   #       zone: '488'
-   #       souszone:    0
-   #       presence: true
-   #     - id: 7212
-   #       type: dependance
-   #       zone: '488'
-   #       souszone:   0
-   #       type-notice-liee: BIBLIO
-   #     - id: 7213
-   #       type: reciprocite
-   #       zone: '488'
-   #       souszone:   0
+   - id: 7210
+     id-excel: 320
+     message: "Zone 488 : dans la notice du document lié indiqué en $0, le lien réciproque en 488 est absent ou erroné. Ajouter ou corriger le lien vers cette notice "
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7211
+         type: presencesouszone
+         zone: '488'
+         souszone:    0
+         presence: true
+       - id: 7212
+         type: dependance
+         zone: '488'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7213
+         type: reciprocite
+         zone: '488'
+         souszone:   0
 
 
 
