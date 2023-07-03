@@ -2880,7 +2880,7 @@ rules:
        -    M
        -    BD
        -	   PC
-      regles:
+     regles:
        - id: 7841
          type: nombrezone
          zone: '225'
