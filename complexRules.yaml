@@ -1101,27 +1101,27 @@ rules:
          operateur-booleen: ET
 
 # désactivation temporaire règle 7210 pour débugage le 20/06/23 - voir Jira 
-   # - id: 7210
-   #   id-excel: 320
-   #   message: "Zone 488 : dans la notice du document lié indiqué en $0, le lien réciproque en 488 est absent ou erroné. Ajouter ou corriger le lien vers cette notice "
-   #   priorite: P1
-   #   jeux-de-regles:
-   #     - 3  #liens
-   #   regles:
-   #     - id: 7211
-   #       type: presencesouszone
-   #       zone: '488'
-   #       souszone:    0
-   #       presence: true
-   #     - id: 7212
-   #       type: dependance
-   #       zone: '488'
-   #       souszone:   0
-   #       type-notice-liee: BIBLIO
-   #     - id: 7213
-   #       type: reciprocite
-   #       zone: '488'
-   #       souszone:   0
+   - id: 7210
+     id-excel: 320
+     message: "Zone 488 : dans la notice du document lié indiqué en $0, le lien réciproque en 488 est absent ou erroné. Ajouter ou corriger le lien vers cette notice "
+     priorite: P1
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7211
+         type: presencesouszone
+         zone: '488'
+         souszone:    0
+         presence: true
+       - id: 7212
+         type: dependance
+         zone: '488'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7213
+         type: reciprocite
+         zone: '488'
+         souszone:   0
 
 
 
@@ -2837,8 +2837,8 @@ rules:
      message:     "Zone 102 : puisqu'un lieu a été renseigné en sous-zone 214$a, une sous-zone 102$a peut être créée, mentionnant le code du pays de publication"
      priorite:    P1
      jeux-de-regles:
-     - 1  #1XX
-     - 4  #2XX
+       - 1  #1XX
+       - 4  #2XX
      regles:
        - id: 7831
          type: presencezone
@@ -2859,7 +2859,7 @@ rules:
            - chaine-caracteres:    "inconnu"
          operateur-booleen: ET
 
-
+#modif 7840 : exclusion des K dans type-doc - dde ORX juillet 2023
    - id: 7840
      id-excel: 198
      message: "Zone 225 : puisqu'une mention de collection est déclarée (indicateur 1 = 0), une zone 410 (avec lien à la notice de collection en sous-zone $0) est obligatoire"
@@ -2867,6 +2867,19 @@ rules:
      jeux-de-regles:
        - 3  #liens$0/$3
        - 4 #2XX
+     type-doc:
+       -    A
+       -    B
+       -    O
+       -    N
+       -    I
+       -    F
+       -    Z
+       -    V
+       -    G
+       -    M
+       -    BD
+       -    PC
      regles:
        - id: 7841
          type: nombrezone
@@ -2885,7 +2898,6 @@ rules:
          type-de-verification: STRICTEMENT
          valeur: '0'
          operateur-booleen: ET
-
 
 
    - id: 7850
@@ -2954,7 +2966,7 @@ rules:
          valeur: '2'
          operateur-booleen: ET
 
-
+#modif  7870 : exclusion des K dans type-doc - dde ORX juillet 2023
    - id: 7870
      id-excel: 202
      message: "Zone 225 : puisque une mention de collection est déclarée (indicateur 1 = 2), une zone 410 (avec lien à la notice de collection) est obligatoire"
@@ -2962,6 +2974,19 @@ rules:
      jeux-de-regles:
        - 3  #liens$0/$3
        - 4 #2XX
+     type-doc:
+       -    A
+       -    B
+       -    O
+       -    N
+       -    I
+       -    F
+       -    Z
+       -    V
+       -    G
+       -    M
+       -    BD
+       -    PC
      regles:
        - id: 7871
          type: nombrezone
