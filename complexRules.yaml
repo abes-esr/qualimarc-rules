@@ -2986,7 +2986,7 @@ rules:
        -    G
        -    M
        -    BD
-       -	   PC
+       -    PC
      regles:
        - id: 7871
          type: nombrezone
