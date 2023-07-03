@@ -2907,7 +2907,7 @@ rules:
      jeux-de-regles:
        - 3  #liens$0/$3
        - 4 #2XX
-      regles:
+     regles:
        - id: 7851
          type: nombrezone
          zone: '225'
