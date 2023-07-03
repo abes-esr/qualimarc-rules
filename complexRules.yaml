@@ -3014,19 +3014,6 @@ rules:
      jeux-de-regles:
        - 3  #liens$0/$3
        - 4 #2XX
-     type-doc:
-       -    A
-       -    B
-       -    O
-       -    N
-       -    I
-       -    F
-       -    Z
-       -    V
-       -    G
-       -    M
-       -    BD
-       -	   PC
      regles:
        - id: 7881
          type: nombrezone
