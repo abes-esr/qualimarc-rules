@@ -2879,7 +2879,7 @@ rules:
        -    G
        -    M
        -    BD
-       -	   PC
+       -    PC
      regles:
        - id: 7841
          type: nombrezone
