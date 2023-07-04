@@ -608,3 +608,13 @@ rules:
       -    G
       -    K
       -    PC
+
+    - id:         541
+      id-excel:   727  
+      type:        presencezone
+      message:     "Zone 676 : une classification décimale Dewey pourrait être enregistrée dans une zone 676 : elle apporterait des précisions sur la discipline couverte par le document décrit"
+      zone:        676
+      priorite:    P2
+      presence:    false
+
+
