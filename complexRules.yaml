@@ -3135,3 +3135,166 @@ rules:
          zone: '616'
          presence: false
          operateur-booleen: ET
+
+
+   - id: 7910
+     id-excel: 724
+     message: "Si la ressource décrite est une feuille de carte appartenant à une série, alors la relation entre la feuille et la série dont elle fait partie est à enregistrer en zone 461, et non en 410"
+     priorite: P2
+     type-doc:
+       -    K
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7911
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '0'
+       - id: 7912
+         type: presencezone
+         zone: '461'
+         presence: false
+         operateur-booleen: ET
+       - id: 7913
+         type: presencezone
+         zone: '410'
+         presence: true
+         operateur-booleen: ET
+
+
+   - id: 7920
+     id-excel: 724
+     message: "Si la ressource décrite est une feuille de carte appartenant à une série, alors la relation entre la feuille et la série dont elle fait partie est à enregistrer en zone 461, et non en 410"
+     priorite: P2
+     type-doc:
+       -    K
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7921
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '2'
+       - id: 7922
+         type: presencezone
+         zone: '461'
+         presence: false
+         operateur-booleen: ET
+       - id: 7923
+         type: presencezone
+         zone: '410'
+         presence: true
+         operateur-booleen: ET
+
+
+   - id: 7930
+     id-excel: 725
+     message: "Si la ressource décrite est une carte appartenant à une collection éditoriale, alors la relation entre la carte et la collection dont elle fait partie est à enregistrer en zone 410, et non en 461"
+     priorite: P2
+     type-doc:
+       -    K
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7931
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '0'
+       - id: 7932
+         type: presencezone
+         zone: '461'
+         presence: true
+         operateur-booleen: ET
+       - id: 7933
+         type: presencezone
+         zone: '410'
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 7940
+     id-excel: 725
+     message: "Si la ressource décrite est une carte appartenant à une collection éditoriale, alors la relation entre la carte et la collection dont elle fait partie est à enregistrer en zone 410, et non en 461"
+     priorite: P2
+     type-doc:
+       -    K
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7941
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '2'
+       - id: 7942
+         type: presencezone
+         zone: '461'
+         presence: true
+         operateur-booleen: ET
+       - id: 7943
+         type: presencezone
+         zone: '410'
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 7950
+     id-excel: 726
+     message: "Puisqu'une mention de collection est déclarée (indicateur 1 = 0), une zone avec lien à la notice de collection en sous-zone $0 est obligatoire : si la ressource décrite est une feuille de carte appartenant à une série, alors une relation entre la feuille et la série dont elle fait partie est à enregistrer en zone 461 ; si la ressource décrite est une carte appartenant à une collection éditoriale, alors une relation entre la carte et la collection dont elle fait partie est à enregistrer en zone 410"
+     priorite: P1
+     type-doc:
+       -    K
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7951
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '0'
+       - id: 7952
+         type: presencezone
+         zone: '461'
+         presence: false
+         operateur-booleen: ET
+       - id: 7953
+         type: presencezone
+         zone: '410'
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 7960
+     id-excel: 726
+     message: "Puisqu'une mention de collection est déclarée (indicateur 1 = 2), une zone avec lien à la notice de collection en sous-zone $0 est obligatoire : si la ressource décrite est une feuille de carte appartenant à une série, alors une relation entre la feuille et la série dont elle fait partie est à enregistrer en zone 461 ; si la ressource décrite est une carte appartenant à une collection éditoriale, alors une relation entre la carte et la collection dont elle fait partie est à enregistrer en zone 410"
+     priorite: P1
+     type-doc:
+       -    K
+     jeux-de-regles:
+       - 3  #liens
+     regles:
+       - id: 7961
+         type: indicateur
+         zone: '225'
+         indicateur: 1
+         type-de-verification: STRICTEMENT
+         valeur: '2'
+       - id: 7962
+         type: presencezone
+         zone: '461'
+         presence: false
+         operateur-booleen: ET
+       - id: 7963
+         type: presencezone
+         zone: '410'
+         presence: false
+         operateur-booleen: ET
+
