@@ -3154,13 +3154,13 @@ rules:
          valeur: '0'
        - id: 7912
          type: presencezone
-         zone: '461'
-         presence: false
+         zone: '410'
+         presence: true
          operateur-booleen: ET
        - id: 7913
          type: presencezone
-         zone: '410'
-         presence: true
+         zone: '461'
+         presence: false
          operateur-booleen: ET
 
 
@@ -3181,13 +3181,13 @@ rules:
          valeur: '2'
        - id: 7922
          type: presencezone
-         zone: '461'
-         presence: false
+         zone: '410'
+         presence: true
          operateur-booleen: ET
        - id: 7923
          type: presencezone
-         zone: '410'
-         presence: true
+         zone: '461'
+         presence: false
          operateur-booleen: ET
 
 
