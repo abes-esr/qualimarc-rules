@@ -514,8 +514,6 @@ rules:
       -    SOUTENANCE
 
 
-
-
     - id:         537
       id-excel:    717
       type:        presencezone
@@ -619,9 +617,40 @@ rules:
 
 
     - id:         542
-      id-excel:   730  
+      id-excel:   730
+      jeux-de-regles:
+      -  4  #2XX
       type:        presencezone
       message:     "Zone 215 absente : vérifiez si des informations liées à la description matérielle de la ressource peuvent être ajoutées"
       zone:        215
       priorite:    P2
       presence:    false
+
+
+    - id:         543
+      id-excel:   729 
+      type-doc:
+      -  A
+      -  B
+      -  K
+      -  N
+      -  I
+      -  F
+      -  Z
+      -  V
+      -  G
+      -  M
+      -  PC
+      jeux-de-regles:
+      -  9  # Identifiants
+      type:        presencezone
+      message:     "Si la ressource décrite est identifiée par un EAN, sa transcription dans la notice est obligatoire dans une zone 073"
+      zone:        073
+      priorite:    P2
+      presence:    false
+
+
+
+
+
+
