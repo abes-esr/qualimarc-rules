@@ -776,7 +776,7 @@ rules:
     - id:                      1052
       id-excel:                511
       type:                     presencechainecaracteres
-      message:                  "Zone 856 : la sous-zone $2 contient le terme générique 'Texte du lien' : modifier ou supprimer cette sous-zone. "
+      message:                  "Zone 856 : la sous-zone $2 contient le terme générique 'Texte du lien' : modifier ou supprimer cette sous-zone"
       zone:                     856
       priorite:                 P1
       souszone:                 2
