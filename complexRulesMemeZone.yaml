@@ -1612,4 +1612,29 @@ rules:
         souszone: "1"
         presence: false
 
-
+#règle initiale 7170 ; ajout présence de $5 pour contourner les données d'exemplaire qui sont exportées suite ticket
+  - id:         25640
+    id-excel:    509
+    message:     "Zone 856 : puisque le document décrit n'est pas une ressource électronique, cette zone doit être supprimée"
+    zone: 856
+    priorite:    P1
+    type-doc:
+      -  A
+      -  B
+      -  K
+      -  N
+      -  I
+      -  F
+      -  Z
+      -  V
+      -  G
+      -  M
+      -  PC
+    regles:
+      - id: 25641
+        type: presencezone
+        presence: true
+      - id: 25642
+        type: presencesouszone
+        souszone: "5"
+        presence: false

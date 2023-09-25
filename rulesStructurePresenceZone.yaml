@@ -484,7 +484,7 @@ rules:
     - id:          534
       id-excel:    233
       type:        presencezone
-      message:     "Zone 327 : vérifier si les informations enregistrées signalent bien la présence et/ou la nature d'un contenu intéressant dans le volume décrit. Toute information liée aux tables des matières/sommaires doit être enregistrée en zone 359"
+      message:     "Zone 327 : vérifier si les informations enregistrées signalent bien la présence et/ou la nature d'un contenu intéressant dans la ressource décrite. Toute information liée aux tables des matières/sommaires doit être enregistrée en zone 359"
       zone:        327
       priorite:    P2
       presence:    true
@@ -512,8 +512,6 @@ rules:
       presence:    true
       type-these:
       -    SOUTENANCE
-
-
 
 
     - id:         537
@@ -616,5 +614,43 @@ rules:
       zone:        676
       priorite:    P2
       presence:    false
+
+
+    - id:         542
+      id-excel:   730
+      jeux-de-regles:
+      -  4  #2XX
+      type:        presencezone
+      message:     "Zone 215 absente : vérifiez si des informations liées à la description matérielle de la ressource peuvent être ajoutées"
+      zone:        215
+      priorite:    P2
+      presence:    false
+
+
+    - id:         543
+      id-excel:   729 
+      type-doc:
+      -  A
+      -  B
+      -  K
+      -  N
+      -  I
+      -  F
+      -  Z
+      -  V
+      -  G
+      -  M
+      -  PC
+      jeux-de-regles:
+      -  9  # Identifiants
+      type:        presencezone
+      message:     "Si la ressource décrite est identifiée par un EAN, sa transcription dans la notice est obligatoire dans une zone 073"
+      zone:        073
+      priorite:    P2
+      presence:    false
+
+
+
+
 
 

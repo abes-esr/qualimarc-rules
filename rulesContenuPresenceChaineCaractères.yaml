@@ -748,3 +748,75 @@ rules:
       chaines-caracteres:
         - chaine-caracteres:    'Titre parallèle'
 
+
+    - id:                      1050
+      id-excel:                513
+      type:                     presencechainecaracteres
+      message:                  "Zone 856 : la sous-zone $u contient le terme générique 'URL' : modifier ou supprimer cette sous-zone"
+      zone:                     856
+      priorite:                 P1
+      souszone:                 u
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'URL'
+
+
+    - id:                      1051
+      id-excel:                512
+      type:                     presencechainecaracteres
+      message:                  "Zone 856 : la sous-zone $q contient le terme générique 'Format' : modifier ou supprimer cette sous-zone"
+      zone:                     856
+      priorite:                 P1
+      souszone:                 q
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Format'
+
+
+    - id:                      1052
+      id-excel:                511
+      type:                     presencechainecaracteres
+      message:                  "Zone 856 : la sous-zone $2 contient le terme générique 'Texte du lien' : modifier ou supprimer cette sous-zone"
+      zone:                     856
+      priorite:                 P1
+      souszone:                 2
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Texte du lien'
+
+
+    - id:                       1053
+      id-excel:                 451
+      type:                     presencechainecaracteres
+      message:                  "Zone 701 : la sous-zone $a contient le terme générique 'Nom Co-auteur' ou 'Nom Directeur de thèse' : modifier ou supprimer cette sous-zone"
+      zone:                     701
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Nom Co-auteur
+        - operateur:            OU
+          chaine-caracteres:    Nom Directeur de thèse
+      jeux-de-regles: 
+      - 7 #responsabilités
+
+
+    - id:                       1054
+      id-excel:                 459
+      type:                     presencechainecaracteres
+      message:                  "Zone 702 : la sous-zone $a contient le terme générique 'Nom' ou 'Nom Auteur' ou 'Auteur secondaire' ou 'Nom Auteur relatif à la manifestation ou à l'item' : modifier ou supprimer cette sous-zone"
+      zone:                     702
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Nom
+        - operateur:            OU
+          chaine-caracteres:    Nom Auteur
+        - operateur:            OU
+          chaine-caracteres:    "Nom Auteur relatif à la manifestation ou à l'item"
+        - operateur:            OU
+          chaine-caracteres:    "Auteur secondaire"
+      jeux-de-regles: 
+      - 7 #responsabilités
+      

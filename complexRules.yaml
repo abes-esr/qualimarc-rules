@@ -1,7 +1,7 @@
 ---
 rules:
 #REGLES VALIDEES AURELIE
-# NOTA IMPORTANT : ID principal (règle complexe) à partir de 5000 puis décliné en dizaine (5010-5020-5030....)
+# NOTA IMPORTANT : ID principal (règle complexe) à partir de 5000 puis décliné en dizaine (5010-5020-5030....) 
 # ID secondaire (règles simples qui composent la règle complexe) : reprend l'ID principal, décliné par unité (exemple pour règle complexe 5000 : 5001-5002-5003...)
 
    - id: 5000
@@ -971,35 +971,35 @@ rules:
          presence: true
          operateur-booleen: ET
 
-
-   - id:         7170
-     id-excel:    509
-     message:     "Zone 856 : puisque le document décrit n'est pas une ressource électronique, cette zone doit être supprimée"
-     priorite:    P1
-     type-doc:
-       -  A
-       -  B
-       -  K
-       -  BD
-       -  N
-       -  I
-       -  F
-       -  Z
-       -  V
-       -  G
-       -  M
-       -  PC
-     regles:
-       - id: 7171
-         type: presencezone
-         zone: '856'
-         presence: true
-       - id: 7172
-         type: typedocument
-         position: 1
-         type-de-verification: STRICTEMENTDIFFERENT
-         valeur: o
-         operateur-booleen: ET
+#désactivation règle 7170 au profit de 25640 et 7970 (exclusion des BD et des $5 données d'exemplaires) le 25/09/23
+   # - id:         7170
+   #   id-excel:    509
+   #   message:     "Zone 856 : puisque le document décrit n'est pas une ressource électronique, cette zone doit être supprimée"
+   #   priorite:    P1
+   #   type-doc:
+   #     -  A
+   #     -  B
+   #     -  K
+   #     -  BD
+   #     -  N
+   #     -  I
+   #     -  F
+   #     -  Z
+   #     -  V
+   #     -  G
+   #     -  M
+   #     -  PC
+   #   regles:
+   #     - id: 7171
+   #       type: presencezone
+   #       zone: '856'
+   #       presence: true
+   #     - id: 7172
+   #       type: typedocument
+   #       position: 1
+   #       type-de-verification: STRICTEMENTDIFFERENT
+   #       valeur: o
+   #       operateur-booleen: ET
 
 
    - id:         7180
@@ -3298,3 +3298,28 @@ rules:
          presence: false
          operateur-booleen: ET
 
+
+#7150 : complément de la règle github 25640 (inclusion des ressources continues électroniques)
+   - id:         7970
+     id-excel:    509
+     message:     "Zone 856 : puisque la ressource continue décrite n'est pas électronique, cette zone doit être supprimée"
+     priorite:    P1
+     type-doc:
+     -    BD
+     regles:
+       - id: 7971
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: o
+       - id: 7972
+         type: presencezone
+         zone: '856'
+         presence: true
+         operateur-booleen: ET
+       - id: 7973
+         type: presencesouszone
+         zone: '856'
+         souszone: '5'
+         presence: false
+         operateur-booleen: ET
