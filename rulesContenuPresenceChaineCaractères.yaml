@@ -748,3 +748,38 @@ rules:
       chaines-caracteres:
         - chaine-caracteres:    'Titre parallèle'
 
+
+    - id:                      1050
+      id-excel:                513
+      type:                     presencechainecaracteres
+      message:                  "Zone 856 : la sous-zone $u contient le terme générique 'URL' : modifier ou supprimer cette sous-zone"
+      zone:                     856
+      priorite:                 P1
+      souszone:                 u
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'URL'
+
+
+    - id:                      1051
+      id-excel:                512
+      type:                     presencechainecaracteres
+      message:                  "Zone 856 : la sous-zone $q contient le terme générique 'Format' : modifier ou supprimer cette sous-zone"
+      zone:                     856
+      priorite:                 P1
+      souszone:                 q
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Format'
+
+
+    - id:                      1052
+      id-excel:                511
+      type:                     presencechainecaracteres
+      message:                  "Zone 856 : la sous-zone $2 contient le terme générique 'Texte du lien' : modifier ou supprimer cette sous-zone. "
+      zone:                     856
+      priorite:                 P1
+      souszone:                 2
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    'Texte du lien'
