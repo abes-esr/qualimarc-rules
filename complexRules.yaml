@@ -3298,3 +3298,28 @@ rules:
          presence: false
          operateur-booleen: ET
 
+
+#7150 : complément de la règle github 25640 (inclusion des ressources continues électroniques)
+   - id:         7970
+     id-excel:    510
+     message:     "Zone 856 : puisque la ressource continue décrite n'est pas électronique, cette zone doit être supprimée"
+     priorite:    P1
+     type-doc:
+     -    BD
+     regles:
+       - id: 7971
+         type: typedocument
+         position: 1
+         type-de-verification: STRICTEMENTDIFFERENT
+         valeur: o
+       - id: 7972
+         type: presencezone
+         zone: '856'
+         presence: true
+         operateur-booleen: ET
+       - id: 7973
+         type: presencesouszone
+         zone: '856'
+         souszone: '5'
+         presence: false
+         operateur-booleen: ET
