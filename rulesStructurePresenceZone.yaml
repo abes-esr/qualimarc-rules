@@ -618,3 +618,10 @@ rules:
       presence:    false
 
 
+    - id:         542
+      id-excel:   730  
+      type:        presencezone
+      message:     "Zone 215 absente : vérifiez si des informations liées à la description matérielle de la ressource peuvent être ajoutées"
+      zone:        215
+      priorite:    P2
+      presence:    false
