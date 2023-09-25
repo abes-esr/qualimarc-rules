@@ -1630,7 +1630,7 @@ rules:
       -  G
       -  M
       -  PC
-   regles:
+    regles:
       - id: 25641
         type: presencezone
         zone: '856'
