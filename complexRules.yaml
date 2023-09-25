@@ -3301,7 +3301,7 @@ rules:
 
 #7150 : complément de la règle github 25640 (inclusion des ressources continues électroniques)
    - id:         7970
-     id-excel:    510
+     id-excel:    509
      message:     "Zone 856 : puisque la ressource continue décrite n'est pas électronique, cette zone doit être supprimée"
      priorite:    P1
      type-doc:
