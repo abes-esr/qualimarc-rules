@@ -3337,13 +3337,13 @@ rules:
          zone: '214'
          souszone: 'd'
          zonecible: '100'
-	 souszonecible: 'A'
+         souszonecible: 'A'
        - id: 7982
          type: comparaisoncontenusouszone
          zone: '100'
          souszone: 'A'
-	 type-de-verification: NECONTIENTPAS
+         type-de-verification: NECONTIENTPAS
          zonecible: '214'
-	 souszonecible: 'd'
+         souszonecible: 'd'
          operateur-booleen: ET
   
