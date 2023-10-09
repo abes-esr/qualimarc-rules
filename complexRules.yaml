@@ -3325,24 +3325,25 @@ rules:
          operateur-booleen: ET
 
 #remplace l'ancienne règle 1101 (comparaison de dates). Activée le 09/10/23 suite ticket.
-   - id: 7980
-     id-excel: 190
-     message: "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
-     priorite: P1
+   - id:         7980
+     id-excel:    190
+     message:     "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
+     priorite:    P1
      jeux-de-regles:
-       - 6 #Dates
+     - 6 #dates
      regles:
        - id: 7981
          type: nombresouszone
-	 zone: '214'
-	 souszone: 'd'
-	 zonecible: '100'
+         zone: '214'
+         souszone: 'd'
+         zonecible: '100'
 	 souszonecible: 'A'
        - id: 7982
          type: comparaisoncontenusouszone
-	 zone: '100'
-	 souszone: 'A'
+         zone: '100'
+         souszone: 'A'
 	 type-de-verification: NECONTIENTPAS
          zonecible: '214'
 	 souszonecible: 'd'
          operateur-booleen: ET
+  
