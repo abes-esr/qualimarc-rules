@@ -3335,13 +3335,13 @@ rules:
        - id: 7981
          type: nombresouszone
 	 zone: '214'
-         souszone: 'd'
+	 souszone: 'd'
 	 zonecible: '100'
-         souszonecible: 'A'
+	 souszonecible: 'A'
        - id: 7982
          type: comparaisoncontenusouszone
 	 zone: '100'
-         souszone:    'A'
+	 souszone: 'A'
 	 type-de-verification: NECONTIENTPAS
          zonecible: '214'
 	 souszonecible: 'd'
