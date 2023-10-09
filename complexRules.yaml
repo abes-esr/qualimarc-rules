@@ -3332,18 +3332,17 @@ rules:
      jeux-de-regles:
      - 6 #dates
      regles:
-       # - id: 7981
-       #   type: nombresouszone
-       #   zone: '214'
-       #   souszone: 'd'
-       #   zonecible: '100'
-       #   souszonecible: 'A'
        - id: 7981
+         type: nombrezone
+         zone: '214'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7982
          type: comparaisoncontenusouszone
          zone: '100'
          souszone: 'A'
          type-de-verification: NECONTIENTPAS
          zonecible: '214'
          souszonecible: 'd'
-         # operateur-booleen: ET
+         operateur-booleen: ET
   
