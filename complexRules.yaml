@@ -3335,9 +3335,9 @@ rules:
        - id: 7981
          type: nombresouszone
          zone: '214'
-	      souszone: 'd'
-	      zonecible: '100'
-	      souszonecible: 'A'
+	 souszone: 'd'
+	 zonecible: '100'
+	 souszonecible: 'A'
        - id: 7982
          type: comparaisoncontenusouszone
          zone: '100'
