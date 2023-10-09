@@ -3339,10 +3339,10 @@ rules:
          occurrences: 1
        - id: 7982
          type: comparaisoncontenusouszone
-         zone: '100'
-         souszone: 'A'
+         zone: '214'
+         souszone: 'd'
          type-de-verification: NECONTIENTPAS
-         zonecible: '214'
-         souszonecible: 'd'
+         zonecible: '100'
+         souszonecible: 'A'
          operateur-booleen: ET
   
