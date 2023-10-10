@@ -387,29 +387,29 @@ rules:
 #         type-de-verification: STRICTEMENTDIFFERENT
 #         valeur: "2"
 
+#réactivation de la règle le 10/10/23. passage en P2 et modif message d'erreur
+  - id: 25120
+    id-excel: 273
+    message: "Zone 410 : s'il existe, faire le lien vers la notice de collection en sous-zone $0"
+    zone: 410
+    priorite: P2
+    jeux-de-regles:
+      - 3 #liens
+    regles:
+      - id: 25121
+        type: presencezone
+        presence: true
+      - id: 25122
+        type: presencesouszone
+        souszone: "0"
+        presence: false
 
-#   - id: 25120
-#     id-excel: 273
-#     message: "Zone 410 : faire le lien vers la notice de collection en sous-zone $0"
-#     zone: 410
-#     priorite: P1
-#     jeux-de-regles:
-#       - 3 #liens
-#     regles:
-#       - id: 25121
-#         type: presencezone
-#         presence: true
-#       - id: 25122
-#         type: presencesouszone
-#         souszone: "0"
-#         presence: false
-
-
+# passage en P2 et modif message d'erreur (cohérence abs lien 4XX$0) le 10/10/23
   - id: 25130
     id-excel: 322
-    message: "Zone 488 : faire le lien vers la notice du document en relation en sous-zone $0 (sauf thèse soutenue sur travaux)"
+    message: "Zone 488 : s'il existe, faire le lien vers la notice du document en relation en sous-zone $0 (sauf thèse soutenue sur travaux)"
     zone: 488
-    priorite: P1
+    priorite: P2
     jeux-de-regles:
       - 3 #liens
     regles:
@@ -808,11 +808,12 @@ rules:
         souszone: "1"
         presence: false
 
+# passage en P2 et modif message d'erreur (cohérence abs lien 4XX$0) le 10/10/23
   - id: 25320
     id-excel: 287
-    message: "Zone 451 : faire le lien vers la notice 'autre édition sur le même support' dans une sous-zone $0"
+    message: "Zone 451 : s'il existe, faire le lien vers la notice 'autre édition sur le même support' dans une sous-zone $0"
     zone: 451
-    priorite: P1
+    priorite: P2
     jeux-de-regles:
       - 3 #liens
     regles:
@@ -823,12 +824,13 @@ rules:
         type: presencesouszone
         souszone: "0"
         presence: false
-        
+
+# passage en P2 et modif message d'erreur (cohérence abs lien 4XX$0) le 10/10/23
   - id: 25330
     id-excel: 291
-    message: "Zone 452 : faire le lien vers la notice 'autre édition sur un autre support' dans une sous-zone $0"
+    message: "Zone 452 : s'il existe, faire le lien vers la notice 'autre édition sur un autre support' dans une sous-zone $0"
     zone: 452
-    priorite: P1
+    priorite: P2
     jeux-de-regles:
       - 3 #liens
     regles:
@@ -841,12 +843,12 @@ rules:
         presence: false
  
  
-        
+# passage en P2 et modif message d'erreur (cohérence abs lien 4XX$0) le 10/10/23        
   - id: 25340
     id-excel: 297
-    message: "Zone 455 : faire le lien vers la notice décrivant le document original dans une sous-zone $0"
+    message: "Zone 455 : s'il existe, faire le lien vers la notice décrivant le document original dans une sous-zone $0"
     zone: 455
-    priorite: P1
+    priorite: P2
     jeux-de-regles:
       - 3 #liens
     regles:
@@ -859,12 +861,12 @@ rules:
         presence: false
         
         
-        
+# passage en P2 et modif message d'erreur (cohérence abs lien 4XX$0) le 10/10/23        
   - id: 25350
     id-excel: 308
-    message: "Zone 456 : faire le lien vers la notice décrivant la reproduction dans une sous-zone $0"
+    message: "Zone 456 : s'il existe, faire le lien vers la notice décrivant la reproduction dans une sous-zone $0"
     zone: 456
-    priorite: P1
+    priorite: P2
     jeux-de-regles:
       - 3 #liens
     regles:
@@ -875,8 +877,6 @@ rules:
         type: presencesouszone
         souszone: "0"
         presence: false
-
-
 
 
   - id: 25360
