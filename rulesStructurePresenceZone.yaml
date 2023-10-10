@@ -650,7 +650,23 @@ rules:
       presence:    false
 
 
-
-
+    - id:         544
+      id-excel:   262 
+      type-doc:
+      -  A
+      -  B
+      -  K
+      -  N
+      -  I
+      -  F
+      -  V
+      -  G
+      -  M
+      -  PC
+      type:        presencezone
+      message:     "Zone 337 : la zone ne peut être employée que dans les notices de ressources électroniques (O*) ou de multimédia multisupport (Z*). Supprimer la zone"
+      zone:        337
+      priorite:    P1
+      presence:    true
 
 
