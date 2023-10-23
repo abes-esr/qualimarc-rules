@@ -2286,10 +2286,10 @@ rules:
          operateur-booleen: ET
 
 
-
+#remplacement zone 464 en 454 (erreur initiale VerifSudoc) oct 2023
    - id: 7640
      id-excel: 130
-     message: "Zone 510 : il faut enregistrer autant de zones 510 que de titre parallèle enregistré en sous-zone 200$d (et une zone 464 si un des titres parallèles correspond au titre original de l'oeuvre)"
+     message: "Zone 510 : il faut enregistrer autant de zones 510 que de titre parallèle enregistré en sous-zone 200$d (et une zone 454 si un des titres parallèles correspond au titre original de l'oeuvre)"
      priorite: P1
      jeux-de-regles:
        - 4  #2XX
@@ -2314,7 +2314,7 @@ rules:
          operateur-booleen: ET
        - id: 7644
          type: presencezone
-         zone: '464'
+         zone: '454'
          presence: false
          operateur-booleen: ET
 
@@ -3346,3 +3346,26 @@ rules:
          souszonecible: 'A'
          operateur-booleen: ET
   
+
+   - id:         7990
+     id-excel:    56
+     message:     "Travaux universitaires (document originel) : l'indexation Forme-Genre 'Thèses et écrits académiques' (ppn 027253139) est obligatoire en zone 608"
+     priorite:    P1
+     type-these:
+     - SOUTENANCE
+     jeux-de-regles:
+     - 2 #6XX
+     regles:
+       - id: 7991
+         type: presencesouszone
+         zone: '608'
+         souszone: a
+         presence: true
+       - id: 7992
+         type: presencechainecaracteres
+         zone: '608'
+         souszone: 'a'
+         type-de-verification: NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "Thèses et écrits académiques"
+         operateur-booleen: ET

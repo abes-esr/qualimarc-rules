@@ -1638,3 +1638,192 @@ rules:
         type: presencesouszone
         souszone: "5"
         presence: false
+
+
+  - id: 25650
+    id-excel: 240
+    message: "Zone 328 : les sous-zones $c, $e et $d (dans cet ordre) sont obligatoires après une sous-zone $b"
+    zone: 328
+    priorite: P1
+    type-these:
+      -  SOUTENANCE
+      -  REPRO
+    regles:
+      - id: 25651
+        type: presencesouszone
+        souszone: "b"
+        presence: true
+      - id: 25652
+        type: presencesouszone
+        souszone: "c"
+        presence: false
+      - id: 25653
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+      - id: 25654
+        type: presencesouszone
+        souszone: "e"
+        presence: false
+
+
+  - id: 25660
+    id-excel: 240
+    message: "Zone 328 : il manque la sous-zone $c, qui doit obligatoirement être enregistrée entre la sous-zone $b et les sous-zones $e/$d"
+    zone: 328
+    priorite: P1
+    type-these:
+      -  SOUTENANCE
+      -  REPRO
+    regles:
+      - id: 25661
+        type: presencesouszone
+        souszone: "b"
+        presence: true
+      - id: 25662
+        type: presencesouszone
+        souszone: "c"
+        presence: false
+      - id: 25663
+        type: presencesouszone
+        souszone: "d"
+        presence: true
+      - id: 25664
+        type: presencesouszone
+        souszone: "e"
+        presence: true
+
+ 
+  - id: 25670
+    id-excel: 240
+    message: "Zone 328 : il manque la sous-zone $e, qui doit obligatoirement être enregistrée entre les sous-zones $b/$c et la sous-zone $d"
+    zone: 328
+    priorite: P1
+    type-these:
+      -  SOUTENANCE
+      -  REPRO
+    regles:
+      - id: 25671
+        type: presencesouszone
+        souszone: "b"
+        presence: true
+      - id: 25672
+        type: presencesouszone
+        souszone: "c"
+        presence: true
+      - id: 25673
+        type: presencesouszone
+        souszone: "d"
+        presence: true
+      - id: 25674
+        type: presencesouszone
+        souszone: "e"
+        presence: false
+
+
+  - id: 25680
+    id-excel: 240
+    message: "Zone 328 : il manque la sous-zone $d, qui doit obligatoirement être enregistrée après les sous-zones $b, $c et $e"
+    zone: 328
+    priorite: P1
+    type-these:
+      -  SOUTENANCE
+      -  REPRO
+    regles:
+      - id: 25681
+        type: presencesouszone
+        souszone: "b"
+        presence: true
+      - id: 25682
+        type: presencesouszone
+        souszone: "c"
+        presence: true
+      - id: 25683
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+      - id: 25684
+        type: presencesouszone
+        souszone: "e"
+        presence: true
+
+
+  - id: 25690
+    id-excel: 240
+    message: "Zone 328 : il manque les sous-zones $d et $e, qui doivent obligatoirement être enregistrées après les sous-zones $b/$c, dans cet ordre : $e puis $d"
+    zone: 328
+    priorite: P1
+    type-these:
+      -  SOUTENANCE
+      -  REPRO
+    regles:
+      - id: 25691
+        type: presencesouszone
+        souszone: "b"
+        presence: true
+      - id: 25692
+        type: presencesouszone
+        souszone: "c"
+        presence: true
+      - id: 25693
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+      - id: 25694
+        type: presencesouszone
+        souszone: "e"
+        presence: false
+
+
+  - id: 25700
+    id-excel: 240
+    message: "Zone 328 : il manque les sous-zones $c et $d, qui doivent obligatoirement être enregistrées dans l'ordre $b$c$e$d"
+    zone: 328
+    priorite: P1
+    type-these:
+      -  SOUTENANCE
+      -  REPRO
+    regles:
+      - id: 25701
+        type: presencesouszone
+        souszone: "b"
+        presence: true
+      - id: 25702
+        type: presencesouszone
+        souszone: "c"
+        presence: false
+      - id: 25703
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+      - id: 25704
+        type: presencesouszone
+        souszone: "e"
+        presence: true
+
+
+  - id: 25710
+    id-excel: 240
+    message: "Zone 328 : il manque les sous-zones $c et $e, qui doivent obligatoirement être enregistrées dans l'ordre $b$c$e$d"
+    zone: 328
+    priorite: P1
+    type-these:
+      -  SOUTENANCE
+      -  REPRO
+    regles:
+      - id: 25711
+        type: presencesouszone
+        souszone: "b"
+        presence: true
+      - id: 25712
+        type: presencesouszone
+        souszone: "c"
+        presence: false
+      - id: 25713
+        type: presencesouszone
+        souszone: "d"
+        presence: true
+      - id: 25714
+        type: presencesouszone
+        souszone: "e"
+        presence: false

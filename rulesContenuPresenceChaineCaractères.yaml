@@ -820,3 +820,35 @@ rules:
       jeux-de-regles: 
       - 7 #responsabilités
       
+    - id:                       1055
+      id-excel:                 242
+      type:                     presencechainecaracteres
+      message:                  "Zone 328 : la sous-zone $c contient le terme générique 'Discipline' ; un nom précis de discipline doit être enregistré, ou à défaut utiliser le '?'"
+      zone:                     328
+      priorite:                 P1
+      souszone:                 c
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    Discipline
+        - operateur:            OU
+          chaine-caracteres:    discipline
+      type-these: 
+      - SOUTENANCE
+      - REPRO
+
+
+    - id:                       1056
+      id-excel:                 707
+      type:                     presencechainecaracteres
+      message:                  "Zone 214 : la date enregistrée en sous-zone $d ne peut pas comporter les préfixes suivants 'cop.' ou 'copyright' ; les remplacer par le simple préfixe 'C'"
+      zone:                     214
+      priorite:                 P1
+      souszone:                 d
+      jeux-de-regles: 
+      - 4 #2XX
+      - 6 #dates
+      type-de-verification:     COMMENCE
+      chaines-caracteres:
+        - chaine-caracteres:    cop
+        - operateur:            OU
+          chaine-caracteres:    Cop
