@@ -2,6 +2,7 @@
 #ID de 400 à 499
 rules:
 #REGLES VALIDEES AURELIE octobre 2022
+#400 : passage en P1
   - id:          400
     id-excel:    42
     type:        nombresouszone
@@ -10,7 +11,7 @@ rules:
     souszone:    d
     zonecible:   330
     souszonecible: a
-    priorite:    P2
+    priorite:    P1
     type-these:
       -    REPRO
       -    SOUTENANCE
