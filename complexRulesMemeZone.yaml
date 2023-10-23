@@ -1746,3 +1746,84 @@ rules:
         type: presencesouszone
         souszone: "e"
         presence: true
+
+
+  - id: 25690
+    id-excel: 240
+    message: "Zone 328 : il manque les sous-zones $d et $e, qui doivent obligatoirement être enregistrées après les sous-zones $b/$c, dans cet ordre : $e puis $d"
+    zone: 328
+    priorite: P1
+    type-these:
+      -  SOUTENANCE
+      -  REPRO
+    regles:
+      - id: 25691
+        type: presencesouszone
+        souszone: "b"
+        presence: true
+      - id: 25692
+        type: presencesouszone
+        souszone: "c"
+        presence: true
+      - id: 25693
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+      - id: 25694
+        type: presencesouszone
+        souszone: "e"
+        presence: false
+
+
+  - id: 25700
+    id-excel: 240
+    message: "Zone 328 : il manque les sous-zones $c et $d, qui doivent obligatoirement être enregistrées dans l'ordre $b$c$e$d"
+    zone: 328
+    priorite: P1
+    type-these:
+      -  SOUTENANCE
+      -  REPRO
+    regles:
+      - id: 25701
+        type: presencesouszone
+        souszone: "b"
+        presence: true
+      - id: 25702
+        type: presencesouszone
+        souszone: "c"
+        presence: false
+      - id: 25703
+        type: presencesouszone
+        souszone: "d"
+        presence: false
+      - id: 25704
+        type: presencesouszone
+        souszone: "e"
+        presence: true
+
+
+  - id: 25710
+    id-excel: 240
+    message: "Zone 328 : il manque les sous-zones $c et $e, qui doivent obligatoirement être enregistrées dans l'ordre $b$c$e$d"
+    zone: 328
+    priorite: P1
+    type-these:
+      -  SOUTENANCE
+      -  REPRO
+    regles:
+      - id: 25711
+        type: presencesouszone
+        souszone: "b"
+        presence: true
+      - id: 25712
+        type: presencesouszone
+        souszone: "c"
+        presence: false
+      - id: 25713
+        type: presencesouszone
+        souszone: "d"
+        presence: true
+      - id: 25714
+        type: presencesouszone
+        souszone: "e"
+        presence: false
