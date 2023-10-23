@@ -2286,10 +2286,10 @@ rules:
          operateur-booleen: ET
 
 
-
+#remplacement zone 464 en 454 (erreur initiale VerifSudoc) oct 2023
    - id: 7640
      id-excel: 130
-     message: "Zone 510 : il faut enregistrer autant de zones 510 que de titre parallèle enregistré en sous-zone 200$d (et une zone 464 si un des titres parallèles correspond au titre original de l'oeuvre)"
+     message: "Zone 510 : il faut enregistrer autant de zones 510 que de titre parallèle enregistré en sous-zone 200$d (et une zone 454 si un des titres parallèles correspond au titre original de l'oeuvre)"
      priorite: P1
      jeux-de-regles:
        - 4  #2XX
@@ -2314,7 +2314,7 @@ rules:
          operateur-booleen: ET
        - id: 7644
          type: presencezone
-         zone: '464'
+         zone: '454'
          presence: false
          operateur-booleen: ET
 
