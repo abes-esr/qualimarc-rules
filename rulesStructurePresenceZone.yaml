@@ -670,3 +670,13 @@ rules:
       presence:    true
 
 
+
+  - id:          545
+    id-excel:    56
+    type:        presencezone
+    message:     "Travaux universitaires (document originel) : l'indexation Forme-Genre 'Thèses et écrits académiques' est obligatoire en zone 608"
+    zone:        608
+    presence: false
+    priorite:    P1
+    type-these:
+      -    SOUTENANCE
