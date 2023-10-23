@@ -835,3 +835,20 @@ rules:
       type-these: 
       - SOUTENANCE
       - REPRO
+
+
+    - id:                       1056
+      id-excel:                 707
+      type:                     presencechainecaracteres
+      message:                  "Zone 214 : la date enregistrée en sous-zone $d ne peut pas comporter les préfixes suivants 'cop.' ou 'copyright' ; les remplacer par le simple préfixe 'C'"
+      zone:                     214
+      priorite:                 P1
+      souszone:                 d
+      jeux-de-regles: 
+      - 4 #2XX
+      - 6 #dates
+      type-de-verification:     COMMENCE
+      chaines-caracteres:
+        - chaine-caracteres:    cop
+        - operateur:            OU
+          chaine-caracteres:    Cop
