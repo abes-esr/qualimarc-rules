@@ -606,7 +606,7 @@ rules:
       -    G
       -    K
       -    PC
-
+      
     - id:         541
       id-excel:   727  
       type:        presencezone
@@ -615,11 +615,24 @@ rules:
       priorite:    P2
       presence:    false
 
-
+#exclusion des ressources elec (O) pour la règle 542 suite ticket abesstp le 21/11/23
     - id:         542
       id-excel:   730
       jeux-de-regles:
       -  4  #2XX
+      type-doc:
+      -  A
+      -  B
+      -  K
+      -  N
+      -  I
+      -  F
+      -  Z
+      -  V
+      -  G
+      -  M
+      -  PC
+      -  BD
       type:        presencezone
       message:     "Zone 215 absente : vérifiez si des informations liées à la description matérielle de la ressource peuvent être ajoutées"
       zone:        215
