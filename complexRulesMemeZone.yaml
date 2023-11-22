@@ -465,27 +465,28 @@ rules:
         type: presencesouszone
         souszone: "1"
         presence: false
-        
-  - id: 25160
-    id-excel: 456
-    message: "Zone 702 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
-    zone: 702
-    priorite: P1
-    jeux-de-regles:
-      - 7 #7XX
-      - 3 #liens
-    regles:
-      - id: 25161
-        type: presencezone
-        presence: true
-      - id: 25162
-        type: presencesouszone
-        souszone: "3"
-        presence: false
-      - id: 25163
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+
+#règle 25160 déasactivée en faveur de la 25720 (exclusion sur les $5 et pas $1) - nov 2023
+  # - id: 25160
+  #   id-excel: 456
+  #   message: "Zone 702 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+  #   zone: 702
+  #   priorite: P1
+  #   jeux-de-regles:
+  #     - 7 #7XX
+  #     - 3 #liens
+  #   regles:
+  #     - id: 25161
+  #       type: presencezone
+  #       presence: true
+  #     - id: 25162
+  #       type: presencesouszone
+  #       souszone: "3"
+  #       presence: false
+  #     - id: 25163
+  #       type: presencesouszone
+  #       souszone: "1"
+  #       presence: false
         
         
         
@@ -533,26 +534,27 @@ rules:
         presence: false
 
 
-  - id: 25190
-    id-excel: 475
-    message: "Zone 712 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
-    zone: 712
-    priorite: P1
-    jeux-de-regles:
-      - 7 #7XX
-      - 3 #liens
-    regles:
-      - id: 25191
-        type: presencezone
-        presence: true
-      - id: 25192
-        type: presencesouszone
-        souszone: "3"
-        presence: false
-      - id: 25193
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#règle 25190 déasactivée en faveur de la 25730 (exclusion sur les $5 et pas $1) - nov 2023
+  # - id: 25190
+  #   id-excel: 475
+  #   message: "Zone 712 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+  #   zone: 712
+  #   priorite: P1
+  #   jeux-de-regles:
+  #     - 7 #7XX
+  #     - 3 #liens
+  #   regles:
+  #     - id: 25191
+  #       type: presencezone
+  #       presence: true
+  #     - id: 25192
+  #       type: presencesouszone
+  #       souszone: "3"
+  #       presence: false
+  #     - id: 25193
+  #       type: presencesouszone
+  #       souszone: "1"
+  #       presence: false
         
         
         
@@ -598,27 +600,28 @@ rules:
         type: presencesouszone
         souszone: "1"
         presence: false
-        
-  - id: 25220
-    id-excel: 
-    message: "Zone 722 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
-    zone: 722
-    priorite: P1
-    jeux-de-regles:
-      - 7 #7XX
-      - 3 #liens
-    regles:
-      - id: 25221
-        type: presencezone
-        presence: true
-      - id: 25222
-        type: presencesouszone
-        souszone: "3"
-        presence: false
-      - id: 25223
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+
+#règle 25220 déasactivée en faveur de la 25720 (exclusion sur les $5 et pas $1) - nov 2023        
+  # - id: 25220
+  #   id-excel: 
+  #   message: "Zone 722 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+  #   zone: 722
+  #   priorite: P1
+  #   jeux-de-regles:
+  #     - 7 #7XX
+  #     - 3 #liens
+  #   regles:
+  #     - id: 25221
+  #       type: presencezone
+  #       presence: true
+  #     - id: 25222
+  #       type: presencesouszone
+  #       souszone: "3"
+  #       presence: false
+  #     - id: 25223
+  #       type: presencesouszone
+  #       souszone: "1"
+  #       presence: false
 
 
   - id: 25230
