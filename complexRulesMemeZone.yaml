@@ -1287,7 +1287,7 @@ rules:
             chaine-caracteres: '480'
       - id: 25512
         type: presencesouszone
-        souszone: "1"
+        souszone: "5"
         presence: false
 
 
@@ -1338,7 +1338,7 @@ rules:
             chaine-caracteres: '755'
       - id: 25522
         type: presencesouszone
-        souszone: "1"
+        souszone: "5"
         presence: false
 
 
@@ -1364,7 +1364,7 @@ rules:
             chaine-caracteres: '958'
       - id: 25532
         type: presencesouszone
-        souszone: "1"
+        souszone: "5"
         presence: false
 
 
@@ -1514,7 +1514,7 @@ rules:
             chaine-caracteres: '996'            
       - id: 25582
         type: presencesouszone
-        souszone: "1"
+        souszone: "5"
         presence: false
 
 
@@ -1574,7 +1574,7 @@ rules:
           - chaine-caracteres: '725'         
       - id: 25612
         type: presencesouszone
-        souszone: "1"
+        souszone: "5"
         presence: false
 
   - id: 25620
@@ -1612,7 +1612,7 @@ rules:
           - chaine-caracteres: '295'         
       - id: 25632
         type: presencesouszone
-        souszone: "1"
+        souszone: "5"
         presence: false
 
 #règle initiale 7170 ; ajout présence de $5 pour contourner les données d'exemplaire qui sont exportées suite ticket
@@ -1896,6 +1896,65 @@ rules:
         souszone: "3"
         presence: false
       - id: 25743
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+
+  - id: 25750
+    id-excel: 
+    message: "Zone 700 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation"
+    zone: 700
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25751
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '050'
+          - operateur:  OU
+            chaine-caracteres: '075'
+          - operateur:  OU
+            chaine-caracteres: '080'
+          - operateur:  OU
+            chaine-caracteres: '140'
+          - operateur:  OU
+            chaine-caracteres: '150'
+          - operateur:  OU
+            chaine-caracteres: '160'
+          - operateur:  OU
+            chaine-caracteres: '310'
+          - operateur:  OU
+            chaine-caracteres: '320'
+          - operateur:  OU
+            chaine-caracteres: '390'
+          - operateur:  OU
+            chaine-caracteres: '450'
+          - operateur:  OU
+            chaine-caracteres: '490'
+          - operateur:  OU
+            chaine-caracteres: '500'
+          - operateur:  OU
+            chaine-caracteres: '540'
+          - operateur:  OU
+            chaine-caracteres: '580'
+          - operateur:  OU
+            chaine-caracteres: '610'
+          - operateur:  OU
+            chaine-caracteres: '620'
+          - operateur:  OU
+            chaine-caracteres: '650'
+          - operateur:  OU
+            chaine-caracteres: '678'
+          - operateur:  OU
+            chaine-caracteres: '720'
+          - operateur:  OU
+            chaine-caracteres: '740'
+          - operateur:  OU
+            chaine-caracteres: '920'
+      - id: 25752
         type: presencesouszone
         souszone: "5"
         presence: false
