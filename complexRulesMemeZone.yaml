@@ -1827,3 +1827,72 @@ rules:
         type: presencesouszone
         souszone: "e"
         presence: false
+
+
+#duplication de la règle 25160 pour exclure données d'exemplaire ($5)         
+  - id: 25720
+    id-excel: 456
+    message: "Zone 702 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25721
+        type: presencezone
+        presence: true
+      - id: 25722
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+      - id: 25723
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+
+ 
+#duplication de la règle 25190 pour exclure données d'exemplaire ($5)         
+  - id: 25730
+    id-excel: 456
+    message: "Zone 712 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25731
+        type: presencezone
+        presence: true
+      - id: 25732
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+      - id: 25733
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+
+
+#duplication de la règle 25220 pour exclure données d'exemplaire ($5)         
+  - id: 25740
+    id-excel: 456
+    message: "Zone 722 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 722
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25741
+        type: presencezone
+        presence: true
+      - id: 25742
+        type: presencesouszone
+        souszone: "3"
+        presence: false
+      - id: 25743
+        type: presencesouszone
+        souszone: "5"
+        presence: false
