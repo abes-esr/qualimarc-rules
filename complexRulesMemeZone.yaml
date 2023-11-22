@@ -1879,7 +1879,7 @@ rules:
   - id: 25740
     id-excel: 456
     message: "Zone 722 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
-    zone: 702
+    zone: 722
     priorite: P1
     jeux-de-regles:
       - 7 #7XX
