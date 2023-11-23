@@ -1958,3 +1958,121 @@ rules:
         type: presencesouszone
         souszone: "5"
         presence: false
+
+  - id: 25760
+    id-excel: 
+    message: "Zone 710 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation"
+    zone: 710
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25761
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '050'
+          - operateur:  OU
+            chaine-caracteres: '075'
+          - operateur:  OU
+            chaine-caracteres: '080'
+          - operateur:  OU
+            chaine-caracteres: '140'
+          - operateur:  OU
+            chaine-caracteres: '150'
+          - operateur:  OU
+            chaine-caracteres: '160'
+          - operateur:  OU
+            chaine-caracteres: '310'
+          - operateur:  OU
+            chaine-caracteres: '320'
+          - operateur:  OU
+            chaine-caracteres: '390'
+          - operateur:  OU
+            chaine-caracteres: '450'
+          - operateur:  OU
+            chaine-caracteres: '490'
+          - operateur:  OU
+            chaine-caracteres: '500'
+          - operateur:  OU
+            chaine-caracteres: '540'
+          - operateur:  OU
+            chaine-caracteres: '580'
+          - operateur:  OU
+            chaine-caracteres: '610'
+          - operateur:  OU
+            chaine-caracteres: '620'
+          - operateur:  OU
+            chaine-caracteres: '650'
+          - operateur:  OU
+            chaine-caracteres: '678'
+          - operateur:  OU
+            chaine-caracteres: '720'
+          - operateur:  OU
+            chaine-caracteres: '740'
+          - operateur:  OU
+            chaine-caracteres: '920'
+      - id: 25762
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+
+  - id: 25770
+    id-excel: 
+    message: "Zone 720 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation"
+    zone: 720
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25771
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '050'
+          - operateur:  OU
+            chaine-caracteres: '075'
+          - operateur:  OU
+            chaine-caracteres: '080'
+          - operateur:  OU
+            chaine-caracteres: '140'
+          - operateur:  OU
+            chaine-caracteres: '150'
+          - operateur:  OU
+            chaine-caracteres: '160'
+          - operateur:  OU
+            chaine-caracteres: '310'
+          - operateur:  OU
+            chaine-caracteres: '320'
+          - operateur:  OU
+            chaine-caracteres: '390'
+          - operateur:  OU
+            chaine-caracteres: '450'
+          - operateur:  OU
+            chaine-caracteres: '490'
+          - operateur:  OU
+            chaine-caracteres: '500'
+          - operateur:  OU
+            chaine-caracteres: '540'
+          - operateur:  OU
+            chaine-caracteres: '580'
+          - operateur:  OU
+            chaine-caracteres: '610'
+          - operateur:  OU
+            chaine-caracteres: '620'
+          - operateur:  OU
+            chaine-caracteres: '650'
+          - operateur:  OU
+            chaine-caracteres: '678'
+          - operateur:  OU
+            chaine-caracteres: '720'
+          - operateur:  OU
+            chaine-caracteres: '740'
+          - operateur:  OU
+            chaine-caracteres: '920'
+      - id: 25772
+        type: presencesouszone
+        souszone: "5"
+        presence: false
