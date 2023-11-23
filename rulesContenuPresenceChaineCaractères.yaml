@@ -852,3 +852,31 @@ rules:
         - chaine-caracteres:    cop
         - operateur:            OU
           chaine-caracteres:    Cop
+
+
+    - id:                       1057
+      id-excel:                
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fonction '305' (Candidat) n'est pas utilisé dans le Sudoc. Modifier ce code"
+      zone:                     "7XX"
+      priorite:                 P1
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    305
+      jeux-de-regles: 
+      - 7 #responsabilités
+      
+      
+    - id:                       1058
+      id-excel:                 
+      type:                     presencechainecaracteres
+      message:                  "Zones 7XX : le code fonction '420' (Personne honorée) n'est pas utilisé dans le Sudoc. Voir le document consacré aux règles de catalogage des Mélanges dans le Guide Méthodologique"
+      zone:                     "7XX"
+      priorite:                 P1
+      souszone:                 4
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    420
+      jeux-de-regles: 
+      - 7 #responsabilités
