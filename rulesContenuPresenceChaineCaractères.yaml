@@ -880,3 +880,48 @@ rules:
         - chaine-caracteres:    420
       jeux-de-regles: 
       - 7 #responsabilités
+
+
+    - id:                       1059
+      id-excel:                 467
+      type:                     presencechainecaracteres
+      message:                  "Zone 710 : la sous-zone $a contient le terme générique 'Nom Collectivité [...]' : modifier ou supprimer cette sous-zone"
+      zone:                     710
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     COMMENCE
+      chaines-caracteres:
+        - chaine-caracteres:    Nom Collectivité
+      jeux-de-regles: 
+      - 7 #responsabilités
+
+    - id:                       1060
+      id-excel:                 473
+      type:                     presencechainecaracteres
+      message:                  "Zone 711 : la sous-zone $a contient le terme générique 'Nom Collectivité [...]' : modifier ou supprimer cette sous-zone"
+      zone:                     711
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     COMMENCE
+      chaines-caracteres:
+        - chaine-caracteres:    Nom Collectivité
+      jeux-de-regles: 
+      - 7 #responsabilités
+
+    - id:                       1061
+      id-excel:                 478
+      type:                     presencechainecaracteres
+      message:                  "Zone 712 : la sous-zone $a contient le terme générique 'Nom Collectivité [...]' : modifier ou supprimer cette sous-zone"
+      zone:                     712
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     COMMENCE
+      chaines-caracteres:
+        - chaine-caracteres:    Nom Collectivité
+      jeux-de-regles: 
+      - 7 #responsabilités
+
+
+
+
+      
