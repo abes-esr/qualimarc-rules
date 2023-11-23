@@ -3325,6 +3325,7 @@ rules:
          operateur-booleen: ET
 
 #remplace l'ancienne règle 1101 (comparaison de dates). Activée le 09/10/23 suite ticket.
+#ajout sous-règle 7983 sur absence nécéssaire de X dans 100$A (sinon, forcément pas les mêmes !) - suite discussion SNX nov 2023
    - id:         7980
      id-excel:    190
      message:     "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
@@ -3345,7 +3346,15 @@ rules:
          zonecible: '100'
          souszonecible: 'A'
          operateur-booleen: ET
-  
+       - id: 7983
+         type: presencechainecaracteres
+         zone: '100'
+         souszone: 'A'
+         type-de-verification: NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "X"
+         operateur-booleen: ET
+
 
    - id:         7990
      id-excel:    56
