@@ -1902,7 +1902,7 @@ rules:
 
   - id: 25750
     id-excel: 
-    message: "Zone 700 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation"
+    message: "Zone 700 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
     zone: 700
     priorite: P1
     jeux-de-regles:
@@ -1961,7 +1961,7 @@ rules:
 
   - id: 25760
     id-excel: 
-    message: "Zone 710 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation"
+    message: "Zone 710 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
     zone: 710
     priorite: P1
     jeux-de-regles:
@@ -2020,7 +2020,7 @@ rules:
 
   - id: 25770
     id-excel: 
-    message: "Zone 720 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation"
+    message: "Zone 720 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
     zone: 720
     priorite: P1
     jeux-de-regles:
@@ -2081,7 +2081,7 @@ rules:
 
   - id: 25780
     id-excel: 
-    message: "Zone 701 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation"
+    message: "Zone 701 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
     zone: 701
     priorite: P1
     jeux-de-regles:
@@ -2140,7 +2140,7 @@ rules:
 
   - id: 25790
     id-excel: 
-    message: "Zone 711 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation"
+    message: "Zone 711 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
     zone: 711
     priorite: P1
     jeux-de-regles:
@@ -2200,7 +2200,7 @@ rules:
 
   - id: 25800
     id-excel: 
-    message: "Zone 721 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation"
+    message: "Zone 721 : les codes fonction 050/075/080/140/150/160/310/320/390/450/490/500/540/580/610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
     zone: 721
     priorite: P1
     jeux-de-regles:
