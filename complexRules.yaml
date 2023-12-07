@@ -3378,3 +3378,76 @@ rules:
          chaines-caracteres:
            - chaine-caracteres:    "Thèses et écrits académiques"
          operateur-booleen: ET
+
+
+   - id:         8000
+     id-excel:    728
+     message:     "Zone 7X0 : puisqu'une mention de responsabilité a été enregistrée en 200$f ou en 200$g, un point d'accès autorisé pourrait être créé en 7X0, avec un lien à la notice d'autorité"
+     priorite:    P2
+     jeux-de-regles:
+     - 7  #7XX
+     - 2  #2XX
+     regles:
+       - id: 8001
+         type: presencesouszone
+         zone: '200'
+         souszone: f
+         presence: true
+       - id: 8002
+         type: presencesouszone
+         zone: '200'
+         souszone: g
+         presence: true
+         operateur-booleen: OU
+       - id: 8003
+         type: presencezone
+         zone: '700'
+         presence: false
+         operateur-booleen: ET
+       - id: 8004
+         type: presencezone
+         zone: '710'
+         presence: false
+         operateur-booleen: ET
+       - id: 8005
+         type: presencezone
+         zone: '720'
+         presence: false
+         operateur-booleen: ET
+
+
+#réciproque de la règle 8000 
+   - id:         8010
+     id-excel:    728
+     message:     "Zone 200 : puisqu'un point d'accès autorisé a été enregistré en 7X0, une mention de responsabilité pourrait peut-être être enregistrée en 200$f et/ou 200$g"
+     priorite:    P2
+     jeux-de-regles:
+     - 7  #7XX
+     - 2  #2XX
+     regles:
+       - id: 8011
+         type: presencezone
+         zone: '700'
+         presence: true
+       - id: 8012
+         type: presencezone
+         zone: '710'
+         presence: true
+         operateur-booleen: OU
+       - id: 8013
+         type: presencezone
+         zone: '720'
+         presence: true
+         operateur-booleen: OU
+       - id: 8014
+         type: presencesouszone
+         zone: '200'
+         souszone: f
+         presence: false
+         operateur-booleen: ET
+       - id: 8015
+         type: presencesouszone
+         zone: '200'
+         souszone: g
+         presence: false
+         operateur-booleen: ET
