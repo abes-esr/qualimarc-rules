@@ -2258,10 +2258,10 @@ rules:
         presence: false
 
 
-
+#scindée avec 25840 pour alléger le temps de traitement - dec 2023
   - id: 25810
     id-excel: 
-    message: "Zone 702 : les codes fonction 010/018/030/062/ 072/090/100/130/170/ 180/190/206/220/230/ 233/236/245/ 255/257/260/ 300/303/330/ 340/355/365/ 385/395/405/410/475/ 520/545/552/557/560/ 582/584/587/590/630/ 635/637/651/ 665/672/675/ 690/705/721/770 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
+    message: "Zone 702 : les codes fonction 010/018/030/062/ 072/090/100/130/170/ 180/190/206/220/230/ 233/236/245/ 255/257/260/ 300/303/330/ 340/355/365/385/395 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
     zone: 702
     priorite: P1
     jeux-de-regles:
@@ -2327,62 +2327,16 @@ rules:
             chaine-caracteres: '385'
           - operateur:  OU
             chaine-caracteres: '395'
-          - operateur:  OU
-            chaine-caracteres: '405'
-          - operateur:  OU
-            chaine-caracteres: '410'
-          - operateur:  OU
-            chaine-caracteres: '475'
-          - operateur:  OU
-            chaine-caracteres: '520'
-          - operateur:  OU
-            chaine-caracteres: '545'
-          - operateur:  OU
-            chaine-caracteres: '552'
-          - operateur:  OU
-            chaine-caracteres: '557'
-          - operateur:  OU
-            chaine-caracteres: '560'
-          - operateur:  OU
-            chaine-caracteres: '582'
-          - operateur:  OU
-            chaine-caracteres: '584'
-          - operateur:  OU
-            chaine-caracteres: '587'
-          - operateur:  OU
-            chaine-caracteres: '590'
-          - operateur:  OU
-            chaine-caracteres: '630'
-          - operateur:  OU
-            chaine-caracteres: '635'
-          - operateur:  OU
-            chaine-caracteres: '637'
-          - operateur:  OU
-            chaine-caracteres: '651'
-          - operateur:  OU
-            chaine-caracteres: '665'
-          - operateur:  OU
-            chaine-caracteres: '672'
-          - operateur:  OU
-            chaine-caracteres: '675'
-          - operateur:  OU
-            chaine-caracteres: '690'
-          - operateur:  OU
-            chaine-caracteres: '705'
-          - operateur:  OU
-            chaine-caracteres: '721'
-          - operateur:  OU
-            chaine-caracteres: '770'
       - id: 25812
         type: presencesouszone
         souszone: "5"
         presence: false
 
 
-
+#scindée avec la 25850 pour alléger temps de traitement - dec 2023
   - id: 25820
     id-excel: 
-    message: "Zone 712 : les codes fonction 010/018/030/062/072/ 090/100/130/ 170/180/190 /206/220/230/233/236/ 245/255/257/260/ 300/303/ 330/340/355/ 365/385/395/405/410 /475/520/545/552/557/ 560/582/584/ 587/590/630 /635/637/651/665/ 672/675/690/ 705/721/770 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
+    message: "Zone 712 : les codes fonction 010/018/030/062/072/ 090/100/130/ 170/180/190 /206/220/230/233/236/ 245/255/257/260/ 300/303/ 330/340/355/365/385/395 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
     zone: 712
     priorite: P1
     jeux-de-regles:
@@ -2448,62 +2402,16 @@ rules:
             chaine-caracteres: '385'
           - operateur:  OU
             chaine-caracteres: '395'
-          - operateur:  OU
-            chaine-caracteres: '405'
-          - operateur:  OU
-            chaine-caracteres: '410'
-          - operateur:  OU
-            chaine-caracteres: '475'
-          - operateur:  OU
-            chaine-caracteres: '520'
-          - operateur:  OU
-            chaine-caracteres: '545'
-          - operateur:  OU
-            chaine-caracteres: '552'
-          - operateur:  OU
-            chaine-caracteres: '557'
-          - operateur:  OU
-            chaine-caracteres: '560'
-          - operateur:  OU
-            chaine-caracteres: '582'
-          - operateur:  OU
-            chaine-caracteres: '584'
-          - operateur:  OU
-            chaine-caracteres: '587'
-          - operateur:  OU
-            chaine-caracteres: '590'
-          - operateur:  OU
-            chaine-caracteres: '630'
-          - operateur:  OU
-            chaine-caracteres: '635'
-          - operateur:  OU
-            chaine-caracteres: '637'
-          - operateur:  OU
-            chaine-caracteres: '651'
-          - operateur:  OU
-            chaine-caracteres: '665'
-          - operateur:  OU
-            chaine-caracteres: '672'
-          - operateur:  OU
-            chaine-caracteres: '675'
-          - operateur:  OU
-            chaine-caracteres: '690'
-          - operateur:  OU
-            chaine-caracteres: '705'
-          - operateur:  OU
-            chaine-caracteres: '721'
-          - operateur:  OU
-            chaine-caracteres: '770'
       - id: 25822
         type: presencesouszone
         souszone: "5"
         presence: false
 
 
-
+#scindée avec la 25860 pour alléger tps de traitement - dec 2023
   - id: 25830
     id-excel: 
-    message: "Zone 722 : les codes fonction 010/018/030/ 062/072/090/100/ 130/170/180/190/ 206/220/230/233/ 236/245/255/ 257/260/300/303/ 330/340/355/365/ 385/395/405/ 410/475/520/545/ 552/557/560/582 /584/587/590/630/ 635/637/651 /665/672/675/690/ 705/721/770 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
+    message: "Zone 722 : les codes fonction 010/018/030/ 062/072/090/100/ 130/170/180/190/ 206/220/230/233/ 236/245/255/ 257/260/300/303/ 330/340/355/365/385/395 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
     zone: 722
     priorite: P1
     jeux-de-regles:
@@ -2569,8 +2477,26 @@ rules:
             chaine-caracteres: '385'
           - operateur:  OU
             chaine-caracteres: '395'
-          - operateur:  OU
-            chaine-caracteres: '405'
+      - id: 25832
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+
+#scission de la 25810 pour alléger le temps de traitement 
+  - id: 25840
+    id-excel: 
+    message: "Zone 702 : les codes fonction 405/410/475/ 520/545/552/557/560/ 582/584/587/590/630/ 635/637/651/ 665/672/675/ 690/705/721/770 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
+    zone: 702
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25841
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '405'
           - operateur:  OU
             chaine-caracteres: '410'
           - operateur:  OU
@@ -2615,7 +2541,136 @@ rules:
             chaine-caracteres: '721'
           - operateur:  OU
             chaine-caracteres: '770'
-      - id: 25832
+      - id: 25842
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+
+
+#scission de la 25820 pour alléger temps de traitement - dec 2023
+  - id: 25850
+    id-excel: 
+    message: "Zone 712 : les codes fonction 405/410/475/520/545/552/557/ 560/582/584/ 587/590/630 /635/637/651/665/ 672/675/690/ 705/721/770 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
+    zone: 712
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25851
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '405'
+          - operateur:  OU
+            chaine-caracteres: '410'
+          - operateur:  OU
+            chaine-caracteres: '475'
+          - operateur:  OU
+            chaine-caracteres: '520'
+          - operateur:  OU
+            chaine-caracteres: '545'
+          - operateur:  OU
+            chaine-caracteres: '552'
+          - operateur:  OU
+            chaine-caracteres: '557'
+          - operateur:  OU
+            chaine-caracteres: '560'
+          - operateur:  OU
+            chaine-caracteres: '582'
+          - operateur:  OU
+            chaine-caracteres: '584'
+          - operateur:  OU
+            chaine-caracteres: '587'
+          - operateur:  OU
+            chaine-caracteres: '590'
+          - operateur:  OU
+            chaine-caracteres: '630'
+          - operateur:  OU
+            chaine-caracteres: '635'
+          - operateur:  OU
+            chaine-caracteres: '637'
+          - operateur:  OU
+            chaine-caracteres: '651'
+          - operateur:  OU
+            chaine-caracteres: '665'
+          - operateur:  OU
+            chaine-caracteres: '672'
+          - operateur:  OU
+            chaine-caracteres: '675'
+          - operateur:  OU
+            chaine-caracteres: '690'
+          - operateur:  OU
+            chaine-caracteres: '705'
+          - operateur:  OU
+            chaine-caracteres: '721'
+          - operateur:  OU
+            chaine-caracteres: '770'
+      - id: 25852
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+
+#scission avec la 25830 pour alléger tps de traitement - dec 2023
+  - id: 25860
+    id-excel: 
+    message: "Zone 722 : les codes fonction 405/410/475/520/545/ 552/557/560/582 /584/587/590/630/ 635/637/651 /665/672/675/690/ 705/721/770 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
+    zone: 722
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+    regles:
+      - id: 25861
+        type: presencechainecaracteres
+        souszone: "4"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          - chaine-caracteres: '405'
+          - operateur:  OU
+            chaine-caracteres: '410'
+          - operateur:  OU
+            chaine-caracteres: '475'
+          - operateur:  OU
+            chaine-caracteres: '520'
+          - operateur:  OU
+            chaine-caracteres: '545'
+          - operateur:  OU
+            chaine-caracteres: '552'
+          - operateur:  OU
+            chaine-caracteres: '557'
+          - operateur:  OU
+            chaine-caracteres: '560'
+          - operateur:  OU
+            chaine-caracteres: '582'
+          - operateur:  OU
+            chaine-caracteres: '584'
+          - operateur:  OU
+            chaine-caracteres: '587'
+          - operateur:  OU
+            chaine-caracteres: '590'
+          - operateur:  OU
+            chaine-caracteres: '630'
+          - operateur:  OU
+            chaine-caracteres: '635'
+          - operateur:  OU
+            chaine-caracteres: '637'
+          - operateur:  OU
+            chaine-caracteres: '651'
+          - operateur:  OU
+            chaine-caracteres: '665'
+          - operateur:  OU
+            chaine-caracteres: '672'
+          - operateur:  OU
+            chaine-caracteres: '675'
+          - operateur:  OU
+            chaine-caracteres: '690'
+          - operateur:  OU
+            chaine-caracteres: '705'
+          - operateur:  OU
+            chaine-caracteres: '721'
+          - operateur:  OU
+            chaine-caracteres: '770'
+      - id: 25862
         type: presencesouszone
         souszone: "5"
         presence: false
