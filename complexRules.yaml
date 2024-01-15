@@ -3451,3 +3451,141 @@ rules:
          souszone: g
          presence: false
          operateur-booleen: ET
+
+
+   - id: 8020
+     id-excel: 72
+     message: "Zone 608 : puisqu'il est indiqué que la ressource comporte des caractères en braille en sous-zone 106$a, une indexation à la forme (Livres en braille) peut être précisée en zone 608"
+     priorite: P2
+     jeux-de-regles:
+       - 1  #1XX
+       - 2 #6XX
+     regles:
+       - id: 8021
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+       - id: 8022
+         type: presencechainecaracteres
+         zone: '106'
+         souszone: a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    f
+         operateur-booleen: ET
+       - id: 8023
+         type: presencezone
+         zone: '608'
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 8030
+     id-excel: 73
+     message: "Zone 608 : puisqu'il est indiqué que la ressource est imprimée en gros caractères en sous-zone 106$a, une indexation à la forme (Livres en gros caractères) peut être précisée en zone 608"
+     priorite: P2
+     jeux-de-regles:
+       - 1  #1XX
+       - 2 #6XX
+     regles:
+       - id: 8031
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+       - id: 8032
+         type: presencechainecaracteres
+         zone: '106'
+         souszone: a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    d
+         operateur-booleen: ET
+       - id: 8033
+         type: presencezone
+         zone: '608'
+         presence: false
+         operateur-booleen: ET
+
+
+
+   - id: 8040
+     id-excel: 110
+     message: "Microforme : puisque le type de médiation déclaré est 'Microforme' (valeur 'h' en 182$c), une zone 130 pourrait compléter la description de la ressource"
+     priorite: P2
+     jeux-de-regles:
+       - 1  #1XX
+     regles:
+       - id: 8041
+         type: presencesouszone
+         zone: '182'
+         souszone:    c
+         presence: true
+       - id: 8042
+         type: presencechainecaracteres
+         zone: '182'
+         souszone: c
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+       - id: 8043
+         type: presencezone
+         zone: '130'
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 8050
+     id-excel: 111
+     message: "Zone 130 :  si le type de médiation de la ressource décrite est effectivement 'Microforme', la valeur 'h' en 182$c est attendue ; si ce n'est pas le cas, la zone 130 doit être supprimée"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #1XX
+     regles:
+       - id: 8051
+         type: presencesouszone
+         zone: '182'
+         souszone:    c
+         presence: true
+       - id: 8052
+         type: presencechainecaracteres
+         zone: '182'
+         souszone: c
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+       - id: 8053
+         type: presencezone
+         zone: '130'
+         presence: true
+         operateur-booleen: ET
+
+#ATTENTION, par défaut s'applique à tous les documents : à verifier !! janv 2024
+   - id: 8060
+     id-excel: 123 
+     message: "Zone 464 : il faut enregistrer autant de zones 464 avec sous-zone $t que de titres enregistrés en sous-zone 200$a"
+     priorite: P1
+     jeux-de-regles:
+       - 4  #2XX
+     regles:
+       - id: 8061
+         type: nombrezone
+         zone: '200'
+         operateur: EGAL
+         occurrences: 1 
+       - id: 8062
+         type: presencesouszone
+         zone: '200'
+         souszone: 'c'
+         presence: false
+         operateur-booleen: ET
+       - id: 8063
+         type: nombresouszone
+         zone: '200'
+         souszone: a
+         zonecible: '464'
+         souszonecible:   t
+         operateur-booleen: ET
