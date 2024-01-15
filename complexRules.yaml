@@ -3451,3 +3451,33 @@ rules:
          souszone: g
          presence: false
          operateur-booleen: ET
+
+
+   - id: 8020
+     id-excel: 72
+     message: "Zone 608 : puisqu'il est indiqué que la ressource comporte des caractères en braille en sous-zone 106$a, une indexation à la forme (Livres en braille) peut être précisée en zone 608"
+     priorite: P2
+     jeux-de-regles:
+       - 1  #1XX
+       - 2 #6XX
+     regles:
+       - id: 8021
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+       - id: 8022
+         type: presencechainecaracteres
+         zone: '106'
+         souszone: a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    f
+         operateur-booleen: ET
+       - id: 8023
+         type: presencesouszone
+         zone: '608'
+         souszone:    3
+         presence: false
+         operateur-booleen: ET
+           
