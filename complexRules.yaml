@@ -3479,3 +3479,31 @@ rules:
          zone: '608'
          presence: false
          operateur-booleen: ET
+
+
+   - id: 8030
+     id-excel: 73
+     message: "Zone 608 : puisqu'il est indiqué que la ressource est imprimée en gros caractères en sous-zone 106$a, une indexation à la forme (Livres en gros caractères) peut être précisée en zone 608"
+     priorite: P2
+     jeux-de-regles:
+       - 1  #1XX
+       - 2 #6XX
+     regles:
+       - id: 8031
+         type: presencesouszone
+         zone: '106'
+         souszone:    a
+         presence: true
+       - id: 8032
+         type: presencechainecaracteres
+         zone: '106'
+         souszone: a
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    d
+         operateur-booleen: ET
+       - id: 8033
+         type: presencezone
+         zone: '608'
+         presence: false
+         operateur-booleen: ET
