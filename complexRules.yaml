@@ -3507,3 +3507,58 @@ rules:
          zone: '608'
          presence: false
          operateur-booleen: ET
+
+
+
+   - id: 8040
+     id-excel: 110
+     message: "Microforme : puisque le type de médiation déclaré est 'Microforme' (valeur 'h' en 182$c), une zone 130 pourrait compléter la description de la ressource"
+     priorite: P2
+     jeux-de-regles:
+       - 1  #1XX
+     regles:
+       - id: 8041
+         type: presencesouszone
+         zone: '182'
+         souszone:    c
+         presence: true
+       - id: 8042
+         type: presencechainecaracteres
+         zone: '182'
+         souszone: c
+         type-de-verification:    CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+       - id: 8043
+         type: presencezone
+         zone: '130'
+         presence: false
+         operateur-booleen: ET
+
+
+   - id: 8050
+     id-excel: 111
+     message: "Zone 130 :  si le type de médiation de la ressource décrite est effectivement 'Microforme', la valeur 'h' en 182$c est attendue ; si ce n'est pas le cas, la zone 130 doit être supprimée"
+     priorite: P1
+     jeux-de-regles:
+       - 1  #1XX
+     regles:
+       - id: 8051
+         type: presencesouszone
+         zone: '182'
+         souszone:    c
+         presence: true
+       - id: 8052
+         type: presencechainecaracteres
+         zone: '182'
+         souszone: c
+         type-de-verification:    NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    h
+         operateur-booleen: ET
+       - id: 8053
+         type: presencezone
+         zone: '130'
+         presence: true
+         operateur-booleen: ET
