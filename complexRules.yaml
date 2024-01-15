@@ -3475,9 +3475,7 @@ rules:
            - chaine-caracteres:    f
          operateur-booleen: ET
        - id: 8023
-         type: presencesouszone
+         type: presencezone
          zone: '608'
-         souszone:    3
          presence: false
          operateur-booleen: ET
-           
