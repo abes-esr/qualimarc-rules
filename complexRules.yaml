@@ -3563,29 +3563,42 @@ rules:
          presence: true
          operateur-booleen: ET
 
-#ATTENTION, par défaut s'applique à tous les documents : à verifier !! janv 2024
-   - id: 8060
-     id-excel: 123 
-     message: "Zone 464 : il faut enregistrer autant de zones 464 avec sous-zone $t que de titres enregistrés en sous-zone 200$a"
-     priorite: P1
-     jeux-de-regles:
-       - 4  #2XX
-     regles:
-       - id: 8061
-         type: nombrezone
-         zone: '200'
-         operateur: EGAL
-         occurrences: 1 
-       - id: 8062
-         type: presencesouszone
-         zone: '200'
-         souszone: 'c'
-         presence: false
-         operateur-booleen: ET
-       - id: 8063
-         type: nombresouszone
-         zone: '200'
-         souszone: a
-         zonecible: '464'
-         souszonecible:   t
-         operateur-booleen: ET
+#REGLE DESACTIVEE EN ATTENTE DE DVPT DE REGLE NB SS ZONE POUR AJOUTER CONDITION PRESENCE DE PLS 200$a - janv 2024
+   # - id: 8060
+   #   id-excel: 123 
+   #   message: "Zone 464 : il faut enregistrer autant de zones 464 avec sous-zone $t que de titres enregistrés en sous-zone 200$a"
+   #   priorite: P1
+   #   jeux-de-regles:
+   #     - 4  #2XX
+      # type-doc:
+      # -    A
+      # -    B
+      # -    K
+      # -    O
+      # -    N
+      # -    I
+      # -    F
+      # -    Z
+      # -    V
+      # -    G
+      # -    M
+      # -    PC
+   #   regles:
+   #     - id: 8061
+   #       type: nombrezone
+   #       zone: '200'
+   #       operateur: EGAL
+   #       occurrences: 1 
+   #     - id: 8062
+   #       type: presencesouszone
+   #       zone: '200'
+   #       souszone: 'c'
+   #       presence: false
+   #       operateur-booleen: ET
+   #     - id: 8063
+   #       type: nombresouszone
+   #       zone: '200'
+   #       souszone: a
+   #       zonecible: '464'
+   #       souszonecible:   t
+   #       operateur-booleen: ET
