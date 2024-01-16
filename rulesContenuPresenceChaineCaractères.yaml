@@ -922,6 +922,18 @@ rules:
       - 7 #responsabilités
 
 
+    - id:                       1062
+      id-excel:                 153 
+      type:                     presencechainecaracteres
+      message:                  "Zone 207 : la sous-zone $a contient le terme générique 'Numérotation : indication de date et de volume' : compléter ou supprimer cette sous-zone"
+      jeux-de-regles:
+      - 4 #2XX
+      zone:                     207
+      priorite:                 P1
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    'indication de date et de volume'
 
 
       
