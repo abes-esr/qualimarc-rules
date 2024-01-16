@@ -2674,3 +2674,24 @@ rules:
         type: presencesouszone
         souszone: "5"
         presence: false
+
+
+  - id: 25870
+    id-excel: 731 
+    message: "Zone 206 : il est recommandé de privilégier l'enregistrement de la zone sous une forme structurée (valeur de l'indicateur 1 = 0, avec utilisation des sous-zones $b, $c, $d, $e, $f)"
+    zone: 206
+    priorite: P2
+    type-doc:
+      - K
+    jeux-de-regles:
+      - 4 #2XX
+    regles:
+      - id: 25871
+        type: indicateur
+        indicateur: 1
+        type-de-verification: STRICTEMENT
+        valeur: "#"
+      - id: 25872
+        type: presencesouszone
+        souszone: "a"
+        presence: true
