@@ -2695,3 +2695,44 @@ rules:
         type: presencesouszone
         souszone: "a"
         presence: true
+
+ - id: 25880
+    id-excel: 144 
+    message: "Zone 206 : puisque la zone 206 comporte des sous-zones $b, $c, $d, $e et/ou $f, elle doit être déclarée comme zone structurée avec un indicateur 1 = 0 au lieu de #"
+    zone: 206
+    priorite: P1
+    type-doc:
+      - K
+    jeux-de-regles:
+      - 4 #2XX
+    regles:
+      - id: 25881
+        type: indicateur
+        indicateur: 1
+        type-de-verification: STRICTEMENT
+        valeur: "#"
+      - id: 25882
+        type: presencesouszone
+        souszone: "a"
+        presence: false
+
+
+ - id: 25890
+    id-excel: 145 
+    message: "Zone 206 : puisqu'elle est déclarée comme zone structurée (indicateur 1 = 0), la sous-zone $a doit être remplacée en faveur des sous-zones $b, $c, $d, $e et/ou $f ; sinon, modifier la valeur de l'indicateur 1 en # (zone non structurée)"
+    zone: 206
+    priorite: P1
+    type-doc:
+      - K
+    jeux-de-regles:
+      - 4 #2XX
+    regles:
+      - id: 25891
+        type: indicateur
+        indicateur: 1
+        type-de-verification: STRICTEMENT
+        valeur: "0"
+      - id: 25892
+        type: presencesouszone
+        souszone: "a"
+        presence: true
