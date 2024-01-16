@@ -367,7 +367,7 @@ rules:
     - id:         523
       id-excel:    143
       type:        presencezone
-      message:     "Carte : la zone 206 (mention d'échelle) est obligatoire"
+      message:     "Carte : la zone 206 (mention d'échelle) est obligatoire. Privilégier une zone 206 structurée (indicateur 1 = 0)"
       zone:        206
       priorite:    P1
       presence:    false
