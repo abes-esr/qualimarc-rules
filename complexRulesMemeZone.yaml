@@ -2736,3 +2736,21 @@ rules:
         type: presencesouszone
         souszone: "a"
         presence: true
+
+  
+  - id: 25900
+    id-excel: 479
+    message: "Zone 716 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
+    zone: 716
+    priorite: P1
+    jeux-de-regles:
+      - 7 #7XX
+      - 3 #liens
+    regles:
+      - id: 25901
+        type: presencezone
+        presence: true
+      - id: 25902
+        type: presencesouszone
+        souszone: "3"
+        presence: false
