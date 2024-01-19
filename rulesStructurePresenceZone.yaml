@@ -683,7 +683,6 @@ rules:
       presence:    true
 
 
-
     - id:          545
       id-excel:    56
       jeux-de-regles:
@@ -695,3 +694,27 @@ rules:
       priorite:    P1
       type-these:
       -    SOUTENANCE
+
+    - id:          546
+      id-excel:    400
+      jeux-de-regles:
+      -  2  #6XX
+      type:        presencezone
+      message:     "Carte : une indexation à la forme (Cartes, Plans, Atlas, ...) pourrait peut-être être précisée en zone 608"
+      zone:        608
+      presence: false
+      priorite:    P2
+      type-doc:
+      -  K
+
+    - id:          547
+      id-excel:    389
+      jeux-de-regles:
+      -  2  #6XX
+      type:        presencezone
+      message:     "Carte : une indexation sujet 'Nom géographique' pourrait peut-être être précisée en zone 607"
+      zone:        607
+      presence: false
+      priorite:    P2
+      type-doc:
+      -  K
