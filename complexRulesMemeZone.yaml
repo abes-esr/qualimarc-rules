@@ -2754,3 +2754,32 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
+
+
+
+  - id: 25910
+    id-excel: 416
+    message: "Zone 616 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
+    zone: 616
+    priorite: P1
+    jeux-de-regles:
+      - 2 #6XX
+      - 3 #liens
+    regles:
+      - id: 25911
+        type: presencezone
+        presence: true
+      - id: 25912
+        type: presencesouszone
+        souszone: "2"
+        presence: true
+      - id: 25913
+        type: presencechainecaracteres
+        souszone: "2"
+        type-de-verification: STRICTEMENT
+        chaines-caracteres:
+          -  rameau
+      - id: 25914
+        type: presencesouszone
+        souszone: "3"
+        presence: false
