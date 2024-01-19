@@ -951,22 +951,3 @@ rules:
       jeux-de-regles: 
       - 4 #2XX       
 
-      
-    - id:                       1064
-      id-excel:                 505
-      type:                     presencechainecaracteres
-      message:                  "Zones 7XX : dans une ressource de type carte, un accès auteur avec un code fonction '180' en sous-zone $4 est attendu pour désigner le(s) cartographe(s) ; utilisez les codes fonction '350' (graveur) ou '410' (dessinateur) dans le cas de cartes anciennes"
-      zone:                     7XX
-      type-doc:
-        - K
-      priorite:                 P2
-      souszone:                 4
-      type-de-verification:     NECONTIENTPAS
-      chaines-caracteres:
-        - chaine-caracteres:    '180'
-        - operateur:            OU
-          chaine-caracteres:    '410'
-        - operateur:            OU
-          chaine-caracteres:    '350'
-      jeux-de-regles: 
-      - 7 #7XX
