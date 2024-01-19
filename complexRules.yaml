@@ -3659,6 +3659,7 @@ rules:
              chaine-caracteres:    '350'
            - operateur: OU
              chaine-caracteres:    '410'
+         operateur-booleen: ET
        - id: 8075
          type: presencechainecaracteres
          zone: '711'
@@ -3670,7 +3671,7 @@ rules:
              chaine-caracteres:    '350'
            - operateur: OU
              chaine-caracteres:    '410'
-         operateur-booleen: ET       
+         operateur-booleen: ET
        - id: 8076
          type: presencechainecaracteres
          zone: '712'
@@ -3694,6 +3695,7 @@ rules:
              chaine-caracteres:    '350'
            - operateur: OU
              chaine-caracteres:    '410'
+         operateur-booleen: ET
        - id: 8078
          type: presencechainecaracteres
          zone: '721'
@@ -3705,7 +3707,7 @@ rules:
              chaine-caracteres:    '350'
            - operateur: OU
              chaine-caracteres:    '410'
-         operateur-booleen: ET       
+         operateur-booleen: ET
        - id: 8079
          type: presencechainecaracteres
          zone: '722'
