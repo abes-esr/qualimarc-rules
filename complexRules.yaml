@@ -3602,3 +3602,121 @@ rules:
    #       zonecible: '464'
    #       souszonecible:   t
    #       operateur-booleen: ET
+
+#règle 8070 désactivée - attente création règle "générique" qui proterait sur l'ensemble d'1 bloc - janv 2024
+   # - id: 8070
+   #   id-excel: 505
+   #   message: "Zones 7XX : dans une ressource de type carte, un accès auteur avec un code fonction '180' en sous-zone $4 est attendu pour désigner le(s) cartographe(s) ; utilisez les codes fonction '350' (graveur) ou '410' (dessinateur) dans le cas de cartes anciennes"
+   #   priorite: P2
+   #   type-doc:
+   #     - K
+   #   jeux-de-regles:
+   #     - 7  #7XX
+   #   regles:
+   #     - id: 8071
+   #       type: presencechainecaracteres
+   #       zone: '700'
+   #       souszone:    4
+   #       type-de-verification:    NECONTIENTPAS
+   #       chaines-caracteres:
+   #         - chaine-caracteres:    '180'
+   #         - operateur: OU
+   #           chaine-caracteres:    '350'
+   #         - operateur: OU
+   #           chaine-caracteres:    '410'
+   #     - id: 8072
+   #       type: presencechainecaracteres
+   #       zone: '701'
+   #       souszone: 4
+   #       type-de-verification:    NECONTIENTPAS
+   #       chaines-caracteres:
+   #         - chaine-caracteres:    '180'
+   #         - operateur: OU
+   #           chaine-caracteres:    '350'
+   #         - operateur: OU
+   #           chaine-caracteres:    '410'
+   #       operateur-booleen: ET       
+   #     - id: 8073
+   #       type: presencechainecaracteres
+   #       zone: '702'
+   #       souszone: 4
+   #       type-de-verification:    NECONTIENTPAS
+   #       chaines-caracteres:
+   #         - chaine-caracteres:    '180'
+   #         - operateur: OU
+   #           chaine-caracteres:    '350'
+   #         - operateur: OU
+   #           chaine-caracteres:    '410'
+   #       operateur-booleen: ET
+   #     - id: 8074
+   #       type: presencechainecaracteres
+   #       zone: '710'
+   #       souszone:    4
+   #       type-de-verification:    NECONTIENTPAS
+   #       chaines-caracteres:
+   #         - chaine-caracteres:    '180'
+   #         - operateur: OU
+   #           chaine-caracteres:    '350'
+   #         - operateur: OU
+   #           chaine-caracteres:    '410'
+   #       operateur-booleen: ET
+   #     - id: 8075
+   #       type: presencechainecaracteres
+   #       zone: '711'
+   #       souszone: 4
+   #       type-de-verification:    NECONTIENTPAS
+   #       chaines-caracteres:
+   #         - chaine-caracteres:    '180'
+   #         - operateur: OU
+   #           chaine-caracteres:    '350'
+   #         - operateur: OU
+   #           chaine-caracteres:    '410'
+   #       operateur-booleen: ET
+   #     - id: 8076
+   #       type: presencechainecaracteres
+   #       zone: '712'
+   #       souszone: 4
+   #       type-de-verification:    NECONTIENTPAS
+   #       chaines-caracteres:
+   #         - chaine-caracteres:    '180'
+   #         - operateur: OU
+   #           chaine-caracteres:    '350'
+   #         - operateur: OU
+   #           chaine-caracteres:    '410'
+   #       operateur-booleen: ET
+   #     - id: 8077
+   #       type: presencechainecaracteres
+   #       zone: '720'
+   #       souszone:    4
+   #       type-de-verification:    NECONTIENTPAS
+   #       chaines-caracteres:
+   #         - chaine-caracteres:    '180'
+   #         - operateur: OU
+   #           chaine-caracteres:    '350'
+   #         - operateur: OU
+   #           chaine-caracteres:    '410'
+   #       operateur-booleen: ET
+   #     - id: 8078
+   #       type: presencechainecaracteres
+   #       zone: '721'
+   #       souszone: 4
+   #       type-de-verification:    NECONTIENTPAS
+   #       chaines-caracteres:
+   #         - chaine-caracteres:    '180'
+   #         - operateur: OU
+   #           chaine-caracteres:    '350'
+   #         - operateur: OU
+   #           chaine-caracteres:    '410'
+   #       operateur-booleen: ET
+   #     - id: 8079
+   #       type: presencechainecaracteres
+   #       zone: '722'
+   #       souszone: 4
+   #       type-de-verification:    NECONTIENTPAS
+   #       chaines-caracteres:
+   #         - chaine-caracteres:    '180'
+   #         - operateur: OU
+   #           chaine-caracteres:    '350'
+   #         - operateur: OU
+   #           chaine-caracteres:    '410'
+   #       operateur-booleen: ET
