@@ -3366,11 +3366,17 @@ rules:
      - 2 #6XX
      regles:
        - id: 7991
+         type: nombrezone
+         zone: '608'
+         operateur: EGAL
+         occurrences: 1
+       - id: 7992
          type: presencesouszone
          zone: '608'
          souszone: a
          presence: true
-       - id: 7992
+         operateur-booleen: ET
+       - id: 7993
          type: presencechainecaracteres
          zone: '608'
          souszone: 'a'
