@@ -3375,6 +3375,7 @@ rules:
          zone: '608'
          souszone: a
          presence: true
+         operateur-booleen: ET
        - id: 7993
          type: presencechainecaracteres
          zone: '608'
