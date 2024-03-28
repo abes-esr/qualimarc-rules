@@ -4,7 +4,7 @@
 
 ## Documentation d'utilisation du dépôt
 
-Ce document explique étape par étape comment ajouter ou modifier des règles dans le projet QualiMarc.
+Ce document explique étape par étape comment ajouter ou modifier des règles dans le projet QualiMarc..
 
 ## Sommaire
 - [Utilisation de GitHub](#1)
