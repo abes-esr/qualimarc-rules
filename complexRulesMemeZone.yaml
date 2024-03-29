@@ -1097,7 +1097,7 @@ rules:
         type-de-verification: NECONTIENTPAS
         chaines-caracteres:
           - chaine-caracteres: rameau
-          - operateur:  OU
+          - operateur:  ET
             chaine-caracteres: fmesh
  
  
