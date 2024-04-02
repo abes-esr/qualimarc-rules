@@ -1074,7 +1074,7 @@ rules:
           -  rameau
           
           
- #modif opérateur booléen ET > OU 28/03/2024 suite ticket et bug
+ #modif opérateur booléen ET > OU 28/03/2024 suite ticket et bug / remodif avec ET le 29/03 : le pb constaté montre que la règle se joue aléatoirement (l'erreur remonte une fois sur deux quand on relance l'analyse), , quand présence de rameau ET de fmesh dans la notice
   - id: 25440
     id-excel: 712
     message: "Zone 606 : dès lors qu'elle comporte un lien vers une autorité, la sous-zone $2 doit être 'rameau' ou 'fmesh' (en minuscules)"
