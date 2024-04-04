@@ -1074,31 +1074,33 @@ rules:
           -  rameau
           
           
- 
-  - id: 25440
-    id-excel: 712
-    message: "Zone 606 : dès lors qu'elle comporte un lien vers une autorité, la sous-zone $2 doit être 'rameau' ou 'fmesh' (en minuscules)"
-    zone: 606
-    priorite: P1
-    jeux-de-regles:
-      - 2 #6XX
-    regles:
-      - id: 25441
-        type: presencesouszone
-        souszone: "3"
-        presence: true
-      - id: 25442
-        type: presencesouszone
-        souszone: "2"
-        presence: true
-      - id: 25443
-        type: presencechainecaracteres
-        souszone: "2"
-        type-de-verification: NECONTIENTPAS
-        chaines-caracteres:
-          - chaine-caracteres: rameau
-          - operateur:  ET
-            chaine-caracteres: fmesh
+ #modif opérateur booléen ET > OU 28/03/2024 suite ticket et bug / remodif avec ET le 29/03 : le pb constaté montre que la règle se joue aléatoirement 
+ #(l'erreur remonte une fois sur deux quand on relance l'analyse), , quand présence de rameau ET de fmesh dans la notice
+ #désactiuvation temporaire de la règle le 04/04/24 en attendant le debugage
+  # - id: 25440
+  #   id-excel: 712
+  #   message: "Zone 606 : dès lors qu'elle comporte un lien vers une autorité, la sous-zone $2 doit être 'rameau' ou 'fmesh' (en minuscules)"
+  #   zone: 606
+  #   priorite: P1
+  #   jeux-de-regles:
+  #     - 2 #6XX
+  #   regles:
+  #     - id: 25441
+  #       type: presencesouszone
+  #       souszone: "3"
+  #       presence: true
+  #     - id: 25442
+  #       type: presencesouszone
+  #       souszone: "2"
+  #       presence: true
+  #     - id: 25443
+  #       type: presencechainecaracteres
+  #       souszone: "2"
+  #       type-de-verification: NECONTIENTPAS
+  #       chaines-caracteres:
+  #         - chaine-caracteres: rameau
+  #         - operateur:  ET
+  #           chaine-caracteres: fmesh
  
  
  
