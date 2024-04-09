@@ -1102,8 +1102,7 @@ rules:
           - chaine-caracteres: rameau
           - operateur:  ET
             chaine-caracteres: fmesh
- 
- 
+
  
  
   - id: 25450
