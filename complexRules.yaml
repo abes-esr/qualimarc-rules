@@ -3758,10 +3758,7 @@ rules:
          presence: false
          operateur-booleen: ET 
        - id: 8083
-         type: presencechainecaracteres
+         type: presencezone
          zone: '328'
-         souszone: 'b'
-         type-de-verification:     NECONTIENTPAS
-         chaines-caracteres:
-           - chaine-caracteres:    "Thèse"
+         presence: false
          operateur-booleen: ET
