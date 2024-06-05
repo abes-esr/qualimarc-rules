@@ -639,28 +639,28 @@ rules:
       priorite:    P2
       presence:    false
 
-
-    - id:         543
-      id-excel:   729 
-      type-doc:
-      -  A
-      -  B
-      -  K
-      -  N
-      -  I
-      -  F
-      -  Z
-      -  V
-      -  G
-      -  M
-      -  PC
-      jeux-de-regles:
-      -  9  # Identifiants
-      type:        presencezone
-      message:     "Si la ressource décrite est identifiée par un EAN, sa transcription dans la notice est obligatoire dans une zone 073"
-      zone:        073
-      priorite:    P2
-      presence:    false
+# Désactivation règle 543 le 05/06/2024 pour la récréer en règle complexe (ajout de critère sur absence de zone 029 et 010 pour ne pas qu'elle s'enclenche pour les thèses originelles)
+    # - id:         543
+    #   id-excel:   729 
+    #   type-doc:
+    #   -  A
+    #   -  B
+    #   -  K
+    #   -  N
+    #   -  I
+    #   -  F
+    #   -  Z
+    #   -  V
+    #   -  G
+    #   -  M
+    #   -  PC
+    #   jeux-de-regles:
+    #   -  9  # Identifiants
+    #   type:        presencezone
+    #   message:     "Si la ressource décrite est identifiée par un EAN, sa transcription dans la notice est obligatoire dans une zone 073"
+    #   zone:        073
+    #   priorite:    P2
+    #   presence:    false
 
 
     - id:         544
