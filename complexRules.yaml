@@ -3734,19 +3734,19 @@ rules:
      message:     "Si la ressource décrite est identifiée par un EAN, sa transcription dans la notice est obligatoire dans une zone 073"
      priorite:    P2
      jeux-de-regles:
-     - 9  #Identifiants
+       - 9  #Identifiants
      type-doc:
-      -  A
-      -  B
-      -  K
-      -  N
-      -  I
-      -  F
-      -  Z
-      -  V
-      -  G
-      -  M
-      -  PC
+       -  A
+       -  B
+       -  K
+       -  N
+       -  I
+       -  F
+       -  Z
+       -  V
+       -  G
+       -  M
+       -  PC
      regles:
        - id: 8081
          type: presencezone
