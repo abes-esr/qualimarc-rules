@@ -3756,9 +3756,12 @@ rules:
          type: presencezone
          zone: '029'
          presence: false
-         operateur-booleen: ET
+         operateur-booleen: ET 
        - id: 8083
-         type: presencezone
-         zone: '010'
-         presence: false
+         type: presencechainecaracteres
+         zone: '328'
+         souszone: 'b'
+         type-de-verification:     NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "Thèse"
          operateur-booleen: ET
