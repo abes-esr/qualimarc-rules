@@ -3726,3 +3726,39 @@ rules:
    #         - operateur: OU
    #           chaine-caracteres:    '410'
    #       operateur-booleen: ET
+
+
+# règle 8080 créée juin 2024 en remplacement de la 543 pour éviter qu'elle ne s'enclenche pour les thèses originelles.   
+   - id:         8080
+     id-excel:    729
+     message:     "Si la ressource décrite est identifiée par un EAN, sa transcription dans la notice est obligatoire dans une zone 073"
+     priorite:    P2
+     jeux-de-regles:
+       - 9  #Identifiants
+     type-doc:
+       -  A
+       -  B
+       -  K
+       -  N
+       -  I
+       -  F
+       -  Z
+       -  V
+       -  G
+       -  M
+       -  PC
+     regles:
+       - id: 8081
+         type: presencezone
+         zone: '073'
+         presence: false
+       - id: 8082
+         type: presencezone
+         zone: '029'
+         presence: false
+         operateur-booleen: ET 
+       - id: 8083
+         type: presencezone
+         zone: '328'
+         presence: false
+         operateur-booleen: ET
