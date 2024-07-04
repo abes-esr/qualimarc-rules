@@ -2258,7 +2258,7 @@ rules:
          type-de-verification: STRICTEMENT
          valeur: A
 
-
+#ajout de critère d'absence de 200$7 pour éviter les potentiels bilingues
    - id: 7630
      id-excel: 139
      message: "Zone 200 : il doit y avoir autant de titre parallèle déclaré (en sous-zone $d) que de langue de titre parallèle déclarée (en sous-zone $z)"
@@ -2284,9 +2284,16 @@ rules:
          zonecible: '200'
          souszonecible:   z
          operateur-booleen: ET
+       - id: 7634
+         type: presencesouszone
+         zone: '200'
+         souszone:    7
+         presence: false
+         operateur-booleen: ET
 
-
-#remplacement zone 464 en 454 (erreur initiale VerifSudoc) oct 2023
+         
+#remplacement zone 464 en 454 (erreur initiale VerifSudoc) oct 2023 
+# ajout absence de 200$e pour éviter qu'elle ne se déclenche dans le cas de complément de titre parallèle - cf jeux SNX - juin 2024
    - id: 7640
      id-excel: 130
      message: "Zone 510 : il faut enregistrer autant de zones 510 que de titre parallèle enregistré en sous-zone 200$d (et une zone 454 si un des titres parallèles correspond au titre original de l'oeuvre)"
@@ -2315,6 +2322,12 @@ rules:
        - id: 7644
          type: presencezone
          zone: '454'
+         presence: false
+         operateur-booleen: ET
+       - id: 7645
+         type: presencesouszone
+         zone: '200'
+         souszone: 'e'
          presence: false
          operateur-booleen: ET
 
