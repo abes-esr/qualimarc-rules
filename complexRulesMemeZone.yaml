@@ -899,10 +899,10 @@ rules:
         souszone: "z"
         presence: false
         
-
+# ajout absence de 200$e pour éviter que la règle ne se déclenche si présence de cpt de titre parallèle (200$e =)
   - id: 25370
     id-excel: 139
-    message: "Zone 200 : pour chaque langue de titre parallèle déclarée (en sous-zone $z), une sous-zone $d (titre parallèle) est obligatoire"
+    message: "Zone 200 : pour chaque langue de titre parallèle déclarée (en sous-zone $z), une sous-zone $d (titre parallèle) ou $e (complément de titre parallèle) est obligatoire"
     zone: 200
     priorite: P1
     jeux-de-regles:
@@ -916,6 +916,10 @@ rules:
         type: presencesouszone
         souszone: "z"
         presence: true
+      - id: 25373
+        type: presencesouszone
+        souszone: "e"
+        presence: false
 
 #REGLE 25380 NOK - A SUPPRIMER CAR TYPE DEPENDANCE EXCLUE DES REGLES COMPLEXES MEME ZONE - EVOLUTION DEMANDEE EN V2 ?
   #- id: 25380
