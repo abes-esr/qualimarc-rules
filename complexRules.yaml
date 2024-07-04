@@ -2258,7 +2258,7 @@ rules:
          type-de-verification: STRICTEMENT
          valeur: A
 
-
+#ajout de critère d'absence de 200$7 pour éviter les potentiels bilingues
    - id: 7630
      id-excel: 139
      message: "Zone 200 : il doit y avoir autant de titre parallèle déclaré (en sous-zone $d) que de langue de titre parallèle déclarée (en sous-zone $z)"
@@ -2284,7 +2284,11 @@ rules:
          zonecible: '200'
          souszonecible:   z
          operateur-booleen: ET
-
+       - id: 7634
+         type: presencesouszone
+         zone: '200'
+         souszone:    7
+         presence: false
 
 #remplacement zone 464 en 454 (erreur initiale VerifSudoc) oct 2023
    - id: 7640
