@@ -2485,7 +2485,7 @@ rules:
          valeur:  'g'
          position: 2
 
-
+# ajout 7714 pour autoriser l'emploi des Fmesh (Tl) en zone 608 - suite màj consignes et GM du 09/07/24
    - id: 7710
      id-excel: 410
      message: "Zone 608 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Forme ou genre Rameau' (Tf) : revoir l'indexation"
@@ -2509,7 +2509,13 @@ rules:
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur:  'f'
          position: 2
-
+       - id: 7714
+         type: typedocument
+         type-de-verification:    STRICTEMENTDIFFERENT
+         valeur:  'l'
+         position: 2
+         operateur-booleen: ET
+         
    - id: 7720
      id-excel: 417
      message: "Zone 616 : la notice d'autorité liée enregistrée en élément d'entrée du point d'accès doit obligatoirement être de type 'Nom de marque' (Tm) : revoir l'indexation"
