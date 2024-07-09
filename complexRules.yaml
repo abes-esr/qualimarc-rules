@@ -2485,10 +2485,11 @@ rules:
          valeur:  'g'
          position: 2
 
-# ajout 7714 pour autoriser l'emploi des Fmesh (Tl) en zone 608 - suite màj consignes et GM du 09/07/24
+# ajout 7714 pour autoriser l'emploi des Fmesh (Tl) en zone 608 - suite màj consignes et GM du 09/07/24 / A TRANSFERER EN REGLE COMPLEXE MM ZONE EN V2 QUAND REGLE DE DEPENDANCE INCLUSE 
+# actuellement, si pls 608 dont une erronée et une correcte, l'erreur ne sera pas détectée par QM
    - id: 7710
      id-excel: 410
-     message: "Zone 608 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Forme ou genre Rameau' (Tf) : revoir l'indexation"
+     message: "Zone 608 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Forme ou genre Rameau' (Tf) ou FmeSH (Tl 'publication type') : revoir l'indexation"
      priorite: P1
      jeux-de-regles:
        - 2  #6XX
