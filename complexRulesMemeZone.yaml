@@ -1132,10 +1132,10 @@ rules:
         chaines-caracteres:
           -  rameau
           
-
+#màj 25460 ajout "fmesh" dans présence $2 suite ouverture utilisation 608 autre que Tf8 + modif message d'erreur en csq
   - id: 25460
     id-excel: 713
-    message: "Zone 608 : puisqu'elle contient un lien vers une autorité 'Forme ou Genre' (Tf) la sous-zone $2 doit être 'rameau' (en minuscules)"
+    message: "Zone 608 : dès lors qu'elle comporte un lien vers une autorité, la sous-zone $2 doit être 'rameau' ou 'fmesh' (en minuscules)"
     zone: 608
     priorite: P1
     jeux-de-regles:
@@ -1155,6 +1155,8 @@ rules:
         type-de-verification: NECONTIENTPAS
         chaines-caracteres:
           -  rameau
+          - operateur:  ET
+            chaine-caracteres: fmesh
 
 
   - id: 25470
