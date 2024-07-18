@@ -3026,7 +3026,7 @@ rules:
          valeur: '2'
          operateur-booleen: ET
 
-
+#rajout critère de présence de zone 530 dans notice de collection liée en zone 410$0 suite ticket Abesstp juillet 2024 (7884/7885)
    - id: 7880
      id-excel: 722
      message: "Zone 225 : incohérence entre l'indicateur 1 = 1 et la présence d'un lien vers une notice de collection enregistré en sous-zone 410$0. Modifier la valeur de l'indicateur 1 en '0' ou '2' de la zone 225"
@@ -3053,6 +3053,15 @@ rules:
          type-de-verification: STRICTEMENT
          valeur: '1'
          operateur-booleen: ET
+       - id: 7884
+         type: dependance
+         zone: '410'
+         souszone:   0
+         type-notice-liee: BIBLIO
+       - id: 7885
+         type: presencezone
+         zone:    '530'
+         presence: true
 
 
 #annule et replace la règle 300 (ajout de condition de présence de 183$a ceb/czz)
