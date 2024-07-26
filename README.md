@@ -7,7 +7,7 @@
 Ce document explique étape par étape comment ajouter ou modifier des règles dans le projet QualiMarc..
 
 ## Sommaire
-- [Utilisation de GitHub](#1) 
+- [Utilisation de GitHub](#1)
 - [Déclenchement de la mise à jour](#2)
 - [Langage YAML](#3)
 - [Syntaxe des règles simples](#4)
