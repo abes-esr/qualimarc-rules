@@ -816,9 +816,10 @@ rules:
          operateur-booleen: OU
          
 #DESACTIVATION MOMENTANEE / BUG EN PROD !!!!!!!!! URGENT A TRAITER : OK BUG TRAITE LE 20/03/23 >> attention, ne pas utliser strictementdifferent quand opérateur booleen OU sur même zone/souszone !
+# 13/09/24 : màj du message d'erreur en incluant l'exception des monographies en plusieurs volumes
    - id: 7110
      id-excel: 701
-     message: "Zone 461 : puisqu'il s'agit d'une monographie imprimée, le lien enregistré en 461$0 doit pointer vers une notice de collection de monographies imprimées (Ad) ou vers une notice de ressource continue (Ab) - sauf dans le cas particulier de coffrets"
+     message: "Zone 461 : puisqu'il s'agit d'une monographie imprimée, le lien enregistré en 461$0 doit pointer vers une notice de collection de monographies imprimées (Ad) ou vers une notice de ressource continue (Ab) - sauf dans le cas particulier de coffrets ou sauf si le document décrit est un des volumes d'une monographie en plusieurs volumes (dans ce dernier cas, la zone 461 ne contient qu'un $t et un $v, sans lien $0 donc"
      priorite: P1
      type-doc:
        -    A
