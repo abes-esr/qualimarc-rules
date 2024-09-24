@@ -3806,7 +3806,7 @@ rules:
              chaine-caracteres:    '2'
          operateur-booleen: ET
 
-#24/09/24 : règle créée en remplacement de l'ancienne 571 pour limiter le bruit généré par l'absence quasi systématique de la zone 676 - pls réclamations du réseau à ce propos
+#24/09/24 : règle créée en remplacement de l'ancienne 541 pour limiter le bruit généré par l'absence quasi systématique de la zone 676 - pls réclamations du réseau à ce propos
    - id:         8090
      id-excel:   727
      message:     "Zone 676 : puisqu'aucune indexation matière n'est enregistrée, une classification décimale Dewey pourrait être enregistrée dans une zone 676 : elle apporterait des précisions sur la discipline couverte par le document décrit"
