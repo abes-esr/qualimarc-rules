@@ -606,7 +606,7 @@ rules:
       -    G
       -    K
       -    PC
-#désactivation au profit de la règle complexe XXX pour éviter le bruit (cumulation avec absence de 6XX) - 24/09/24     
+#désactivation au profit de la règle complexe 8090 pour éviter le bruit (cumulation avec absence de 6XX) - 24/09/24     
     # - id:         541
     #   id-excel:   727  
     #   type:        presencezone
