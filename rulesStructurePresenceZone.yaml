@@ -606,14 +606,14 @@ rules:
       -    G
       -    K
       -    PC
-      
-    - id:         541
-      id-excel:   727  
-      type:        presencezone
-      message:     "Zone 676 : une classification décimale Dewey pourrait être enregistrée dans une zone 676 : elle apporterait des précisions sur la discipline couverte par le document décrit"
-      zone:        676
-      priorite:    P2
-      presence:    false
+#désactivation au profit de la règle complexe XXX pour éviter le bruit (cumulation avec absence de 6XX) - 24/09/24     
+    # - id:         541
+    #   id-excel:   727  
+    #   type:        presencezone
+    #   message:     "Zone 676 : une classification décimale Dewey pourrait être enregistrée dans une zone 676 : elle apporterait des précisions sur la discipline couverte par le document décrit"
+    #   zone:        676
+    #   priorite:    P2
+    #   presence:    false
 
 #exclusion des ressources elec (O) pour la règle 542 suite ticket abesstp le 21/11/23
     - id:         542
