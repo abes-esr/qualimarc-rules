@@ -3805,3 +3805,56 @@ rules:
            - operateur: OU
              chaine-caracteres:    '2'
          operateur-booleen: ET
+
+#24/09/24 : règle créée en remplacement de l'ancienne 541 pour limiter le bruit généré par l'absence quasi systématique de la zone 676 - pls réclamations du réseau à ce propos
+   - id:         8090
+     id-excel:   727
+     message:     "Zone 676 : puisqu'aucune indexation matière n'est enregistrée, une classification décimale Dewey pourrait être enregistrée dans une zone 676 : elle apporterait des précisions sur la discipline couverte par le document décrit"
+     priorite:    P2
+     jeux-de-regles:
+       - 2 #6XX
+     regles:
+       - id: 8091
+         type: presencezone
+         zone: '676'
+         presence: false
+       - id: 8092
+         type: presencezone
+         zone: '600'
+         presence: false
+         operateur-booleen: ET
+       - id: 8093
+         type: presencezone
+         zone: '601'
+         presence: false
+         operateur-booleen: ET
+       - id: 8094
+         type: presencezone
+         zone: '602'
+         presence: false
+         operateur-booleen: ET
+       - id: 8095
+         type: presencezone
+         zone: '604'
+         presence: false
+         operateur-booleen: ET
+       - id: 8096
+         type: presencezone
+         zone: '605'
+         presence: false
+         operateur-booleen: ET
+       - id: 8097
+         type: presencezone
+         zone: '606'
+         presence: false
+         operateur-booleen: ET
+       - id: 8098
+         type: presencezone
+         zone: '607'
+         presence: false
+         operateur-booleen: ET
+       - id: 8099
+         type: presencezone
+         zone: '608'
+         presence: false
+         operateur-booleen: ET
