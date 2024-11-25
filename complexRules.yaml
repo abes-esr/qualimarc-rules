@@ -149,11 +149,11 @@ rules:
          presence: false
          operateur-booleen: ET
          
-                  
+# nov 2024 : suite collectif données et pbmatique liée aux périos, màj de la règle en la passant en recommandation (P2/avancée)                  
    - id: 5060
      id-excel: 321
-     message: "Puisque un autre type de relation est enregistré en zone 488, une note sur les zones de lien en zone 311 est obligatoire pour préciser la nature du lien entre les 2 documents"
-     priorite: P1
+     message: "Puisque un autre type de relation est enregistré en zone 488, une note sur les zones de lien en zone 311 est fortement recommandée pour préciser la nature du lien entre les 2 documents"
+     priorite: P2
      regles:
        - id: 5061
          type: presencezone
