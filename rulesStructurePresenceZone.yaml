@@ -718,3 +718,17 @@ rules:
       priorite:    P2
       type-doc:
       -  K
+
+ # règle 548 : création AFE - 14/01/2025
+ # limitée dans un premier temps aux seules ressources continues (type doc : BD) ; voir si peut être élargie aux autres types de docs autrs que monographies pures (Za, Na, Ka...)
+    - id:         548
+      id-excel:    50
+      type:        presencezone
+      message:     "Zone 105 : à supprimer car ces données codées ne peuvent être enregistrées que dans une notice de monographie"
+      zone:        105
+      priorite:    P1
+      presence:    true
+      type-doc:
+      -    BD
+      jeux-de-regles:
+      - 1  #1XX
