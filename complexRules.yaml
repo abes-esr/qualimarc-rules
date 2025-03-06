@@ -3887,3 +3887,35 @@ rules:
          zonecible: '183'
          souszonecible: 'a'
          operateur-booleen: ET
+
+
+#AFE - 06/03/2025 - règle ajoutée dans le cadre de la couverture des vérifications rétroconversions
+#duplication de la règle 7982 en cas de zone 210 au lieu de 214
+   - id:         9010
+     message:     "Zone 210 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
+     priorite:    P1
+     jeux-de-regles:
+     - 6 #dates
+     regles:
+       - id: 9011
+         type: nombrezone
+         zone: '210'
+         operateur: EGAL
+         occurrences: 1
+       - id: 9012
+         type: comparaisoncontenusouszone
+         zone: '210'
+         souszone: 'd'
+         type-de-verification: NECONTIENTPAS
+         zonecible: '100'
+         souszonecible: 'A'
+         operateur-booleen: ET
+       - id: 9013
+         type: presencechainecaracteres
+         zone: '100'
+         souszone: 'A'
+         type-de-verification: NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "X"
+         operateur-booleen: ET
+
