@@ -732,3 +732,14 @@ rules:
       -    BD
       jeux-de-regles:
       - 1  #1XX
+
+
+ #AFE - 06/03/2025 - règle créée dans le cadre de la couverture des vérifications rétroconversions
+    - id:         549
+      type:        presencezone
+      message:     "Zone 320 absente : dans une notice de thèse, elle est obligatoire dans la mesure où toute thèse comporte une bibliographie et éventuellement un index"
+      zone:        320
+      priorite:    P1
+      presence:    false
+      type-these:
+      -    SOUTENANCE
