@@ -3963,3 +3963,28 @@ rules:
          zone: '214'
          presence: true
          operateur-booleen: OU
+
+
+ #AFE - 06/03/2025 - règle ajoutée dans le cadre de la couverture des vérifications rétroconversions      
+   - id: 9040
+     message: "Livre ancien : la présence d'une zone 620, permettant de mieux identifier un lieu de publication, est fortement recommandée dans le Sudoc"
+     priorite: P2
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 9041
+         type: presencezone
+         zone: '620'
+         presence: false
+       - id: 9042
+         type: presencesouszone
+         zone: '214'
+         souszone:    s
+         presence: true
+         operateur-booleen: ET
+       - id: 9043
+         type: presencesouszone
+         zone: '214'
+         souszone:    r
+         presence: true
+         operateur-booleen: OU
