@@ -3858,3 +3858,32 @@ rules:
          zone: '608'
          presence: false
          operateur-booleen: ET
+
+
+#AFE - 06/03/2025 - règle ajoutée dans le cadre de la couverture des vérifications rétroconversions
+   - id:         9000
+     message:     "La lettre enregistrée en sous-zone 182$c doit être strictement identique à la première lettre du code enregistré en sous-zone 183$a"
+     priorite:    P1
+     jeux-de-regles:
+     - 1 #données codées
+     regles:
+       - id: 9001
+         type: nombrezone
+         zone: '182'
+         operateur: EGAL
+         occurrences: 1
+       - id: 9002
+         type: nombrezone
+         zone: '183'
+         operateur: EGAL
+         occurrences: 1
+         operateur-booleen: ET
+       - id: 9003
+         type: comparaisoncontenusouszone
+         zone: '182'
+         souszone: 'c'
+         type-de-verification: STRICTEMENTDIFFERENT
+         nombreCaracteres: 1
+         zonecible: '183'
+         souszonecible: 'a'
+         operateur-booleen: ET
