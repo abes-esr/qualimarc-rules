@@ -120,7 +120,8 @@ rules:
 
 
 
-  #exclusion type doc BD (ressources continues) pour cohérence avec consignes et GM / juin 2023       
+  #exclusion type doc BD (ressources continues) pour cohérence avec consignes et GM / juin 2023 - AFE
+  #exclusion des PC (parties composantes) pour cohérence avec consignes et GM / 06/03/2025 - AFE
    - id: 5050
      id-excel: 158
      message: "Zone 210  obsolète :  à remplacer par une zone 214 (document en main, en sélectionnant les bons indicateurs)"
@@ -137,7 +138,6 @@ rules:
        -    V
        -    G
        -    M
-       -    PC
      regles:
        - id: 5051
          type: presencezone
@@ -877,7 +877,7 @@ rules:
          presence: false
          operateur-booleen: ET
 
-       
+  #exclusion des PC (parties composantes) pour cohérence avec consignes et GM / 06/03/2025 - AFE       
    - id: 7130
      id-excel: 179
      message: "La notice ne peut pas comporter à la fois une zone 210 et une zone 214 : supprimer la zone 210 au profit de la/les zone(s) 214"
@@ -894,7 +894,6 @@ rules:
        -  V
        -  G
        -  M
-       -  PC
      regles:
        - id: 7131
          type: presencezone
@@ -3919,3 +3918,48 @@ rules:
            - chaine-caracteres:    "X"
          operateur-booleen: ET
 
+
+  #réciproque règle 7130 - 06/03/2025 - AFE       
+   - id: 9020
+     message: "La notice ne comporte aucune zone dédiée à la mention de publication : enregistrer une zone 214"
+     priorite: P1
+     type-doc:
+       -  A
+       -  B
+       -  K
+       -  O
+       -  N
+       -  I
+       -  F
+       -  Z
+       -  V
+       -  G
+       -  M
+     regles:
+       - id: 9021
+         type: presencezone
+         zone: '210'
+         presence: false
+       - id: 9022
+         type: presencezone
+         zone: '214'
+         presence: false
+         operateur-booleen: ET
+
+
+ #AFE - 06/03/2025 - règle ajoutée dans le cadre de la couverture des vérifications rétroconversions      
+   - id: 9030
+     message: "Partie composante : aucune zone dédiée à la mention de publication n'est attendue. Supprimer toutes les zones 210 et 214"
+     priorite: P1
+     type-doc:
+       -  PC
+     regles:
+       - id: 9031
+         type: presencezone
+         zone: '210'
+         presence: true
+       - id: 9032
+         type: presencezone
+         zone: '214'
+         presence: true
+         operateur-booleen: OU
