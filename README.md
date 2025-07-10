@@ -236,7 +236,8 @@ Règle numéro 5 dans la base, sur la ligne 110 du fichier Excel, permettant de 
 ### Position de sous-zone
 Liste des champs propres au type de règle position de sous-zone : 
 - souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc de catalogage ne doit pas être renseigné
-- position : ``obligatoire`` / de type entier. La position de la sous-zone dans la zone à vérifier.
+- positions : ``obligatoire`` / de type liste des positions de la sous-zone dans la zone à vérifier. Pour vérifier qu'une sous-zone est en dernière position de la zone, mettre la valeur -1. Composé de deux champs : la position et le type de comparateur à appliquer entre EGAL, DIFFERENT, INFERIEUR, SUPERIEUR, INFERIEUR_EGAl, SUPERIEUR_EGAL
+- operateur : ``obligatoire`` / valeur ET ou OU : opérateur booléen à mettre entre les différentes positions
 
 Exemple de fichier YAML :  
 ``` YAML
@@ -248,10 +249,15 @@ rules:
     zone:       608
     souszone:   3
     priorite:   P1
-    position:   1
+    positions:
+       - position: 1
+         comparateur: EGAL
+       - positon: -1
+         comparateur: DIFFERENT
+    operateur:  OU
 ```
 
-Si la souszone $3 n'est pas placée en première position dans l'une des occurrences de la zone 608, le message Faire le lien à l'autorité en sous-zone $3 est envoyé à l'utilisateur.
+Si la souszone $3 n'est pas placée en première OU dernière position dans l'une des occurrences de la zone 608, le message Faire le lien à l'autorité en sous-zone $3 est envoyé à l'utilisateur.
 
 ### Presence / absence sous-zones dans une même occurrence de zone
 Liste des champs propres au type de règle présence / absence de sous-zones dans une même occurrence de zone :
