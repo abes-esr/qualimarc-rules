@@ -37,3 +37,7 @@ jeux-de-regles:
     libelle:     Identification (0XX)
     description: "fait uniquement jouer les règles qui portent sur les zones 0XX"
     position:    1
+  - id:          10
+    libelle:     Rétroconversion
+    description: "fait uniquement jouer les règles dédiées à la vérification minimale requise dans le cadre de rétroconversions"
+    position:    10

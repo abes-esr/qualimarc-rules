@@ -120,7 +120,8 @@ rules:
 
 
 
-  #exclusion type doc BD (ressources continues) pour cohérence avec consignes et GM / juin 2023       
+  #exclusion type doc BD (ressources continues) pour cohérence avec consignes et GM / juin 2023 - AFE
+  #exclusion des PC (parties composantes) pour cohérence avec consignes et GM / 06/03/2025 - AFE
    - id: 5050
      id-excel: 158
      message: "Zone 210  obsolète :  à remplacer par une zone 214 (document en main, en sélectionnant les bons indicateurs)"
@@ -137,7 +138,6 @@ rules:
        -    V
        -    G
        -    M
-       -    PC
      regles:
        - id: 5051
          type: presencezone
@@ -877,7 +877,7 @@ rules:
          presence: false
          operateur-booleen: ET
 
-       
+  #exclusion des PC (parties composantes) pour cohérence avec consignes et GM / 06/03/2025 - AFE       
    - id: 7130
      id-excel: 179
      message: "La notice ne peut pas comporter à la fois une zone 210 et une zone 214 : supprimer la zone 210 au profit de la/les zone(s) 214"
@@ -894,7 +894,6 @@ rules:
        -  V
        -  G
        -  M
-       -  PC
      regles:
        - id: 7131
          type: presencezone
@@ -3858,3 +3857,134 @@ rules:
          zone: '608'
          presence: false
          operateur-booleen: ET
+
+
+#AFE - 06/03/2025 - règle ajoutée dans le cadre de la couverture des vérifications rétroconversions
+   - id:         9000
+     message:     "La lettre enregistrée en sous-zone 182$c doit être strictement identique à la première lettre du code enregistré en sous-zone 183$a"
+     priorite:    P1
+     jeux-de-regles:
+     - 1 #données codées
+     regles:
+       - id: 9001
+         type: nombrezone
+         zone: '182'
+         operateur: EGAL
+         occurrences: 1
+       - id: 9002
+         type: nombrezone
+         zone: '183'
+         operateur: EGAL
+         occurrences: 1
+         operateur-booleen: ET
+       - id: 9003
+         type: comparaisoncontenusouszone
+         zone: '182'
+         souszone: 'c'
+         type-de-verification: STRICTEMENTDIFFERENT
+         nombreCaracteres: 1
+         zonecible: '183'
+         souszonecible: 'a'
+         operateur-booleen: ET
+
+
+#AFE - 06/03/2025 - règle ajoutée dans le cadre de la couverture des vérifications rétroconversions
+#duplication de la règle 7982 en cas de zone 210 au lieu de 214
+   - id:         9010
+     message:     "Zone 210 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
+     priorite:    P1
+     jeux-de-regles:
+     - 6 #dates
+     regles:
+       - id: 9011
+         type: nombrezone
+         zone: '210'
+         operateur: EGAL
+         occurrences: 1
+       - id: 9012
+         type: comparaisoncontenusouszone
+         zone: '210'
+         souszone: 'd'
+         type-de-verification: NECONTIENTPAS
+         zonecible: '100'
+         souszonecible: 'A'
+         operateur-booleen: ET
+       - id: 9013
+         type: presencechainecaracteres
+         zone: '100'
+         souszone: 'A'
+         type-de-verification: NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "X"
+         operateur-booleen: ET
+
+
+  #réciproque règle 7130 - 06/03/2025 - AFE       
+   - id: 9020
+     message: "La notice ne comporte aucune zone dédiée à la mention de publication : enregistrer une zone 214"
+     priorite: P1
+     type-doc:
+       -  A
+       -  B
+       -  K
+       -  O
+       -  N
+       -  I
+       -  F
+       -  Z
+       -  V
+       -  G
+       -  M
+     regles:
+       - id: 9021
+         type: presencezone
+         zone: '210'
+         presence: false
+       - id: 9022
+         type: presencezone
+         zone: '214'
+         presence: false
+         operateur-booleen: ET
+
+
+ #AFE - 06/03/2025 - règle ajoutée dans le cadre de la couverture des vérifications rétroconversions      
+   - id: 9030
+     message: "Partie composante : aucune zone dédiée à la mention de publication n'est attendue. Supprimer toutes les zones 210 et 214"
+     priorite: P1
+     type-doc:
+       -  PC
+     regles:
+       - id: 9031
+         type: presencezone
+         zone: '210'
+         presence: true
+       - id: 9032
+         type: presencezone
+         zone: '214'
+         presence: true
+         operateur-booleen: OU
+
+
+ #AFE - 06/03/2025 - règle ajoutée dans le cadre de la couverture des vérifications rétroconversions      
+   - id: 9040
+     message: "Livre ancien : la présence d'une zone 620, permettant de mieux identifier un lieu de publication, est fortement recommandée dans le Sudoc"
+     priorite: P2
+     jeux-de-regles:
+       - 2  #6XX
+     regles:
+       - id: 9041
+         type: presencezone
+         zone: '620'
+         presence: false
+       - id: 9042
+         type: presencesouszone
+         zone: '214'
+         souszone:    s
+         presence: true
+         operateur-booleen: ET
+       - id: 9043
+         type: presencesouszone
+         zone: '214'
+         souszone:    r
+         presence: true
+         operateur-booleen: OU
