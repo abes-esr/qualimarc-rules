@@ -55,13 +55,14 @@ Par exemple :
 Toutes les règles de Qualimarc ont une structure commune, puis des champs propres à chaque type de règle. Dans le chapitre décrivant les règles, les éléments obligatoires seront précisés. Voici un exemple de fichier YAML décrivant une règle : 
 ``` YAML
 rules:
-  - id:             2
-    id-excel:       2
-    type:           presencezone
-    message:        message test test 2
-    zone:           330
-    priorite:       P1
-    presence:       false
+  - id:                2
+    id-excel:          2
+    type:              presencezone
+    message:           message test test 2
+    zone:              330
+    affiche-etiquette: false
+    priorite:          P1
+    presence:          false
     type-doc:
         - A 
         - B
@@ -112,6 +113,7 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
 - id-excel : ``optionnel`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
 - message : ``obligatoire`` / de type chaine de caractère : indique le message à envoyer à l'utilisateur si la condition décrite dans la règle est validée dans la notice
 - zone : ``obligatoire`` sauf indication contraire / de type chaine de caractère : indique la zone du format Unimarc d'export sur laquelle porte la règle. Pour les règles simples il est possible de mentionner une zone générique (4XX, 5XX, 6XX, 7XX). Si une telle zone est renseignée, la règle sera dupliquée n fois, n correspondant au nombre de zones de la zone générique correspondante (voir [ce fichier](https://docs.google.com/spreadsheets/d/1E98M405rEaCcAV4UDkwY_ld6_B2yIeE9XQjCQqfv0Qk/edit?usp=sharing "Fichier des correspondances de zones génériques") )
+- affichage-etiquette : ``optionnel`` : si positionné à false, la zone correspondant à la règle simple ne sera pas affichée dans l'interface
 - priorite: ``obligatoire`` / une des deux valeurs possible : P1 ou P2 : indique la priorité de la règle (P1 utilisé pour analyse Rapide, P2 pour analyse experte)
 - jeux-de-regles : ``optionnel`` : de type liste d'entier : indique les identifiants des jeux de règles auquel la règle appartient. (voir [ce fichier](https://docs.google.com/spreadsheets/d/1ao46m7mI-NhqtCuCn4eq0EH1iS4hXCZ8cqKbSKpJYaw/edit?usp=sharing "Fichier des correspondeances Identifiant au jeux de règles") )
 - type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
