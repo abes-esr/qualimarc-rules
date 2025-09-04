@@ -2660,7 +2660,9 @@ rules:
          type: positionsouszone
          zone: '101'
          souszone:    2
-         position: 3
+         positions: 
+          - position: 3
+          comparateur: EGAL
          operateur-booleen: ET
        - id: 7765
          type: comparaisoncontenusouszone
