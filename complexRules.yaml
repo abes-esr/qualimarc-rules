@@ -2649,24 +2649,24 @@ rules:
          zone: '101'
          souszone:    a
          positions: 
-          - position: 1
-          comparateur: EGAL
+           - position: 1
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7763
          type: positionsouszone
          zone: '101'
          souszone:    c
          positions: 
-          - position: 2
-          comparateur: EGAL
+           - position: 2
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7764
          type: positionsouszone
          zone: '101'
          souszone:    2
          positions: 
-          - position: 3
-          comparateur: EGAL
+           - position: 3
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7765
          type: comparaisoncontenusouszone
@@ -2702,24 +2702,24 @@ rules:
          zone: '101'
          souszone:    a
          positions: 
-          - position: 1
-          comparateur: EGAL
+           - position: 1
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7773
          type: positionsouszone
          zone: '101'
          souszone:    c
          positions: 
-          - position: 2
-          comparateur: EGAL
+           - position: 2
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7774
          type: positionsouszone
          zone: '101'
          souszone:    2
          positions: 
-          - position: 3
-          comparateur: EGAL
+           - position: 3
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7775
          type: comparaisoncontenusouszone
