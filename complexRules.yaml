@@ -3837,41 +3837,49 @@ rules:
          type: presencezone
          zone: '600'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8093
          type: presencezone
          zone: '601'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8094
          type: presencezone
          zone: '602'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8095
          type: presencezone
          zone: '604'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8096
          type: presencezone
          zone: '605'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8097
          type: presencezone
          zone: '606'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8098
          type: presencezone
          zone: '607'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8099
          type: presencezone
          zone: '608'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -3917,6 +3925,7 @@ rules:
          zone: '210'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
        - id: 9012
          type: comparaisoncontenusouszone
          zone: '210'
