@@ -2701,19 +2701,25 @@ rules:
          type: positionsouszone
          zone: '101'
          souszone:    a
-         position: 1
+         positions: 
+          - position: 1
+          comparateur: EGAL
          operateur-booleen: ET
        - id: 7773
          type: positionsouszone
          zone: '101'
          souszone:    c
-         position: 2
+         positions: 
+          - position: 2
+          comparateur: EGAL
          operateur-booleen: ET
        - id: 7774
          type: positionsouszone
          zone: '101'
          souszone:    2
-         position: 3
+         positions: 
+          - position: 3
+          comparateur: EGAL
          operateur-booleen: ET
        - id: 7775
          type: comparaisoncontenusouszone
