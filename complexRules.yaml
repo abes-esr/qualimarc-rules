@@ -2670,7 +2670,6 @@ rules:
          zone: '200'
          souszone:   7
          presence: true
-         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2692,7 +2691,6 @@ rules:
          zone: '200'
          souszone:    7
          presence: false
-         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2824,7 +2822,6 @@ rules:
          zone: '205'
          souszone:    7
          presence: false
-         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2846,7 +2843,6 @@ rules:
          zone: '207'
          souszone:    7
          presence: false
-         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2868,7 +2864,6 @@ rules:
          zone: '208'
          souszone:    7
          presence: false
-         affichage-etiquette: false
          operateur-booleen: ET
 
 
