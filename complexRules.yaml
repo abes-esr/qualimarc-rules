@@ -768,6 +768,7 @@ rules:
        - id: 7093
          type: typedocument
          position: 1
+         affichage-etiquette: false
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
        - id: 7094
@@ -775,6 +776,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: d
+         affichage-etiquette: false
          operateur-booleen: OU
 
 
@@ -799,11 +801,13 @@ rules:
        - id: 7103
          type: typedocument
          position: 1
+         affichage-etiquette: false
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: o
        - id: 7104
          type: typedocument
          position: 2
+         affichage-etiquette: false
          type-de-verification: STRICTEMENT
          valeur: a
          operateur-booleen: OU
@@ -812,12 +816,14 @@ rules:
          position: 2
          type-de-verification: STRICTEMENT
          valeur: s
+         affichage-etiquette: false
          operateur-booleen: OU
        - id: 7106
          type: typedocument
          position: 2
          type-de-verification: STRICTEMENT
          valeur: r
+         affichage-etiquette: false
          operateur-booleen: OU
          
 #DESACTIVATION MOMENTANEE / BUG EN PROD !!!!!!!!! URGENT A TRAITER : OK BUG TRAITE LE 20/03/23 >> attention, ne pas utliser strictementdifferent quand opérateur booleen OU sur même zone/souszone !
@@ -844,23 +850,27 @@ rules:
          position: 2
          type-de-verification: STRICTEMENT
          valeur: r
+         affichage-etiquette: false
        - id: 7114
          type: typedocument
          position: 2
          type-de-verification: STRICTEMENT
          valeur: a
+         affichage-etiquette: false
          operateur-booleen: OU
        - id: 7115
          type: typedocument
          position: 2
          type-de-verification: STRICTEMENT
          valeur: s
+         affichage-etiquette: false
          operateur-booleen: OU
        - id: 7116
          type: typedocument
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
+         affichage-etiquette: false
          operateur-booleen: OU
 
 
@@ -876,6 +886,7 @@ rules:
          position:   1
          type-de-verification:    STRICTEMENT
          valeur: o
+         affichage-etiquette: false
        - id: 7122
          type: presencezone
          zone: '371'
@@ -926,6 +937,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: o
+         affichage-etiquette: false
        - id: 7142
          type: presencezone
          zone: '135'
@@ -947,6 +959,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENT
          valeur: o
+         affichage-etiquette: false
        - id: 7152
          type: presencezone
          zone: '856'
@@ -970,6 +983,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: o
+         affichage-etiquette: false
        - id: 7162
          type: presencezone
          zone: '230'
@@ -1020,6 +1034,7 @@ rules:
          type: presencezone
          zone: '110'
          presence: true
+         affichage-etiquette: false
        - id: 7182
          type: presencechainecaracteres
          zone: '110'
@@ -1055,6 +1070,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENT
          valeur: d
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -1071,6 +1087,7 @@ rules:
          type: presencezone
          zone: '110'
          presence: true
+         affichage-etiquette: false
        - id: 7192
          type: presencechainecaracteres
          zone: '110'
@@ -1084,6 +1101,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -1218,6 +1236,7 @@ rules:
          type: presencezone
          zone: '029'
          presence: true
+         affichage-etiquette: false
        - id: 7252
          type: presencesouszone
          zone: '029'
@@ -1255,6 +1274,7 @@ rules:
          type: presencezone
          zone: '029'
          presence: true
+         affichage-etiquette: false
        - id: 7262
          type: presencesouszone
          zone: '029'
@@ -1345,6 +1365,7 @@ rules:
          type: presencechainecaracteres
          zone: '029'
          souszone: 'a'
+         affichage-etiquette: false
          type-de-verification:     STRICTEMENT
          chaines-caracteres:
            - chaine-caracteres:    "FR"
@@ -1353,6 +1374,7 @@ rules:
          type: presencechainecaracteres
          zone: '328'
          souszone: 'b'
+         affichage-etiquette: false
          type-de-verification:     CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    "doctorat"
@@ -1376,6 +1398,7 @@ rules:
          type: presencechainecaracteres
          zone: '328'
          souszone: 'b'
+         affichage-etiquette: false
          type-de-verification:     CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    "doctorat"
@@ -1472,12 +1495,14 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENT
          valeur: L
+         affichage-etiquette: false
        - id: 7322
          type: typedocument
          position: 1
          type-de-verification:    STRICTEMENT
          valeur: P
          operateur-booleen: ET
+         affichage-etiquette: false
        - id: 7323
          type: presencesouszone
          zone: '106'
@@ -1509,6 +1534,7 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur: L
+         affichage-etiquette: false
        - id: 7332
          type: presencesouszone
          zone: '106'
@@ -1540,6 +1566,7 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur: P
+         affichage-etiquette: false
        - id: 7342
          type: presencesouszone
          zone: '106'
@@ -1572,6 +1599,7 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENT
          valeur: P
+         affichage-etiquette: false
        - id: 7352
          type: presencesouszone
          zone: '106'
@@ -1603,6 +1631,7 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENT
          valeur: L
+         affichage-etiquette: false
        - id: 7362
          type: presencesouszone
          zone: '106'
@@ -1664,6 +1693,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: p
+         affichage-etiquette: false
 
    - id: 7390
      id-excel: 448
@@ -1687,6 +1717,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: p
+         affichage-etiquette: false
 
    - id: 7400
      id-excel: 454
@@ -1710,6 +1741,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: p
+         affichage-etiquette: false
 
 
    - id: 7410
@@ -1734,6 +1766,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: b
+         affichage-etiquette: false
 
    - id: 7420
      id-excel: 468
@@ -1757,6 +1790,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: b
+         affichage-etiquette: false
 
    - id: 7430
      id-excel: 474
@@ -1780,6 +1814,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: b
+         affichage-etiquette: false
 
 
 
@@ -1805,6 +1840,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
+         affichage-etiquette: false
 
    - id: 7450
      id-excel: 487
@@ -1828,6 +1864,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
+         affichage-etiquette: false
 
    - id: 7460
      id-excel: 491
@@ -1851,6 +1888,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
+         affichage-etiquette: false
 
 
    - id: 7470
@@ -1876,6 +1914,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -1902,6 +1941,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
          
  
@@ -1928,6 +1968,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -1955,6 +1996,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -1981,6 +2023,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
          
  
@@ -2007,6 +2050,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2033,6 +2077,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2059,6 +2104,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
          
  
@@ -2085,6 +2131,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2137,6 +2184,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: O
+         affichage-etiquette: false
 
 
    - id: 7580
@@ -2163,6 +2211,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: A
+         affichage-etiquette: false
 
 
    - id: 7590
@@ -2236,6 +2285,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENT
          valeur: O
+         affichage-etiquette: false
 
 
    - id: 7620
@@ -2262,6 +2312,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENT
          valeur: A
+         affichage-etiquette: false
 
 #ajout de critère d'absence de 200$7 pour éviter les potentiels bilingues
    - id: 7630
