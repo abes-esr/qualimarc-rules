@@ -2345,6 +2345,7 @@ rules:
          zone: '200'
          souszone:    7
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
          
@@ -2368,23 +2369,27 @@ rules:
          zone: '200'
          souszone: '7'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7643
          type: presencesouszone
          zone: '510'
          souszone: '7'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7644
          type: presencezone
          zone: '454'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7645
          type: presencesouszone
          zone: '200'
          souszone: 'e'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2633,6 +2638,7 @@ rules:
          type: presencechainecaracteres
          zone: '280'
          souszone:   a
+         affichage-etiquette: false
          type-de-verification:    CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    'gros caractères'
@@ -2664,6 +2670,7 @@ rules:
          zone: '200'
          souszone:   7
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2685,6 +2692,7 @@ rules:
          zone: '200'
          souszone:    7
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2700,6 +2708,7 @@ rules:
          zone: '101'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
        - id: 7762
          type: positionsouszone
          zone: '101'
@@ -2738,6 +2747,7 @@ rules:
          indicateur:    1
          valeur: '0'
          type-de-verification: STRICTEMENT
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2753,6 +2763,7 @@ rules:
          zone: '101'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
        - id: 7772
          type: positionsouszone
          zone: '101'
@@ -2791,6 +2802,7 @@ rules:
          indicateur:    1
          valeur: '1'
          type-de-verification: STRICTEMENT
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2812,6 +2824,7 @@ rules:
          zone: '205'
          souszone:    7
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2833,6 +2846,7 @@ rules:
          zone: '207'
          souszone:    7
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2854,6 +2868,7 @@ rules:
          zone: '208'
          souszone:    7
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2879,6 +2894,7 @@ rules:
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur:  'u'
          position: 2
+         affichage-etiquette: false
 
 
 #7820 : réciproque de la 7300
@@ -3146,10 +3162,12 @@ rules:
          type: presencezone
          zone: '183'
          presence: false
+         affichage-etiquette: false
        - id: 7892
          type: presencechainecaracteres
          zone: '183'
          souszone: a
+         affichage-etiquette: false
          type-de-verification:     COMMENCE
          chaines-caracteres:
            - chaine-caracteres:    "s"
@@ -3249,6 +3267,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '0'
+         affichage-etiquette: false
        - id: 7912
          type: presencezone
          zone: '410'
@@ -3276,6 +3295,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '2'
+         affichage-etiquette: false
        - id: 7922
          type: presencezone
          zone: '410'
@@ -3303,6 +3323,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '0'
+         affichage-etiquette: false
        - id: 7932
          type: presencezone
          zone: '461'
@@ -3330,6 +3351,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '2'
+         affichage-etiquette: false
        - id: 7942
          type: presencezone
          zone: '461'
@@ -3357,6 +3379,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '0'
+         affichage-etiquette: false
        - id: 7952
          type: presencezone
          zone: '461'
@@ -3384,6 +3407,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '2'
+         affichage-etiquette: false
        - id: 7962
          type: presencezone
          zone: '461'
@@ -3409,6 +3433,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: o
+         affichage-etiquette: false
        - id: 7972
          type: presencezone
          zone: '856'
@@ -3435,6 +3460,7 @@ rules:
          zone: '214'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
        - id: 7982
          type: comparaisoncontenusouszone
          zone: '214'
@@ -3472,6 +3498,7 @@ rules:
          zone: '608'
          souszone: a
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7993
          type: presencechainecaracteres
