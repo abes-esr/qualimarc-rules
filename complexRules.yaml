@@ -87,6 +87,7 @@ rules:
          zone: '359'
          souszone:    b
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
          
          
@@ -189,12 +190,14 @@ rules:
          type: presencezone
          zone: '206'
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 5074
          type: presencesouszone
          zone: '123'
          souszone:    b
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -302,6 +305,7 @@ rules:
          type: presencechainecaracteres
          zone: '280'
          souszone:   a
+         affichage-etiquette: false
          type-de-verification:    CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    braille
@@ -739,6 +743,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: d
+         affichage-etiquette: false
          operateur-booleen: OU
 
 
