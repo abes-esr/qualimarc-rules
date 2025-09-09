@@ -80,7 +80,7 @@ rules:
         presence: false
 
 
-
+#désactivaton controle $1 suite évolution pour exclure les données niveau 1  et 2
   - id: 25020
     id-excel: 338
     message: "Zone 600 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
@@ -97,9 +97,11 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25023
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette: false
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  rameau
@@ -107,10 +109,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25025
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+      # - id: 25025
+      #   type: presencesouszone
+      #   souszone: "1"
+      #   presence: false
 
 
   - id: 25030
