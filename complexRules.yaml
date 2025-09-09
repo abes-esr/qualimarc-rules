@@ -3973,11 +3973,13 @@ rules:
          zone: '182'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
        - id: 9002
          type: nombrezone
          zone: '183'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 9003
          type: comparaisoncontenusouszone
@@ -4084,10 +4086,12 @@ rules:
          zone: '214'
          souszone:    s
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 9043
          type: presencesouszone
          zone: '214'
          souszone:    r
          presence: true
+         affichage-etiquette: false
          operateur-booleen: OU
