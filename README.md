@@ -339,6 +339,15 @@ Liste des champs propres au type de règle présence chaine caractères:
 * chaines-caracteres : **obligatoire** - de type liste d'objets. La liste des chaine-caracteres à vérifier. Les champs d'un objet de la liste sont les suivants : 
     * operateur : de type opérateur logique. ne peut être que `ET` ou `OU`. 
     * chaine-caracteres :  la chaine de caractères à vérifier
+On peut controler également sur le contenu d'une sous-zone à des positions spécifiques
+* positionstart : **facultatif** - de type nombre. La position dans la chaîne de caractères à laquelle je souhaite débuter mon controle. Le premier caractère correspond à la position 0.
+* positionend : **facultatif** - de type nombre. La position dans la chaîne de caractères à laquelle je souhaite arrêter mon controle.
+
+Note: 
+- positionstart peut etre renseigné, sans positionend, avec un type de verification CONTIENT: on controle à partir d'un endroit du contenu
+- positionend peut etre renseigné, sans positionstart, avec un type de verification CONTIENT: on controle jusqu'à un endroit du contenu
+- positionstart et positionend peuvent être renseignés avec la même valeur : on controle 1 seul caractère
+- il peut y avoir pour une liste de chaine controlées pour un contenu (plusieurs chaines de caractères dans une liste contrôlées sur une même sous zone)
 
 Liste des valeurs possibles en fonction du type de vérification :
 * La vérification `STRICTEMENT` peut comporter :
@@ -402,6 +411,40 @@ rules:
           chaine-caracteres:    deuxième chaine de caractères à chercher
         - operateur:            OU
           chaine-caracteres:    deuxième chaine de caractères à chercher
+          - id:                       3
+    - id:                       4
+      id-excel:                 4
+      type:                     presencechainecaracteres
+      message:                  message de retour
+      zone:                     110
+      priorite:                 P1
+      type-these:
+          - REPRO
+      souszone:                 a
+      type-de-verification:     STRICTEMENT
+      chaines-caracteres:
+        - chaine-caracteres:    premier caractère ou chaine de caractères à chercher
+        - operateur:            OU
+          chaine-caracteres:    deuxième caractère ou deuxième chaine de caractères à chercher
+        - operateur:            OU
+          chaine-caracteres:    troisième caractère ou troisième chaine de caractères à chercher
+      positionstart:            position dans la chaine à laquelle commence le controle
+      positionend:              position dans la chaine à laquelle s'arrête le controle
+    - id:                       5
+      id-excel:                 5
+      type:                     presencechainecaracteres
+      message:                  message de retour
+      zone:                     110
+      priorite:                 P1
+      type-these:
+          - REPRO
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    premier caractere a chercher
+        - operateur:            OU
+          chaine-caracteres:    deuxième caractere a chercher
+      positionstart:            position dans la chaine à laquelle commence le controle, va jusqu'a la fin de chaine
 ```
 
 ### Comparaison contenu sous-zone
