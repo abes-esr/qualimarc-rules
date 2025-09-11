@@ -16,6 +16,17 @@ rules:
       type-de-verification:     NECONTIENTPAS
       zonecible:                328
       souszonecible:            d
+      
+    - id:                       1202
+      type:                     comparaisoncontenusouszone
+      message:                  "Rules TEST avec ppn 090389352"
+      zone:                     100
+      priorite:                 P1
+      souszone:                 a
+      position:                 25
+      type-de-verification:     AUCUNCONTIENT
+      zonecible:                104
+      souszonecible:            d
 
 #1201 désactivée car regarde TOUTES les sous-zones 200$7 ; donc nécéssairement en erreur !
 #     - id:                       1201
