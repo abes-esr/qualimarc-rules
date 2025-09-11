@@ -408,10 +408,16 @@ rules:
 
 Liste des champs propres au type de règle comparaison contenu sous-zone:
 * souszone : **obligatoire** - de type caractère. La sous-zone sur laquelle va porter la comparaison. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
-* type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS` ou `STRICTEMENTDIFFERENT`
+* position : *optionnel* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0).
+* positionstart : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`).
+* positionend : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**.
+* type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS` ou `STRICTEMENTDIFFERENT` OU `TOUTCONTIENT` OU `AUCUNCONTIENT`
 * nombreCaracteres : *optionnel* - de type chiffre. Le nombre de caractères de la souszonecible à comparer à la souszone. Ne peux contenir que deux chiffres maximum. Ce paramètre est pris en compte uniquement pour les type-de-verification COMMENCE et TERMINE.
 * zonecible : **obligatoire** - de type caractère. La zone dans laquelle aller chercher la souszonecible qui permettra d'effectuer la comparaison.
 * souszonecible : **obligatoire** - de type caractère. La souszonecible qui sera comparée à la souszone. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
+* positioncible : *optionnel* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0).
+* positionstartcible : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`).
+* positionendcible : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**.
 
 ``` YAML
 ---
@@ -425,10 +431,13 @@ rules:
       type-these:
           - REPRO
       souszone:                 a
+      position:                 5
       type-de-verification:     COMMENCE
       nombreCaracteres:         6
       zonecible:                215
       souszonecible:            a
+      positionstartcible:       1
+      positionendcible:         8
 ```
 
 ### Type de caractères
