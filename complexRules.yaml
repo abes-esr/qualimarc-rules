@@ -3416,6 +3416,7 @@ rules:
 
 
 #7150 : complément de la règle github 25640 (inclusion des ressources continues électroniques)
+# sept 2025 : suppression de la condition exclusion de la $5 suite évolution exclusion des données locales
    - id:         7970
      id-excel:    509
      message:     "Zone 856 : puisque la ressource continue décrite n'est pas électronique, cette zone doit être supprimée"
@@ -3434,12 +3435,12 @@ rules:
          zone: '856'
          presence: true
          operateur-booleen: ET
-       - id: 7973
-         type: presencesouszone
-         zone: '856'
-         souszone: '5'
-         presence: false
-         operateur-booleen: ET
+#       - id: 7973
+#         type: presencesouszone
+#         zone: '856'
+#         souszone: '5'
+#         presence: false
+#         operateur-booleen: ET
 
 #remplace l'ancienne règle 1101 (comparaison de dates). Activée le 09/10/23 suite ticket.
 #ajout sous-règle 7983 sur absence nécéssaire de X dans 100$A (sinon, forcément pas les mêmes !) - suite discussion SNX nov 2023
