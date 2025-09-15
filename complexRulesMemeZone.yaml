@@ -1910,10 +1910,11 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-#      - id: 25733
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25733
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 
 #duplication de la règle 25220 pour exclure données d'exemplaire ($5)     
@@ -1994,10 +1995,11 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-#      - id: 25752
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25752
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25760
@@ -2054,10 +2056,11 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-#      - id: 25762
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25762
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25770
@@ -2114,10 +2117,11 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-#      - id: 25772
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25772
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
@@ -2175,10 +2179,11 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-#      - id: 25782
-#        type: presencesouszone
-#        souszone: "1"
-#        presence: false
+      - id: 25782
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25790
@@ -2235,10 +2240,11 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-#      - id: 25792
-#        type: presencesouszone
-#        souszone: "1"
-#        presence: false
+      - id: 25792
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25800
@@ -2295,10 +2301,11 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-#      - id: 25802
-#        type: presencesouszone
-#        souszone: "1"
-#        presence: false
+      - id: 25802
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        affichage-etiquette: false
 
 
 #scindée avec 25840 pour alléger le temps de traitement - dec 2023
@@ -2371,10 +2378,11 @@ rules:
             chaine-caracteres: '385'
           - operateur:  OU
             chaine-caracteres: '395'
-#      - id: 25812
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25812
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 
 #scindée avec la 25850 pour alléger temps de traitement - dec 2023
@@ -2447,10 +2455,11 @@ rules:
             chaine-caracteres: '385'
           - operateur:  OU
             chaine-caracteres: '395'
-#      - id: 25822
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25822
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 
 #scindée avec la 25860 pour alléger tps de traitement - dec 2023
@@ -2523,10 +2532,11 @@ rules:
             chaine-caracteres: '385'
           - operateur:  OU
             chaine-caracteres: '395'
-#      - id: 25832
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25832
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 #scission de la 25810 pour alléger le temps de traitement 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
@@ -2588,10 +2598,11 @@ rules:
             chaine-caracteres: '721'
           - operateur:  OU
             chaine-caracteres: '770'
-#      - id: 25842
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25842
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 
 #scission de la 25820 pour alléger temps de traitement - dec 2023
@@ -2654,10 +2665,11 @@ rules:
             chaine-caracteres: '721'
           - operateur:  OU
             chaine-caracteres: '770'
-#      - id: 25852
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25852
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 #scission avec la 25830 pour alléger tps de traitement - dec 2023
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
@@ -2719,10 +2731,11 @@ rules:
             chaine-caracteres: '721'
           - operateur:  OU
             chaine-caracteres: '770'
-#      - id: 25862
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25862
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 
   - id: 25870
