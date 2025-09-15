@@ -1300,10 +1300,11 @@ rules:
             chaine-caracteres: '470'
           - operateur:  OU
             chaine-caracteres: '480'
-#      - id: 25512
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25512
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
@@ -1351,10 +1352,11 @@ rules:
             chaine-caracteres: '735'
           - operateur:  OU
             chaine-caracteres: '755'
-#      - id: 25522
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25522
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25530
@@ -1377,10 +1379,11 @@ rules:
             chaine-caracteres: '956'
           - operateur:  OU
             chaine-caracteres: '958'
-#      - id: 25532
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25532
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25540
@@ -1403,10 +1406,11 @@ rules:
             chaine-caracteres: '956'
           - operateur:  OU
             chaine-caracteres: '958'
-#      - id: 25542
-#        type: presencesouszone
-#        souszone: "1"
-#        presence: false
+      - id: 25542
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25550
@@ -1437,10 +1441,11 @@ rules:
             chaine-caracteres: '750'
           - operateur:  OU
             chaine-caracteres: '753'
-#      - id: 25552
-#        type: presencesouszone
-#        souszone: "1"
-#        presence: false
+      - id: 25552
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25560
@@ -1471,10 +1476,11 @@ rules:
             chaine-caracteres: '750'
           - operateur:  OU
             chaine-caracteres: '753'
-#      - id: 25562
-#        type: presencesouszone
-#        souszone: "1"
-#        presence: false
+      - id: 25562
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25570
@@ -1501,10 +1507,11 @@ rules:
             chaine-caracteres: '995'
           - operateur:  OU
             chaine-caracteres: '996'            
-#      - id: 25572
-#        type: presencesouszone
-#        souszone: "1"
-#        presence: false
+      - id: 25572
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25580
@@ -1531,10 +1538,11 @@ rules:
             chaine-caracteres: '995'
           - operateur:  OU
             chaine-caracteres: '996'            
-#      - id: 25582
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25582
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25590
@@ -1551,10 +1559,11 @@ rules:
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           - chaine-caracteres: '015'         
-#      - id: 25592
-#        type: presencesouszone
-#        souszone: "1"
-#        presence: false
+      - id: 25592
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25600
@@ -1571,10 +1580,11 @@ rules:
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           - chaine-caracteres: '015'         
-#      - id: 25602
-#        type: presencesouszone
-#        souszone: "1"
-#        presence: false
+      - id: 25602
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25610
@@ -1591,10 +1601,11 @@ rules:
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           - chaine-caracteres: '725'         
-#      - id: 25612
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25612
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25620
@@ -1611,10 +1622,11 @@ rules:
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           - chaine-caracteres: '295'         
-#      - id: 25622
-#        type: presencesouszone
-#        souszone: "1"
-#        presence: false
+      - id: 25622
+        type: presencesouszone
+        souszone: "1"
+        presence: false
+        affichage-etiquette: false
 
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25630
@@ -1631,10 +1643,11 @@ rules:
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           - chaine-caracteres: '295'         
-#      - id: 25632
-#        type: presencesouszone
-#        souszone: "5"
-#        presence: false
+      - id: 25632
+        type: presencesouszone
+        souszone: "5"
+        presence: false
+        affichage-etiquette: false
 
 #règle initiale 7170 ; ajout présence de $5 pour contourner les données d'exemplaire qui sont exportées suite ticket
 # sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
