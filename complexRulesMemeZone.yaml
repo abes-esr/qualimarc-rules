@@ -1878,7 +1878,9 @@ rules:
         presence: false
 
  
-#duplication de la règle 25190 pour exclure données d'exemplaire ($5)         
+#duplication de la règle 25190 pour exclure données d'exemplaire ($5)   
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
+
   - id: 25730
     id-excel: 456
     message: "Zone 712 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -1895,13 +1897,14 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25733
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25733
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
 
-#duplication de la règle 25220 pour exclure données d'exemplaire ($5)         
+#duplication de la règle 25220 pour exclure données d'exemplaire ($5)     
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25740
     id-excel: 456
     message: "Zone 722 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -1918,11 +1921,12 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25743
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25743
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25750
     id-excel: 
     message: "Zone 700 : les codes fonction 050/075/080/140/150/ 160/310/320/390/ 450/490/500/540/ 580/610/650/678/ 720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
@@ -1977,11 +1981,12 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-      - id: 25752
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25752
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25760
     id-excel: 
     message: "Zone 710 : les codes fonction 050/075/080/140/ 150/160/310/320/390/450/ 490/500/540/580/610/ 650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
@@ -2036,11 +2041,12 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-      - id: 25762
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25762
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25770
     id-excel: 
     message: "Zone 720 : les codes fonction 050/075/080/140/ 150/160/310/320/390/ 450/490/500/540/580/ 610/650/678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
@@ -2095,13 +2101,13 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-      - id: 25772
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25772
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
 
-
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25780
     id-excel: 
     message: "Zone 701 : les codes fonction 050/075/080/140/ 150/160/310/320/390/ 450/490/500/540/580/ 610/650/678/ 720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
@@ -2156,11 +2162,12 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-      - id: 25782
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25782
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25790
     id-excel: 
     message: "Zone 711 : les codes fonction 050/075/080/140/150/ 160/310/320/390/450/ 490/500/540/580/ 610/650/678/ 720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
@@ -2215,12 +2222,12 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-      - id: 25792
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25792
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
-
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25800
     id-excel: 
     message: "Zone 721 : les codes fonction 050/075/080/140/150/ 160/310/320/390/450/490/ 500/540/580/610/650/ 678/720/740/920 doivent être enregistrés dans une zone 7X2, niveau Manifestation ou Item"
@@ -2275,13 +2282,14 @@ rules:
             chaine-caracteres: '740'
           - operateur:  OU
             chaine-caracteres: '920'
-      - id: 25802
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25802
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
 
 #scindée avec 25840 pour alléger le temps de traitement - dec 2023
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25810
     id-excel: 
     message: "Zone 702 : les codes fonction 010/018/030/062/ 072/090/100/130/170/ 180/190/206/220/230/ 233/236/245/ 255/257/260/ 300/303/330/ 340/355/365/385/395 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
@@ -2350,13 +2358,14 @@ rules:
             chaine-caracteres: '385'
           - operateur:  OU
             chaine-caracteres: '395'
-      - id: 25812
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25812
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
 
 #scindée avec la 25850 pour alléger temps de traitement - dec 2023
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25820
     id-excel: 
     message: "Zone 712 : les codes fonction 010/018/030/062/072/ 090/100/130/ 170/180/190 /206/220/230/233/236/ 245/255/257/260/ 300/303/ 330/340/355/365/385/395 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
@@ -2425,13 +2434,14 @@ rules:
             chaine-caracteres: '385'
           - operateur:  OU
             chaine-caracteres: '395'
-      - id: 25822
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25822
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
 
 #scindée avec la 25860 pour alléger tps de traitement - dec 2023
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25830
     id-excel: 
     message: "Zone 722 : les codes fonction 010/018/030/ 062/072/090/100/ 130/170/180/190/ 206/220/230/233/ 236/245/255/ 257/260/300/303/ 330/340/355/365/385/395 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
@@ -2500,12 +2510,13 @@ rules:
             chaine-caracteres: '385'
           - operateur:  OU
             chaine-caracteres: '395'
-      - id: 25832
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25832
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
 #scission de la 25810 pour alléger le temps de traitement 
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25840
     id-excel: 
     message: "Zone 702 : les codes fonction 405/410/475/ 520/545/552/557/560/ 582/584/587/590/630/ 635/637/651/ 665/672/675/ 690/705/721/770 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
@@ -2564,13 +2575,14 @@ rules:
             chaine-caracteres: '721'
           - operateur:  OU
             chaine-caracteres: '770'
-      - id: 25842
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25842
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
 
 #scission de la 25820 pour alléger temps de traitement - dec 2023
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25850
     id-excel: 
     message: "Zone 712 : les codes fonction 405/410/475/520/545/552/557/ 560/582/584/ 587/590/630 /635/637/651/665/ 672/675/690/ 705/721/770 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
@@ -2629,12 +2641,13 @@ rules:
             chaine-caracteres: '721'
           - operateur:  OU
             chaine-caracteres: '770'
-      - id: 25852
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25852
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
 #scission avec la 25830 pour alléger tps de traitement - dec 2023
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25860
     id-excel: 
     message: "Zone 722 : les codes fonction 405/410/475/520/545/ 552/557/560/582 /584/587/590/630/ 635/637/651 /665/672/675/690/ 705/721/770 doivent être enregistrés dans une zone 7X0 ou 7X1, niveau Oeuvre ou Expression"
@@ -2693,10 +2706,10 @@ rules:
             chaine-caracteres: '721'
           - operateur:  OU
             chaine-caracteres: '770'
-      - id: 25862
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25862
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
 
   - id: 25870
