@@ -424,7 +424,7 @@ rules:
         presence: false
 
 
-
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25140
     id-excel: 438
     message: "Zone 700 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -441,12 +441,13 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25143
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25143
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
           
-        
+
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25150
     id-excel: 447
     message: "Zone 701 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -463,10 +464,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25153
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25153
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
 #règle 25160 déasactivée en faveur de la 25720 (exclusion sur les $5 et pas $1) - nov 2023
   # - id: 25160
@@ -491,7 +492,7 @@ rules:
   #       presence: false
         
         
-        
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25170
     id-excel: 464
     message: "Zone 710 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -508,12 +509,12 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25173
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25173
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
-
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25180
     id-excel: 470
     message: "Zone 711 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -530,10 +531,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25183
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25183
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
 
 #règle 25190 déasactivée en faveur de la 25730 (exclusion sur les $5 et pas $1) - nov 2023
@@ -559,7 +560,7 @@ rules:
   #       presence: false
         
         
-        
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25200
     id-excel: 483
     message: "Zone 720 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -576,12 +577,12 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25203
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25203
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
           
-        
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25210
     id-excel: 488
     message: "Zone 721 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -598,10 +599,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25213
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25213
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
 #règle 25220 déasactivée en faveur de la 25720 (exclusion sur les $5 et pas $1) - nov 2023        
   # - id: 25220
@@ -625,7 +626,7 @@ rules:
   #       souszone: "1"
   #       presence: false
 
-
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire
   - id: 25230
     id-excel: 499
     message: "Zone 700 : un code de fonction (sous-zone $4) est obligatoire"
@@ -641,12 +642,12 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-      - id: 25233
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25233
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
           
-        
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25240
     id-excel: 499
     message: "Zone 701 : un code de fonction (sous-zone $4) est obligatoire"
@@ -662,11 +663,12 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-      - id: 25243
-        type: presencesouszone
-        souszone: "1"
-        presence: false
-        
+#      - id: 25243
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
+
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25250
     id-excel: 499
     message: "Zone 702 : un code de fonction (sous-zone $4) est obligatoire"
@@ -682,13 +684,13 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-      - id: 25253
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25253
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
         
         
-        
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25260
     id-excel: 499
     message: "Zone 710 : un code de fonction (sous-zone $4) est obligatoire"
@@ -704,12 +706,12 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-      - id: 25263
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25263
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
           
-        
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25270
     id-excel: 499
     message: "Zone 711 : un code de fonction (sous-zone $4) est obligatoire"
@@ -725,11 +727,12 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-      - id: 25273
-        type: presencesouszone
-        souszone: "1"
-        presence: false
-        
+#      - id: 25273
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
+
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25280
     id-excel: 499
     message: "Zone 712 : un code de fonction (sous-zone $4) est obligatoire"
@@ -745,13 +748,13 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-      - id: 25283
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25283
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
         
         
-        
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25290
     id-excel: 499
     message: "Zone 720 : un code de fonction (sous-zone $4) est obligatoire"
@@ -767,12 +770,12 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-      - id: 25293
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25293
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
           
-        
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25300
     id-excel: 499
     message: "Zone 721 : un code de fonction (sous-zone $4) est obligatoire"
@@ -788,11 +791,12 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-      - id: 25303
-        type: presencesouszone
-        souszone: "1"
-        presence: false
-        
+#      - id: 25303
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
+
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25310
     id-excel: 499
     message: "Zone 722 : un code de fonction (sous-zone $4) est obligatoire"
@@ -808,10 +812,10 @@ rules:
         type: presencesouszone
         souszone: "4"
         presence: false
-      - id: 25313
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+ #     - id: 25313
+ #       type: presencesouszone
+ #       souszone: "1"
+ #       presence: false
 
 # passage en P2 et modif message d'erreur (cohérence abs lien 4XX$0) le 10/10/23
   - id: 25320
