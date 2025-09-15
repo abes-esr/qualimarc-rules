@@ -1868,7 +1868,8 @@ rules:
         presence: false
 
 
-#duplication de la règle 25160 pour exclure données d'exemplaire ($5)         
+#duplication de la règle 25160 pour exclure données d'exemplaire ($5)
+# sept 2025 : suppression de la condition exclusion de la $1/$5 suite évolution exclusion des données locales et exemplaire        
   - id: 25720
     id-excel: 456
     message: "Zone 702 : faire le lien vers la notice d'autorité mentionnée dans le point d'accès dans une sous-zone $3"
@@ -1885,10 +1886,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25723
-        type: presencesouszone
-        souszone: "5"
-        presence: false
+#      - id: 25723
+#        type: presencesouszone
+#        souszone: "5"
+#        presence: false
 
  
 #duplication de la règle 25190 pour exclure données d'exemplaire ($5)   
