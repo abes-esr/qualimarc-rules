@@ -130,9 +130,11 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25033
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette: false
         type-de-verification: NECONTIENTPAS
         chaines-caracteres:
           -  rameau
@@ -141,7 +143,7 @@ rules:
         souszone: "3"
         presence: true
 
-  
+#supp $1 suite évolution exclusion des données d'exemplaires/locales sept 2025  
   - id: 25040
     id-excel: 350
     message: "Zone 601 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
@@ -158,9 +160,11 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25043
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette: false
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  rameau
@@ -168,12 +172,13 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25045
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25045
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
 
+#supp $1 suite évolution exclusion des données d'exemplaires/locales sept 2025  
   - id: 25050
     id-excel: 358
     message: "Zone 602 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
@@ -190,9 +195,11 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25053
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette: false
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  rameau
@@ -200,12 +207,13 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25055
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25055
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
 
+#supp $1 suite évolution exclusion des données d'exemplaires/locales sept 2025  
   - id: 25060
     id-excel: 370
     message: "Zone 605 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
@@ -222,9 +230,11 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25063
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette: false
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  rameau
@@ -232,13 +242,13 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25065
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25065
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
 
-
+#supp $1 suite évolution exclusion des données d'exemplaires/locales sept 2025  
   - id: 25070
     id-excel: 378
     message: "Zone 606 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
@@ -255,9 +265,11 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25073
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette: false
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  rameau
@@ -265,12 +277,12 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25075
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+ #     - id: 25075
+ #       type: presencesouszone
+ #       souszone: "1"
+ #       presence: false
 
-
+#supp $1 suite évolution exclusion des données d'exemplaires/locales sept 2025  
   - id: 25080
     id-excel: 378
     message: "Zone 606 : faire le lien vers la ou les notice(s) d'autorité fmesh (Tl) mentionnée(s) dans une sous-zone $3"
@@ -291,18 +303,20 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25084
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette : false
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  fmesh
-      - id: 25085
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25085
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
-
+#supp $1 suite évolution exclusion des données d'exemplaires/locales sept 2025  
   - id: 25090
     id-excel: 391
     message: "Zone 607 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
@@ -319,9 +333,11 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25093
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette: false
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  rameau
@@ -329,12 +345,12 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25095
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25095
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
 
-
+#supp $1 suite évolution exclusion des données d'exemplaires/locales sept 2025  
   - id: 25100
     id-excel: 402
     message: "Zone 608 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
@@ -351,9 +367,11 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25103
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette: false
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  rameau
@@ -361,10 +379,10 @@ rules:
         type: presencesouszone
         souszone: "3"
         presence: false
-      - id: 25065
-        type: presencesouszone
-        souszone: "1"
-        presence: false
+#      - id: 25065
+#        type: presencesouszone
+#        souszone: "1"
+#        presence: false
         
         
 # désactivation 25110 car s'applique juste aux MONOS électroniques HORS THESE + tjs double présence de 214 : 214#0 et 214 #2
@@ -1164,7 +1182,7 @@ rules:
           - operateur:  ET
             chaine-caracteres: fmesh
 
-
+#supp $1 suite évolution exclusion des données d'exemplaires/locales sept 2025  
   - id: 25470
     id-excel: 714
     message: "Zone 604 : faire le lien vers la ou les notice(s) d'autorité mentionnée(s) dans une sous-zone $3"
@@ -1181,9 +1199,11 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25473
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette: false
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  rameau
@@ -1192,7 +1212,7 @@ rules:
         souszone: "3"
         presence: false
 
-
+#supp $1 suite évolution exclusion des données d'exemplaires/locales sept 2025  
   - id: 25480
     id-excel: 168
     message: "Zone 214 : si la ressource décrite est bien est un livre ou un périodique ancien (indicateur 2=#), les seules sous-zones autorisées sont : $r ou $s. Remplacer les sous-zones présentes ou modifier la valeur de l'indicateur 2"
@@ -1678,7 +1698,6 @@ rules:
         presence: false
         affichage-etiquette: false
 
-
   - id: 25650
     id-excel: 240
     message: "Zone 328 : les sous-zones $c, $e et $d (dans cet ordre) sont obligatoires après une sous-zone $b"
@@ -1692,19 +1711,22 @@ rules:
         type: presencesouszone
         souszone: "b"
         presence: true
+        affichage-etiquette: false
       - id: 25652
         type: presencesouszone
         souszone: "c"
         presence: false
+        affichage-etiquette: false
       - id: 25653
         type: presencesouszone
         souszone: "d"
         presence: false
+        affichage-etiquette: false
       - id: 25654
         type: presencesouszone
         souszone: "e"
         presence: false
-
+        affichage-etiquette: false
 
   - id: 25660
     id-excel: 240
@@ -1719,6 +1741,7 @@ rules:
         type: presencesouszone
         souszone: "b"
         presence: true
+        affichage-etiquette: false
       - id: 25662
         type: presencesouszone
         souszone: "c"
@@ -1727,12 +1750,13 @@ rules:
         type: presencesouszone
         souszone: "d"
         presence: true
+        affichage-etiquette: false
       - id: 25664
         type: presencesouszone
         souszone: "e"
         presence: true
+        affichage-etiquette: false
 
- 
   - id: 25670
     id-excel: 240
     message: "Zone 328 : il manque la sous-zone $e, qui doit obligatoirement être enregistrée entre les sous-zones $b/$c et la sous-zone $d"
@@ -1746,19 +1770,21 @@ rules:
         type: presencesouszone
         souszone: "b"
         presence: true
+        affichage-etiquette: false
       - id: 25672
         type: presencesouszone
         souszone: "c"
         presence: true
+        affichage-etiquette: false
       - id: 25673
         type: presencesouszone
         souszone: "d"
         presence: true
+        affichage-etiquette: false
       - id: 25674
         type: presencesouszone
         souszone: "e"
         presence: false
-
 
   - id: 25680
     id-excel: 240
@@ -1773,10 +1799,12 @@ rules:
         type: presencesouszone
         souszone: "b"
         presence: true
+        affichage-etiquette: false
       - id: 25682
         type: presencesouszone
         souszone: "c"
         presence: true
+        affichage-etiquette: false
       - id: 25683
         type: presencesouszone
         souszone: "d"
@@ -1785,7 +1813,7 @@ rules:
         type: presencesouszone
         souszone: "e"
         presence: true
-
+        affichage-etiquette: false
 
   - id: 25690
     id-excel: 240
@@ -1800,10 +1828,12 @@ rules:
         type: presencesouszone
         souszone: "b"
         presence: true
+        affichage-etiquette: false
       - id: 25692
         type: presencesouszone
         souszone: "c"
         presence: true
+        affichage-etiquette: false
       - id: 25693
         type: presencesouszone
         souszone: "d"
@@ -1812,7 +1842,6 @@ rules:
         type: presencesouszone
         souszone: "e"
         presence: false
-
 
   - id: 25700
     id-excel: 240
@@ -1827,6 +1856,7 @@ rules:
         type: presencesouszone
         souszone: "b"
         presence: true
+        affichage-etiquette: false
       - id: 25702
         type: presencesouszone
         souszone: "c"
@@ -1839,7 +1869,7 @@ rules:
         type: presencesouszone
         souszone: "e"
         presence: true
-
+        affichage-etiquette: false
 
   - id: 25710
     id-excel: 240
@@ -1854,6 +1884,7 @@ rules:
         type: presencesouszone
         souszone: "b"
         presence: true
+        affichage-etiquette: false
       - id: 25712
         type: presencesouszone
         souszone: "c"
@@ -1862,6 +1893,7 @@ rules:
         type: presencesouszone
         souszone: "d"
         presence: true
+        affichage-etiquette: false
       - id: 25714
         type: presencesouszone
         souszone: "e"
