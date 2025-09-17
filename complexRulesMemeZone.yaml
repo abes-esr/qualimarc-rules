@@ -2790,6 +2790,7 @@ rules:
         type: presencesouszone
         souszone: "a"
         presence: true
+        affichage-etiquette: false
 
   - id: 25880
     id-excel: 144 
@@ -2810,6 +2811,7 @@ rules:
         type: presencesouszone
         souszone: "a"
         presence: false
+        affichage-etiquette: false
 
 
   - id: 25890
@@ -2868,9 +2870,11 @@ rules:
         type: presencesouszone
         souszone: "2"
         presence: true
+        affichage-etiquette: false
       - id: 25913
         type: presencechainecaracteres
         souszone: "2"
+        affichage-etiquette: false
         type-de-verification: STRICTEMENT
         chaines-caracteres:
           -  rameau
