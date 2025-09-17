@@ -460,7 +460,7 @@ rules:
 
    - id: 6070
      id-excel: 33
-     message: "Traduction : si la ressource est bien une traduction (indicateur 1=1), la zone 454 est obligatoire"
+     message: "Zone 101 : si la ressource est bien une traduction (indicateur 1=1), la zone 454 est obligatoire"
      priorite: P1
      jeux-de-regles:
        - 1  #données codées
@@ -480,7 +480,7 @@ rules:
 
    - id: 6080
      id-excel: 34
-     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) zone(s) 454 n'ont pas lieu d'être"
+     message: "Puisque la ressource n'est pas une traduction (zone 101 avec indicateur 1=0), la (ou les) zone(s) 454 n'ont pas lieu d'être"
      priorite: P1
      jeux-de-regles:
        - 1  #données codées
