@@ -2885,7 +2885,7 @@ rules:
 
 # complément de la 25360 pour couvrir les seuls cas où présence de 200$e=
   - id: 25920
-    message: "Zone 200 : pour chaque compélment de titre parallèle déclaré (en sous-zone $e suivi d'un =), une sous-zone $z (langue du titre parallèle) est obligatoire"
+    message: "Zone 200 : pour chaque complément de titre parallèle déclaré (en sous-zone $e suivi d'un =), une sous-zone $z (langue du titre parallèle) est obligatoire"
     zone: 200
     priorite: P1
     jeux-de-regles:
