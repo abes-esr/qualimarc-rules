@@ -2216,7 +2216,7 @@ rules:
 
    - id: 7590
      id-excel: 299
-     message: "Zone 455 : puisque la ressource est une reproduction, la notice liée doit contenir un lien réciproque 'Est reproduit comme'. Corriger la notice liée ou utiliser une autre zone que la zone 455"
+     message: "Zone 455 : puisque la ressource est une reproduction, la notice liée doit contenir un lien réciproque 'Est reproduit comme' dans une zone 456. Corriger la notice liée ou utiliser une autre zone que la zone 455"
      priorite: P1
      jeux-de-regles:
        - 3  #liens
@@ -2238,7 +2238,7 @@ rules:
          
    - id: 7600
      id-excel: 305
-     message: "Zone 456 : puisque la ressource est un document original, la notice liée doit contenir un lien réciproque 'Reproduction de'. Corriger la notice liée ou utiliser une autre zone que la zone 456"
+     message: "Zone 456 : puisque la ressource est un document original, la notice liée doit contenir un lien réciproque 'Reproduction de' dans une zone 455. Corriger la notice liée ou utiliser une autre zone que la zone 456"
      priorite: P1
      jeux-de-regles:
        - 3  #liens
