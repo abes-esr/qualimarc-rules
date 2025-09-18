@@ -684,7 +684,19 @@ Ainsi, un certain nombre de règles de gestion doivent être respectées :
 - Une règle de dépendance ne peut avoir que les attributs id, type, zone et souszone, aucun autre attribut d'une règle simple n'est possible et ces 4 attributs sont obligatoires
 - Une règle complexe ne peut avoir qu'une seule règle de dépendance.
 
-le champ ``type-notice-liee`` correspond au type de notice lié contenu dans la zone spécifié, à savoir notice bibliographique ou notice d'autorité. Ce champ ne peut prendre que les valeurs : ``AUTORITE | BIBLIO``
+Liste des champs propres au type de règle de dépendance :
+- id : `obligatoire` / de type entier — identifiant de la règle dans la base de données.
+- type : `obligatoire` — doit avoir la valeur `dependance`.
+- zone : `obligatoire` / de type chaîne de caractères — zone utilisée (dans la notice courante) pour trouver la notice liée.
+- souszone : `obligatoire` / de type caractère — sous-zone correspondante. ATTENTION : ne pas renseigner le signe `$` du format Unimarc.
+- type-notice-liee : `obligatoire` / de type chaîne de caractères — type de la notice liée. Valeurs possibles : `AUTORITE | BIBLIO`.
+- position : `optionnel` / de type nombre — position de la sous-zone à récupérer (0 = première, -1 = dernière, etc.).
+- positionStart : `optionnel` / de type nombre — début de l’intervalle d’occurrences de sous-zones à récupérer.
+- positionEnd : `optionnel` / de type nombre — fin de l’intervalle d’occurrences de sous-zones à récupérer.
+
+Remarque :
+- `positionStart` et `positionEnd` peuvent servir à exclure une occurrence et définir deux segments.  
+  Exemple : pour récupérer 0 à 2 puis 4 jusqu’à la fin (en excluant 3), renseigner `positionStart = 4` et `positionEnd = 2`.
 
 Exemple de fichier YAML d'une règle complexe avec une règle de dépendance : 
 ``` YAML
