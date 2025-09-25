@@ -108,18 +108,18 @@ NB : Toutes les règles complexes seront stockées dans le même fichier.
 
 Cette partie va décrire la structure des différentes règles en YAML.
 ### Champs communs aux règles simples
-Voici les champs à renseigner pour décrire une règle simple toutes les règles héritent de ces champs. Ils doivent être renseignés pour chaque règle décrite dans un fichier YAML (à l'exception des champs optionnels) : 
+Voici les champs à renseigner pour décrire une règle simple toutes les règles héritent de ces champs. Ils doivent être renseignés pour chaque règle décrite dans un fichier YAML (à l'exception des champs facultatifs) : 
 - id : ``obligatoire`` / de type entier : identifiant unique de la règle dans la base, ce numéro est arbritraire, mais ne doit pas être retrouvé plusieurs fois dans les fichiers décrivant les règles. Deux règles simples ne peuvent pas avoir le même identifiant (cela inclut les règles simples qui composent une règle complexe), et deux règles complexes ne peuvent pas avoir le même identifiant.
-- id-excel : ``optionnel`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
+- id-excel : ``facultatif`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
 - message : ``obligatoire`` / de type chaine de caractère : indique le message à envoyer à l'utilisateur si la condition décrite dans la règle est validée dans la notice
 - zone : ``obligatoire`` sauf indication contraire / de type chaine de caractère : indique la zone du format Unimarc d'export sur laquelle porte la règle. Pour les règles simples il est possible de mentionner une zone générique (4XX, 5XX, 6XX, 7XX). Si une telle zone est renseignée, la règle sera dupliquée n fois, n correspondant au nombre de zones de la zone générique correspondante (voir [ce fichier](https://docs.google.com/spreadsheets/d/1E98M405rEaCcAV4UDkwY_ld6_B2yIeE9XQjCQqfv0Qk/edit?usp=sharing "Fichier des correspondances de zones génériques") )
-- affichage-etiquette : ``optionnel`` : si positionné à false, la zone correspondant à la règle simple ne sera pas affichée dans l'interface
+- affichage-etiquette : ``facultatif`` : si positionné à false, la zone correspondant à la règle simple ne sera pas affichée dans l'interface
 - priorite: ``obligatoire`` / une des deux valeurs possible : P1 ou P2 : indique la priorité de la règle (P1 utilisé pour analyse Rapide, P2 pour analyse experte)
-- jeux-de-regles : ``optionnel`` : de type liste d'entier : indique les identifiants des jeux de règles auquel la règle appartient. (voir [ce fichier](https://docs.google.com/spreadsheets/d/1ao46m7mI-NhqtCuCn4eq0EH1iS4hXCZ8cqKbSKpJYaw/edit?usp=sharing "Fichier des correspondeances Identifiant au jeux de règles") )
-- type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
+- jeux-de-regles : ``facultatif`` : de type liste d'entier : indique les identifiants des jeux de règles auquel la règle appartient. (voir [ce fichier](https://docs.google.com/spreadsheets/d/1ao46m7mI-NhqtCuCn4eq0EH1iS4hXCZ8cqKbSKpJYaw/edit?usp=sharing "Fichier des correspondeances Identifiant au jeux de règles") )
+- type-doc : ``facultatif`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
 > les valeurs possibles pour les types de documents sont les suivantes :
 > B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, PC : Partie composante
-- type-these : ``optionnel`` : de type liste de valeur : indique si la règle doit être appliquée sur les thèses.
+- type-these : ``facultatif`` : de type liste de valeur : indique si la règle doit être appliquée sur les thèses.
 > les valeurs possibles pour les types de thèse sont REPRO ou SOUTENANCE
 - type : ``obligatoire`` : de type chaine de caractère : indique le type de règle qui est décrite. Les valeurs possibles sont : 
   - ``presencezone`` : pour les règles permettant de tester la présence ou l'absence d'une zone dans la notice
@@ -342,11 +342,13 @@ Liste des champs propres au type de règle présence chaine caractères:
 On peut controler également sur le contenu d'une sous-zone à des positions spécifiques
 * positionstart : **facultatif** - de type nombre. La position dans la chaîne de caractères à laquelle je souhaite débuter mon controle. Le premier caractère correspond à la position 0.
 * positionend : **facultatif** - de type nombre. La position dans la chaîne de caractères à laquelle je souhaite arrêter mon controle.
+* position : **facultatif** - de type nombre. La position dans la chaîne de caractères que je souhaite controler.
 
 Note: 
 - positionstart peut etre renseigné, sans positionend, avec un type de verification CONTIENT: on controle à partir d'un endroit du contenu
 - positionend peut etre renseigné, sans positionstart, avec un type de verification CONTIENT: on controle jusqu'à un endroit du contenu
 - positionstart et positionend peuvent être renseignés avec la même valeur : on controle 1 seul caractère
+- position est préférable si on veut controler un seul caractère
 - il peut y avoir pour une liste de chaine controlées pour un contenu (plusieurs chaines de caractères dans une liste contrôlées sur une même sous zone)
 
 Liste des valeurs possibles en fonction du type de vérification :
@@ -370,7 +372,6 @@ Liste des valeurs possibles en fonction du type de vérification :
 ---
 rules:
     - id:                       1
-      id-excel:                 1
       type:                     presencechainecaracteres
       message:                  message de retour
       zone:                     200
@@ -382,7 +383,6 @@ rules:
       chaines-caracteres:
         - chaine-caracteres:    chaine de caractères à chercher
     - id:                       2
-      id-excel:                 2
       type:                     presencechainecaracteres
       message:                  message de retour
       zone:                     200
@@ -396,7 +396,6 @@ rules:
         - operateur:            OU
           chaine-caracteres:    deuxième chaine de caractères à chercher
     - id:                       3
-      id-excel:                 3
       type:                     presencechainecaracteres
       message:                  message de retour
       zone:                     200
@@ -411,9 +410,7 @@ rules:
           chaine-caracteres:    deuxième chaine de caractères à chercher
         - operateur:            OU
           chaine-caracteres:    deuxième chaine de caractères à chercher
-          - id:                       3
     - id:                       4
-      id-excel:                 4
       type:                     presencechainecaracteres
       message:                  message de retour
       zone:                     110
@@ -428,10 +425,9 @@ rules:
           chaine-caracteres:    deuxième caractère ou deuxième chaine de caractères à chercher
         - operateur:            OU
           chaine-caracteres:    troisième caractère ou troisième chaine de caractères à chercher
-      positionstart:            position dans la chaine à laquelle commence le controle
-      positionend:              position dans la chaine à laquelle s'arrête le controle
+      positionstart:            2
+      positionend:              7
     - id:                       5
-      id-excel:                 5
       type:                     presencechainecaracteres
       message:                  message de retour
       zone:                     110
@@ -444,23 +440,37 @@ rules:
         - chaine-caracteres:    premier caractere a chercher
         - operateur:            OU
           chaine-caracteres:    deuxième caractere a chercher
-      positionstart:            position dans la chaine à laquelle commence le controle, va jusqu'a la fin de chaine
+      positionstart:            4
+    - id:                       6
+      type:                     presencechainecaracteres
+      message:                  message de retour
+      zone:                     110
+      priorite:                 P1
+      type-these:
+          - REPRO
+      souszone:                 a
+      type-de-verification:     CONTIENT
+      chaines-caracteres:
+        - chaine-caracteres:    premier caractere a chercher
+        - operateur:            OU
+          chaine-caracteres:    deuxième caractere a chercher
+      position:                 4
 ```
 
 ### Comparaison contenu sous-zone
 
 Liste des champs propres au type de règle comparaison contenu sous-zone:
 * souszone : **obligatoire** - de type caractère. La sous-zone sur laquelle va porter la comparaison. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
-* position : *optionnel* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0).
-* positionstart : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`).
-* positionend : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**.
+* position : *facultatif* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0).
+* positionstart : *facultatif* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`).
+* positionend : *facultatif* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**.
 * type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS` ou `STRICTEMENTDIFFERENT` OU `TOUTCONTIENT` OU `AUCUNCONTIENT`
-* nombreCaracteres : *optionnel* - de type chiffre. Le nombre de caractères de la souszonecible à comparer à la souszone. Ne peux contenir que deux chiffres maximum. Ce paramètre est pris en compte uniquement pour les type-de-verification COMMENCE et TERMINE.
+* nombreCaracteres : *facultatif* - de type chiffre. Le nombre de caractères de la souszonecible à comparer à la souszone. Ne peux contenir que deux chiffres maximum. Ce paramètre est pris en compte uniquement pour les type-de-verification COMMENCE et TERMINE.
 * zonecible : **obligatoire** - de type caractère. La zone dans laquelle aller chercher la souszonecible qui permettra d'effectuer la comparaison.
 * souszonecible : **obligatoire** - de type caractère. La souszonecible qui sera comparée à la souszone. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
-* positioncible : *optionnel* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0).
-* positionstartcible : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`).
-* positionendcible : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**.
+* positioncible : *facultatif* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0).
+* positionstartcible : *facultatif* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`).
+* positionendcible : *facultatif* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**.
 
 ``` YAML
 ---
@@ -574,10 +584,10 @@ Les règles complexes seront toutes déclarées dans le fichier complexRules.yam
 ### Champs communs aux règles complexes
 Les règles complexes disposent de champs communs qui décrivent la règle complexe et seront disposés au premier niveau du bloc YAML : 
 - id ``obligatoire`` / de type entier : identifiant de la règle dans la base de données. L'identifiant d'une règle complexe est unique et aucune autre règle complexe ne peut avoir le même identifiant. Il est par contre possible d'avoir une règle complexe disposant du même identifiant qu'une règle simple.
-- id-excel ``optionnel`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
+- id-excel ``facultatif`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
 - message ``obligatoire`` / de type chaine de caractère : indique le message à envoyer à l'utilisateur si la condition décrite dans la règle est validée dans la notice
 - priorite ``obligatoire`` / une des deux valeurs possible : P1 ou P2 : indique la priorité de la règle (P1 utilisé pour analyse Rapide, P2 pour analyse experte)
-- type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
+- type-doc : ``facultatif`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
 > les valeurs possibles pour les types de documents sont les suivantes :
 > B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, TS : Thèse de soutenance, TR : Thèse de reproduction, PC : Partie composante 
 
@@ -816,7 +826,7 @@ Sur le même principe que les règles, il est possible de créer des jeux de rè
 Les jeux de règles personnalisés sont créés dans le fichier jeux_de_regles.yaml. Le premier élément du fichier doit être nommé **jeux-de-regles**. Une liste d'objet doit ensuite être déclarée dans le fichier. Les attributs qui composent un jeu de règle sont : 
 - id : ``obligatoire`` / de type entier : identifiant du jeu de règles dans la base de données
 - libelle : ``obligatoire`` / de type chaîne de caractères : libellé du jeu de règles tel qu'il sera affiché sur la page d'accueil de Qualimarc
-- description : ``optionnel`` / de type chaîne de caractères. Une description du jeu de règle qui sera affichée dans l'info bulle.
+- description : ``facultatif`` / de type chaîne de caractères. Une description du jeu de règle qui sera affichée dans l'info bulle.
 - position : ``obligatoire`` / de type entier. Indique la position du jeu de règles dans la liste de la page d'accueil. Le premier jeu de règle aura la position 0.
 
 Exemple de fichier YAML : 
