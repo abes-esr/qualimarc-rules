@@ -460,7 +460,7 @@ rules:
 
    - id: 6070
      id-excel: 33
-     message: "Traduction : si la ressource est bien une traduction (indicateur 1=1), la zone 454 est obligatoire"
+     message: "Zone 101 : si la ressource est bien une traduction (indicateur 1=1), la zone 454 est obligatoire"
      priorite: P1
      jeux-de-regles:
        - 1  #données codées
@@ -480,7 +480,7 @@ rules:
 
    - id: 6080
      id-excel: 34
-     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) zone(s) 454 n'ont pas lieu d'être"
+     message: "Puisque la ressource n'est pas une traduction (zone 101 avec indicateur 1=0), la (ou les) zone(s) 454 n'ont pas lieu d'être"
      priorite: P1
      jeux-de-regles:
        - 1  #données codées
@@ -2216,7 +2216,7 @@ rules:
 
    - id: 7590
      id-excel: 299
-     message: "Zone 455 : puisque la ressource est une reproduction, la notice liée doit contenir un lien réciproque 'Est reproduit comme'. Corriger la notice liée ou utiliser une autre zone que la zone 455"
+     message: "Zone 455 : puisque la ressource est une reproduction, la notice liée doit contenir un lien réciproque 'Est reproduit comme' dans une zone 456. Corriger la notice liée ou utiliser une autre zone que la zone 455"
      priorite: P1
      jeux-de-regles:
        - 3  #liens
@@ -2238,7 +2238,7 @@ rules:
          
    - id: 7600
      id-excel: 305
-     message: "Zone 456 : puisque la ressource est un document original, la notice liée doit contenir un lien réciproque 'Reproduction de'. Corriger la notice liée ou utiliser une autre zone que la zone 456"
+     message: "Zone 456 : puisque la ressource est un document original, la notice liée doit contenir un lien réciproque 'Reproduction de' dans une zone 455. Corriger la notice liée ou utiliser une autre zone que la zone 456"
      priorite: P1
      jeux-de-regles:
        - 3  #liens
@@ -3205,25 +3205,30 @@ rules:
          type: presencezone
          zone: '600'
          presence: false
+         affichage-etiquette: false
        - id: 7902
          type: presencezone
          zone: '601'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7903
          type: presencezone
          zone: '602'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7904
          type: presencezone
          zone: '604'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7905
          type: presencezone
          zone: '605'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7906
          type: presencezone
@@ -3234,6 +3239,7 @@ rules:
          type: presencezone
          zone: '607'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7908
          type: presencezone
@@ -3244,6 +3250,7 @@ rules:
          type: presencezone
          zone: '616'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -3416,6 +3423,7 @@ rules:
 
 
 #7150 : complément de la règle github 25640 (inclusion des ressources continues électroniques)
+# sept 2025 : suppression de la condition exclusion de la $5 suite évolution exclusion des données locales
    - id:         7970
      id-excel:    509
      message:     "Zone 856 : puisque la ressource continue décrite n'est pas électronique, cette zone doit être supprimée"
@@ -3434,12 +3442,12 @@ rules:
          zone: '856'
          presence: true
          operateur-booleen: ET
-       - id: 7973
-         type: presencesouszone
-         zone: '856'
-         souszone: '5'
-         presence: false
-         operateur-booleen: ET
+#       - id: 7973
+#         type: presencesouszone
+#         zone: '856'
+#         souszone: '5'
+#         presence: false
+#         operateur-booleen: ET
 
 #remplace l'ancienne règle 1101 (comparaison de dates). Activée le 09/10/23 suite ticket.
 #ajout sous-règle 7983 sur absence nécéssaire de X dans 100$A (sinon, forcément pas les mêmes !) - suite discussion SNX nov 2023
@@ -4045,6 +4053,7 @@ rules:
          type: presencezone
          zone: '210'
          presence: false
+         affichage-etiquette: false
        - id: 9022
          type: presencezone
          zone: '214'
