@@ -4139,7 +4139,6 @@ rules:
          type: comparaisoncontenusouszone
          zone: '225'
          souszone:    a
-         positionstart: 1
          type-de-verification: STRICTEMENT
          zonecible: '410'
          souszonecible: t
