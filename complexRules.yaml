@@ -4179,3 +4179,37 @@ rules:
          positionstartcible:       10
          positionendcible:         13
          operateur-booleen: ET
+
+
+#test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
+   - id: 9070
+     id-excel: 733
+     message: "La première lettre enregistrée en sous-zone 182$c doit être identique à celle enregistrée en sous-zone 183$a."
+     priorite: P1
+     jeux-de-regles:
+       - 1 #1XX
+     regles:
+       - id: 9071
+         type: nombrezone
+         zone: '182'
+         operateur: EGAL
+         occurrences: 1
+         affichage-etiquette: false
+      - id: 9072
+         type: nombrezone
+         zone: '183'
+         operateur: EGAL
+         occurrences: 1
+         affichage-etiquette: false
+         operateur-booleen: ET
+       - id: 9073
+         type: comparaisoncontenusouszone
+         zone: '182'
+         souszone:    c
+         type-de-verification: COMMENCE
+         nombreCaracteres:         1
+         zonecible: '183'
+         souszonecible: a
+         type-de-verification: COMMENCE
+         nombreCaracteres:         1
+         operateur-booleen: ET
