@@ -23,7 +23,7 @@ rules:
       zone:                     100
       priorite:                 P1
       souszone:                 a
-      position:                 34
+      positionstart:            34
       positionend:              35
       type-de-verification:     AUCUNCONTIENT
       zonecible:                200
