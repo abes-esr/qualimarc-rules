@@ -4124,6 +4124,7 @@ rules:
          type: indicateur
          zone: '225'
          indicateur:    1
+         type-de-verification: STRICTEMENT
          valeur: '0'
          affichage-etiquette: false
          operateur-booleen: ET
