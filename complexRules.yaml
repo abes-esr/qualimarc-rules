@@ -4179,8 +4179,8 @@ rules:
          type-de-verification: NECONTIENTPAS
          zonecible: '100'
          souszonecible:    a
-         positionciblestart:       9
-         positioncibleend:         12 
+         positionstartcible:       9
+         positionendcible:         12 
          operateur-booleen: ET
        - id: 9064
          type: presencechainecaracteres
