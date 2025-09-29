@@ -4127,7 +4127,7 @@ rules:
          valeur: '0'
          affichage-etiquette: false
          operateur-booleen: ET
-      - id: 9053
+       - id: 9053
          type: presencesouszone
          zone: '410'
          souszone:    0
