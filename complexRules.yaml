@@ -4171,13 +4171,13 @@ rules:
          operateur-booleen: ET
        - id: 9063
          type: comparaisoncontenusouszone
-         zone: '214'
-         souszone:    d
-         type-de-verification: CONTIENT
-         zonecible: '100'
-         souszonecible: a
+         zone: '100'
+         souszone:    a
          positionstartcible:       10
          positionendcible:         13
+         type-de-verification: CONTIENT
+         zonecible: '214'
+         souszonecible: d
          operateur-booleen: ET
 
 
@@ -4190,18 +4190,10 @@ rules:
        - 1 #1XX
      regles:
        - id: 9071
-         type: nombrezone
-         zone: '182'
-         operateur: EGAL
-         occurrences: 1
-         affichage-etiquette: false
-       - id: 9072
-         type: nombrezone
+         type: presencezone
          zone: '183'
-         operateur: EGAL
-         occurrences: 1
+         presence: true
          affichage-etiquette: false
-         operateur-booleen: ET
        - id: 9073
          type: comparaisoncontenusouszone
          zone: '182'
