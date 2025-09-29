@@ -4104,3 +4104,42 @@ rules:
          presence: true
          affichage-etiquette: false
          operateur-booleen: OU
+
+#test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
+   - id: 9050
+     id-excel: 207
+     message: "Zone 225 : puisque la forme du titre est déclarée 'différente' de celle de l'autorité (indicateur 1=0), le titre enregistré en sous-zone $a doit être différent de celui enregistré en 410."
+     priorite: P1
+     jeux-de-regles:
+       - 3 #liens
+       - 4 #2XX
+     regles:
+       - id: 9051
+         type: nombrezone
+         zone: '225'
+         operateur: EGAL
+         occurrences: 1
+         affichage-etiquette: false
+       - id: 9052
+         type: indicateur
+         zone: '225'
+         indicateur:    1
+         valeur: '0'
+         affichage-etiquette: false
+         operateur-booleen: ET
+      - id: 9053
+         type: presencesouszone
+         zone: '410'
+         souszone:    0
+         presence: true
+         affichage-etiquette: false
+         operateur-booleen: ET
+       - id: 9054
+         type: comparaisoncontenusouszone
+         zone: '225'
+         souszone:    a
+         type-de-verification: STRICTEMENT
+         zonecible: '410'
+         souszonecible: t
+         operateur-booleen: ET
+
