@@ -4175,7 +4175,7 @@ rules:
          souszone: a
          positionstart:       10
          positionend:         13 
-         type-de-verification: CONTIENT
+         type-de-verification: NECONTIENTPAS
          zonecible: '214'
          souszonecible:    d
          operateur-booleen: ET
@@ -4198,10 +4198,14 @@ rules:
          type: comparaisoncontenusouszone
          zone: '182'
          souszone:    c
-         type-de-verification: COMMENCE
-         nombreCaracteres:         1
+         positionstart: 0
+         positionend: 0
+         type-de-verification: STRICTEMENTDIFFERENT
+         #nombreCaracteres:         1
          zonecible: '183'
          souszonecible: a
+         positionstartcible:       0
+         positionendcible:         0
         # type-de-verification: COMMENCE
          #nombreCaracteres:         1
          operateur-booleen: ET
