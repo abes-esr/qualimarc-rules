@@ -3451,35 +3451,36 @@ rules:
 
 #remplace l'ancienne règle 1101 (comparaison de dates). Activée le 09/10/23 suite ticket.
 #ajout sous-règle 7983 sur absence nécéssaire de X dans 100$A (sinon, forcément pas les mêmes !) - suite discussion SNX nov 2023
-   - id:         7980
-     id-excel:    190
-     message:     "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
-     priorite:    P1
-     jeux-de-regles:
-     - 6 #dates
-     regles:
-       - id: 7981
-         type: nombrezone
-         zone: '214'
-         operateur: EGAL
-         occurrences: 1
-         affichage-etiquette: false
-       - id: 7982
-         type: comparaisoncontenusouszone
-         zone: '214'
-         souszone: 'd'
-         type-de-verification: NECONTIENTPAS
-         zonecible: '100'
-         souszonecible: 'A'
-         operateur-booleen: ET
-       - id: 7983
-         type: presencechainecaracteres
-         zone: '100'
-         souszone: 'A'
-         type-de-verification: NECONTIENTPAS
-         chaines-caracteres:
-           - chaine-caracteres:    "X"
-         operateur-booleen: ET
+#annulée et remplacée par la 9060 pour taper sur la 100$a pos. 9-12 directement (et pas sur la 100$A)
+#   - id:         7980
+#     id-excel:    190
+#     message:     "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
+#     priorite:    P1
+#     jeux-de-regles:
+#     - 6 #dates
+#     regles:
+#       - id: 7981
+#         type: nombrezone
+#         zone: '214'
+#         operateur: EGAL
+#         occurrences: 1
+#         affichage-etiquette: false
+#       - id: 7982
+#         type: comparaisoncontenusouszone
+#         zone: '214'
+#         souszone: 'd'
+#         type-de-verification: NECONTIENTPAS
+#         zonecible: '100'
+#         souszonecible: 'A'
+#         operateur-booleen: ET
+ #      - id: 7983
+#         type: presencechainecaracteres
+#         zone: '100'
+#         souszone: 'A'
+#         type-de-verification: NECONTIENTPAS
+#         chaines-caracteres:
+ #          - chaine-caracteres:    "X"
+#         operateur-booleen: ET
 
 
    - id:         7990
@@ -4146,9 +4147,11 @@ rules:
 
 
 #test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
+# annule et remplace la 7980 pour éviter de taper sur la 100$A en affichage erreur, en reprenant toutefois la condition d'absence de X dans la date.
+# suppression de la condition sur valeur indicateur : couvre donc les règles excel 189 ET 190
    - id: 9060
      id-excel: 189
-     message: "RULE TEST Zone 214 : la date indiquée en sous-zone $d ne correspond pas à celle indiquée en 100 $a (onglet 'Générales')."
+     message: "RULE TEST Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
      priorite: P1
      jeux-de-regles:
        - 1 #1XX
@@ -4161,25 +4164,33 @@ rules:
          operateur: EGAL
          occurrences: 1
          affichage-etiquette: false
-       - id: 9062
-         type: indicateur
-         zone: '214'
-         indicateur:    2
-         type-de-verification: STRICTEMENT
-         valeur: '1'
-         affichage-etiquette: false
-         operateur-booleen: ET
+#       - id: 9062
+#         type: indicateur
+#         zone: '214'
+#         indicateur:    2
+#         type-de-verification: STRICTEMENT
+#         valeur: '1'
+#         affichage-etiquette: false
+#         operateur-booleen: ET
        - id: 9063
          type: comparaisoncontenusouszone
          zone: '100'
          souszone: a
-         positionstart:       10
-         positionend:         13 
+         positionstart:       9
+         positionend:         12 
          type-de-verification: NECONTIENTPAS
          zonecible: '214'
          souszonecible:    d
          operateur-booleen: ET
-
+       - id: 9064
+         type: presencechainecaracteres
+         zone: '100'
+         souszone: 'A'
+         affichage-etiquette: false
+         type-de-verification: NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "X"
+         operateur-booleen: ET
 
 #test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
    - id: 9070
