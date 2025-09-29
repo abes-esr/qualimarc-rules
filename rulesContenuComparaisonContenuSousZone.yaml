@@ -16,20 +16,22 @@ rules:
       type-de-verification:     NECONTIENTPAS
       zonecible:                328
       souszonecible:            d
-      
-    - id:                       1202
-      type:                     comparaisoncontenusouszone
-      message:                  "Rule TEST le code enregistré en 104$d ou 100$a pos.34-35 (langue du titre) ne se retrouve dans aucune 200$7 - ppn 090389352"
-      zone:                     100
-      priorite:                 P1
-      souszone:                 a
-      positionstart:            34
-      positionend:              35
-      type-de-verification:     AUCUNCONTIENT
-      zonecible:                200
-      souszonecible:            "7"
 
-#1201 désactivée car regarde TOUTES les sous-zones 200$7 ; donc nécéssairement en erreur !
+#règle test SAM désactivée      
+#    - id:                       1202
+#      type:                     comparaisoncontenusouszone
+#      message:                  "Rule TEST le code enregistré en 104$d ou 100$a pos.34-35 (langue du titre) ne se retrouve dans aucune 200$7 - ppn 090389352"
+#      zone:                     100
+#      priorite:                 P1
+#      souszone:                 a
+#      positionstart:            34
+#      positionend:              35
+#      type-de-verification:     AUCUNCONTIENT
+#      zonecible:                200
+#      souszonecible:            "7"
+
+#1201 désactivée car regarde TOUTES les sous-zones 200$7 ; donc nécéssairement en erreur ! 
+# OK remplacée par la 9080 suite évolution reègle comparaison sous-zone
 #     - id:                       1201
 #       id-excel:                 121
 #       type:                     comparaisoncontenusouszone
