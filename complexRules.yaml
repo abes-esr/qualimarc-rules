@@ -4171,13 +4171,13 @@ rules:
          operateur-booleen: ET
        - id: 9063
          type: comparaisoncontenusouszone
-         zone: '100'
-         souszone:    a
+         zone: '214'
+         souszone:    d
+         type-de-verification: CONTIENT
+         zonecible: '100'
+         souszonecible: a
          positionstartcible:       10
          positionendcible:         13
-         type-de-verification: CONTIENT
-         zonecible: '214'
-         souszonecible: d
          operateur-booleen: ET
 
 
