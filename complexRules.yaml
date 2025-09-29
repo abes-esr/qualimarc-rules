@@ -4209,3 +4209,28 @@ rules:
         # type-de-verification: COMMENCE
          #nombreCaracteres:         1
          operateur-booleen: ET
+
+
+#test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352 - remplace la 1201 initiale
+   - id: 9080
+     id-excel: 121
+     message: "RULE TEST Zone 200 : le code d'écriture de catalogage indiqué en première sous-zone $7 ne correspond pas à celui indiqué en sous-zone 104$d. Corriger l'une ou l'autre de ces sous-zones pour rendre les données cohérentes"
+     priorite: P1
+     jeux-de-regles:
+       - 1 #1XX
+       - 4 #2XX
+     regles:
+       - id: 9081
+         type: presencesouszone
+         zone: '200'
+         souszone: 7
+         presence: true
+         affichage-etiquette: false
+       - id: 9082
+         type: comparaisoncontenusouszone
+         zone: '104'
+         souszone:    d
+         type-de-verification: AUCUNCONTIENT
+         zonecible: '200'
+         souszonecible: 7
+         operateur-booleen: ET
