@@ -4174,13 +4174,13 @@ rules:
 #         operateur-booleen: ET
        - id: 9063
          type: comparaisoncontenusouszone
-         zone: '100'
-         souszone: a
-         positionstart:       9
-         positionend:         12 
+         zone: '214'
+         souszone: d
          type-de-verification: NECONTIENTPAS
-         zonecible: '214'
-         souszonecible:    d
+         zonecible: '100'
+         souszonecible:    a
+         positionciblestart:       9
+         positioncibleend:         12 
          operateur-booleen: ET
        - id: 9064
          type: presencechainecaracteres
