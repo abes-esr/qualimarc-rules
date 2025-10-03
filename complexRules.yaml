@@ -4194,6 +4194,7 @@ rules:
 
 #test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
 # remplace la 9000 > à désactiver à la prochaine PR !
+# rétroconversions !
    - id: 9070
      id-excel: 733
      message: "RULE TEST La première lettre enregistrée en sous-zone 182$c doit être identique à celle enregistrée en sous-zone 183$a."
