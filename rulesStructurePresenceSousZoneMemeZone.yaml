@@ -97,7 +97,7 @@ rules:
         presence:           false
       - souszone:           a
         presence:           true
-      #  affichage-etiquette: false
+        affichage-etiquette: false
         operateur-booleen:  ET
 #      - souszone:           1
 #        presence:           false
