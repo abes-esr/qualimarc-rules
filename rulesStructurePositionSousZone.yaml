@@ -29,11 +29,11 @@ rules:
     souszone:   z
     priorite:   P1
     positions:
-       - position: 1
+       - position: 0
          comparateur: DIFFERENT
-       - position: 3
-         comparateur: DIFFERENT
-    operateur:  OU
+    #    - position: 3
+    #      comparateur: DIFFERENT
+    # operateur:  OU
 
   - id:         202
     id-excel:   95555
