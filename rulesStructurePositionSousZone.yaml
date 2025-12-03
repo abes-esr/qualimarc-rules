@@ -20,11 +20,11 @@
  #   position:    1
 
 
-
+rules:
   - id:         201
     id-excel:   95555
     type:       positionsouszone
-    message:    "TEST AFE position sous zone présence 328$z avec comparateur 'different' et opérateur booleen OU 'pos 1 ou pos 3' "
+    message:    "TEST AFE position sous zone présence 328$z avec comparateur 'different' et opérateur booleen OU 'pos 1 ou pos 3'"
     zone:       328
     souszone:   z
     priorite:   P1
