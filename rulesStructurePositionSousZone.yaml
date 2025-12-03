@@ -29,7 +29,7 @@ rules:
     souszone:   z
     priorite:   P1
     positions:
-       - position: 0
+       - position: 1
          comparateur: DIFFERENT
     #    - position: 3
     #      comparateur: DIFFERENT
