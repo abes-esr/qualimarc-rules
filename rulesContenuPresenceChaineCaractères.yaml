@@ -951,3 +951,16 @@ rules:
       jeux-de-regles: 
       - 4 #2XX       
 
+#regle 1064 : test simple avec les nouveaux attributs positionstart/end - à supprimer
+    - id: 1064
+      id-excel: 999
+      type: presencechainecaracteres
+      message: "TEST REGLE CARACTERES POS : La langue (100$a pos.22-24) doit être 'fre'"
+      zone: 100
+      souszone: a
+      positionstart: 22
+      positionend: 24
+      type-de-verification: NECONTIENTPAS
+      chaines-caracteres:
+        - chaine-caracteres: "fre"
+      priorite: P1
