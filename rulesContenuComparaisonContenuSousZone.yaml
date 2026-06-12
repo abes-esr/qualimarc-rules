@@ -45,3 +45,17 @@ rules:
 #       type-de-verification:     STRICTEMENTDIFFERENT
 #       zonecible:                104
 #       souszonecible:            d
+
+    - id:                       1203
+      type:                     comparaisoncontenusouszone
+      message:                  "La valeur de 110$a (pos.1) doit être 'a' (UNM prod 110$b)."
+      zone:                     110
+      priorite:                 P1
+      souszone:                 a
+      positionstart:            1
+      positionend:              1
+      type-de-verification:     STRICTEMENT
+      zonecible:                110
+      souszonecible:            b
+      positionstartcible:       1
+      positionendcible:         1
