@@ -705,6 +705,8 @@ Liste des champs propres au type de règle de dépendance :
 - positionStart : `optionnel` / de type nombre — début de l’intervalle d’occurrences de sous-zones à récupérer.
 - positionEnd : `optionnel` / de type nombre — fin de l’intervalle d’occurrences de sous-zones à récupérer.
 
+- `position`, `positionStart` et `positionEnd` acceptent aussi des index negatifs (`-1` = derniere occurrence, `-2` = avant-derniere, etc.).
+
 Remarque :
 - `positionStart` et `positionEnd` peuvent servir à exclure une occurrence et définir deux segments.  
   Exemple : pour récupérer 0 à 2 puis 4 jusqu’à la fin (en excluant 3), renseigner `positionStart = 4` et `positionEnd = 2`.
