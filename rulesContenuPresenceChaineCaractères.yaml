@@ -964,3 +964,17 @@ rules:
       chaines-caracteres:
         - chaine-caracteres: "fre"
       priorite: P1
+
+#Ajout d'une règle de test SOA-183 pour positionstart et positionend
+    - id: 39991
+      id-excel: 39991
+      type: presencechainecaracteres
+      message: "TEST SOA-183 IMPORT - 100$a pos.22-24 doit contenir fre"
+      zone: 100
+      souszone: a
+      positionstart: 22
+      positionend: 24
+      type-de-verification: NECONTIENTPAS
+      chaines-caracteres:
+        - chaine-caracteres: "fre"
+      priorite: P1
