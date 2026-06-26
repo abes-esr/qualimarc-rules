@@ -1,5 +1,5 @@
-# Qualimarc-rules 
- 
+# Qualimarc-rules
+
 ![qualimarc](https://user-images.githubusercontent.com/328244/203315079-4cabb49a-58a8-4778-80b5-d789e48fb94d.PNG)
 
 ## Documentation d'utilisation du dépôt
@@ -14,14 +14,15 @@ Ce document explique étape par étape comment ajouter ou modifier des règles d
 - [Syntaxe des règles complexes](#5)
 - [Règles de dépendance](#6)
 - [Jeux de règles personnalisés](#7)
+- [Convention d'indexation des positions](#8)
 
 ## Utilisation de GitHub-  <a id="1"></a>
 Github est un outil en ligne permettant de versionner des fichiers. Il dispose d'un éditeur en ligne permettant de modifier des fichiers puis de les sauvegarder tout en conservant un historique des modifications réalisées..
 
 ### Notion de branche
-Une branche est une version du code disponible dans un projet. Elle dispose de son propre historique, et toutes les modifications effectuées sur cette branche auront leur propre cycle de vie. Pour sélectionner une branche, cliquez sur la liste déroulante : ![branches](https://user-images.githubusercontent.com/57490853/190959280-452d5f2b-a04e-4061-ac49-3bea09ddf00b.PNG) 
+Une branche est une version du code disponible dans un projet. Elle dispose de son propre historique, et toutes les modifications effectuées sur cette branche auront leur propre cycle de vie. Pour sélectionner une branche, cliquez sur la liste déroulante : ![branches](https://user-images.githubusercontent.com/57490853/190959280-452d5f2b-a04e-4061-ac49-3bea09ddf00b.PNG)
 et sélectionnez la branche de travail. Le contenu de la branche est affiché.
-> Pour modifier les règles et qu'elles soient prises en compte sur l'environnement de test, il est nécessaire de se 
+> Pour modifier les règles et qu'elles soient prises en compte sur l'environnement de test, il est nécessaire de se
 > positionner sur la branche ``main``
 
 ### Editer un fichier
@@ -29,7 +30,7 @@ Pour modifier le contenu d'un fichier, cliquez sur le nom du fichier à modifier
 
 ### Sauvegarder un fichier
 La sauvegarde d'un fichier est réalisée via l'action commit dans github. Lorsqu'on fichier est en édition, en bas de la page, renseignez un titre dans le premier champ texte, puis une description des modifications effectuées dans le second, cochez la case ``Commit directly to the <nom_de_la_branche> branch`` puis cliquez sur le bouton Commit changes :  
-![commit](https://user-images.githubusercontent.com/57490853/190960543-e91a3708-9308-4f43-ad39-111ecb62a1ce.PNG) 
+![commit](https://user-images.githubusercontent.com/57490853/190960543-e91a3708-9308-4f43-ad39-111ecb62a1ce.PNG)
 > Un commit est une sauvegarde à laquelle est ajoutée un commentaire.
 > Chaque commit donne lieu à une nouvelle entrée dans l'historique des modifications du fichier et de la branche active.
 
@@ -46,22 +47,33 @@ Les fichiers de règles sont décrits dans un langage appelé YAML. Proche du JS
 - les chaines de caractères doivent être placée sur une même ligne, sans retour à la ligne.
 - Si un attribut dispose de plusieurs valeurs, celles-ci sont disposées sur des lignes différents et précédées d'un tiret ``- ``.
 
-Par exemple :  
+Par exemple :
 
-![typedoc](https://user-images.githubusercontent.com/57490853/190974752-3b5b1118-8c4e-42ce-8963-734559227c80.PNG) 
+![typedoc](https://user-images.githubusercontent.com/57490853/190974752-3b5b1118-8c4e-42ce-8963-734559227c80.PNG)
 
+
+## Convention d'indexation des positions <a id="8"></a>
+
+Cette convention s'applique aux règles qui utilisent les champs `position`, `positionstart` et `positionend`.
+
+- Pour les règles de contenu de sous-zone (ex: `presencechainecaracteres`, `comparaisoncontenusouszone`, `comparaisondate`), l'indexation est en base 0.
+- En base 0, `0` correspond au premier caractère.
+- Pour cibler un seul caractère, utilisez `positionstart = positionend`.
+- Exemple: `positionstart: "3"` et `positionend: "3"` cible le 4e caractère.
+- Exception: pour la règle `typedocument` (zone 008), le champ `position` est en base 1 et doit être compris entre 1 et 4.
 
 ## Description des règles de Qualimarc
-Toutes les règles de Qualimarc ont une structure commune, puis des champs propres à chaque type de règle. Dans le chapitre décrivant les règles, les éléments obligatoires seront précisés. Voici un exemple de fichier YAML décrivant une règle : 
+Toutes les règles de Qualimarc ont une structure commune, puis des champs propres à chaque type de règle. Dans le chapitre décrivant les règles, les éléments obligatoires seront précisés. Voici un exemple de fichier YAML décrivant une règle :
 ``` YAML
 rules:
-  - id:             2
-    id-excel:       2
-    type:           presencezone
-    message:        message test test 2
-    zone:           330
-    priorite:       P1
-    presence:       false
+  - id:                2
+    id-excel:          2
+    type:              presencezone
+    message:           message test test 2
+    zone:              330
+    affiche-etiquette: false
+    priorite:          P1
+    presence:          false
     type-doc:
         - A 
         - B
@@ -73,12 +85,12 @@ rules:
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
 ## Syntaxe des règles simples <a id="4"></a>
-A l'heure actuelle il existe 13 types de règles dans Qualimarc : 
+A l'heure actuelle il existe 13 types de règles dans Qualimarc :
 - ``structure`` : Présence ou absence de zone
 - ``structure`` : Présence ou absence de sous-zone
 - ``structure`` : Nombre de zones dans une notice
 - ``structure`` : Nombre de sous-zones dans une notice
-- ``structure`` : Position de sous-zones dans une zone 
+- ``structure`` : Position de sous-zones dans une zone
 - ``structure`` : Présence de sous-zones dans une même occurrence d'une zone
 - ``contenu`` : Valeur d'un indicateur
 - ``contenu`` : Nombre de caractères dans une sous-zone
@@ -107,11 +119,12 @@ NB : Toutes les règles complexes seront stockées dans le même fichier.
 
 Cette partie va décrire la structure des différentes règles en YAML.
 ### Champs communs aux règles simples
-Voici les champs à renseigner pour décrire une règle simple toutes les règles héritent de ces champs. Ils doivent être renseignés pour chaque règle décrite dans un fichier YAML (à l'exception des champs optionnels) : 
+Voici les champs à renseigner pour décrire une règle simple toutes les règles héritent de ces champs. Ils doivent être renseignés pour chaque règle décrite dans un fichier YAML (à l'exception des champs optionnels) :
 - id : ``obligatoire`` / de type entier : identifiant unique de la règle dans la base, ce numéro est arbritraire, mais ne doit pas être retrouvé plusieurs fois dans les fichiers décrivant les règles. Deux règles simples ne peuvent pas avoir le même identifiant (cela inclut les règles simples qui composent une règle complexe), et deux règles complexes ne peuvent pas avoir le même identifiant.
 - id-excel : ``optionnel`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
 - message : ``obligatoire`` / de type chaine de caractère : indique le message à envoyer à l'utilisateur si la condition décrite dans la règle est validée dans la notice
 - zone : ``obligatoire`` sauf indication contraire / de type chaine de caractère : indique la zone du format Unimarc d'export sur laquelle porte la règle. Pour les règles simples il est possible de mentionner une zone générique (4XX, 5XX, 6XX, 7XX). Si une telle zone est renseignée, la règle sera dupliquée n fois, n correspondant au nombre de zones de la zone générique correspondante (voir [ce fichier](https://docs.google.com/spreadsheets/d/1E98M405rEaCcAV4UDkwY_ld6_B2yIeE9XQjCQqfv0Qk/edit?usp=sharing "Fichier des correspondances de zones génériques") )
+- affichage-etiquette : ``optionnel`` : si positionné à false, la zone correspondant à la règle simple ne sera pas affichée dans l'interface
 - priorite: ``obligatoire`` / une des deux valeurs possible : P1 ou P2 : indique la priorité de la règle (P1 utilisé pour analyse Rapide, P2 pour analyse experte)
 - jeux-de-regles : ``optionnel`` : de type liste d'entier : indique les identifiants des jeux de règles auquel la règle appartient. (voir [ce fichier](https://docs.google.com/spreadsheets/d/1ao46m7mI-NhqtCuCn4eq0EH1iS4hXCZ8cqKbSKpJYaw/edit?usp=sharing "Fichier des correspondeances Identifiant au jeux de règles") )
 - type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
@@ -119,27 +132,27 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
 > B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, PC : Partie composante
 - type-these : ``optionnel`` : de type liste de valeur : indique si la règle doit être appliquée sur les thèses.
 > les valeurs possibles pour les types de thèse sont REPRO ou SOUTENANCE
-- type : ``obligatoire`` : de type chaine de caractère : indique le type de règle qui est décrite. Les valeurs possibles sont : 
+- type : ``obligatoire`` : de type chaine de caractère : indique le type de règle qui est décrite. Les valeurs possibles sont :
   - ``presencezone`` : pour les règles permettant de tester la présence ou l'absence d'une zone dans la notice
   - ``presencesouszone`` : pour les règles permettant de tester la présence ou l'absence d'une sous zone dans la notice
   - ``nombrezone`` pour les règles permettant de compter le nombre d'occurrences d'une zone dans la notice
   - ``nombresouszone`` : pour les règles permettant de comparer le nombre d'occurrences d'une sous zone par rapport à une autre sous zone de la notice
-  - ``positionsouszone`` : pour les règles permettant de vérifier la position d'une sous zone dans toutes les occurrences d'une zone 
+  - ``positionsouszone`` : pour les règles permettant de vérifier la position d'une sous zone dans toutes les occurrences d'une zone
   - ``presencesouszonesmemezone`` : pour les règles permettant de vérifier la présence ou l'absence de n sous-zones dans la même occurrence d'une zone
   - ``indicateur`` : pour les règles permettant de vérifier la valeur d'un indicateur
   - ``nombrecaractere`` : pour les règles permettant de vérifier le nombre de caractères dans une sous-zone
   - ``presencechainecaracteres`` : pour les règles permettant de vérifier la présence et la position d'une ou plusieurs chaines de caractères dans une sous-zone
-  - ``comparaisoncontenusouszone`` : pour les règles permettant de comparer le contenu d'une sous-zone avec le contenu d'une autre sous-zone 
+  - ``comparaisoncontenusouszone`` : pour les règles permettant de comparer le contenu d'une sous-zone avec le contenu d'une autre sous-zone
   - ``typecaractere`` : pour les règles permettant de vérifier le type de caractères dans une sous-zone
   - ``comparaisondate`` : pour les règles permettant de comparer la date de deux sous-zones
   - ``typedocument`` : pour les règles permettant de chercher une valeur à une position de la 008
 
 
 ### Présence / absence de zone
-Liste des champs propres au type de règle presence de zone : 
+Liste des champs propres au type de règle presence de zone :
 - presence : ``obligatoire`` / de type booléen. Si la valeur est true et que la zone est présente dans la notice, le message est envoyé à l'utilisateur. Si la valeur est false et que la zone est absente de la notice, le message est envoyé à l'utilisateur
 
-Exemple de fichier YAML :  
+Exemple de fichier YAML :
 ``` YAML
 rules:
   - id:             2
@@ -159,14 +172,14 @@ rules:
 ```
 
 Règle numéro 2 dans la base, sur la ligne 2 du fichier Excel, permettant de tester l'absence de la zone 330 dans la notice. Si la 330 est absente, le message ``message test`` est envoyé à l'utilisateur. La règle sera lancée si le traitement rapide ou expert est choisi ou si le jeu de règle "Données codées (1XX)" ou
-"Indexation-matière (6XX)" est choisi, et s'appliquera uniquement sur les types de documents Monographie, Audiovisuel ou Doc Elec 
+"Indexation-matière (6XX)" est choisi, et s'appliquera uniquement sur les types de documents Monographie, Audiovisuel ou Doc Elec
 
 ### Présence / absence de sous-zone
-Liste des champs propres au type de règle presence de sous-zone : 
-- souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc NE doit PAS être renseigné. 
+Liste des champs propres au type de règle presence de sous-zone :
+- souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc NE doit PAS être renseigné.
 - presence : ``obligatoire`` / de type booléen. Si la valeur est true et que la sous-zone est présente dans la notice, le message est envoyé à l'utilisateur. Si la valeur est false et que la sous-zone est absente de la notice, le message est envoyé à l'utilisateur
 
-Exemple de fichier YAML :  
+Exemple de fichier YAML :
 ``` YAML
 rules:
   - id:             3
@@ -186,13 +199,13 @@ Règle numéro 3 dans la base, sur la ligne 3 du fichier Excel, permettant de te
 
 
 ### Nombre de zones
-Liste des champs propres au type de règle nombre de zones : 
+Liste des champs propres au type de règle nombre de zones :
 - operateur : ``obligatoire`` / peut prendre les valeurs : SUPERIEUR, INFERIEUR, EGAL
 - occurrences : ``obligatoire`` / de type entier : le nombre d'occurrences de la zone à compter dans la notice.
 
 Si le nombre de zone respecte la condition (SUPERIEUR / INFERIEUR / EGAL) au nombre d'occurrence choisi, le message est envoyé à l'utilisateur.
 
-Exemple de fichier YAML :  
+Exemple de fichier YAML :
 
 ``` YAML
 rules:
@@ -209,14 +222,14 @@ rules:
 Règle numéro 4 dans la base, sur la ligne 10 du fichier Excel, permettant de tester le nombre de zones dans la zone 330 de la notice. Si le nombre de 330 dans la notice est strictement inférieur à 3, le message ``message test nombre zone`` est envoyé à l'utilisateur. La règle sera lancée si le traitement rapide ou expert est sélectionné. L'absence du champ type-doc indique que la règle s'applique à tous les types de documents.
 
 ### Nombre de sous-zones
-Liste des champs propres au type de règle nombre de sous-zones : 
+Liste des champs propres au type de règle nombre de sous-zones :
 - souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc de catalogage NE doit PAS être renseigné.
 - zonecible : ``obligatoire`` / de type chaine de caractères. La zone sur laquelle va s'effectuer la comparaison
 - souszonecible : ``obligatoire`` / de type caractère. La sous zone sur laquelle va s'effectuer la comparaison. ATTENTION : le $ du format Unimarc NE doit PAS être renseigné.
 
 Si le nombre de sous-zones dans la zone est différent du nombre de sous-zones dans la zone cible, le message est envoyé à l'utilisateur. En cas de zone répétée, toutes les occurrences de toutes les zones sont cumulées.
 
-Exemple de fichier YAML :  
+Exemple de fichier YAML :
 ``` YAML
 rules:
   - id:             5
@@ -234,11 +247,12 @@ rules:
 Règle numéro 5 dans la base, sur la ligne 110 du fichier Excel, permettant de comparer le nombre de 200 $a avec le nombre de 600 $b. Si le nombre de 200 $a est différent du nombre de 600 $b, le message ``message test nombre sous zone`` est envoyé à l'utilisateur. La règle sera lancée uniquement si le traitement expert est sélectionné. L'absence du champ type-doc indique que la règle s'applique à tous les types de documents.
 
 ### Position de sous-zone
-Liste des champs propres au type de règle position de sous-zone : 
+Liste des champs propres au type de règle position de sous-zone :
 - souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc de catalogage ne doit pas être renseigné
-- position : ``obligatoire`` / de type entier. La position de la sous-zone dans la zone à vérifier.
+- positions : ``obligatoire`` / de type liste des positions de la sous-zone dans la zone à vérifier. Pour vérifier qu'une sous-zone est en dernière position de la zone, mettre la valeur -1. Composé de deux champs : la position et le type de comparateur à appliquer entre EGAL, DIFFERENT, INFERIEUR, SUPERIEUR, INFERIEUR_EGAl, SUPERIEUR_EGAL
+- operateur : ``obligatoire`` / valeur ET ou OU : opérateur booléen à mettre entre les différentes positions
 
-Exemple de fichier YAML :  
+Exemple de fichier YAML :
 ``` YAML
 rules:
   - id:         9
@@ -248,19 +262,24 @@ rules:
     zone:       608
     souszone:   3
     priorite:   P1
-    position:   1
+    positions:
+       - position: 1
+         comparateur: EGAL
+       - positon: -1
+         comparateur: DIFFERENT
+    operateur:  OU
 ```
 
-Si la souszone $3 n'est pas placée en première position dans l'une des occurrences de la zone 608, le message Faire le lien à l'autorité en sous-zone $3 est envoyé à l'utilisateur.
+Si la souszone $3 n'est pas placée en première OU dernière position dans l'une des occurrences de la zone 608, le message Faire le lien à l'autorité en sous-zone $3 est envoyé à l'utilisateur.
 
 ### Presence / absence sous-zones dans une même occurrence de zone
 Liste des champs propres au type de règle présence / absence de sous-zones dans une même occurrence de zone :
-- souszones : ``obligatoire`` / de type liste d'objets. La liste des sous-zones à vérifier. Les champs de la liste sont les suivants : 
+- souszones : ``obligatoire`` / de type liste d'objets. La liste des sous-zones à vérifier. Les champs de la liste sont les suivants :
 - * souszone : ``obligatoire`` de type caractère la sous-zone à vérifier. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
 - * presence : ``obligatoire`` de type booléen. true si on souhaite que la sous-zone soit présente, false sinon
-- * operateur-booleen : une des deux valeurs possible : ET / OU : indique l'opérateur qui sera utilisé pour calculer la validité des différentes recherches de sous-zones dans la zone. Ce critère **ne** doit **pas** être renseigné pour la première sous-zone, et doit être **obligatoire** pour les suivantes. 
+- * operateur-booleen : une des deux valeurs possible : ET / OU : indique l'opérateur qui sera utilisé pour calculer la validité des différentes recherches de sous-zones dans la zone. Ce critère **ne** doit **pas** être renseigné pour la première sous-zone, et doit être **obligatoire** pour les suivantes.
 
-Exemple de fichier YAML :  
+Exemple de fichier YAML :
 ``` YAML
 rules:
   - id:         4
@@ -283,7 +302,7 @@ Si une sous-zone $a est présente ET une sous-zone $b est absente dans une même
 Liste des champs propres au type de règle valeur d'un indicateur :
 - indicateur : ``obligatoire`` / de type entier. Indique sur quel indicateur de la zone porte la règle. Ce champ ne peut prendre que les valeurs 1 ou 2
 - valeur : ``obligatoire`` / de type chaine de caractères. Indique la valeur de l'indicateur que la règle doit vérifier. Cette valeur ne peut être qu'un entier entre 0 et 9 ou un '#' (# entre guillemets car en Yaml le # est utilisé pour écrire un commentaire)
-- type-de-verification : ``obligatoire`` / de type chaine de caractères. Indique le type de vérification à appliquer. Peut prendre les valeurs STRICTEMENT ou STRICTEMENTDIFFERENT 
+- type-de-verification : ``obligatoire`` / de type chaine de caractères. Indique le type de vérification à appliquer. Peut prendre les valeurs STRICTEMENT ou STRICTEMENTDIFFERENT
 
 Exemple de fichier YAML : <br />
 
@@ -302,12 +321,12 @@ rules:
 Si le second indicateur de la zone 200 a STRICTEMENT la valeur # alors le message "message test" est envoyé à l'utilisateur.
 
 ### Nombre de caractères
-Liste des champs propres au type de règle nombre de caractères : 
+Liste des champs propres au type de règle nombre de caractères :
 - operateur : ``obligatoire`` / peut prendre les valeurs : INFERIEUR, SUPERIEUR, EGAL, SUPERIEUR_EGAL, INFERIEUR_EGAL
 - souszone : ``obligatoire`` / de type caractère la sous-zone à vérifier. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
 - occurrences : ``obligatoire`` / de type entier : le nombre d'occurrences de caractères à comparer
- 
-Exemple de fichier YAML : 
+
+Exemple de fichier YAML :
 
 ``` YAML
 rules:
@@ -328,26 +347,26 @@ Si le nombre de caractères dans la 200$a est inférieur ou égal à 20, alors l
 Liste des champs propres au type de règle présence chaine caractères:
 * souszone : **obligatoire** - de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
 * type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS`
-* chaines-caracteres : **obligatoire** - de type liste d'objets. La liste des chaine-caracteres à vérifier. Les champs d'un objet de la liste sont les suivants : 
-    * operateur : de type opérateur logique. ne peut être que `ET` ou `OU`. 
-    * chaine-caracteres :  la chaine de caractères à vérifier
+* chaines-caracteres : **obligatoire** - de type liste d'objets. La liste des chaine-caracteres à vérifier. Les champs d'un objet de la liste sont les suivants :
+  * operateur : de type opérateur logique. ne peut être que `ET` ou `OU`.
+  * chaine-caracteres :  la chaine de caractères à vérifier
 
 Liste des valeurs possibles en fonction du type de vérification :
 * La vérification `STRICTEMENT` peut comporter :
-    * soit une `chaine-caracteres` sans `operateur`,
-    * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `operateur` `OU`.
+  * soit une `chaine-caracteres` sans `operateur`,
+  * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `operateur` `OU`.
 * La vérification `COMMENCE` peut comporter :
-    * soit une `chaine-caracteres` sans `operateur`,
-    * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `operateur` `OU`,
+  * soit une `chaine-caracteres` sans `operateur`,
+  * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `operateur` `OU`,
 * La vérification `TERMINE` peut comporter :
-    * soit une `chaine-caracteres` sans `operateur`,
-    * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `OU`,
+  * soit une `chaine-caracteres` sans `operateur`,
+  * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `OU`,
 * La vérification `CONTIENT` peut comporter :
-    * soit une `chaine-caracteres` sans `operateur`,
-    * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `ET` ou `OU`,
+  * soit une `chaine-caracteres` sans `operateur`,
+  * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `ET` ou `OU`,
 * La vérification `NECONTIENTPAS` peut comporter :
-    * soit une `chaine-caracteres` sans `operateur`,
-    * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `ET` ou `OU`,
+  * soit une `chaine-caracteres` sans `operateur`,
+  * soit une `chaine-caracteres` sans `operateur` et plusieurs `chaine-caracteres` avec `opérateur` `ET` ou `OU`,
 
 ``` YAML
 ---
@@ -400,10 +419,16 @@ rules:
 
 Liste des champs propres au type de règle comparaison contenu sous-zone:
 * souszone : **obligatoire** - de type caractère. La sous-zone sur laquelle va porter la comparaison. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
-* type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS` ou `STRICTEMENTDIFFERENT`
+* position : *optionnel* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0).
+* positionstart : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`).
+* positionend : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**.
+* type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS` ou `STRICTEMENTDIFFERENT` OU `TOUTCONTIENT` OU `AUCUNCONTIENT`
 * nombreCaracteres : *optionnel* - de type chiffre. Le nombre de caractères de la souszonecible à comparer à la souszone. Ne peux contenir que deux chiffres maximum. Ce paramètre est pris en compte uniquement pour les type-de-verification COMMENCE et TERMINE.
 * zonecible : **obligatoire** - de type caractère. La zone dans laquelle aller chercher la souszonecible qui permettra d'effectuer la comparaison.
 * souszonecible : **obligatoire** - de type caractère. La souszonecible qui sera comparée à la souszone. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
+* positioncible : *optionnel* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0).
+* positionstartcible : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`).
+* positionendcible : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**.
 
 ``` YAML
 ---
@@ -417,10 +442,13 @@ rules:
       type-these:
           - REPRO
       souszone:                 a
+      position:                 5
       type-de-verification:     COMMENCE
       nombreCaracteres:         6
       zonecible:                215
       souszonecible:            a
+      positionstartcible:       1
+      positionendcible:         8
 ```
 
 ### Type de caractères
@@ -476,7 +504,7 @@ rules:
 ```
 
 ### Contenu de la zone 008
-Liste des champs propres à l'analyse de la zone 008 : 
+Liste des champs propres à l'analyse de la zone 008 :
 - type-de-verification : ``obligatoire`` peut prendre les valeurs STRICTEMENT ou STRICTEMENTDIFFERENT : permet de déterminer si la valeur recherchée dans la 008 doit être égale ou différente.
 - position : ``obligatoire`` de type entier, la position où rechercher dans le contenu de la zone 008. Cette position ne peut être comprise qu'entre 1 et 4.
 - valeur : ``obligatoire`` de type caractère : la valeur à chercher dans la zone 008.
@@ -499,7 +527,7 @@ rules:
 Si le caractère à la position 1 de la zone 008 est égal à "a", alors le message "Le caractère à la position 1 de la 008 doit être a" est envoyé à l'utilisateur.
 
 ## Syntaxe des règles complexes <a id="5"></a>
-Une règle complexe est un assemblage de plusieurs règles simples qui seront testées les unes après les autres avec un opérateur booléen. Par exemple, une règle complexe composée de 3 règles simples avec un opérateur ET entre les deux premières et un opérateur OU entre les deux suivantes donnera l'expression suivante : règle 1 ET règle 2 OU règle 3. 
+Une règle complexe est un assemblage de plusieurs règles simples qui seront testées les unes après les autres avec un opérateur booléen. Par exemple, une règle complexe composée de 3 règles simples avec un opérateur ET entre les deux premières et un opérateur OU entre les deux suivantes donnera l'expression suivante : règle 1 ET règle 2 OU règle 3.
 
 Les conditions seront évaluées dans l'ordre d'apparition et ne prennent pas en compte la priorité des opérateurs booléen (dans cet exemple, règle 1 ET règle 2 est évalué d'abord, puis le résultat OU règle 3 est évalué ensuite, ce qui équivalent à (règle 1 ET règle 2) ou règle 3).
 
@@ -509,19 +537,19 @@ Par ailleurs, une règle complexe doit être composée d'au moins deux règles s
 
 Les règles simples qui composent une règle complexe ne peuvent pas avoir de zone générique. Il est donc interdit de créer une règle simple dans une règle complexe avec comme valeur du champ zone 4XX, 5XX, 6XX ou 7XX. Un message d'erreur sera envoyé si c'est le cas.
 
-Les règles complexes seront toutes déclarées dans le fichier complexRules.yaml situé à la racine de la branche. 
+Les règles complexes seront toutes déclarées dans le fichier complexRules.yaml situé à la racine de la branche.
 
 ### Champs communs aux règles complexes
-Les règles complexes disposent de champs communs qui décrivent la règle complexe et seront disposés au premier niveau du bloc YAML : 
+Les règles complexes disposent de champs communs qui décrivent la règle complexe et seront disposés au premier niveau du bloc YAML :
 - id ``obligatoire`` / de type entier : identifiant de la règle dans la base de données. L'identifiant d'une règle complexe est unique et aucune autre règle complexe ne peut avoir le même identifiant. Il est par contre possible d'avoir une règle complexe disposant du même identifiant qu'une règle simple.
 - id-excel ``optionnel`` / de type entier : Cet identifiant ne sert qu'à référencer le numéro de la ligne dans le fichier Excel des règles maintenu par les responsables fonctionnels de l'application. Il n'est pas exploité par l'application et n'est présent qu'à titre indicatif.
 - message ``obligatoire`` / de type chaine de caractère : indique le message à envoyer à l'utilisateur si la condition décrite dans la règle est validée dans la notice
 - priorite ``obligatoire`` / une des deux valeurs possible : P1 ou P2 : indique la priorité de la règle (P1 utilisé pour analyse Rapide, P2 pour analyse experte)
 - type-doc : ``optionnel`` : de type liste de chaines de caractères : indique les types de documents sur lesquels seront appliqués la règle. Si le champ n'est pas renseigné, la règle portera sur tous les types de documents, sans restriction.
 > les valeurs possibles pour les types de documents sont les suivantes :
-> B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, TS : Thèse de soutenance, TR : Thèse de reproduction, PC : Partie composante 
+> B : Audiovisuel, K : Carte, O : Doc Elec, N : Enregistrement, I : Image, F : Manuscrit, Z : Multimédia, V : Objet, G : Musique, M : Partition, BD : Ressource continue, A : Monographie, TS : Thèse de soutenance, TR : Thèse de reproduction, PC : Partie composante
 
-Ainsi, un exemple de fichier YAML permettant de définir les critères communs est présenté ci-dessous : 
+Ainsi, un exemple de fichier YAML permettant de définir les critères communs est présenté ci-dessous :
 ``` YAML
 ---
 rules:
@@ -541,7 +569,7 @@ Suite à la déclaration des champs communs, il est nécessaire de décrire au m
 - zone : ``obligatoire`` : de type chaine de caractère : indique la zone du format Unimarc d'export sur laquelle porte la règle
 - operateur-booleen : une des deux valeurs possible : ET / OU : indique l'opérateur qui sera utilisé pour calculer la validité de la règle simple par rapport à la précédente. Ce critère **ne** doit **pas** être renseigné pour la **première** règle simple qui compose une règle complexe, et est **obligatoire** pour toutes les règles composant la règle complexe à partir de la **seconde**
 
-Les critères spécifiques au type de règle simple sélectionné doivent ensuite être rajouté (en suivant la même terminologie que dans le paragraphe sur les [règles simples](#4) ). 
+Les critères spécifiques au type de règle simple sélectionné doivent ensuite être rajouté (en suivant la même terminologie que dans le paragraphe sur les [règles simples](#4) ).
 
 Exemple de fichier YAML de 2 règles complexes composées de règles simples de différents types :
 ``` YAML
@@ -589,11 +617,11 @@ rules:
 
 ```
 
-Le YAML précédent permet de déclarer 2 règles complexes. La première règle a un id 2, le message renvoyé sera **message test** si la règle est valide. Elle a une priorité de 1, et concerne les types de documents monographie et doc élec. Elle est composée de 2 règles simples : 
+Le YAML précédent permet de déclarer 2 règles complexes. La première règle a un id 2, le message renvoyé sera **message test** si la règle est valide. Elle a une priorité de 1, et concerne les types de documents monographie et doc élec. Elle est composée de 2 règles simples :
 - La première règle simple a un id 20, et vérifie si la zone 330 est absente.
 - La seconde règle simple a un id 21, et vérifie si la zone 200 est présente. Les deux règles simples doivent être valides pour que la règle complexe soit valide (operateur-booleen = ET)
 
-La seconde règle a un id 3, le message renvoyé est **message test 2** si la règle est valide. Elle a une priorité de 2, et concerne tous les types de documents (absence du champ type-doc). Elle est composée de 3 règles simples : 
+La seconde règle a un id 3, le message renvoyé est **message test 2** si la règle est valide. Elle a une priorité de 2, et concerne tous les types de documents (absence du champ type-doc). Elle est composée de 3 règles simples :
 - La première règle simple a un id 30, et vérifie qu'il y a exactement 1 zone 330 dans la notice.
 - La deuxième règle simple a un id 31, et vérifie qu'il y a plus d'1 zone 200 dans la notice.
 - La troisième règle simple a un id 32, et vérifie qu'il y a moins d'une zone 400 dans la notice.
@@ -647,7 +675,7 @@ rules:
 ## Règles de dépendance <a id="6"></a>
 
 ### Articulation entre deux notices
-Il est possible de créer des règles complexes permettant d'effectuer des vérifications dans une notice liée de la notice. Pour cela, une règle simple particulière doit être créée dans la règle complexe. Cette règle aura la valeur dependance dans le champ type. Voici un exemple de règle simple de type dépendance en YAML : 
+Il est possible de créer des règles complexes permettant d'effectuer des vérifications dans une notice liée de la notice. Pour cela, une règle simple particulière doit être créée dans la règle complexe. Cette règle aura la valeur dependance dans le champ type. Voici un exemple de règle simple de type dépendance en YAML :
 ``` YAML
 ---
 rules:
@@ -667,9 +695,23 @@ Ainsi, un certain nombre de règles de gestion doivent être respectées :
 - Une règle de dépendance ne peut avoir que les attributs id, type, zone et souszone, aucun autre attribut d'une règle simple n'est possible et ces 4 attributs sont obligatoires
 - Une règle complexe ne peut avoir qu'une seule règle de dépendance.
 
-le champ ``type-notice-liee`` correspond au type de notice lié contenu dans la zone spécifié, à savoir notice bibliographique ou notice d'autorité. Ce champ ne peut prendre que les valeurs : ``AUTORITE | BIBLIO``
+Liste des champs propres au type de règle de dépendance :
+- id : `obligatoire` / de type entier — identifiant de la règle dans la base de données.
+- type : `obligatoire` — doit avoir la valeur `dependance`.
+- zone : `obligatoire` / de type chaîne de caractères — zone utilisée (dans la notice courante) pour trouver la notice liée.
+- souszone : `obligatoire` / de type caractère — sous-zone correspondante. ATTENTION : ne pas renseigner le signe `$` du format Unimarc.
+- type-notice-liee : `obligatoire` / de type chaîne de caractères — type de la notice liée. Valeurs possibles : `AUTORITE | BIBLIO`.
+- position : `optionnel` / de type nombre — position de la sous-zone à récupérer (0 = première, -1 = dernière, etc.).
+- positionStart : `optionnel` / de type nombre — début de l’intervalle d’occurrences de sous-zones à récupérer.
+- positionEnd : `optionnel` / de type nombre — fin de l’intervalle d’occurrences de sous-zones à récupérer.
 
-Exemple de fichier YAML d'une règle complexe avec une règle de dépendance : 
+- `position`, `positionStart` et `positionEnd` acceptent aussi des index negatifs (`-1` = derniere occurrence, `-2` = avant-derniere, etc.).
+
+Remarque :
+- `positionStart` et `positionEnd` peuvent servir à exclure une occurrence et définir deux segments.  
+  Exemple : pour récupérer 0 à 2 puis 4 jusqu’à la fin (en excluant 3), renseigner `positionStart = 4` et `positionEnd = 2`.
+
+Exemple de fichier YAML d'une règle complexe avec une règle de dépendance :
 ``` YAML
 ---
 rules:
@@ -703,20 +745,20 @@ rules:
           operateur-booleen: ET
 ```
 
-Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec.  
+Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec.
 
 Elle est composée de 4 règles simples qui seront validées dans l'ordre. La première règle vérifie la présence d'une 660$3. La seconde informe le programme que les règles suivantes seront appliquées sur la ou les notices bibliographiques liées dont le ppn est situé dans la première occurrence de la $3 de chaque 606 présente dans la notice. Si au moins une des notice liée contient une 250$a ET une 200, le message est envoyé à l'utilisateur.
 
 ### Règle de réciprocité
 Ce type de règle ne peut être créé que dans une règle complexe, et doit être placée après une règle de dépendance. En effet, elle permet d'aller vérifier que la valeur contenu dans une zone / sous zone spécifique d'une notice liée correspond au PPN de la notice en cours d'analyse.
 
-Liste des champs propres au type de règle reciprocite : 
+Liste des champs propres au type de règle reciprocite :
 - id : ``obligatoire`` / de type entier : identifiant de la règle dans la base de données
 - type : ``obligatoire`` : doit avoir la valeur **reciprocite**
 - zone : ``obligatoire`` / de type chaîne de caractères. La zone à vérifier dans la notice liée
-- souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier dans la notice liée. ATTENTION : le $ du format unimarc NE doit PAS être renseigné. 
+- souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier dans la notice liée. ATTENTION : le $ du format unimarc NE doit PAS être renseigné.
 
-Exemple de fichier YAML :  
+Exemple de fichier YAML :
 ``` YAML
 rules:
   - id:             1
@@ -743,7 +785,7 @@ rules:
           souszone:          a
 ```
 
-Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec.  
+Le YAML précédent permet de créer une règle complexe qui renvoie le message **message test** si la règle est valide. Elle a une priorité de 1 et concerne les types de documents monographie et doc élec.
 
 Elle vérifie d'abord la présence de la zone 660$3, puis récupère le PPN en 606$3, analyse la notice bibliographique liée et si la valeur contenue dans la zone 250$a **ne** contient **pas** le PPN de la notice en cours d'analyse, elle envoie le message à l'utilisateur.
 
@@ -753,13 +795,13 @@ Elle vérifie d'abord la présence de la zone 660$3, puis récupère le PPN en 6
 Sur le même principe que les règles, il est possible de créer des jeux de règles personnalisés via un fichier contenant des objets en langage Yaml. A chaque modification du fichier, l'application supprimera tous les jeux de règles existants et les remplacera par ceux du fichier.
 
 ### Création des jeux de règles personnalisés
-Les jeux de règles personnalisés sont créés dans le fichier jeux_de_regles.yaml. Le premier élément du fichier doit être nommé **jeux-de-regles**. Une liste d'objet doit ensuite être déclarée dans le fichier. Les attributs qui composent un jeu de règle sont : 
+Les jeux de règles personnalisés sont créés dans le fichier jeux_de_regles.yaml. Le premier élément du fichier doit être nommé **jeux-de-regles**. Une liste d'objet doit ensuite être déclarée dans le fichier. Les attributs qui composent un jeu de règle sont :
 - id : ``obligatoire`` / de type entier : identifiant du jeu de règles dans la base de données
 - libelle : ``obligatoire`` / de type chaîne de caractères : libellé du jeu de règles tel qu'il sera affiché sur la page d'accueil de Qualimarc
 - description : ``optionnel`` / de type chaîne de caractères. Une description du jeu de règle qui sera affichée dans l'info bulle.
 - position : ``obligatoire`` / de type entier. Indique la position du jeu de règles dans la liste de la page d'accueil. Le premier jeu de règle aura la position 0.
 
-Exemple de fichier YAML : 
+Exemple de fichier YAML :
 ```YAML
 ---
 jeux-de-regles:

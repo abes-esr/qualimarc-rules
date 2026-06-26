@@ -1,0 +1,48 @@
+---
+#ID 200 à 299
+# rules:
+#   - id:          2
+#     id-excel:    9
+#     type:        positionsouszone
+#     message:     "TEST : faire le lien à l'autorité en sous-zone $3"
+#     zone:        603
+#     souszone:    3
+#     priorite:    P1
+#     position:    1
+    
+ # - id:          200
+ #   id-excel:    11111111
+ #   type:        positionsouszone
+ #   message:     "Test zone générique : Faire le lien à l'autorité en sous-zone $3"
+ #   zone:        "6XX"
+ #   souszone:    3
+ #   priorite:    P1
+ #   position:    1
+
+
+rules:
+  - id:         201
+    id-excel:   95555
+    type:       positionsouszone
+    message:    "TEST AFE position sous zone présence 328$z avec comparateur 'different' et opérateur booleen OU 'pos 1 ou pos 3'"
+    zone:       328
+    souszone:   z
+    priorite:   P1
+    positions:
+       - position: 1
+         comparateur: DIFFERENT
+       - position: 3
+         comparateur: DIFFERENT
+    operateur:  OU
+
+  - id:         202
+    id-excel:   95555
+    type:       positionsouszone
+    message:    "TEST AFE position sous zone présence 606$2 avec comparateur 'different' et position -1"
+    zone:       606
+    souszone:   2
+    priorite:   P1
+    positions:
+       - position: -1
+         comparateur: DIFFERENT
+

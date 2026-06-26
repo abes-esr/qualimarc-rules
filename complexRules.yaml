@@ -87,6 +87,7 @@ rules:
          zone: '359'
          souszone:    b
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
          
          
@@ -189,12 +190,14 @@ rules:
          type: presencezone
          zone: '206'
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 5074
          type: presencesouszone
          zone: '123'
          souszone:    b
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -302,6 +305,7 @@ rules:
          type: presencechainecaracteres
          zone: '280'
          souszone:   a
+         affichage-etiquette: false
          type-de-verification:    CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    braille
@@ -456,7 +460,7 @@ rules:
 
    - id: 6070
      id-excel: 33
-     message: "Traduction : si la ressource est bien une traduction (indicateur 1=1), la zone 454 est obligatoire"
+     message: "Zone 101 : si la ressource est bien une traduction (indicateur 1=1), la zone 454 est obligatoire"
      priorite: P1
      jeux-de-regles:
        - 1  #données codées
@@ -476,7 +480,7 @@ rules:
 
    - id: 6080
      id-excel: 34
-     message: "Zone 101 : puisque la ressource n'est pas une traduction (indicateur 1=0), la (ou les) zone(s) 454 n'ont pas lieu d'être"
+     message: "Puisque la ressource n'est pas une traduction (zone 101 avec indicateur 1=0), la (ou les) zone(s) 454 n'ont pas lieu d'être"
      priorite: P1
      jeux-de-regles:
        - 1  #données codées
@@ -739,6 +743,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: d
+         affichage-etiquette: false
          operateur-booleen: OU
 
 
@@ -763,6 +768,7 @@ rules:
        - id: 7093
          type: typedocument
          position: 1
+         affichage-etiquette: false
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
        - id: 7094
@@ -770,6 +776,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: d
+         affichage-etiquette: false
          operateur-booleen: OU
 
 
@@ -794,11 +801,13 @@ rules:
        - id: 7103
          type: typedocument
          position: 1
+         affichage-etiquette: false
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: o
        - id: 7104
          type: typedocument
          position: 2
+         affichage-etiquette: false
          type-de-verification: STRICTEMENT
          valeur: a
          operateur-booleen: OU
@@ -807,12 +816,14 @@ rules:
          position: 2
          type-de-verification: STRICTEMENT
          valeur: s
+         affichage-etiquette: false
          operateur-booleen: OU
        - id: 7106
          type: typedocument
          position: 2
          type-de-verification: STRICTEMENT
          valeur: r
+         affichage-etiquette: false
          operateur-booleen: OU
          
 #DESACTIVATION MOMENTANEE / BUG EN PROD !!!!!!!!! URGENT A TRAITER : OK BUG TRAITE LE 20/03/23 >> attention, ne pas utliser strictementdifferent quand opérateur booleen OU sur même zone/souszone !
@@ -839,23 +850,27 @@ rules:
          position: 2
          type-de-verification: STRICTEMENT
          valeur: r
+         affichage-etiquette: false
        - id: 7114
          type: typedocument
          position: 2
          type-de-verification: STRICTEMENT
          valeur: a
+         affichage-etiquette: false
          operateur-booleen: OU
        - id: 7115
          type: typedocument
          position: 2
          type-de-verification: STRICTEMENT
          valeur: s
+         affichage-etiquette: false
          operateur-booleen: OU
        - id: 7116
          type: typedocument
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
+         affichage-etiquette: false
          operateur-booleen: OU
 
 
@@ -871,6 +886,7 @@ rules:
          position:   1
          type-de-verification:    STRICTEMENT
          valeur: o
+         affichage-etiquette: false
        - id: 7122
          type: presencezone
          zone: '371'
@@ -921,6 +937,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: o
+         affichage-etiquette: false
        - id: 7142
          type: presencezone
          zone: '135'
@@ -942,6 +959,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENT
          valeur: o
+         affichage-etiquette: false
        - id: 7152
          type: presencezone
          zone: '856'
@@ -965,6 +983,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: o
+         affichage-etiquette: false
        - id: 7162
          type: presencezone
          zone: '230'
@@ -1015,6 +1034,7 @@ rules:
          type: presencezone
          zone: '110'
          presence: true
+         affichage-etiquette: false
        - id: 7182
          type: presencechainecaracteres
          zone: '110'
@@ -1050,6 +1070,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENT
          valeur: d
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -1066,6 +1087,7 @@ rules:
          type: presencezone
          zone: '110'
          presence: true
+         affichage-etiquette: false
        - id: 7192
          type: presencechainecaracteres
          zone: '110'
@@ -1079,6 +1101,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -1213,6 +1236,7 @@ rules:
          type: presencezone
          zone: '029'
          presence: true
+         affichage-etiquette: false
        - id: 7252
          type: presencesouszone
          zone: '029'
@@ -1250,6 +1274,7 @@ rules:
          type: presencezone
          zone: '029'
          presence: true
+         affichage-etiquette: false
        - id: 7262
          type: presencesouszone
          zone: '029'
@@ -1340,6 +1365,7 @@ rules:
          type: presencechainecaracteres
          zone: '029'
          souszone: 'a'
+         affichage-etiquette: false
          type-de-verification:     STRICTEMENT
          chaines-caracteres:
            - chaine-caracteres:    "FR"
@@ -1348,6 +1374,7 @@ rules:
          type: presencechainecaracteres
          zone: '328'
          souszone: 'b'
+         affichage-etiquette: false
          type-de-verification:     CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    "doctorat"
@@ -1371,6 +1398,7 @@ rules:
          type: presencechainecaracteres
          zone: '328'
          souszone: 'b'
+         affichage-etiquette: false
          type-de-verification:     CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    "doctorat"
@@ -1467,12 +1495,14 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENT
          valeur: L
+         affichage-etiquette: false
        - id: 7322
          type: typedocument
          position: 1
          type-de-verification:    STRICTEMENT
          valeur: P
          operateur-booleen: ET
+         affichage-etiquette: false
        - id: 7323
          type: presencesouszone
          zone: '106'
@@ -1504,6 +1534,7 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur: L
+         affichage-etiquette: false
        - id: 7332
          type: presencesouszone
          zone: '106'
@@ -1535,6 +1566,7 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur: P
+         affichage-etiquette: false
        - id: 7342
          type: presencesouszone
          zone: '106'
@@ -1567,6 +1599,7 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENT
          valeur: P
+         affichage-etiquette: false
        - id: 7352
          type: presencesouszone
          zone: '106'
@@ -1598,6 +1631,7 @@ rules:
          position: 1
          type-de-verification:    STRICTEMENT
          valeur: L
+         affichage-etiquette: false
        - id: 7362
          type: presencesouszone
          zone: '106'
@@ -1659,6 +1693,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: p
+         affichage-etiquette: false
 
    - id: 7390
      id-excel: 448
@@ -1682,6 +1717,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: p
+         affichage-etiquette: false
 
    - id: 7400
      id-excel: 454
@@ -1705,6 +1741,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: p
+         affichage-etiquette: false
 
 
    - id: 7410
@@ -1729,6 +1766,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: b
+         affichage-etiquette: false
 
    - id: 7420
      id-excel: 468
@@ -1752,6 +1790,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: b
+         affichage-etiquette: false
 
    - id: 7430
      id-excel: 474
@@ -1775,6 +1814,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: b
+         affichage-etiquette: false
 
 
 
@@ -1800,6 +1840,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
+         affichage-etiquette: false
 
    - id: 7450
      id-excel: 487
@@ -1823,6 +1864,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
+         affichage-etiquette: false
 
    - id: 7460
      id-excel: 491
@@ -1846,6 +1888,7 @@ rules:
          position: 2
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: a
+         affichage-etiquette: false
 
 
    - id: 7470
@@ -1871,6 +1914,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -1897,6 +1941,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
          
  
@@ -1923,6 +1968,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -1950,6 +1996,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -1976,6 +2023,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
          
  
@@ -2002,6 +2050,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2028,6 +2077,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2054,6 +2104,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
          
  
@@ -2080,6 +2131,7 @@ rules:
          position: 2
          type-de-verification:    STRICTEMENT
          valeur: b
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2132,6 +2184,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: O
+         affichage-etiquette: false
 
 
    - id: 7580
@@ -2158,11 +2211,12 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: A
+         affichage-etiquette: false
 
 
    - id: 7590
      id-excel: 299
-     message: "Zone 455 : puisque la ressource est une reproduction, la notice liée doit contenir un lien réciproque 'Est reproduit comme'. Corriger la notice liée ou utiliser une autre zone que la zone 455"
+     message: "Zone 455 : puisque la ressource est une reproduction, la notice liée doit contenir un lien réciproque 'Est reproduit comme' dans une zone 456. Corriger la notice liée ou utiliser une autre zone que la zone 455"
      priorite: P1
      jeux-de-regles:
        - 3  #liens
@@ -2184,7 +2238,7 @@ rules:
          
    - id: 7600
      id-excel: 305
-     message: "Zone 456 : puisque la ressource est un document original, la notice liée doit contenir un lien réciproque 'Reproduction de'. Corriger la notice liée ou utiliser une autre zone que la zone 456"
+     message: "Zone 456 : puisque la ressource est un document original, la notice liée doit contenir un lien réciproque 'Reproduction de' dans une zone 455. Corriger la notice liée ou utiliser une autre zone que la zone 456"
      priorite: P1
      jeux-de-regles:
        - 3  #liens
@@ -2231,6 +2285,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENT
          valeur: O
+         affichage-etiquette: false
 
 
    - id: 7620
@@ -2257,6 +2312,7 @@ rules:
          position: 1
          type-de-verification: STRICTEMENT
          valeur: A
+         affichage-etiquette: false
 
 #ajout de critère d'absence de 200$7 pour éviter les potentiels bilingues
    - id: 7630
@@ -2289,6 +2345,7 @@ rules:
          zone: '200'
          souszone:    7
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
          
@@ -2312,23 +2369,27 @@ rules:
          zone: '200'
          souszone: '7'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7643
          type: presencesouszone
          zone: '510'
          souszone: '7'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7644
          type: presencezone
          zone: '454'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7645
          type: presencesouszone
          zone: '200'
          souszone: 'e'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2577,6 +2638,7 @@ rules:
          type: presencechainecaracteres
          zone: '280'
          souszone:   a
+         affichage-etiquette: false
          type-de-verification:    CONTIENT
          chaines-caracteres:
            - chaine-caracteres:    'gros caractères'
@@ -2644,23 +2706,30 @@ rules:
          zone: '101'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
        - id: 7762
          type: positionsouszone
          zone: '101'
          souszone:    a
-         position: 1
+         positions: 
+           - position: 1
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7763
          type: positionsouszone
          zone: '101'
          souszone:    c
-         position: 2
+         positions: 
+           - position: 2
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7764
          type: positionsouszone
          zone: '101'
          souszone:    2
-         position: 3
+         positions: 
+           - position: 3
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7765
          type: comparaisoncontenusouszone
@@ -2676,6 +2745,7 @@ rules:
          indicateur:    1
          valeur: '0'
          type-de-verification: STRICTEMENT
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2691,23 +2761,30 @@ rules:
          zone: '101'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
        - id: 7772
          type: positionsouszone
          zone: '101'
          souszone:    a
-         position: 1
+         positions: 
+           - position: 1
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7773
          type: positionsouszone
          zone: '101'
          souszone:    c
-         position: 2
+         positions: 
+           - position: 2
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7774
          type: positionsouszone
          zone: '101'
          souszone:    2
-         position: 3
+         positions: 
+           - position: 3
+             comparateur: EGAL
          operateur-booleen: ET
        - id: 7775
          type: comparaisoncontenusouszone
@@ -2723,6 +2800,7 @@ rules:
          indicateur:    1
          valeur: '1'
          type-de-verification: STRICTEMENT
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -2811,6 +2889,7 @@ rules:
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur:  'u'
          position: 2
+         affichage-etiquette: false
 
 
 #7820 : réciproque de la 7300
@@ -3078,10 +3157,12 @@ rules:
          type: presencezone
          zone: '183'
          presence: false
+         affichage-etiquette: false
        - id: 7892
          type: presencechainecaracteres
          zone: '183'
          souszone: a
+         affichage-etiquette: false
          type-de-verification:     COMMENCE
          chaines-caracteres:
            - chaine-caracteres:    "s"
@@ -3124,25 +3205,30 @@ rules:
          type: presencezone
          zone: '600'
          presence: false
+         affichage-etiquette: false
        - id: 7902
          type: presencezone
          zone: '601'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7903
          type: presencezone
          zone: '602'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7904
          type: presencezone
          zone: '604'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7905
          type: presencezone
          zone: '605'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7906
          type: presencezone
@@ -3153,6 +3239,7 @@ rules:
          type: presencezone
          zone: '607'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7908
          type: presencezone
@@ -3163,6 +3250,7 @@ rules:
          type: presencezone
          zone: '616'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -3181,6 +3269,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '0'
+         affichage-etiquette: false
        - id: 7912
          type: presencezone
          zone: '410'
@@ -3208,6 +3297,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '2'
+         affichage-etiquette: false
        - id: 7922
          type: presencezone
          zone: '410'
@@ -3235,6 +3325,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '0'
+         affichage-etiquette: false
        - id: 7932
          type: presencezone
          zone: '461'
@@ -3262,6 +3353,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '2'
+         affichage-etiquette: false
        - id: 7942
          type: presencezone
          zone: '461'
@@ -3289,6 +3381,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '0'
+         affichage-etiquette: false
        - id: 7952
          type: presencezone
          zone: '461'
@@ -3316,6 +3409,7 @@ rules:
          indicateur: 1
          type-de-verification: STRICTEMENT
          valeur: '2'
+         affichage-etiquette: false
        - id: 7962
          type: presencezone
          zone: '461'
@@ -3329,6 +3423,7 @@ rules:
 
 
 #7150 : complément de la règle github 25640 (inclusion des ressources continues électroniques)
+# sept 2025 : suppression de la condition exclusion de la $5 suite évolution exclusion des données locales
    - id:         7970
      id-excel:    509
      message:     "Zone 856 : puisque la ressource continue décrite n'est pas électronique, cette zone doit être supprimée"
@@ -3341,48 +3436,51 @@ rules:
          position: 1
          type-de-verification: STRICTEMENTDIFFERENT
          valeur: o
+         affichage-etiquette: false
        - id: 7972
          type: presencezone
          zone: '856'
          presence: true
          operateur-booleen: ET
-       - id: 7973
-         type: presencesouszone
-         zone: '856'
-         souszone: '5'
-         presence: false
-         operateur-booleen: ET
+#       - id: 7973
+#         type: presencesouszone
+#         zone: '856'
+#         souszone: '5'
+#         presence: false
+#         operateur-booleen: ET
 
 #remplace l'ancienne règle 1101 (comparaison de dates). Activée le 09/10/23 suite ticket.
 #ajout sous-règle 7983 sur absence nécéssaire de X dans 100$A (sinon, forcément pas les mêmes !) - suite discussion SNX nov 2023
-   - id:         7980
-     id-excel:    190
-     message:     "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
-     priorite:    P1
-     jeux-de-regles:
-     - 6 #dates
-     regles:
-       - id: 7981
-         type: nombrezone
-         zone: '214'
-         operateur: EGAL
-         occurrences: 1
-       - id: 7982
-         type: comparaisoncontenusouszone
-         zone: '214'
-         souszone: 'd'
-         type-de-verification: NECONTIENTPAS
-         zonecible: '100'
-         souszonecible: 'A'
-         operateur-booleen: ET
-       - id: 7983
-         type: presencechainecaracteres
-         zone: '100'
-         souszone: 'A'
-         type-de-verification: NECONTIENTPAS
-         chaines-caracteres:
-           - chaine-caracteres:    "X"
-         operateur-booleen: ET
+#annulée et remplacée par la 9060 pour taper sur la 100$a pos. 9-12 directement (et pas sur la 100$A)
+#   - id:         7980
+#     id-excel:    190
+#     message:     "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
+#     priorite:    P1
+#     jeux-de-regles:
+#     - 6 #dates
+#     regles:
+#       - id: 7981
+#         type: nombrezone
+#         zone: '214'
+#         operateur: EGAL
+#         occurrences: 1
+#         affichage-etiquette: false
+#       - id: 7982
+#         type: comparaisoncontenusouszone
+#         zone: '214'
+#         souszone: 'd'
+#         type-de-verification: NECONTIENTPAS
+#         zonecible: '100'
+#         souszonecible: 'A'
+#         operateur-booleen: ET
+ #      - id: 7983
+#         type: presencechainecaracteres
+#         zone: '100'
+#         souszone: 'A'
+#         type-de-verification: NECONTIENTPAS
+#         chaines-caracteres:
+ #          - chaine-caracteres:    "X"
+#         operateur-booleen: ET
 
 
    - id:         7990
@@ -3404,6 +3502,7 @@ rules:
          zone: '608'
          souszone: a
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 7993
          type: presencechainecaracteres
@@ -3759,6 +3858,7 @@ rules:
 
 # règle 8080 créée juin 2024 en remplacement de la 543 pour éviter qu'elle ne s'enclenche pour les thèses originelles.
 # ajout du critère de date en 100$A > 1980 pour éviter qu'elle ne s'enclenche pour des éditions antérieures
+# test remontée étqiuette attrbut affaichage-etiquette 02/09/25
    - id:         8080
      id-excel:    729
      message:     "Si la ressource décrite est identifiée par un EAN, sa transcription dans la notice est obligatoire dans une zone 073"
@@ -3786,16 +3886,19 @@ rules:
          type: presencezone
          zone: '029'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET 
        - id: 8083
          type: presencezone
          zone: '328'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8084
          type: presencechainecaracteres
          zone: '100'
          souszone: "A"
+         affichage-etiquette: false
          type-de-verification:    COMMENCE
          chaines-caracteres:
            - chaine-caracteres:    '198'
@@ -3821,41 +3924,49 @@ rules:
          type: presencezone
          zone: '600'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8093
          type: presencezone
          zone: '601'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8094
          type: presencezone
          zone: '602'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8095
          type: presencezone
          zone: '604'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8096
          type: presencezone
          zone: '605'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8097
          type: presencezone
          zone: '606'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8098
          type: presencezone
          zone: '607'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 8099
          type: presencezone
          zone: '608'
          presence: false
+         affichage-etiquette: false
          operateur-booleen: ET
 
 
@@ -3871,11 +3982,13 @@ rules:
          zone: '182'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
        - id: 9002
          type: nombrezone
          zone: '183'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 9003
          type: comparaisoncontenusouszone
@@ -3901,6 +4014,7 @@ rules:
          zone: '210'
          operateur: EGAL
          occurrences: 1
+         affichage-etiquette: false
        - id: 9012
          type: comparaisoncontenusouszone
          zone: '210'
@@ -3940,6 +4054,7 @@ rules:
          type: presencezone
          zone: '210'
          presence: false
+         affichage-etiquette: false
        - id: 9022
          type: presencezone
          zone: '214'
@@ -3981,10 +4096,154 @@ rules:
          zone: '214'
          souszone:    s
          presence: true
+         affichage-etiquette: false
          operateur-booleen: ET
        - id: 9043
          type: presencesouszone
          zone: '214'
          souszone:    r
          presence: true
+         affichage-etiquette: false
          operateur-booleen: OU
+
+#test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
+   - id: 9050
+     id-excel: 207
+     message: "RULE TEST Zone 225 : puisque la forme du titre est déclarée 'différente' de celle de l'autorité (indicateur 1=0), le titre enregistré en sous-zone $a doit être différent de celui enregistré en 410."
+     priorite: P1
+     jeux-de-regles:
+       - 3 #liens
+       - 4 #2XX
+     regles:
+       - id: 9051
+         type: nombrezone
+         zone: '225'
+         operateur: EGAL
+         occurrences: 1
+         affichage-etiquette: false
+       - id: 9052
+         type: indicateur
+         zone: '225'
+         indicateur:    1
+         type-de-verification: STRICTEMENT
+         valeur: '0'
+         affichage-etiquette: false
+         operateur-booleen: ET
+       - id: 9053
+         type: presencesouszone
+         zone: '410'
+         souszone:    0
+         presence: true
+         affichage-etiquette: false
+         operateur-booleen: ET
+       - id: 9054
+         type: comparaisoncontenusouszone
+         zone: '225'
+         souszone:    a
+         type-de-verification: STRICTEMENT
+         zonecible: '410'
+         souszonecible: t
+         operateur-booleen: ET
+
+
+#test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
+# annule et remplace la 7980 pour éviter de taper sur la 100$A en affichage erreur, en reprenant toutefois la condition d'absence de X dans la date.
+# suppression de la condition sur valeur indicateur : couvre donc les règles excel 189 ET 190
+   - id: 9060
+     id-excel: 189
+     message: "RULE TEST Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
+     priorite: P1
+     jeux-de-regles:
+       - 1 #1XX
+       - 4 #2XX 
+       - 6 #dates
+     regles:
+       - id: 9061
+         type: nombrezone
+         zone: '214'
+         operateur: EGAL
+         occurrences: 1
+         affichage-etiquette: false
+#       - id: 9062
+#         type: indicateur
+#         zone: '214'
+#         indicateur:    2
+#         type-de-verification: STRICTEMENT
+#         valeur: '1'
+#         affichage-etiquette: false
+#         operateur-booleen: ET
+       - id: 9063
+         type: comparaisoncontenusouszone
+         zone: '214'
+         souszone: d
+         type-de-verification: NECONTIENTPAS
+         zonecible: '100'
+         souszonecible:    a
+         positionstartcible:       9
+         positionendcible:         12 
+         operateur-booleen: ET
+       - id: 9064
+         type: presencechainecaracteres
+         zone: '100'
+         souszone: 'A'
+         affichage-etiquette: false
+         type-de-verification: NECONTIENTPAS
+         chaines-caracteres:
+           - chaine-caracteres:    "X"
+         operateur-booleen: ET
+
+#test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
+# remplace la 9000 > à désactiver à la prochaine PR !
+# rétroconversions !
+   - id: 9070
+     id-excel: 733
+     message: "RULE TEST La première lettre enregistrée en sous-zone 182$c doit être identique à celle enregistrée en sous-zone 183$a."
+     priorite: P1
+     jeux-de-regles:
+       - 1 #1XX
+     regles:
+       - id: 9071
+         type: presencezone
+         zone: '183'
+         presence: true
+         affichage-etiquette: false
+       - id: 9072
+         type: comparaisoncontenusouszone
+         zone: '182'
+         souszone:    c
+         positionstart: 0
+         positionend: 0
+         type-de-verification: STRICTEMENTDIFFERENT
+         #nombreCaracteres:         1
+         zonecible: '183'
+         souszonecible: a
+         positionstartcible:       0
+         positionendcible:         0
+        # type-de-verification: COMMENCE
+         #nombreCaracteres:         1
+         operateur-booleen: ET
+
+
+#test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352 - remplace la 1201 initiale
+   - id: 9080
+     id-excel: 121
+     message: "RULE TEST Zone 200 : le code d'écriture de catalogage indiqué en première sous-zone $7 ne correspond pas à celui indiqué en sous-zone 104$d. Corriger l'une ou l'autre de ces sous-zones pour rendre les données cohérentes"
+     priorite: P1
+     jeux-de-regles:
+       - 1 #1XX
+       - 4 #2XX
+     regles:
+       - id: 9081
+         type: presencesouszone
+         zone: '200'
+         souszone: 7
+         presence: true
+         affichage-etiquette: false
+       - id: 9082
+         type: comparaisoncontenusouszone
+         zone: '104'
+         souszone:    d
+         type-de-verification: AUCUNCONTIENT
+         zonecible: '200'
+         souszonecible: 7
+         operateur-booleen: ET
