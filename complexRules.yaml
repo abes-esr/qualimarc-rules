@@ -4248,10 +4248,10 @@ rules:
          souszonecible: 7
          operateur-booleen: ET
 
-# test SOA-182 - groupe meme zone imbrique - a supprimer apres recette
-   - id: 9111
+# test SOA-182 - 215$a microfiche + premiere sous-zone de 328
+   - id: 9090
      id-excel: 182
-     message: "RULE TEST SOA-182 : si 215$a contient 'microfiche', chaque zone 328 doit commencer par une sous-zone $z"
+     message: "RULE TEST SOA-182 : si 215$a contient 'microfiche', la zone 328 doit commencer par une sous-zone $z"
      priorite: P1
      regles:
        - id: 9091
