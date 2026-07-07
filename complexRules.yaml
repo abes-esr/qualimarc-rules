@@ -4278,7 +4278,7 @@ rules:
 #test position -1 dans dépendance 
    - id: 10000
      id-excel: 
-     message: "TEST SOA-181 : la derniere 606$3 doit pointer vers une autorite dont 106$a = 1."
+     message: "TEST SOA-181 : la derniere 606$3 doit pointer vers une autorite dont 106$b différent de 1."
      priorite: P1
      regles:
        - id: 10001
@@ -4294,7 +4294,7 @@ rules:
        - id: 10003
          type: presencechainecaracteres
          zone: "106"
-         souszone: "a"
-         type-de-verification: NECONTIENTPAS
+         souszone: "b"
+         type-de-verification: CONTIENT
          chaines-caracteres:
            - chaine-caracteres: "1"
