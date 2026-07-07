@@ -106,7 +106,7 @@ rules:
     -  2  #6XX
 
 
-
+#ajout affichage etiquette sur 607$7
   - id:       606
     id-excel: 345
     type:     presencesouszonesmemezone
@@ -116,6 +116,7 @@ rules:
     souszones:
       - souszone:           7
         presence:           true
+        affichage-etiquette: false
       - souszone:           6
         presence:           false
         operateur-booleen:  ET
