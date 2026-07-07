@@ -2495,7 +2495,7 @@ rules:
          valeur:  'q'
          position: 2
          
-
+#test ajout affichage etaiquette false sur zone 008
    - id: 7690
      id-excel: 371
      message: "Zone 605 : la notice d'autorité liée en élément d'entrée du point d'accès doit obligatoirement être de type 'Titre uniforme' (Tu) : revoir l'indexation"
@@ -2519,6 +2519,7 @@ rules:
          type-de-verification:    STRICTEMENTDIFFERENT
          valeur:  'u'
          position: 2
+         affichage-etiquette: false
 
 
 
