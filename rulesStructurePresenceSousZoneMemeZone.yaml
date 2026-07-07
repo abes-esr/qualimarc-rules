@@ -106,7 +106,7 @@ rules:
     -  2  #6XX
 
 
-#ajout affichage etiquette sur 607$7
+#ajout affichage etiquette sur 607$7 juillet 2026
   - id:       606
     id-excel: 345
     type:     presencesouszonesmemezone
@@ -124,7 +124,7 @@ rules:
     -  5  # Tranlittération ($6/$7)
     -  2  #6XX
 
-
+#ajout affichage étiquette sur $7 juillet 2026
   - id:       607
     id-excel: 442
     type:     presencesouszonesmemezone
@@ -134,6 +134,7 @@ rules:
     souszones:
       - souszone:           7
         presence:           true
+        affichage-etiquette: false
       - souszone:           6
         presence:           false
         operateur-booleen:  ET
