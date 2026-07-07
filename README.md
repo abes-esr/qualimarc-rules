@@ -82,6 +82,22 @@ rules:
         - REPRO
         - SOUTENANCE
 ```
+
+### Complement dependance position -1
+
+Pour les regles de type `dependance`, le cas `position = -1` est traite occurrence de zone par occurrence de zone.
+
+- Une occurrence de zone n'est prise en compte que si elle contient au moins **deux** occurrences de la sous-zone ciblee.
+- Une occurrence de zone qui ne contient qu'une seule occurrence de la sous-zone ciblee est ignoree.
+- Le meme principe s'applique aussi au cas interne equivalent `positionStart = -1` et `positionEnd = -1`.
+
+Exemple :
+
+- `606$3$3$3`
+- `606$3`
+- `606$3$3`
+
+Avec `position = -1`, Qualimarc recupere la derniere `$3` de la premiere et de la troisieme `606`, mais ignore la deuxieme `606`.
 Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
 ## Syntaxe des règles simples <a id="4"></a>
