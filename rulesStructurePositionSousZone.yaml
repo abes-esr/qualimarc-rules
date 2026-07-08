@@ -46,3 +46,13 @@ rules:
        - position: -1
          comparateur: DIFFERENT
 
+  - id:         203
+    id-excel:   95555
+    type:       positionsouszone
+    message:    "TEST AFE la zone 215 doit avoir une sous-zone $d en 2e position"
+    zone:       215
+    souszone:   d
+    priorite:   P1
+    positions:
+       - position: 2
+         comparateur: DIFFERENT
