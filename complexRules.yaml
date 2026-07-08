@@ -4275,7 +4275,7 @@ rules:
                  comparateur: DIFFERENT
              operateur: OU
 
-#test position -1 dans dépendance 
+#test position -1 dans dépendance juillet 2026 à supprimer après recette
    - id: 10000
      id-excel: 
      message: "TEST SOA-181 : la derniere 606$3 doit pointer vers une autorite dont 106$b différent de 1."
@@ -4298,3 +4298,51 @@ rules:
          type-de-verification: CONTIENT
          chaines-caracteres:
            - chaine-caracteres: "1"
+
+#test position >1 dans dépendance à conserver si OK et à décliner pour toutes les 6XX juillet 2026
+   - id: 10010
+     id-excel: 
+     message: "TEST SOA-181 : les 606$3 en position différente de 1 doivent pointer vers des autorités dont 106$b différent de 1"
+     priorite: P1
+     regles:
+       - id: 10011
+         type: presencezone
+         zone: "606"
+         presence: true
+       - id: 10012
+         type: dependance
+         zone: "606"
+         souszone: "3"
+         type-notice-liee: AUTORITE
+         positionstart: 2
+       - id: 10013
+         type: presencechainecaracteres
+         zone: "106"
+         souszone: "b"
+         type-de-verification: CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres: "1"
+
+#test position 1 dans dépendance à conserver si OK et à décliner pour toutes les 6XX juillet 2026
+   - id: 10020
+     id-excel: 
+     message: "TEST SOA-181 : les 606$3 en position 1 doivent pointer vers des autorités dont 106$b différent de 2"
+     priorite: P1
+     regles:
+       - id: 10021
+         type: presencezone
+         zone: "606"
+         presence: true
+       - id: 10012
+         type: dependance
+         zone: "606"
+         souszone: "3"
+         type-notice-liee: AUTORITE
+         position: 1
+       - id: 10023
+         type: presencechainecaracteres
+         zone: "106"
+         souszone: "b"
+         type-de-verification: CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres: "2"
