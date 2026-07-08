@@ -4338,7 +4338,7 @@ rules:
          zone: "606"
          souszone: "3"
          type-notice-liee: AUTORITE
-         position: 1
+         position: 0
        - id: 10023
          type: presencechainecaracteres
          zone: "106"
