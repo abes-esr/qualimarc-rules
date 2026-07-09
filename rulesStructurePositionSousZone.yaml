@@ -29,9 +29,9 @@ rules:
     souszone:   z
     priorite:   P1
     positions:
-       - position: 1
+       - position: 0
          comparateur: DIFFERENT
-       - position: 3
+       - position: 2
          comparateur: DIFFERENT
     operateur:  OU
 
@@ -54,5 +54,5 @@ rules:
     souszone:   d
     priorite:   P1
     positions:
-       - position: 2
+       - position: 1
          comparateur: DIFFERENT
