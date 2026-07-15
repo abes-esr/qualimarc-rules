@@ -4361,6 +4361,8 @@ rules:
          type-de-verification: CONTIENT
          chaines-caracteres:
            - chaine-caracteres: "microfiche"
+           - operateur: OU
+           - chaine-caracteres: "Microfiche"
        - id: 10032
          type: groupememezone
          zone: '328'
@@ -4378,4 +4380,6 @@ rules:
              type-de-verification: NECONTIENTPAS
              chaines-caracteres:
                - chaine-caracteres: "reproduction"
+               - operateur: OU
+               - chaine-caracteres: "Reproduction"
              operateur-booleen: OU
