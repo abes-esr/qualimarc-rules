@@ -4346,3 +4346,36 @@ rules:
          type-de-verification: CONTIENT
          chaines-caracteres:
            - chaine-caracteres: "2"
+
+
+#test position sous-zone et groupememezone juillet 2026
+   - id: 10030
+     id-excel: XXX
+     message: "TEST AFE la zone 328 d'une reproduction de thèse doit toujours commencer par une sous-zone $z mentionnant 'Reproduction'"
+     priorite: P1
+     regles:
+       - id: 10031
+         type: presencechainecaracteres
+         zone: '215'
+         souszone: 'a'
+         type-de-verification: CONTIENT
+         chaines-caracteres:
+           - chaine-caracteres: "microfiche"
+       - id: 10032
+         type: groupememezone
+         zone: '328'
+         operateur-booleen: ET
+         regles:
+           - id: 10033
+             type: positionsouszone
+             souszone: 'z'
+             positions:
+               - position: 1
+                 comparateur: DIFFERENT
+           - id: 10034
+             type: presencechainecaracteres
+             souszone: 'z'
+             type-de-verification: NECONTIENTPAS
+             chaines-caracteres:
+               - chaine-caracteres: "reproduction"
+             operateur: ET
