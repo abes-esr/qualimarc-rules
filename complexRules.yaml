@@ -4362,7 +4362,7 @@ rules:
          chaines-caracteres:
            - chaine-caracteres: "microfiche"
            - operateur: OU
-           - chaine-caracteres: "Microfiche"
+             chaine-caracteres: "Microfiche"
        - id: 10032
          type: groupememezone
          zone: '328'
@@ -4381,5 +4381,5 @@ rules:
              chaines-caracteres:
                - chaine-caracteres: "reproduction"
                - operateur: OU
-               - chaine-caracteres: "Reproduction"
+                 chaine-caracteres: "Reproduction"
              operateur-booleen: OU
