@@ -4350,7 +4350,7 @@ rules:
 
 #test position sous-zone et groupememezone juillet 2026
    - id: 10030
-     id-excel: XXX
+     id-excel: 999
      message: "TEST AFE la zone 328 d'une reproduction de thèse doit toujours commencer par une sous-zone $z mentionnant 'Reproduction'"
      priorite: P1
      regles:
