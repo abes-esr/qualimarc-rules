@@ -54,5 +54,5 @@ rules:
     souszone:   d
     priorite:   P1
     positions:
-       - position: 1
+       - position: 2
          comparateur: DIFFERENT
