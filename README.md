@@ -89,7 +89,7 @@ Pour les regles de type `dependance`, le cas `position = -1` est traite occurren
 
 - Une occurrence de zone n'est prise en compte que si elle contient au moins **deux** occurrences de la sous-zone ciblee.
 - Une occurrence de zone qui ne contient qu'une seule occurrence de la sous-zone ciblee est ignoree.
-- Le meme principe s'applique aussi au cas interne equivalent `positionStart = -1` et `positionEnd = -1`.
+- Le meme principe s'applique aussi au cas interne equivalent `positionstart = -1` et `positionend = -1`.
 
 Exemple :
 
@@ -718,14 +718,14 @@ Liste des champs propres au type de règle de dépendance :
 - souszone : `obligatoire` / de type caractère — sous-zone correspondante. ATTENTION : ne pas renseigner le signe `$` du format Unimarc.
 - type-notice-liee : `obligatoire` / de type chaîne de caractères — type de la notice liée. Valeurs possibles : `AUTORITE | BIBLIO`.
 - position : `optionnel` / de type nombre — position de la sous-zone à récupérer (0 = première, -1 = dernière, etc.).
-- positionStart : `optionnel` / de type nombre — début de l’intervalle d’occurrences de sous-zones à récupérer.
-- positionEnd : `optionnel` / de type nombre — fin de l’intervalle d’occurrences de sous-zones à récupérer.
+- positionstart : `optionnel` / de type nombre — début de l’intervalle d’occurrences de sous-zones à récupérer.
+- positionend : `optionnel` / de type nombre — fin de l’intervalle d’occurrences de sous-zones à récupérer.
 
-- `position`, `positionStart` et `positionEnd` acceptent aussi des index negatifs (`-1` = derniere occurrence, `-2` = avant-derniere, etc.).
+- `position`, `positionstart` et `positionend` acceptent aussi des index negatifs (`-1` = derniere occurrence, `-2` = avant-derniere, etc.).
 
 Remarque :
-- `positionStart` et `positionEnd` peuvent servir à exclure une occurrence et définir deux segments.  
-  Exemple : pour récupérer 0 à 2 puis 4 jusqu’à la fin (en excluant 3), renseigner `positionStart = 4` et `positionEnd = 2`.
+- `positionstart` et `positionend` peuvent servir à exclure une occurrence et définir deux segments.
+  Exemple : pour récupérer 0 à 2 puis 4 jusqu’à la fin (en excluant 3), renseigner `positionstart = 4` et `positionend = 2`.
 
 Exemple de fichier YAML d'une règle complexe avec une règle de dépendance :
 ``` YAML
