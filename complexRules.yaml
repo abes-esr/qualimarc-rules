@@ -4314,7 +4314,7 @@ rules:
          zone: "606"
          souszone: "3"
          type-notice-liee: AUTORITE
-         positionStart: 1
+         positionstart: 1
        - id: 10013
          type: presencechainecaracteres
          zone: "106"
