@@ -4380,6 +4380,6 @@ rules:
              type-de-verification: NECONTIENTPAS
              chaines-caracteres:
                - chaine-caracteres: "Reproduction"
-               # - operateur: OU
-               #   chaine-caracteres: "reproduction"
+               - operateur: ET
+                 chaine-caracteres: "reproduction"
              operateur-booleen: OU
