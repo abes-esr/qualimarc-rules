@@ -33,7 +33,7 @@ rules:
          comparateur: DIFFERENT
        - position: 3
          comparateur: DIFFERENT
-    operateur:  OU
+    operateur:  ET
 
   - id:         202
     id-excel:   95555
