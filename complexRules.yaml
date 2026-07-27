@@ -4382,4 +4382,4 @@ rules:
                - chaine-caracteres: "Reproduction"
                - operateur: ET
                  chaine-caracteres: "reproduction"
-             operateur-booleen: ET
+             operateur-booleen: OU
