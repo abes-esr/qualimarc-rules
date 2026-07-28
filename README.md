@@ -28,7 +28,7 @@ Ce document explique étape par étape comment ajouter ou modifier des règles d
 ## Sommaire
 - [Utilisation de GitHub](#1)
 - [Déclenchement de la mise à jour](#2)
-- [Langage YAML](#3)
+- [Langage YAML : syntaxe et utilisation](#3)
 - [Syntaxe des règles simples](#4)
 - [Syntaxe des règles complexes](#5)
 - [Règles de dépendance](#6)
