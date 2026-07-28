@@ -56,14 +56,15 @@ La sauvegarde d'un fichier est réalisée via l'action commit dans github. Lorsq
 ## Déclenchement de la mise à jour <a id="2"></a>
 A intervalles de temps régulier, la plateforme Ansible de l'Abes va scanner le dépot Github et détecter les changements sur la branche. Lorsqu'une modification est détectée, Ansible récupère les fichiers disponibles sur la branche, et appelle un programme qui va stocker le contenu des règles décrites dans les différents fichiers dans la base de données. Une fois terminé une notification est envoyée par mail, ainsi que sur le canal Slack #notif-qualimarc.
 
-## Langage YAML <a id="3"></a>
+## Langage YAML : syntaxe et utilisation<a id="3"></a>
 Les fichiers de règles sont décrits dans un langage appelé YAML. Proche du JSON, ce langage permet de décrire des données selon un syntaxe simple et structurée. Cette partie décrit les éléments de base du langage.
-- La première ligne du fichier doit être ``rules: `` (ce qui annonce que la suite du fichier contient des règles)
+### Généralités
+- La première ligne du fichier doit toujours être ``rules: `` (ce qui annonce que la suite du fichier contient des règles)
 - La syntaxe de base repose sur des couples clé: valeur (l'espace après les : est absolument nécessaire)
 - l'ordre des champs n'a pas d'importance (ceci dit, pour un type de règle donnée, il est recommandé de garder le même ordre dans les attributs de la règle pour une question de lisibilité)
-- Pour ajouter un commentaire faire précéder la ligne du signe ``#``
+- Pour passer une ligne en commentaire (=revient à désactiver la ligne de commande en question), la faire précéder du signe ``#``. Pour passer plusieurs lignes en commentaire, les sélectionner et faire CTRL+/. Faire la même opération pour supprimer le mode commentaire et réactiver les lignes.
 - Chaque niveau d'imbrication doit respecter un alignement vertical. Par exemple, tous les attributs d'une règle doivent être placés au même niveau d'indentation. On utilise 4 espaces pour créer une indentation.
-- les chaines de caractères doivent être placée sur une même ligne, sans retour à la ligne.
+- les chaines de caractères doivent être placées sur une même ligne, sans retour à la ligne. Si elles contiennent des guillemets ('), encadrer la totalité de la chaine de caractères entre guillemets (valable généralement pour les messages d'erreur, comme par exemple : 'Si la sous-zone $2 contient 'rameau', alors toutes les autorités enregistrées en $3 doivent être de type 'rameau'.')
 - Si un attribut dispose de plusieurs valeurs, celles-ci sont disposées sur des lignes différents et précédées d'un tiret ``- ``.
 
 Par exemple :
@@ -71,15 +72,32 @@ Par exemple :
 ![typedoc](https://user-images.githubusercontent.com/57490853/190974752-3b5b1118-8c4e-42ce-8963-734559227c80.PNG)
 
 
-## Convention d'indexation des positions <a id="8"></a>
+### Règles particulières liées au champs de positions <a id="8"></a>
 
 Cette convention s'applique aux règles qui utilisent les champs `position`, `positionstart` et `positionend`.
 
 - Pour les règles de contenu de sous-zone (ex: `presencechainecaracteres`, `comparaisoncontenusouszone`, `comparaisondate`), l'indexation est en base 0.
 - En base 0, `0` correspond au premier caractère.
-- Pour cibler un seul caractère, utilisez `positionstart = positionend`.
-- Exemple: `positionstart: "3"` et `positionend: "3"` cible le 4e caractère.
+- Pour cibler un seul caractère, utilisez `positionstart = positionend`. Exemple: `positionstart: "3"` et `positionend: "3"` cible le 4e caractère.
+- Pour cibler le dernier caractère, utilisez `-1`. Exemple :  `position = -1` cible la dernière sous-zone de la zone.
 - Exception: pour la règle `typedocument` (zone 008), le champ `position` est en base 1 et doit être compris entre 1 et 4.
+
+
+Pour les regles de type `dependance`, le cas `position = -1` est traite occurrence de zone par occurrence de zone.
+
+- Une occurrence de zone n'est prise en compte que si elle contient au moins **deux** occurrences de la sous-zone ciblee.
+- Une occurrence de zone qui ne contient qu'une seule occurrence de la sous-zone ciblee est ignoree.
+- Le meme principe s'applique aussi au cas interne equivalent `positionstart = -1` et `positionend = -1`.
+
+Exemple :
+
+- `606$3$3$3`
+- `606$3`
+- `606$3$3`
+
+Avec `position = -1`, Qualimarc recupere la derniere `$3` de la premiere et de la troisieme `606`, mais ignore la deuxieme `606`.
+Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
+
 
 ## Description des règles de Qualimarc
 Toutes les règles de Qualimarc ont une structure commune, puis des champs propres à chaque type de règle. Dans le chapitre décrivant les règles, les éléments obligatoires seront précisés. Voici un exemple de fichier YAML décrivant une règle ::
@@ -102,22 +120,6 @@ rules:
         - SOUTENANCE
 ```
 
-### Complement dependance position -1
-
-Pour les regles de type `dependance`, le cas `position = -1` est traite occurrence de zone par occurrence de zone.
-
-- Une occurrence de zone n'est prise en compte que si elle contient au moins **deux** occurrences de la sous-zone ciblee.
-- Une occurrence de zone qui ne contient qu'une seule occurrence de la sous-zone ciblee est ignoree.
-- Le meme principe s'applique aussi au cas interne equivalent `positionstart = -1` et `positionend = -1`.
-
-Exemple :
-
-- `606$3$3$3`
-- `606$3`
-- `606$3$3`
-
-Avec `position = -1`, Qualimarc recupere la derniere `$3` de la premiere et de la troisieme `606`, mais ignore la deuxieme `606`.
-Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
 
 ## Syntaxe des règles simples <a id="4"></a>
 A l'heure actuelle il existe 13 types de règles dans Qualimarc :
