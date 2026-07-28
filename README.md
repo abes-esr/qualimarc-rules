@@ -2,6 +2,25 @@
 
 ![qualimarc](https://user-images.githubusercontent.com/328244/203315079-4cabb49a-58a8-4778-80b5-d789e48fb94d.PNG)
 
+## Rechargement des règles en test
+
+Pour que les règles soient prises en compte sur l'environnement de test, il faut travailler sur la branche `main` du dépôt `qualimarc-rules`.
+
+Lorsqu'une modification est détectée sur `main`, la plateforme Ansible de l'Abes récupère automatiquement les fichiers YAML du dépôt et recharge les règles dans la base.
+
+Cette procédure est à utiliser notamment si :
+
+- la page `https://qualimarc-test.sudoc.fr/regles` est vide ;
+- l'API `https://qualimarc-test.sudoc.fr/api/v1/rules` renvoie `[]`.
+
+### Procédure
+
+1. se positionner sur la branche `main` du dépôt `qualimarc-rules` ;
+2. modifier un des fichiers YAML de règles ou de jeux de règles ;
+3. faire un commit directement sur `main` ;
+4. attendre le passage du rechargement automatique Ansible ;
+5. vérifier ensuite que les règles réapparaissent dans l'interface de test.
+
 ## Documentation d'utilisation du dépôt
 
 Ce document explique étape par étape comment ajouter ou modifier des règles dans le projet QualiMarc.
@@ -146,6 +165,10 @@ Voici les champs à renseigner pour décrire une règle simple toutes les règle
   - ``typecaractere`` : pour les règles permettant de vérifier le type de caractères dans une sous-zone
   - ``comparaisondate`` : pour les règles permettant de comparer la date de deux sous-zones
   - ``typedocument`` : pour les règles permettant de chercher une valeur à une position de la 008
+
+> **Nota bene — opérateurs booléens et vérifications négatives**
+>
+> Les opérateurs booléens s'appliquent aux conditions complètes. Pour vérifier qu'une valeur ne correspond à aucune valeur parmi plusieurs possibilités, les vérifications négatives doivent donc généralement être reliées avec `ET` : `DIFFERENT de 1 ET DIFFERENT de 3`, ou `NECONTIENTPAS "valeur 1" ET NECONTIENTPAS "valeur 2"`. Avec `OU`, la condition devient vraie dès qu'une seule des possibilités est différente ou absente, ce qui peut provoquer un faux positif.
 
 
 ### Présence / absence de zone
@@ -347,6 +370,8 @@ Si le nombre de caractères dans la 200$a est inférieur ou égal à 20, alors l
 Liste des champs propres au type de règle présence chaine caractères:
 * souszone : **obligatoire** - de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
 * type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS`
+* positionstart : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à analyser (indexation base 0, voir [Convention d'indexation des positions](#8)). Si non renseigné, l'analyse commence **au début de la sous-zone**.
+* positionend : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à analyser (indexation base 0). Si non renseigné, l'analyse se fait **jusqu'à la fin de la sous-zone**.
 * chaines-caracteres : **obligatoire** - de type liste d'objets. La liste des chaine-caracteres à vérifier. Les champs d'un objet de la liste sont les suivants :
   * operateur : de type opérateur logique. ne peut être que `ET` ou `OU`.
   * chaine-caracteres :  la chaine de caractères à vérifier
@@ -413,6 +438,18 @@ rules:
           chaine-caracteres:    deuxième chaine de caractères à chercher
         - operateur:            OU
           chaine-caracteres:    deuxième chaine de caractères à chercher
+    - id:                       4
+      id-excel:                 999
+      type:                     presencechainecaracteres
+      message:                  "La langue (100$a pos.22-24) doit être 'fre'."
+      zone:                     100
+      souszone:                 a
+      positionstart:            22
+      positionend:              24
+      type-de-verification:     NECONTIENTPAS
+      chaines-caracteres:
+        - chaine-caracteres:    "fre"
+      priorite:                 P1
 ```
 
 ### Comparaison contenu sous-zone
