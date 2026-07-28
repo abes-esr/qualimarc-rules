@@ -83,22 +83,6 @@ Cette convention s'applique aux règles qui utilisent les champs `position`, `po
 - Exception: pour la règle `typedocument` (zone 008), le champ `position` est en base 1 et doit être compris entre 1 et 4.
 
 
-Pour les regles de type `dependance`, le cas `position = -1` est traite occurrence de zone par occurrence de zone.
-
-- Une occurrence de zone n'est prise en compte que si elle contient au moins **deux** occurrences de la sous-zone ciblee.
-- Une occurrence de zone qui ne contient qu'une seule occurrence de la sous-zone ciblee est ignoree.
-- Le meme principe s'applique aussi au cas interne equivalent `positionstart = -1` et `positionend = -1`.
-
-Exemple :
-
-- `606$3$3$3`
-- `606$3`
-- `606$3$3`
-
-Avec `position = -1`, Qualimarc recupere la derniere `$3` de la premiere et de la troisieme `606`, mais ignore la deuxieme `606`.
-Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. Les lettres A, B et O se rapportant au type de document, un niveau d'indentation supplémentaire a été rajouté.
-
-
 ## Description des règles de Qualimarc
 Toutes les règles de Qualimarc ont une structure commune, puis des champs propres à chaque type de règle. Dans le chapitre décrivant les règles, les éléments obligatoires seront précisés. Voici un exemple de fichier YAML décrivant une règle ::
 ``` YAML
@@ -760,11 +744,24 @@ Liste des champs propres au type de règle de dépendance :
 - positionstart : `optionnel` / de type nombre — début de l’intervalle d’occurrences de sous-zones à récupérer.
 - positionend : `optionnel` / de type nombre — fin de l’intervalle d’occurrences de sous-zones à récupérer.
 
-- `position`, `positionstart` et `positionend` acceptent aussi des index negatifs (`-1` = derniere occurrence, `-2` = avant-derniere, etc.).
+- `position`, `positionstart` et `positionend` acceptent aussi des index negatifs (`-1` = derniere occurrence, `-2` = avant-derniere, etc.). Pour les regles de type `dependance`, le cas `position = -1` est traite occurrence de zone par occurrence de zone :
+  - Une occurrence de zone n'est prise en compte que si elle contient au moins **deux** occurrences de la sous-zone ciblee.
+  - Une occurrence de zone qui ne contient qu'une seule occurrence de la sous-zone ciblee est ignoree.
+  - Le meme principe s'applique aussi au cas interne equivalent `positionstart = -1` et `positionend = -1`.
+
+Exemple :
+`positionstart = -1` et `positionend = -1` sur sous-zone $3 des zones 606
+`606$3$3$3`
+`606$3`
+`606$3$3`
+Avec `position = -1`, Qualimarc recupere la derniere `$3` de la premiere et de la troisieme `606`, mais ignore la deuxieme `606`.
+Notez que tous les attributs de la règle sont alignés verticalement, et tous les attributs du type de document aussi. 
 
 Remarque :
 - `positionstart` et `positionend` peuvent servir à exclure une occurrence et définir deux segments.
   Exemple : pour récupérer 0 à 2 puis 4 jusqu’à la fin (en excluant 3), renseigner `positionstart = 4` et `positionend = 2`.
+
+
 
 Exemple de fichier YAML d'une règle complexe avec une règle de dépendance :
 ``` YAML
