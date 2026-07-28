@@ -31,9 +31,11 @@ Ce document explique étape par étape comment ajouter ou modifier des règles d
 - [Langage YAML : syntaxe et utilisation](#3)
 - [Syntaxe des règles simples](#4)
 - [Syntaxe des règles complexes](#5)
-- [Règles de dépendance](#6)
-- [Jeux de règles personnalisés](#7)
-- [Convention d'indexation des positions](#8)
+- [Règle particulière de dépendance](#6)
+- [Règle particulière de réciprocité](#7)
+- [Règle particulière de groupememezone](#8)
+- [Jeux de règles personnalisés](#9)
+- [Convention d'indexation des positions](#10)
 
 ## Utilisation de GitHub-  <a id="1"></a>
 Github est un outil en ligne permettant de versionner des fichiers. Il dispose d'un éditeur en ligne permettant de modifier des fichiers puis de les sauvegarder tout en conservant un historique des modifications réalisées..
@@ -711,7 +713,7 @@ rules:
 ```
 
 
-## Règles de dépendance <a id="6"></a>
+## Règle particulière de dépendance <a id="6"></a>
 
 ### Articulation entre deux notices
 Il est possible de créer des règles complexes permettant d'effectuer des vérifications dans une notice liée de la notice. Pour cela, une règle simple particulière doit être créée dans la règle complexe. Cette règle aura la valeur dependance dans le champ type. Voici un exemple de règle simple de type dépendance en YAML :
@@ -801,7 +803,7 @@ Le YAML précédent permet de créer une règle complexe qui renvoie le message 
 
 Elle est composée de 4 règles simples qui seront validées dans l'ordre. La première règle vérifie la présence d'une 660$3. La seconde informe le programme que les règles suivantes seront appliquées sur la ou les notices bibliographiques liées dont le ppn est situé dans la première occurrence de la $3 de chaque 606 présente dans la notice. Si au moins une des notice liée contient une 250$a ET une 200, le message est envoyé à l'utilisateur.
 
-### Règle de réciprocité
+## Règle particulière de réciprocité <a id="7"></a>
 Ce type de règle ne peut être créé que dans une règle complexe, et doit être placée après une règle de dépendance. En effet, elle permet d'aller vérifier que la valeur contenu dans une zone / sous zone spécifique d'une notice liée correspond au PPN de la notice en cours d'analyse.
 
 Liste des champs propres au type de règle reciprocite :
@@ -841,7 +843,272 @@ Le YAML précédent permet de créer une règle complexe qui renvoie le message 
 
 Elle vérifie d'abord la présence de la zone 660$3, puis récupère le PPN en 606$3, analyse la notice bibliographique liée et si la valeur contenue dans la zone 250$a **ne** contient **pas** le PPN de la notice en cours d'analyse, elle envoie le message à l'utilisateur.
 
-## Jeux de règles personnalisés <a id="7"></a>
+## Règle particulière de groupememezone <a id="8"></a>
+
+`groupememezone` est un type YAML non autonome. Il ne doit pas etre utilisé comme une règle simple importée seule mais seulement au sein d'une règle complexe `ComplexRules`.
+Son rôle est de regrouper une ou plusieurs sous-règles qui doivent toutes s'appliquer à une même occurrence de zone.
+
+Quand le moteur évalue un bloc `groupememezone` :
+
+1. il prend la zone declarée sur le bloc, par exemple `328` ;
+2. il applique la première sous-règle applicable à cette zone ;
+3. il conserve les occurrences de la zone qui satisfont cette sous-règle ;
+4. il applique ensuite les sous-règles suivantes sur cette même liste d'occurrences ;
+5. il fait une intersection des occurrences valides ;
+6. le bloc est valide s'il reste au moins une occurrence de la zone qui satisfait toutes les sous-règles du groupe.
+
+Le bloc permet donc d'exprimer :
+
+- "dans une meme zone 328, la premiere sous-zone doit etre `$z`"
+- "dans cette meme zone 328, la sous-zone `$z` doit contenir `Reproduction`"
+
+Sans `groupememezone`, ces deux contrôles pourraient etre valides sur deux zones `328` differentes de la meme notice, ce qui ne couvrirait pas le besoin.
+
+Exemple :
+
+```yaml
+rules:
+  - id: 9300
+    id-excel: 182
+    message: "Exemple de regle complexe avec groupememezone"
+    priorite: P1
+    regles:
+      - id: 9301
+        type: presencechainecaracteres
+        zone: "215"
+        souszone: "a"
+        type-de-verification: CONTIENT
+        chaines-caracteres:
+          - chaine-caracteres: "microfiche"
+
+      - id: 9302
+        type: groupememezone
+        zone: "328"
+        operateur-booleen: ET
+        regles:
+          - id: 9303
+            type: positionsouszone
+            souszone: "z"
+            positions:
+              - position: 1
+                comparateur: DIFFERENT
+```
+
+Dans cet exemple :
+
+- la regle complexe controle d'abord `215$a` ;
+- puis elle enchaine avec un bloc `groupememezone` sur `328` ;
+- ce bloc dit qu'une meme occurrence de `328` doit respecter les sous-regles internes.
+
+Les sous-regles autorisees dans `groupememezone` sont uniquement :
+- `presencezone`
+- `presencesouszone`
+- `positionsouszone`
+- `presencechainecaracteres`
+- `indicateur`
+
+Les autres types de regles ne doivent pas etre places dans ce bloc.
+
+Contraintes de syntaxe
+
+- Le bloc `groupememezone` doit toujours definir sa `zone`
+- Les sous-regles internes ne doivent pas redefinir la `zone` : la `zone` est portée par le bloc `groupememezone`, les sous-règles internes héritent de cette zone.
+- Le bloc doit contenir au moins une sous-règle
+- La première sous-règle à l'intérieur de `groupememezone` ne doit pas porter `operateur-booleen`.
+- Si le groupe contient une deuxième sous-règle, une troisième, etc., elles doivent porter `operateur-booleen`.
+
+Exemple :
+
+```yaml
+regles:
+  - id: 9303
+    type: positionsouszone
+    souszone: "z"
+    positions:
+      - position: 1
+        comparateur: DIFFERENT
+
+  - id: 9304
+    type: presencechainecaracteres
+    
+    souszone: "z"
+    type-de-verification: CONTIENT
+    chaines-caracteres:
+      - chaine-caracteres: "Reproduction"
+    operateur-booleen: ET
+```
+
+Attention aux deux niveaux d'operateurs ! Il faut distinguer deux notions differentes.
+
+### `operateur-booleen`
+
+`operateur-booleen` sert a lier une regle ou un bloc a la regle precedente.
+
+On le trouve :
+
+- entre deux sous-regles d'une regle complexe ;
+- entre deux sous-regles d'un bloc `groupememezone`.
+
+Exemple :
+
+```yaml
+- id: 9302
+  type: groupememezone
+  zone: "328"
+  operateur-booleen: ET
+```
+
+Ici, `operateur-booleen: ET` ne relie pas les sous-regles internes du groupe.
+Il relie le bloc `groupememezone` a la regle precedente de la regle complexe.
+
+### `operateur`
+
+`operateur` est un attribut interne a certains types de regles, notamment `positionsouszone`.
+Il sert a combiner plusieurs criteres internes de cette regle.
+
+Exemple :
+
+```yaml
+- id: 9403
+  type: positionsouszone
+  souszone: "z"
+  positions:
+    - position: 1
+      comparateur: DIFFERENT
+    - position: 3
+      comparateur: DIFFERENT
+  operateur: OU
+```
+
+Ici, `operateur: OU` sert uniquement a combiner les deux entrees du tableau `positions`.
+
+## Regle importante sur `positionsouszone`
+
+Si une regle `positionsouszone` ne contient qu'une seule entree dans `positions`, il n'est pas necessaire d'ajouter `operateur`.
+
+Exemple recommande :
+
+```yaml
+- id: 9303
+  type: positionsouszone
+  souszone: "z"
+  positions:
+    - position: 1
+      comparateur: DIFFERENT
+```
+
+Exemple inutilement verbeux :
+
+```yaml
+- id: 9303
+  type: positionsouszone
+  souszone: "z"
+  positions:
+    - position: 1
+      comparateur: DIFFERENT
+  operateur: OU
+```
+
+Ce dernier exemple n'est pas utile car il n'y a qu'une seule position a combiner.
+
+## Exemple YAML minimal avec une seule sous-regle dans le groupe
+
+```yaml
+rules:
+  - id: 9200
+    id-excel: 182
+    message: "Si 215$a contient 'microfiche', alors la zone 328 doit commencer par une sous-zone $z"
+    priorite: P1
+    regles:
+      - id: 9201
+        type: presencechainecaracteres
+        zone: "215"
+        souszone: "a"
+        type-de-verification: CONTIENT
+        chaines-caracteres:
+          - chaine-caracteres: "microfiche"
+
+      - id: 9202
+        type: groupememezone
+        zone: "328"
+        operateur-booleen: ET
+        regles:
+          - id: 9203
+            type: positionsouszone
+            souszone: "z"
+            positions:
+              - position: 1
+                comparateur: DIFFERENT
+```
+
+Lecture de cet exemple :
+
+- `9201` teste `215$a contient microfiche` ;
+- `9202` ouvre un bloc `groupememezone` sur `328` ;
+- `9203` verifie qu'une meme occurrence de `328` ne commence pas par autre chose que `$z`.
+
+## Exemple YAML avec deux sous-regles dans le meme groupe
+
+```yaml
+rules:
+  - id: 9300
+    id-excel: 182
+    message: "Si 215$a contient 'microfiche', alors une meme zone 328 doit commencer par $z et contenir 'Reproduction' dans $z"
+    priorite: P1
+    regles:
+      - id: 9301
+        type: presencechainecaracteres
+        zone: "215"
+        souszone: "a"
+        type-de-verification: CONTIENT
+        chaines-caracteres:
+          - chaine-caracteres: "microfiche"
+
+      - id: 9302
+        type: groupememezone
+        zone: "328"
+        operateur-booleen: ET
+        regles:
+          - id: 9303
+            type: positionsouszone
+            souszone: "z"
+            positions:
+              - position: 1
+                comparateur: DIFFERENT
+
+          - id: 9304
+            type: presencechainecaracteres
+            operateur-booleen: ET
+            souszone: "z"
+            type-de-verification: CONTIENT
+            chaines-caracteres:
+              - chaine-caracteres: "Reproduction"
+```
+
+Lecture de cet exemple :
+
+- `9303` controle la position de la sous-zone `$z` ;
+- `9304` controle le contenu de cette sous-zone `$z` ;
+- les deux controles doivent etre vrais sur la meme occurrence de `328`.
+
+## Resume
+
+- `groupememezone` est un type YAML non autonome ;
+- il doit etre utilise dans une regle complexe ;
+- il doit contenir au moins une sous-regle ;
+- les sous-regles internes autorisees sont :
+  - `presencezone`
+  - `presencesouszone`
+  - `positionsouszone`
+  - `presencechainecaracteres`
+  - `indicateur`
+- la `zone` se declare sur le bloc `groupememezone`, pas dans les sous-regles internes ;
+- la premiere sous-regle du groupe n'a pas `operateur-booleen` ;
+- les suivantes doivent avoir `operateur-booleen` ;
+- `operateur` dans `positionsouszone` ne sert que si la regle combine plusieurs positions.
+
+
+## Jeux de règles personnalisés <a id="9"></a>
 
 ### Principe
 Sur le même principe que les règles, il est possible de créer des jeux de règles personnalisés via un fichier contenant des objets en langage Yaml. A chaque modification du fichier, l'application supprimera tous les jeux de règles existants et les remplacera par ceux du fichier.
