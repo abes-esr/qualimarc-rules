@@ -848,10 +848,10 @@ Quand le moteur évalue un bloc `groupememezone` :
 
 Le bloc permet donc d'exprimer :
 
-- "dans une meme zone 328, la premiere sous-zone doit etre `$z`"
-- "dans cette meme zone 328, la sous-zone `$z` doit contenir `Reproduction`"
+- "dans une même zone 328, la première sous-zone doit etre `$z`"
+- "dans cette même zone 328, la sous-zone `$z` doit contenir `Reproduction`"
 
-Sans `groupememezone`, ces deux contrôles pourraient etre valides sur deux zones `328` differentes de la meme notice, ce qui ne couvrirait pas le besoin.
+Sans `groupememezone`, ces deux contrôles pourraient être valides sur deux zones `328` différentes de la même notice, ce qui ne couvrirait pas le besoin.
 
 Exemple :
 
@@ -885,23 +885,23 @@ rules:
 
 Dans cet exemple :
 
-- la regle complexe controle d'abord `215$a` ;
-- puis elle enchaine avec un bloc `groupememezone` sur `328` ;
-- ce bloc dit qu'une meme occurrence de `328` doit respecter les sous-regles internes.
+- la règle complexe contrôle d'abord `215$a` ;
+- puis elle enchaîne avec un bloc `groupememezone` sur `328` ;
+- ce bloc dit qu'une même occurrence de `328` doit respecter les sous-règles internes.
 
-Les sous-regles autorisees dans `groupememezone` sont uniquement :
+Les sous-règles autorisees dans `groupememezone` sont uniquement :
 - `presencezone`
 - `presencesouszone`
 - `positionsouszone`
 - `presencechainecaracteres`
 - `indicateur`
 
-Les autres types de regles ne doivent pas etre places dans ce bloc.
+Les autres types de règles ne doivent pas être placés dans ce bloc.
 
 Contraintes de syntaxe
 
-- Le bloc `groupememezone` doit toujours definir sa `zone`
-- Les sous-regles internes ne doivent pas redefinir la `zone` : la `zone` est portée par le bloc `groupememezone`, les sous-règles internes héritent de cette zone.
+- Le bloc `groupememezone` doit toujours définir sa `zone`
+- Les sous-règles internes ne doivent pas redéfinir la `zone` : la `zone` est portée par le bloc `groupememezone`, les sous-règles internes héritent de cette zone.
 - Le bloc doit contenir au moins une sous-règle
 - La première sous-règle à l'intérieur de `groupememezone` ne doit pas porter `operateur-booleen`.
 - Si le groupe contient une deuxième sous-règle, une troisième, etc., elles doivent porter `operateur-booleen`.
@@ -927,16 +927,16 @@ regles:
     operateur-booleen: ET
 ```
 
-Attention aux deux niveaux d'operateurs ! Il faut distinguer deux notions differentes.
+Attention aux deux niveaux d'opérateurs ! Il faut distinguer deux notions différentes.
 
 ### `operateur-booleen`
 
-`operateur-booleen` sert a lier une regle ou un bloc a la regle precedente.
+`operateur-booleen` sert a lier une règle ou un bloc à la règle précédente.
 
 On le trouve :
 
-- entre deux sous-regles d'une regle complexe ;
-- entre deux sous-regles d'un bloc `groupememezone`.
+- entre deux sous-règles d'une règle complexe ;
+- entre deux sous-règles d'un bloc `groupememezone`.
 
 Exemple :
 
@@ -947,13 +947,13 @@ Exemple :
   operateur-booleen: ET
 ```
 
-Ici, `operateur-booleen: ET` ne relie pas les sous-regles internes du groupe.
-Il relie le bloc `groupememezone` a la regle precedente de la regle complexe.
+Ici, `operateur-booleen: ET` ne relie pas les sous-règles internes du groupe.
+Il relie le bloc `groupememezone` à la règle précédente de la règle complexe.
 
 ### `operateur`
 
-`operateur` est un attribut interne a certains types de regles, notamment `positionsouszone`.
-Il sert a combiner plusieurs criteres internes de cette regle.
+`operateur` est un attribut interne à certains types de règles, notamment `positionsouszone`.
+Il sert a combiner plusieurs critères internes de cette règle.
 
 Exemple :
 
@@ -969,7 +969,7 @@ Exemple :
   operateur: OU
 ```
 
-Ici, `operateur: OU` sert uniquement a combiner les deux entrees du tableau `positions`.
+Ici, `operateur: OU` sert uniquement à combiner les deux entrées du tableau `positions`.
 
 ### Règle importante sur `positionsouszone`
 
