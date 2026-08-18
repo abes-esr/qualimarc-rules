@@ -4108,6 +4108,7 @@ rules:
          operateur-booleen: OU
 
 #test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
+#activée été 2026
    - id: 9050
      id-excel: 207
      message: "RULE TEST Zone 225 : puisque la forme du titre est déclarée 'différente' de celle de l'autorité (indicateur 1=0), le titre enregistré en sous-zone $a doit être différent de celui enregistré en 410."
@@ -4150,9 +4151,10 @@ rules:
 #test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
 # annule et remplace la 7980 pour éviter de taper sur la 100$A en affichage erreur, en reprenant toutefois la condition d'absence de X dans la date.
 # suppression de la condition sur valeur indicateur : couvre donc les règles excel 189 ET 190
+#activée été 2026
    - id: 9060
      id-excel: 189
-     message: "RULE TEST Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
+     message: "Zone 214 : la date enregistrée en sous-zone $d doit correspondre à celle indiquée en sous-zone 100$a (Valeur 'Date la plus ancienne' dans l'onglet 'Générales')"
      priorite: P1
      jeux-de-regles:
        - 1 #1XX
@@ -4196,9 +4198,10 @@ rules:
 #test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352
 # remplace la 9000 > à désactiver à la prochaine PR !
 # rétroconversions !
+#activée été 2026
    - id: 9070
      id-excel: 733
-     message: "RULE TEST La première lettre enregistrée en sous-zone 182$c doit être identique à celle enregistrée en sous-zone 183$a."
+     message: "La première lettre enregistrée en sous-zone 182$c doit être identique à celle enregistrée en sous-zone 183$a."
      priorite: P1
      jeux-de-regles:
        - 1 #1XX
@@ -4228,7 +4231,7 @@ rules:
 #test évolution règle comparaison contenu sous-zone - sept 2025 - ppn 090389352 - remplace la 1201 initiale
    - id: 9080
      id-excel: 121
-     message: "RULE TEST Zone 200 : le code d'écriture de catalogage indiqué en première sous-zone $7 ne correspond pas à celui indiqué en sous-zone 104$d. Corriger l'une ou l'autre de ces sous-zones pour rendre les données cohérentes"
+     message: "Zone 200 : le code d'écriture de catalogage indiqué en première sous-zone $7 ne correspond pas à celui indiqué en sous-zone 104$d. Corriger l'une ou l'autre de ces sous-zones pour rendre les données cohérentes"
      priorite: P1
      jeux-de-regles:
        - 1 #1XX
@@ -4249,60 +4252,61 @@ rules:
          souszonecible: 7
          operateur-booleen: ET
 
-# test SOA-182 - groupe meme zone imbrique - a supprimer apres recette
-   - id: 9090
-     id-excel: 182
-     message: "RULE TEST SOA-182 : si 215$a contient 'microfiche', chaque zone 328 doit commencer par une sous-zone $z"
-     priorite: P1
-     regles:
-       - id: 9091
-         type: presencechainecaracteres
-         zone: '215'
-         souszone: 'a'
-         type-de-verification: CONTIENT
-         chaines-caracteres:
-           - chaine-caracteres: "microfiche"
-       - id: 9092
-         type: groupememezone
-         zone: '328'
-         operateur-booleen: ET
-         regles:
-           - id: 9093
-             type: positionsouszone
-             souszone: 'z'
-             positions:
-               - position: 1
-                 comparateur: DIFFERENT
-             operateur: OU
+# # test SOA-182 - groupe meme zone imbrique - a supprimer apres recette
+#    - id: 9090
+#      id-excel: 182
+#      message: "RULE TEST SOA-182 : si 215$a contient 'microfiche', chaque zone 328 doit commencer par une sous-zone $z"
+#      priorite: P1
+#      regles:
+#        - id: 9091
+#          type: presencechainecaracteres
+#          zone: '215'
+#          souszone: 'a'
+#          type-de-verification: CONTIENT
+#          chaines-caracteres:
+#            - chaine-caracteres: "microfiche"
+#        - id: 9092
+#          type: groupememezone
+#          zone: '328'
+#          operateur-booleen: ET
+#          regles:
+#            - id: 9093
+#              type: positionsouszone
+#              souszone: 'z'
+#              positions:
+#                - position: 1
+#                  comparateur: DIFFERENT
+#              operateur: OU
 
-#test position -1 dans dépendance juillet 2026 à supprimer après recette
-   - id: 10000
-     id-excel: 
-     message: "TEST SOA-181 : la derniere 606$3 doit pointer vers une autorite dont 106$b différent de 1."
-     priorite: P1
-     regles:
-       - id: 10001
-         type: presencezone
-         zone: "606"
-         presence: true
-       - id: 10002
-         type: dependance
-         zone: "606"
-         souszone: "3"
-         type-notice-liee: AUTORITE
-         position: -1
-       - id: 10003
-         type: presencechainecaracteres
-         zone: "106"
-         souszone: "b"
-         type-de-verification: CONTIENT
-         chaines-caracteres:
-           - chaine-caracteres: "1"
+# #test position -1 dans dépendance juillet 2026 à supprimer après recette
+#    - id: 10000
+#      id-excel: 
+#      message: "TEST SOA-181 : la derniere 606$3 doit pointer vers une autorite dont 106$b différent de 1."
+#      priorite: P1
+#      regles:
+#        - id: 10001
+#          type: presencezone
+#          zone: "606"
+#          presence: true
+#        - id: 10002
+#          type: dependance
+#          zone: "606"
+#          souszone: "3"
+#          type-notice-liee: AUTORITE
+#          position: -1
+#        - id: 10003
+#          type: presencechainecaracteres
+#          zone: "106"
+#          souszone: "b"
+#          type-de-verification: CONTIENT
+#          chaines-caracteres:
+#            - chaine-caracteres: "1"
 
 #test position >1 dans dépendance à conserver si OK et à décliner pour toutes les 6XX juillet 2026
+#activée été 2026
    - id: 10010
-     id-excel: 
-     message: "TEST SOA-181 : les 606$3 en position différente de 1 doivent pointer vers des autorités dont 106$b différent de 1"
+     id-excel: 736
+     message: "Zone 606 : une autorité a été enregistrée en subdivision d'une chaîne d'indexation 606 alors qu'elle ne peut s'employer qu'en tant qu'élément initial (tête de vedette) (A106$b=1)"
      priorite: P1
      regles:
        - id: 10011
@@ -4324,9 +4328,10 @@ rules:
            - chaine-caracteres: "1"
 
 #test position 1 dans dépendance à conserver si OK et à décliner pour toutes les 6XX juillet 2026
+#activée été 2026
    - id: 10020
-     id-excel: 
-     message: "TEST SOA-181 : les 606$3 en position 1 doivent pointer vers des autorités dont 106$b différent de 2"
+     id-excel: 735
+     message: "Zone 606 : une autorité a été enregistrée en élément initial (tête de vedette) d'une chaîne d'indexation 606 alors qu'elle ne peut s'employer qu'en tant que subdivision (A106$b=2)"
      priorite: P1
      regles:
        - id: 10021
@@ -4349,37 +4354,38 @@ rules:
 
 
 #test position sous-zone et groupememezone juillet 2026
-   - id: 10030
-     id-excel: 999
-     message: "TEST AFE la zone 328 d'une reproduction de thèse doit toujours commencer par une sous-zone $z mentionnant 'Reproduction'"
-     priorite: P1
-     regles:
-       - id: 10031
-         type: presencechainecaracteres
-         zone: '215'
-         souszone: 'a'
-         type-de-verification: CONTIENT
-         chaines-caracteres:
-           - chaine-caracteres: "Microfiche"
-           - operateur: OU
-             chaine-caracteres: "microfiche"
-       - id: 10032
-         type: groupememezone
-         zone: '328'
-         operateur-booleen: ET
-         regles:
-           - id: 10033
-             type: positionsouszone
-             souszone: 'z'
-             positions:
-               - position: 1
-                 comparateur: DIFFERENT
-           - id: 10034
-             type: presencechainecaracteres
-             souszone: 'z'
-             type-de-verification: NECONTIENTPAS
-             chaines-caracteres:
-               - chaine-caracteres: "Reproduction"
-               - operateur: ET
-                 chaine-caracteres: "reproduction"
-             operateur-booleen: OU
+#à voir si on conserve/décline à l'issue de la PR été 2026
+   # - id: 10030
+   #   id-excel: 999
+   #   message: "TEST AFE la zone 328 d'une reproduction de thèse doit toujours commencer par une sous-zone $z mentionnant 'Reproduction'"
+   #   priorite: P1
+   #   regles:
+   #     - id: 10031
+   #       type: presencechainecaracteres
+   #       zone: '215'
+   #       souszone: 'a'
+   #       type-de-verification: CONTIENT
+   #       chaines-caracteres:
+   #         - chaine-caracteres: "Microfiche"
+   #         - operateur: OU
+   #           chaine-caracteres: "microfiche"
+   #     - id: 10032
+   #       type: groupememezone
+   #       zone: '328'
+   #       operateur-booleen: ET
+   #       regles:
+   #         - id: 10033
+   #           type: positionsouszone
+   #           souszone: 'z'
+   #           positions:
+   #             - position: 1
+   #               comparateur: DIFFERENT
+   #         - id: 10034
+   #           type: presencechainecaracteres
+   #           souszone: 'z'
+   #           type-de-verification: NECONTIENTPAS
+   #           chaines-caracteres:
+   #             - chaine-caracteres: "Reproduction"
+   #             - operateur: ET
+   #               chaine-caracteres: "reproduction"
+   #           operateur-booleen: OU
