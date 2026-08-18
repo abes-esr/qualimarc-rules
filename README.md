@@ -265,7 +265,7 @@ Règle numéro 5 dans la base, sur la ligne 110 du fichier Excel, permettant de 
 ### Position de sous-zone
 Liste des champs propres au type de règle position de sous-zone :
 - souszone : ``obligatoire`` / de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format unimarc de catalogage ne doit pas être renseigné
-- positions : ``obligatoire`` / de type liste des positions de la sous-zone dans la zone à vérifier. Pour vérifier qu'une sous-zone est en dernière position de la zone, mettre la valeur -1. Composé de deux champs : la position et le type de comparateur à appliquer entre EGAL, DIFFERENT, INFERIEUR, SUPERIEUR, INFERIEUR_EGAl, SUPERIEUR_EGAL
+- positions : ``obligatoire`` / de type liste des positions de la sous-zone dans la zone à vérifier. Pour vérifier qu'une sous-zone est en dernière position de la zone, mettre la valeur -1. Composé de deux champs : la position et le type de comparateur à appliquer entre EGAL, DIFFERENT, INFERIEUR, SUPERIEUR, INFERIEUR_EGAl, SUPERIEUR_EGAL. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
 - operateur : ``obligatoire`` / valeur ET ou OU : opérateur booléen à mettre entre les différentes positions
 
 Exemple de fichier YAML :
@@ -363,8 +363,8 @@ Si le nombre de caractères dans la 200$a est inférieur ou égal à 20, alors l
 Liste des champs propres au type de règle présence chaine caractères:
 * souszone : **obligatoire** - de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
 * type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS`
-* positionstart : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à analyser (indexation base 0, voir paragraphe spécifique [Convention d'indexation des positions](#10)). Si non renseigné, l'analyse commence **au début de la sous-zone**.
-* positionend : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à analyser (indexation base 0). Si non renseigné, l'analyse se fait **jusqu'à la fin de la sous-zone**.
+* positionstart : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à analyser (indexation base 0). Si non renseigné, l'analyse commence **au début de la sous-zone**. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
+* positionend : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à analyser (indexation base 0). Si non renseigné, l'analyse se fait **jusqu'à la fin de la sous-zone**. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
 * chaines-caracteres : **obligatoire** - de type liste d'objets. La liste des chaine-caracteres à vérifier. Les champs d'un objet de la liste sont les suivants :
   * operateur : de type opérateur logique. ne peut être que `ET` ou `OU`.
   * chaine-caracteres :  la chaine de caractères à vérifier
@@ -449,16 +449,16 @@ rules:
 
 Liste des champs propres au type de règle comparaison contenu sous-zone:
 * souszone : **obligatoire** - de type caractère. La sous-zone sur laquelle va porter la comparaison. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
-* position : *optionnel* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0).
-* positionstart : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`).
-* positionend : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**.
+* position : *optionnel* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0). Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
+* positionstart : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`). Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
+* positionend : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
 * type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS` ou `STRICTEMENTDIFFERENT` OU `TOUTCONTIENT` OU `AUCUNCONTIENT`
 * nombreCaracteres : *optionnel* - de type chiffre. Le nombre de caractères de la souszonecible à comparer à la souszone. Ne peux contenir que deux chiffres maximum. Ce paramètre est pris en compte uniquement pour les type-de-verification COMMENCE et TERMINE.
 * zonecible : **obligatoire** - de type caractère. La zone dans laquelle aller chercher la souszonecible qui permettra d'effectuer la comparaison.
 * souszonecible : **obligatoire** - de type caractère. La souszonecible qui sera comparée à la souszone. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
 * positioncible : *optionnel* - de type chiffre (max. 3). Permet de cibler un **caractère précis** dans la sous-zone (index commençant à 0).
-* positionstartcible : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`).
-* positionendcible : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**.
+* positionstartcible : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à comparer. Si non renseigné, la comparaison commence **au début de la sous-zone** (équivalent à `0`). Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
+* positionendcible : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à comparer. Si non renseigné, la comparaison se fait **jusqu’à la fin de la sous-zone**. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
 
 ``` YAML
 ---
@@ -507,12 +507,12 @@ Si le type de caractères dans la 603$a est Alphabetique OU Numerique OU Special
 ### Comparaison de dates
 Liste des champs propres au type de règle comparaison de dates :
 - souszone : ``obligatoire`` / de type caractère la sous-zone à vérifier. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
-- positionstart : ``optionel`` / de type entier, la position de début de la date à vérifier dans le champs de la sous zone. Par défaut, la position de début est 1.
-- positionend : ``optionel`` / de type entier, la position de fin de la date à vérifier dans le champs de la sous zone. Si non renseigné, la date sera comprise jusqu'à la fin du champs
+- positionstart : ``optionel`` / de type entier, la position de début de la date à vérifier dans le champs de la sous zone. Par défaut, la position de début est 1. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
+- positionend : ``optionel`` / de type entier, la position de fin de la date à vérifier dans le champs de la sous zone. Si non renseigné, la date sera comprise jusqu'à la fin du champs. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
 - zonecible : ``obligatoire`` / de type caractère, la zone cible à comparer avec la zone de la règle
 - souszonecible : ``obligatoire`` / de type caractère, la sous-zone cible à comparer avec la sous-zone de la règle. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
-- positionstartcible : ``optionel`` / de type entier, la position de début de la date à vérifier dans le champs de la sous zone cible. Par défaut, la position de début est 1.
-- positionendcible : ``optionel`` / de type entier, la position de fin de la date à vérifier dans le champs la sous zone cible. Si non renseigné, la date sera comprise jusqu'à la fin du champs
+- positionstartcible : ``optionel`` / de type entier, la position de début de la date à vérifier dans le champs de la sous zone cible. Par défaut, la position de début est 1. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
+- positionendcible : ``optionel`` / de type entier, la position de fin de la date à vérifier dans le champs la sous zone cible. Si non renseigné, la date sera comprise jusqu'à la fin du champs. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
 - comparateur: ``obligatoire`` / de type caractère, le comparateur à utiliser pour la comparaison. Les valeurs possibles sont : `SUPERIEUR`, `INFERIEUR`, `EGAL`, `SUPERIEUR_EGAL`, `INFERIEUR_EGAL`, `DIFFERENT`
 
 Exemple de fichier YAML :
@@ -536,7 +536,7 @@ rules:
 ### Contenu de la zone 008
 Liste des champs propres à l'analyse de la zone 008 :
 - type-de-verification : ``obligatoire`` peut prendre les valeurs STRICTEMENT ou STRICTEMENTDIFFERENT : permet de déterminer si la valeur recherchée dans la 008 doit être égale ou différente.
-- position : ``obligatoire`` de type entier, la position où rechercher dans le contenu de la zone 008. Cette position ne peut être comprise qu'entre 1 et 4.
+- position : ``obligatoire`` de type entier, la position où rechercher dans le contenu de la zone 008. Cette position ne peut être comprise qu'entre 1 et 4. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
 - valeur : ``obligatoire`` de type caractère : la valeur à chercher dans la zone 008.
 
 Attention ! pour cette règle, il n'est pas utile de préciser la zone, étant donné qu'elle porte sur la 008 quoiqu'il en soit.
@@ -731,9 +731,9 @@ Liste des champs propres au type de règle de dépendance :
 - zone : `obligatoire` / de type chaîne de caractères — zone utilisée (dans la notice courante) pour trouver la notice liée.
 - souszone : `obligatoire` / de type caractère — sous-zone correspondante. ATTENTION : ne pas renseigner le signe `$` du format Unimarc.
 - type-notice-liee : `obligatoire` / de type chaîne de caractères — type de la notice liée. Valeurs possibles : `AUTORITE | BIBLIO`.
-- position : `optionnel` / de type nombre — position de la sous-zone à récupérer (0 = première, -1 = dernière, etc.).
-- positionstart : `optionnel` / de type nombre — début de l’intervalle d’occurrences de sous-zones à récupérer.
-- positionend : `optionnel` / de type nombre — fin de l’intervalle d’occurrences de sous-zones à récupérer.
+- position : `optionnel` / de type nombre — position de la sous-zone à récupérer (0 = première, -1 = dernière, etc.). Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
+- positionstart : `optionnel` / de type nombre — début de l’intervalle d’occurrences de sous-zones à récupérer. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
+- positionend : `optionnel` / de type nombre — fin de l’intervalle d’occurrences de sous-zones à récupérer. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
 
 - `position`, `positionstart` et `positionend` acceptent aussi des index negatifs (`-1` = derniere occurrence, `-2` = avant-derniere, etc.). Pour les regles de type `dependance`, le cas `position = -1` est traite occurrence de zone par occurrence de zone :
   - Une occurrence de zone n'est prise en compte que si elle contient au moins **deux** occurrences de la sous-zone ciblee.
@@ -971,11 +971,11 @@ Exemple :
 
 Ici, `operateur: OU` sert uniquement a combiner les deux entrees du tableau `positions`.
 
-## Regle importante sur `positionsouszone`
+### Règle importante sur `positionsouszone`
 
-Si une regle `positionsouszone` ne contient qu'une seule entree dans `positions`, il n'est pas necessaire d'ajouter `operateur`.
+Si une règle `positionsouszone` ne contient qu'une seule entrée dans `positions`, il n'est pas nécessaire d'ajouter `operateur`.
 
-Exemple recommande :
+Exemple :
 
 ```yaml
 - id: 9303
@@ -998,9 +998,9 @@ Exemple inutilement verbeux :
   operateur: OU
 ```
 
-Ce dernier exemple n'est pas utile car il n'y a qu'une seule position a combiner.
+Ce dernier exemple n'est pas utile car il n'y a qu'une seule position a combiner. Pour plus d'informations sur l'utilisation des attributs de positions, voir [Convention d'indexation des positions](#10)
 
-## Exemple YAML minimal avec une seule sous-regle dans le groupe
+### Exemple YAML minimal avec une seule sous-règle dans le groupe
 
 ```yaml
 rules:
@@ -1034,15 +1034,15 @@ Lecture de cet exemple :
 
 - `9201` teste `215$a contient microfiche` ;
 - `9202` ouvre un bloc `groupememezone` sur `328` ;
-- `9203` verifie qu'une meme occurrence de `328` ne commence pas par autre chose que `$z`.
+- `9203` vérifie qu'une même occurrence de `328` ne commence pas par autre chose que `$z`.
 
-## Exemple YAML avec deux sous-regles dans le meme groupe
+### Exemple YAML avec deux sous-règles dans le même groupe
 
 ```yaml
 rules:
   - id: 9300
     id-excel: 182
-    message: "Si 215$a contient 'microfiche', alors une meme zone 328 doit commencer par $z et contenir 'Reproduction' dans $z"
+    message: "Si 215$a contient 'microfiche', alors une même zone 328 doit commencer par $z et contenir 'Reproduction' dans $z"
     priorite: P1
     regles:
       - id: 9301
@@ -1076,16 +1076,16 @@ rules:
 
 Lecture de cet exemple :
 
-- `9303` controle la position de la sous-zone `$z` ;
-- `9304` controle le contenu de cette sous-zone `$z` ;
-- les deux controles doivent etre vrais sur la meme occurrence de `328`.
+- `9303` contrôle la position de la sous-zone `$z` ;
+- `9304` contrôle le contenu de cette sous-zone `$z` ;
+- les deux contrôles doivent être vrais sur la même occurrence de `328`.
 
-## Resume
+### Résumé
 
 - `groupememezone` est un type YAML non autonome ;
-- il doit etre utilise dans une regle complexe ;
-- il doit contenir au moins une sous-regle ;
-- les sous-regles internes autorisees sont :
+- il doit être utilise dans une règle complexe ;
+- il doit contenir au moins une sous-règle ;
+- les sous-règles internes autorisées sont :
   - `presencezone`
   - `presencesouszone`
   - `positionsouszone`
