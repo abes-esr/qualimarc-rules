@@ -20,39 +20,39 @@
  #   position:    1
 
 
-rules:
-  - id:         201
-    id-excel:   95555
-    type:       positionsouszone
-    message:    "TEST AFE position sous zone présence 328$z avec comparateur 'different' et opérateur booleen OU 'pos 1 ou pos 3'"
-    zone:       328
-    souszone:   z
-    priorite:   P1
-    positions:
-       - position: 1
-         comparateur: DIFFERENT
-       - position: 3
-         comparateur: DIFFERENT
-    operateur:  ET
+# rules:
+#   - id:         201
+#     id-excel:   95555
+#     type:       positionsouszone
+#     message:    "TEST AFE position sous zone présence 328$z avec comparateur 'different' et opérateur booleen OU 'pos 1 ou pos 3'"
+#     zone:       328
+#     souszone:   z
+#     priorite:   P1
+#     positions:
+#        - position: 1
+#          comparateur: DIFFERENT
+#        - position: 3
+#          comparateur: DIFFERENT
+#     operateur:  ET
 
-  - id:         202
-    id-excel:   95555
-    type:       positionsouszone
-    message:    "TEST AFE position sous zone présence 606$2 avec comparateur 'different' et position -1"
-    zone:       606
-    souszone:   2
-    priorite:   P1
-    positions:
-       - position: -1
-         comparateur: DIFFERENT
+#   - id:         202
+#     id-excel:   95555
+#     type:       positionsouszone
+#     message:    "TEST AFE position sous zone présence 606$2 avec comparateur 'different' et position -1"
+#     zone:       606
+#     souszone:   2
+#     priorite:   P1
+#     positions:
+#        - position: -1
+#          comparateur: DIFFERENT
 
-  - id:         203
-    id-excel:   95555
-    type:       positionsouszone
-    message:    "TEST AFE la zone 215 doit avoir une sous-zone $d en 2e position"
-    zone:       215
-    souszone:   d
-    priorite:   P1
-    positions:
-       - position: 2
-         comparateur: DIFFERENT
+#   - id:         203
+#     id-excel:   95555
+#     type:       positionsouszone
+#     message:    "TEST AFE la zone 215 doit avoir une sous-zone $d en 2e position"
+#     zone:       215
+#     souszone:   d
+#     priorite:   P1
+#     positions:
+#        - position: 2
+#          comparateur: DIFFERENT
