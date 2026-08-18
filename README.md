@@ -74,17 +74,6 @@ Par exemple :
 ![typedoc](https://user-images.githubusercontent.com/57490853/190974752-3b5b1118-8c4e-42ce-8963-734559227c80.PNG)
 
 
-### Règles particulières liées au champs de positions <a id="8"></a>
-
-Cette convention s'applique aux règles qui utilisent les champs `position`, `positionstart` et `positionend`.
-
-- Pour les règles de contenu de sous-zone (ex: `presencechainecaracteres`, `comparaisoncontenusouszone`, `comparaisondate`), l'indexation est en base 0.
-- En base 0, `0` correspond au premier caractère.
-- Pour cibler un seul caractère, utilisez `positionstart = positionend`. Exemple: `positionstart: "3"` et `positionend: "3"` cible le 4e caractère.
-- Pour cibler le dernier caractère, utilisez `-1`. Exemple :  `position = -1` cible la dernière sous-zone de la zone.
-- Exception: pour la règle `typedocument` (zone 008), le champ `position` est en base 1 et doit être compris entre 1 et 4.
-
-
 ## Description des règles de Qualimarc
 Toutes les règles de Qualimarc ont une structure commune, puis des champs propres à chaque type de règle. Dans le chapitre décrivant les règles, les éléments obligatoires seront précisés. Voici un exemple de fichier YAML décrivant une règle ::
 ``` YAML
@@ -374,7 +363,7 @@ Si le nombre de caractères dans la 200$a est inférieur ou égal à 20, alors l
 Liste des champs propres au type de règle présence chaine caractères:
 * souszone : **obligatoire** - de type caractère. La sous-zone à vérifier. ATTENTION : le $ du format Unimarc de catalogage ne doit pas être renseigné
 * type-de-verification : **obligatoire** - ne peut être que `STRICTEMENT` ou `COMMENCE` ou `TERMINE` ou `CONTIENT` ou `NECONTIENTPAS`
-* positionstart : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à analyser (indexation base 0, voir [Convention d'indexation des positions](#8)). Si non renseigné, l'analyse commence **au début de la sous-zone**.
+* positionstart : *optionnel* - de type chiffre (max. 3). Définit la **borne de début** de la portion de chaîne à analyser (indexation base 0, voir paragraphe spécifique [Convention d'indexation des positions](#10)). Si non renseigné, l'analyse commence **au début de la sous-zone**.
 * positionend : *optionnel* - de type chiffre (max. 3). Définit la **borne de fin** de la portion de chaîne à analyser (indexation base 0). Si non renseigné, l'analyse se fait **jusqu'à la fin de la sous-zone**.
 * chaines-caracteres : **obligatoire** - de type liste d'objets. La liste des chaine-caracteres à vérifier. Les champs d'un objet de la liste sont les suivants :
   * operateur : de type opérateur logique. ne peut être que `ET` ou `OU`.
@@ -1137,3 +1126,13 @@ jeux-de-regles:
     description: Liens ($0/$3)
     position:    2
 ```
+
+## Convention d'indexation des positions <a id="10"></a>
+
+Cette convention s'applique aux règles qui utilisent les champs `position`, `positionstart` et `positionend`.
+
+- Pour les règles de contenu de sous-zone (ex: `presencechainecaracteres`, `comparaisoncontenusouszone`, `comparaisondate`), l'indexation est en base 0.
+- En base 0, `0` correspond au premier caractère.
+- Pour cibler un seul caractère, utilisez `positionstart = positionend`. Exemple: `positionstart: "3"` et `positionend: "3"` cible le 4e caractère.
+- Pour cibler le dernier caractère, utilisez `-1`. Exemple :  `position = -1` cible la dernière sous-zone de la zone.
+- Exception: pour la règle `typedocument` (zone 008), le champ `position` est en base 1 et doit être compris entre 1 et 4.
