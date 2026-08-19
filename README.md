@@ -1135,4 +1135,6 @@ Cette convention s'applique aux règles qui utilisent les champs `position`, `po
 - En base 0, `0` correspond au premier caractère.
 - Pour cibler un seul caractère, utilisez `positionstart = positionend`. Exemple: `positionstart: "3"` et `positionend: "3"` cible le 4e caractère.
 - Pour cibler le dernier caractère, utilisez `-1`. Exemple :  `position = -1` cible la dernière sous-zone de la zone.
-- Exception: pour la règle `typedocument` (zone 008), le champ `position` est en base 1 et doit être compris entre 1 et 4.
+- Exceptions: pour les règles `typedocument` (zone 008) et `positionsouszone`, le champ `position` est en base 1 :
+          >> `1` correspond donc au premier caractère de la zone 008 et doit être compris entre 1 et 4 pour `typedocument`
+          >> `1` correspond donc à la première position de sous-zone dans une zone `positionsouszone`
